@@ -1,0 +1,91 @@
+grammar com.selenium.gram.xtext.SlnDsl with org.eclipse.xtext.common.Terminals
+
+generate slnDsl "http://www.selenium.com/gram/xtext/SlnDsl"
+
+/*
+ * Le modele
+ */
+Model:
+	subs+=Subprocedure*
+	'main' main=Instruction 'endmain'
+;
+	
+Subprocedure:
+	'sub' head=Head body=Instruction 'endsub'
+	;
+
+Head:
+	name=FunctionName '()' 
+	| name=FunctionName '(' 'var' varId=VariableName (',' 'var' varId=VariableName )* ')'
+;
+
+/*
+ * Subprocedure
+ */
+FunctionReference:
+	functionName=[FunctionName]
+;
+
+FunctionName:
+	name=ID
+;
+
+FunctionCall:
+	FunctionReference '()' 
+	| FunctionReference '(' var=Expression (',' var=Expression)* ')'
+;
+
+/*
+ * VAriables
+ */
+VariableReference:
+	varID=[VariableName]
+;
+
+VariableName:
+	name=ID
+;
+
+NumberLiteral:
+	INT | STRING
+;
+
+/*
+ * Expression
+ */
+
+Expression:
+	var=VariableReference 
+	| NumberLiteral
+	| 'equals' '(' var=Expression ',' var=Expression ')'
+;
+
+
+/*
+ * Type of Instruction
+ */
+Instruction:
+	def=Definition
+	| func=FunctionCall 
+	| cond=Conditional
+	| loop=Loop
+	| act=Action
+	| var=VariableReference '=' exp=Expression
+	| '{' ins+=Instruction+ '}'
+;
+
+Definition:
+	'var' varID=VariableName '=' exp=Expression
+;
+
+Conditional:
+	'if' exp=Expression 'then' ins=Instruction ('else' ins=Instruction 'endif'| 'endif')
+;
+
+Loop:
+	'while' exp=Expression 'do' ins+=Instruction 'endwhile'
+;
+
+Action:
+	'open' url=STRING
+;
