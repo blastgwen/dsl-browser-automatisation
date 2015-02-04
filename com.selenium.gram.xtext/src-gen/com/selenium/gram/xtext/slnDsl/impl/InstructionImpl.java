@@ -2,15 +2,14 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Action;
+import com.selenium.gram.xtext.slnDsl.ActionInstruction;
+import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
-import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
 import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
-import com.selenium.gram.xtext.slnDsl.VariableReference;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -33,8 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getCond <em>Cond</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getLoop <em>Loop</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getAct <em>Act</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getVar <em>Var</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getAss <em>Ass</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,27 +88,17 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * @generated
    * @ordered
    */
-  protected Action act;
+  protected ActionInstruction act;
 
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * The cached value of the '{@link #getAss() <em>Ass</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getAss()
    * @generated
    * @ordered
    */
-  protected VariableReference var;
-
-  /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExp()
-   * @generated
-   * @ordered
-   */
-  protected Expression exp;
+  protected Assignation ass;
 
   /**
    * <!-- begin-user-doc -->
@@ -330,7 +318,7 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public Action getAct()
+  public ActionInstruction getAct()
   {
     return act;
   }
@@ -340,9 +328,9 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAct(Action newAct, NotificationChain msgs)
+  public NotificationChain basicSetAct(ActionInstruction newAct, NotificationChain msgs)
   {
-    Action oldAct = act;
+    ActionInstruction oldAct = act;
     act = newAct;
     if (eNotificationRequired())
     {
@@ -357,7 +345,7 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAct(Action newAct)
+  public void setAct(ActionInstruction newAct)
   {
     if (newAct != act)
     {
@@ -378,9 +366,9 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference getVar()
+  public Assignation getAss()
   {
-    return var;
+    return ass;
   }
 
   /**
@@ -388,13 +376,13 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar(VariableReference newVar, NotificationChain msgs)
+  public NotificationChain basicSetAss(Assignation newAss, NotificationChain msgs)
   {
-    VariableReference oldVar = var;
-    var = newVar;
+    Assignation oldAss = ass;
+    ass = newAss;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.INSTRUCTION__VAR, oldVar, newVar);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.INSTRUCTION__ASS, oldAss, newAss);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -405,68 +393,20 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(VariableReference newVar)
+  public void setAss(Assignation newAss)
   {
-    if (newVar != var)
+    if (newAss != ass)
     {
       NotificationChain msgs = null;
-      if (var != null)
-        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.INSTRUCTION__VAR, null, msgs);
-      if (newVar != null)
-        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.INSTRUCTION__VAR, null, msgs);
-      msgs = basicSetVar(newVar, msgs);
+      if (ass != null)
+        msgs = ((InternalEObject)ass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.INSTRUCTION__ASS, null, msgs);
+      if (newAss != null)
+        msgs = ((InternalEObject)newAss).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.INSTRUCTION__ASS, null, msgs);
+      msgs = basicSetAss(newAss, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.INSTRUCTION__VAR, newVar, newVar));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Expression getExp()
-  {
-    return exp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
-  {
-    Expression oldExp = exp;
-    exp = newExp;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.INSTRUCTION__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExp(Expression newExp)
-  {
-    if (newExp != exp)
-    {
-      NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.INSTRUCTION__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.INSTRUCTION__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.INSTRUCTION__EXP, newExp, newExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.INSTRUCTION__ASS, newAss, newAss));
   }
 
   /**
@@ -489,10 +429,8 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return basicSetLoop(null, msgs);
       case SlnDslPackage.INSTRUCTION__ACT:
         return basicSetAct(null, msgs);
-      case SlnDslPackage.INSTRUCTION__VAR:
-        return basicSetVar(null, msgs);
-      case SlnDslPackage.INSTRUCTION__EXP:
-        return basicSetExp(null, msgs);
+      case SlnDslPackage.INSTRUCTION__ASS:
+        return basicSetAss(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -517,10 +455,8 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return getLoop();
       case SlnDslPackage.INSTRUCTION__ACT:
         return getAct();
-      case SlnDslPackage.INSTRUCTION__VAR:
-        return getVar();
-      case SlnDslPackage.INSTRUCTION__EXP:
-        return getExp();
+      case SlnDslPackage.INSTRUCTION__ASS:
+        return getAss();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -548,13 +484,10 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         setLoop((Loop)newValue);
         return;
       case SlnDslPackage.INSTRUCTION__ACT:
-        setAct((Action)newValue);
+        setAct((ActionInstruction)newValue);
         return;
-      case SlnDslPackage.INSTRUCTION__VAR:
-        setVar((VariableReference)newValue);
-        return;
-      case SlnDslPackage.INSTRUCTION__EXP:
-        setExp((Expression)newValue);
+      case SlnDslPackage.INSTRUCTION__ASS:
+        setAss((Assignation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -583,13 +516,10 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         setLoop((Loop)null);
         return;
       case SlnDslPackage.INSTRUCTION__ACT:
-        setAct((Action)null);
+        setAct((ActionInstruction)null);
         return;
-      case SlnDslPackage.INSTRUCTION__VAR:
-        setVar((VariableReference)null);
-        return;
-      case SlnDslPackage.INSTRUCTION__EXP:
-        setExp((Expression)null);
+      case SlnDslPackage.INSTRUCTION__ASS:
+        setAss((Assignation)null);
         return;
     }
     super.eUnset(featureID);
@@ -615,10 +545,8 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return loop != null;
       case SlnDslPackage.INSTRUCTION__ACT:
         return act != null;
-      case SlnDslPackage.INSTRUCTION__VAR:
-        return var != null;
-      case SlnDslPackage.INSTRUCTION__EXP:
-        return exp != null;
+      case SlnDslPackage.INSTRUCTION__ASS:
+        return ass != null;
     }
     return super.eIsSet(featureID);
   }

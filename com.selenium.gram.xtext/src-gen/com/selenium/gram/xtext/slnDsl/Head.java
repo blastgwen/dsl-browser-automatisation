@@ -2,6 +2,8 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Head#getName <em>Name</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Head#getVarId <em>Var Id</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Head#getArgsID <em>Args ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,29 +52,19 @@ public interface Head extends EObject
   void setName(FunctionName value);
 
   /**
-   * Returns the value of the '<em><b>Var Id</b></em>' containment reference.
+   * Returns the value of the '<em><b>Args ID</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.VariableName}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var Id</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Args ID</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Id</em>' containment reference.
-   * @see #setVarId(VariableName)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getHead_VarId()
+   * @return the value of the '<em>Args ID</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getHead_ArgsID()
    * @model containment="true"
    * @generated
    */
-  VariableName getVarId();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Head#getVarId <em>Var Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Id</em>' containment reference.
-   * @see #getVarId()
-   * @generated
-   */
-  void setVarId(VariableName value);
+  EList<VariableName> getArgsID();
 
 } // Head

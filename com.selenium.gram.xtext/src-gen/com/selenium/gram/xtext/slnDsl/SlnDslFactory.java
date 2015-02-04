@@ -122,6 +122,15 @@ public interface SlnDslFactory extends EFactory
   Definition createDefinition();
 
   /**
+   * Returns a new object of class '<em>Assignation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignation</em>'.
+   * @generated
+   */
+  Assignation createAssignation();
+
+  /**
    * Returns a new object of class '<em>Conditional</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -140,13 +149,40 @@ public interface SlnDslFactory extends EFactory
   Loop createLoop();
 
   /**
-   * Returns a new object of class '<em>Action</em>'.
+   * Returns a new object of class '<em>While</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action</em>'.
+   * @return a new object of class '<em>While</em>'.
    * @generated
    */
-  Action createAction();
+  While createWhile();
+
+  /**
+   * Returns a new object of class '<em>Foreach</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Foreach</em>'.
+   * @generated
+   */
+  Foreach createForeach();
+
+  /**
+   * Returns a new object of class '<em>Action Instruction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Instruction</em>'.
+   * @generated
+   */
+  ActionInstruction createActionInstruction();
+
+  /**
+   * Returns a new object of class '<em>Action Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Expression</em>'.
+   * @generated
+   */
+  ActionExpression createActionExpression();
 
   /**
    * Returns the package supported by this factory.

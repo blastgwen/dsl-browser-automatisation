@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getCond <em>Cond</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getLoop <em>Loop</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getAct <em>Act</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getVar <em>Var</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getExp <em>Exp</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getAss <em>Ass</em>}</li>
  * </ul>
  * </p>
  *
@@ -141,12 +140,12 @@ public interface Instruction extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Act</em>' containment reference.
-   * @see #setAct(Action)
+   * @see #setAct(ActionInstruction)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getInstruction_Act()
    * @model containment="true"
    * @generated
    */
-  Action getAct();
+  ActionInstruction getAct();
 
   /**
    * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Instruction#getAct <em>Act</em>}' containment reference.
@@ -156,58 +155,32 @@ public interface Instruction extends EObject
    * @see #getAct()
    * @generated
    */
-  void setAct(Action value);
+  void setAct(ActionInstruction value);
 
   /**
-   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ass</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Ass</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(VariableReference)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getInstruction_Var()
+   * @return the value of the '<em>Ass</em>' containment reference.
+   * @see #setAss(Assignation)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getInstruction_Ass()
    * @model containment="true"
    * @generated
    */
-  VariableReference getVar();
+  Assignation getAss();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Instruction#getVar <em>Var</em>}' containment reference.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Instruction#getAss <em>Ass</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' containment reference.
-   * @see #getVar()
+   * @param value the new value of the '<em>Ass</em>' containment reference.
+   * @see #getAss()
    * @generated
    */
-  void setVar(VariableReference value);
-
-  /**
-   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Exp</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(Expression)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getInstruction_Exp()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getExp();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Instruction#getExp <em>Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' containment reference.
-   * @see #getExp()
-   * @generated
-   */
-  void setExp(Expression value);
+  void setAss(Assignation value);
 
 } // Instruction

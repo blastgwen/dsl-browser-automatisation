@@ -150,6 +150,13 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.ASSIGNATION:
+      {
+        Assignation assignation = (Assignation)theEObject;
+        T result = caseAssignation(assignation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.CONDITIONAL:
       {
         Conditional conditional = (Conditional)theEObject;
@@ -164,10 +171,31 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlnDslPackage.ACTION:
+      case SlnDslPackage.WHILE:
       {
-        Action action = (Action)theEObject;
-        T result = caseAction(action);
+        While while_ = (While)theEObject;
+        T result = caseWhile(while_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.FOREACH:
+      {
+        Foreach foreach = (Foreach)theEObject;
+        T result = caseForeach(foreach);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.ACTION_INSTRUCTION:
+      {
+        ActionInstruction actionInstruction = (ActionInstruction)theEObject;
+        T result = caseActionInstruction(actionInstruction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.ACTION_EXPRESSION:
+      {
+        ActionExpression actionExpression = (ActionExpression)theEObject;
+        T result = caseActionExpression(actionExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -352,6 +380,22 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Assignation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Assignation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssignation(Assignation object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Conditional</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -384,17 +428,65 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>While</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>While</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAction(Action object)
+  public T caseWhile(While object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Foreach</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Foreach</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForeach(Foreach object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Instruction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Instruction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionInstruction(ActionInstruction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionExpression(ActionExpression object)
   {
     return null;
   }

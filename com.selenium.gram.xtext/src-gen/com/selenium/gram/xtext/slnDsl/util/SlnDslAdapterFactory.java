@@ -130,6 +130,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createDefinitionAdapter();
       }
       @Override
+      public Adapter caseAssignation(Assignation object)
+      {
+        return createAssignationAdapter();
+      }
+      @Override
       public Adapter caseConditional(Conditional object)
       {
         return createConditionalAdapter();
@@ -140,9 +145,24 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createLoopAdapter();
       }
       @Override
-      public Adapter caseAction(Action object)
+      public Adapter caseWhile(While object)
       {
-        return createActionAdapter();
+        return createWhileAdapter();
+      }
+      @Override
+      public Adapter caseForeach(Foreach object)
+      {
+        return createForeachAdapter();
+      }
+      @Override
+      public Adapter caseActionInstruction(ActionInstruction object)
+      {
+        return createActionInstructionAdapter();
+      }
+      @Override
+      public Adapter caseActionExpression(ActionExpression object)
+      {
+        return createActionExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -332,6 +352,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Assignation <em>Assignation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.Assignation
+   * @generated
+   */
+  public Adapter createAssignationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Conditional <em>Conditional</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -362,16 +397,61 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Action <em>Action</em>}'.
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.While <em>While</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.selenium.gram.xtext.slnDsl.Action
+   * @see com.selenium.gram.xtext.slnDsl.While
    * @generated
    */
-  public Adapter createActionAdapter()
+  public Adapter createWhileAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Foreach <em>Foreach</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.Foreach
+   * @generated
+   */
+  public Adapter createForeachAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionInstruction <em>Action Instruction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ActionInstruction
+   * @generated
+   */
+  public Adapter createActionInstructionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionExpression <em>Action Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ActionExpression
+   * @generated
+   */
+  public Adapter createActionExpressionAdapter()
   {
     return null;
   }

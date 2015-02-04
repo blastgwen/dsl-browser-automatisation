@@ -75,9 +75,13 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.EXPRESSION: return createExpression();
       case SlnDslPackage.INSTRUCTION: return createInstruction();
       case SlnDslPackage.DEFINITION: return createDefinition();
+      case SlnDslPackage.ASSIGNATION: return createAssignation();
       case SlnDslPackage.CONDITIONAL: return createConditional();
       case SlnDslPackage.LOOP: return createLoop();
-      case SlnDslPackage.ACTION: return createAction();
+      case SlnDslPackage.WHILE: return createWhile();
+      case SlnDslPackage.FOREACH: return createForeach();
+      case SlnDslPackage.ACTION_INSTRUCTION: return createActionInstruction();
+      case SlnDslPackage.ACTION_EXPRESSION: return createActionExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -209,6 +213,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Assignation createAssignation()
+  {
+    AssignationImpl assignation = new AssignationImpl();
+    return assignation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Conditional createConditional()
   {
     ConditionalImpl conditional = new ConditionalImpl();
@@ -231,10 +246,43 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Action createAction()
+  public While createWhile()
   {
-    ActionImpl action = new ActionImpl();
-    return action;
+    WhileImpl while_ = new WhileImpl();
+    return while_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Foreach createForeach()
+  {
+    ForeachImpl foreach = new ForeachImpl();
+    return foreach;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionInstruction createActionInstruction()
+  {
+    ActionInstructionImpl actionInstruction = new ActionInstructionImpl();
+    return actionInstruction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionExpression createActionExpression()
+  {
+    ActionExpressionImpl actionExpression = new ActionExpressionImpl();
+    return actionExpression;
   }
 
   /**

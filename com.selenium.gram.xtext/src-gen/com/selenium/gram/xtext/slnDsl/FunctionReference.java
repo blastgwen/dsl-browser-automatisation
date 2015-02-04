@@ -2,6 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +13,7 @@ package com.selenium.gram.xtext.slnDsl;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.FunctionReference#getFunctionName <em>Function Name</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.FunctionReference#getVar <em>Var</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.FunctionReference#getArgs <em>Args</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +50,19 @@ public interface FunctionReference extends FunctionCall
   void setFunctionName(FunctionName value);
 
   /**
-   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * Returns the value of the '<em><b>Args</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Args</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(Expression)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getFunctionReference_Var()
+   * @return the value of the '<em>Args</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getFunctionReference_Args()
    * @model containment="true"
    * @generated
    */
-  Expression getVar();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.FunctionReference#getVar <em>Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' containment reference.
-   * @see #getVar()
-   * @generated
-   */
-  void setVar(Expression value);
+  EList<Expression> getArgs();
 
 } // FunctionReference

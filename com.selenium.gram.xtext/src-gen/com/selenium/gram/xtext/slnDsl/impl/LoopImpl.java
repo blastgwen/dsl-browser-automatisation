@@ -2,26 +2,19 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Expression;
-import com.selenium.gram.xtext.slnDsl.Instruction;
+import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
-
-import java.util.Collection;
+import com.selenium.gram.xtext.slnDsl.While;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +23,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl#getIns <em>Ins</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl#getWhile <em>While</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl#getFor <em>For</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,24 +33,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
 {
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getWhile() <em>While</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getWhile()
    * @generated
    * @ordered
    */
-  protected Expression exp;
+  protected While while_;
 
   /**
-   * The cached value of the '{@link #getIns() <em>Ins</em>}' containment reference list.
+   * The cached value of the '{@link #getFor() <em>For</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIns()
+   * @see #getFor()
    * @generated
    * @ordered
    */
-  protected EList<Instruction> ins;
+  protected Foreach for_;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,9 +78,9 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExp()
+  public While getWhile()
   {
-    return exp;
+    return while_;
   }
 
   /**
@@ -95,13 +88,13 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
+  public NotificationChain basicSetWhile(While newWhile, NotificationChain msgs)
   {
-    Expression oldExp = exp;
-    exp = newExp;
+    While oldWhile = while_;
+    while_ = newWhile;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.LOOP__EXP, oldExp, newExp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.LOOP__WHILE, oldWhile, newWhile);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -112,20 +105,20 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExp(Expression newExp)
+  public void setWhile(While newWhile)
   {
-    if (newExp != exp)
+    if (newWhile != while_)
     {
       NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.LOOP__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.LOOP__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
+      if (while_ != null)
+        msgs = ((InternalEObject)while_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.LOOP__WHILE, null, msgs);
+      if (newWhile != null)
+        msgs = ((InternalEObject)newWhile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.LOOP__WHILE, null, msgs);
+      msgs = basicSetWhile(newWhile, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.LOOP__EXP, newExp, newExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.LOOP__WHILE, newWhile, newWhile));
   }
 
   /**
@@ -133,13 +126,47 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Instruction> getIns()
+  public Foreach getFor()
   {
-    if (ins == null)
+    return for_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFor(Foreach newFor, NotificationChain msgs)
+  {
+    Foreach oldFor = for_;
+    for_ = newFor;
+    if (eNotificationRequired())
     {
-      ins = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.LOOP__INS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.LOOP__FOR, oldFor, newFor);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return ins;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFor(Foreach newFor)
+  {
+    if (newFor != for_)
+    {
+      NotificationChain msgs = null;
+      if (for_ != null)
+        msgs = ((InternalEObject)for_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.LOOP__FOR, null, msgs);
+      if (newFor != null)
+        msgs = ((InternalEObject)newFor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.LOOP__FOR, null, msgs);
+      msgs = basicSetFor(newFor, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.LOOP__FOR, newFor, newFor));
   }
 
   /**
@@ -152,10 +179,10 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
   {
     switch (featureID)
     {
-      case SlnDslPackage.LOOP__EXP:
-        return basicSetExp(null, msgs);
-      case SlnDslPackage.LOOP__INS:
-        return ((InternalEList<?>)getIns()).basicRemove(otherEnd, msgs);
+      case SlnDslPackage.LOOP__WHILE:
+        return basicSetWhile(null, msgs);
+      case SlnDslPackage.LOOP__FOR:
+        return basicSetFor(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -170,10 +197,10 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
   {
     switch (featureID)
     {
-      case SlnDslPackage.LOOP__EXP:
-        return getExp();
-      case SlnDslPackage.LOOP__INS:
-        return getIns();
+      case SlnDslPackage.LOOP__WHILE:
+        return getWhile();
+      case SlnDslPackage.LOOP__FOR:
+        return getFor();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -183,18 +210,16 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SlnDslPackage.LOOP__EXP:
-        setExp((Expression)newValue);
+      case SlnDslPackage.LOOP__WHILE:
+        setWhile((While)newValue);
         return;
-      case SlnDslPackage.LOOP__INS:
-        getIns().clear();
-        getIns().addAll((Collection<? extends Instruction>)newValue);
+      case SlnDslPackage.LOOP__FOR:
+        setFor((Foreach)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -210,11 +235,11 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
   {
     switch (featureID)
     {
-      case SlnDslPackage.LOOP__EXP:
-        setExp((Expression)null);
+      case SlnDslPackage.LOOP__WHILE:
+        setWhile((While)null);
         return;
-      case SlnDslPackage.LOOP__INS:
-        getIns().clear();
+      case SlnDslPackage.LOOP__FOR:
+        setFor((Foreach)null);
         return;
     }
     super.eUnset(featureID);
@@ -230,10 +255,10 @@ public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
   {
     switch (featureID)
     {
-      case SlnDslPackage.LOOP__EXP:
-        return exp != null;
-      case SlnDslPackage.LOOP__INS:
-        return ins != null && !ins.isEmpty();
+      case SlnDslPackage.LOOP__WHILE:
+        return while_ != null;
+      case SlnDslPackage.LOOP__FOR:
+        return for_ != null;
     }
     return super.eIsSet(featureID);
   }

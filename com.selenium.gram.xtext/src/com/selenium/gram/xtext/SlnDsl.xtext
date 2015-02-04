@@ -16,7 +16,7 @@ Subprocedure:
 
 Head:
 	name=FunctionName '()' 
-	| name=FunctionName '(' 'var' varId=VariableName (',' 'var' varId=VariableName )* ')'
+	| name=FunctionName '(' 'var' argsID+=VariableName (',' 'var' argsID+=VariableName )* ')'
 ;
 
 /*
@@ -32,11 +32,11 @@ FunctionName:
 
 FunctionCall:
 	FunctionReference '()' 
-	| FunctionReference '(' var=Expression (',' var=Expression)* ')'
+	| FunctionReference '(' args+=Expression (',' args+=Expression)* ')'
 ;
 
 /*
- * VAriables
+ * Variables
  */
 VariableReference:
 	varID=[VariableName]
@@ -55,11 +55,13 @@ NumberLiteral:
  */
 
 Expression:
-	var=VariableReference 
+	var=VariableReference
 	| NumberLiteral
-	| 'equals' '(' var=Expression ',' var=Expression ')'
+	| ('!'|'sizeof') '(' exp=Expression ')'
+	| ('All' | 'Any') '( element' ('=='|'<'|'>') exp=Expression ')'
+	| ('=='|'<'|'>') left=Expression right=Expression
+	| act=ActionExpression
 ;
-
 
 /*
  * Type of Instruction
@@ -69,22 +71,167 @@ Instruction:
 	| func=FunctionCall 
 	| cond=Conditional
 	| loop=Loop
-	| act=Action
-	| var=VariableReference '=' exp=Expression
+	| act=ActionInstruction
+	| ass=Assignation
 ;
 
 Definition:
 	'var' varID=VariableName '=' exp=Expression
 ;
 
+Assignation:
+	var=VariableReference '=' exp=Expression
+;
+
 Conditional:
 	'if' exp=Expression 'then' ins+=Instruction+ ('else' ins+=Instruction+)? 'endif'
 ;
 
+/*
+ * Loop et Conditional
+ */
+
 Loop:
-	'while' exp=Expression 'do' ins+=Instruction+ 'endwhile'
+	while=While
+	| for=Foreach
 ;
 
-Action:
-	'open' url=STRING
+While:
+	'while' '(' cond=Expression ')' 'do' ins+=Instruction+ 'endwhile'
 ;
+Foreach:
+	'foreach' '(' var=VariableName 'in' exp=Expression ')' 'do' ins+=Instruction+ 'endfor'
+;
+
+ActionInstruction:
+	'open(' url=URL')'
+	| ('check'|'click') '('element=Expression')'
+	| 'type(' element=Expression ',' value=Expression ')'
+;
+
+ActionExpression :
+	('verify'|'select') '(' element=Expression ')'
+;
+
+/*
+ * URL
+ */
+terminal URL:
+    ('a'..'z')+ '://' // Protocol
+ 
+    ( // Hostname
+        (
+            ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+
+        ) |
+        (
+            ('a'..'z'|'A'..'Z')
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )*
+            (
+                '.'
+                ('a'..'z'|'A'..'Z')
+                (
+                    'a'..'z'|'A'..'Z'|
+                    '0'..'9'|
+                    '$'|
+                    '-'|
+                    '_'|
+                    (
+                        '\\'
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                        ('0'..'9'|'a'..'f'|'A'..'F')
+                    ) |
+                    (
+                        '%'
+                        ('0'..'9')
+                        ('0'..'9')
+                    )
+                )*
+            )*
+        )
+    )
+    (':' ('0'..'9')+)? // Portnumber
+ 
+    ('/'
+        (
+            'a'..'z'|'A'..'Z'|
+            '0'..'9'|
+            '$'|
+            '-'|
+            '_'|
+            '~'|
+            '+'|
+            '.'|
+            (
+                '\\'
+                ('0'..'9'|'a'..'f'|'A'..'F')
+                ('0'..'9'|'a'..'f'|'A'..'F')
+            ) |
+            (
+                '%'
+                ('0'..'9')
+                ('0'..'9')
+            )
+        )*
+    )* // Path
+ 
+    ('?'
+        (
+            'a'..'z'|'A'..'Z'|
+            '0'..'9'|
+            '$'|
+            '-'|
+            '_'|
+            '='|
+            '&'|
+            ';'|
+            (
+                '\\'
+                ('0'..'9'|'a'..'f'|'A'..'F')
+                ('0'..'9'|'a'..'f'|'A'..'F')
+            ) |
+            (
+                '%'
+                ('0'..'9')
+                ('0'..'9')
+            )
+        )+
+ 
+        ('+'
+            (
+                'a'..'z'|'A'..'Z'|
+                '0'..'9'|
+                '$'|
+                '-'|
+                '_'|
+                '='|
+                '&'|
+                ';'|
+                (
+                    '\\'
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                    ('0'..'9'|'a'..'f'|'A'..'F')
+                ) |
+                (
+                    '%'
+                    ('0'..'9')
+                    ('0'..'9')
+                )
+            )+
+        )*
+    )?; 

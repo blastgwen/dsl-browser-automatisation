@@ -7,13 +7,20 @@ import com.selenium.gram.xtext.slnDsl.FunctionName;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.FunctionReferenceImpl#getFunctionName <em>Function Name</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.FunctionReferenceImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.FunctionReferenceImpl#getArgs <em>Args</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,14 +49,14 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
   protected FunctionName functionName;
 
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getArgs()
    * @generated
    * @ordered
    */
-  protected Expression var;
+  protected EList<Expression> args;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,47 +127,13 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getVar()
+  public EList<Expression> getArgs()
   {
-    return var;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVar(Expression newVar, NotificationChain msgs)
-  {
-    Expression oldVar = var;
-    var = newVar;
-    if (eNotificationRequired())
+    if (args == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.FUNCTION_REFERENCE__VAR, oldVar, newVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      args = new EObjectContainmentEList<Expression>(Expression.class, this, SlnDslPackage.FUNCTION_REFERENCE__ARGS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVar(Expression newVar)
-  {
-    if (newVar != var)
-    {
-      NotificationChain msgs = null;
-      if (var != null)
-        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.FUNCTION_REFERENCE__VAR, null, msgs);
-      if (newVar != null)
-        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.FUNCTION_REFERENCE__VAR, null, msgs);
-      msgs = basicSetVar(newVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.FUNCTION_REFERENCE__VAR, newVar, newVar));
+    return args;
   }
 
   /**
@@ -173,8 +146,8 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
   {
     switch (featureID)
     {
-      case SlnDslPackage.FUNCTION_REFERENCE__VAR:
-        return basicSetVar(null, msgs);
+      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
+        return ((InternalEList<?>)getArgs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -192,8 +165,8 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         if (resolve) return getFunctionName();
         return basicGetFunctionName();
-      case SlnDslPackage.FUNCTION_REFERENCE__VAR:
-        return getVar();
+      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
+        return getArgs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -203,6 +176,7 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -211,8 +185,9 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         setFunctionName((FunctionName)newValue);
         return;
-      case SlnDslPackage.FUNCTION_REFERENCE__VAR:
-        setVar((Expression)newValue);
+      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
+        getArgs().clear();
+        getArgs().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,8 +206,8 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         setFunctionName((FunctionName)null);
         return;
-      case SlnDslPackage.FUNCTION_REFERENCE__VAR:
-        setVar((Expression)null);
+      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
+        getArgs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -250,8 +225,8 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
     {
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         return functionName != null;
-      case SlnDslPackage.FUNCTION_REFERENCE__VAR:
-        return var != null;
+      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
+        return args != null && !args.isEmpty();
     }
     return super.eIsSet(featureID);
   }

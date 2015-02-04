@@ -7,14 +7,21 @@ import com.selenium.gram.xtext.slnDsl.Head;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.VariableName;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.HeadImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.HeadImpl#getVarId <em>Var Id</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.HeadImpl#getArgsID <em>Args ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,14 +50,14 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
   protected FunctionName name;
 
   /**
-   * The cached value of the '{@link #getVarId() <em>Var Id</em>}' containment reference.
+   * The cached value of the '{@link #getArgsID() <em>Args ID</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarId()
+   * @see #getArgsID()
    * @generated
    * @ordered
    */
-  protected VariableName varId;
+  protected EList<VariableName> argsID;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,47 +133,13 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableName getVarId()
+  public EList<VariableName> getArgsID()
   {
-    return varId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVarId(VariableName newVarId, NotificationChain msgs)
-  {
-    VariableName oldVarId = varId;
-    varId = newVarId;
-    if (eNotificationRequired())
+    if (argsID == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.HEAD__VAR_ID, oldVarId, newVarId);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      argsID = new EObjectContainmentEList<VariableName>(VariableName.class, this, SlnDslPackage.HEAD__ARGS_ID);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVarId(VariableName newVarId)
-  {
-    if (newVarId != varId)
-    {
-      NotificationChain msgs = null;
-      if (varId != null)
-        msgs = ((InternalEObject)varId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.HEAD__VAR_ID, null, msgs);
-      if (newVarId != null)
-        msgs = ((InternalEObject)newVarId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.HEAD__VAR_ID, null, msgs);
-      msgs = basicSetVarId(newVarId, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.HEAD__VAR_ID, newVarId, newVarId));
+    return argsID;
   }
 
   /**
@@ -181,8 +154,8 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
     {
       case SlnDslPackage.HEAD__NAME:
         return basicSetName(null, msgs);
-      case SlnDslPackage.HEAD__VAR_ID:
-        return basicSetVarId(null, msgs);
+      case SlnDslPackage.HEAD__ARGS_ID:
+        return ((InternalEList<?>)getArgsID()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -199,8 +172,8 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
     {
       case SlnDslPackage.HEAD__NAME:
         return getName();
-      case SlnDslPackage.HEAD__VAR_ID:
-        return getVarId();
+      case SlnDslPackage.HEAD__ARGS_ID:
+        return getArgsID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -210,6 +183,7 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -218,8 +192,9 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
       case SlnDslPackage.HEAD__NAME:
         setName((FunctionName)newValue);
         return;
-      case SlnDslPackage.HEAD__VAR_ID:
-        setVarId((VariableName)newValue);
+      case SlnDslPackage.HEAD__ARGS_ID:
+        getArgsID().clear();
+        getArgsID().addAll((Collection<? extends VariableName>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,8 +213,8 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
       case SlnDslPackage.HEAD__NAME:
         setName((FunctionName)null);
         return;
-      case SlnDslPackage.HEAD__VAR_ID:
-        setVarId((VariableName)null);
+      case SlnDslPackage.HEAD__ARGS_ID:
+        getArgsID().clear();
         return;
     }
     super.eUnset(featureID);
@@ -257,8 +232,8 @@ public class HeadImpl extends MinimalEObjectImpl.Container implements Head
     {
       case SlnDslPackage.HEAD__NAME:
         return name != null;
-      case SlnDslPackage.HEAD__VAR_ID:
-        return varId != null;
+      case SlnDslPackage.HEAD__ARGS_ID:
+        return argsID != null && !argsID.isEmpty();
     }
     return super.eIsSet(featureID);
   }
