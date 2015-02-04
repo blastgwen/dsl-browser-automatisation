@@ -138,7 +138,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (exp=Expression ins=Instruction ins=Instruction?)
+	 *     (exp=Expression ins+=Instruction+ ins+=Instruction*)
 	 */
 	protected void sequence_Conditional(EObject context, Conditional semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -215,8 +215,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         cond=Conditional | 
 	 *         loop=Loop | 
 	 *         act=Action | 
-	 *         (var=VariableReference exp=Expression) | 
-	 *         ins+=Instruction+
+	 *         (var=VariableReference exp=Expression)
 	 *     )
 	 */
 	protected void sequence_Instruction(EObject context, Instruction semanticObject) {
@@ -226,7 +225,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (exp=Expression ins+=Instruction)
+	 *     (exp=Expression ins+=Instruction+)
 	 */
 	protected void sequence_Loop(EObject context, Loop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -235,7 +234,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (subs+=Subprocedure* main=Instruction)
+	 *     (subs+=Subprocedure* main+=Instruction+)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -244,20 +243,10 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (head=Head body=Instruction)
+	 *     (head=Head body+=Instruction+)
 	 */
 	protected void sequence_Subprocedure(EObject context, Subprocedure semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__HEAD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__HEAD));
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__BODY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__BODY));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSubprocedureAccess().getHeadHeadParserRuleCall_1_0(), semanticObject.getHead());
-		feeder.accept(grammarAccess.getSubprocedureAccess().getBodyInstructionParserRuleCall_2_0(), semanticObject.getBody());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

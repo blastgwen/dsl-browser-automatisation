@@ -9,7 +9,6 @@ import com.selenium.gram.xtext.slnDsl.Subprocedure;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -50,14 +48,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EList<Subprocedure> subs;
 
   /**
-   * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference.
+   * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMain()
    * @generated
    * @ordered
    */
-  protected Instruction main;
+  protected EList<Instruction> main;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,47 +97,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public Instruction getMain()
+  public EList<Instruction> getMain()
   {
+    if (main == null)
+    {
+      main = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.MODEL__MAIN);
+    }
     return main;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMain(Instruction newMain, NotificationChain msgs)
-  {
-    Instruction oldMain = main;
-    main = newMain;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.MODEL__MAIN, oldMain, newMain);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMain(Instruction newMain)
-  {
-    if (newMain != main)
-    {
-      NotificationChain msgs = null;
-      if (main != null)
-        msgs = ((InternalEObject)main).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.MODEL__MAIN, null, msgs);
-      if (newMain != null)
-        msgs = ((InternalEObject)newMain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.MODEL__MAIN, null, msgs);
-      msgs = basicSetMain(newMain, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.MODEL__MAIN, newMain, newMain));
   }
 
   /**
@@ -155,7 +119,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SlnDslPackage.MODEL__SUBS:
         return ((InternalEList<?>)getSubs()).basicRemove(otherEnd, msgs);
       case SlnDslPackage.MODEL__MAIN:
-        return basicSetMain(null, msgs);
+        return ((InternalEList<?>)getMain()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -194,7 +158,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getSubs().addAll((Collection<? extends Subprocedure>)newValue);
         return;
       case SlnDslPackage.MODEL__MAIN:
-        setMain((Instruction)newValue);
+        getMain().clear();
+        getMain().addAll((Collection<? extends Instruction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -214,7 +179,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getSubs().clear();
         return;
       case SlnDslPackage.MODEL__MAIN:
-        setMain((Instruction)null);
+        getMain().clear();
         return;
     }
     super.eUnset(featureID);
@@ -233,7 +198,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SlnDslPackage.MODEL__SUBS:
         return subs != null && !subs.isEmpty();
       case SlnDslPackage.MODEL__MAIN:
-        return main != null;
+        return main != null && !main.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -42,29 +42,19 @@ public interface Model extends EObject
   EList<Subprocedure> getSubs();
 
   /**
-   * Returns the value of the '<em><b>Main</b></em>' containment reference.
+   * Returns the value of the '<em><b>Main</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Main</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Main</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Main</em>' containment reference.
-   * @see #setMain(Instruction)
+   * @return the value of the '<em>Main</em>' containment reference list.
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getModel_Main()
    * @model containment="true"
    * @generated
    */
-  Instruction getMain();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Model#getMain <em>Main</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Main</em>' containment reference.
-   * @see #getMain()
-   * @generated
-   */
-  void setMain(Instruction value);
+  EList<Instruction> getMain();
 
 } // Model

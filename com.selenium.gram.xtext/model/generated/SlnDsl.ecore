@@ -4,12 +4,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subs" upperBound="-1" eType="#//Subprocedure"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//Instruction"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="main" upperBound="-1" eType="#//Instruction"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subprocedure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//Head" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Instruction"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="#//Instruction"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Head">
@@ -51,8 +51,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ins" upperBound="-1" eType="#//Instruction"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Definition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="varID" eType="#//VariableName"
@@ -63,7 +61,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Conditional">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ins" eType="#//Instruction"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ins" upperBound="-1" eType="#//Instruction"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Loop">

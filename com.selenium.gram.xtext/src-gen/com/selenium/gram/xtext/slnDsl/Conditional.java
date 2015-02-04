@@ -2,6 +2,8 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -50,29 +52,19 @@ public interface Conditional extends EObject
   void setExp(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Ins</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ins</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ins</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Ins</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ins</em>' containment reference.
-   * @see #setIns(Instruction)
+   * @return the value of the '<em>Ins</em>' containment reference list.
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getConditional_Ins()
    * @model containment="true"
    * @generated
    */
-  Instruction getIns();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Conditional#getIns <em>Ins</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ins</em>' containment reference.
-   * @see #getIns()
-   * @generated
-   */
-  void setIns(Instruction value);
+  EList<Instruction> getIns();
 
 } // Conditional

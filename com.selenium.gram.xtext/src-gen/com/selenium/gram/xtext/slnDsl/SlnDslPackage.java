@@ -76,7 +76,7 @@ public interface SlnDslPackage extends EPackage
   int MODEL__SUBS = 0;
 
   /**
-   * The feature id for the '<em><b>Main</b></em>' containment reference.
+   * The feature id for the '<em><b>Main</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -113,7 +113,7 @@ public interface SlnDslPackage extends EPackage
   int SUBPROCEDURE__HEAD = 0;
 
   /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -409,22 +409,13 @@ public interface SlnDslPackage extends EPackage
   int INSTRUCTION__EXP = 6;
 
   /**
-   * The feature id for the '<em><b>Ins</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__INS = 7;
-
-  /**
    * The number of structural features of the '<em>Instruction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTRUCTION_FEATURE_COUNT = 8;
+  int INSTRUCTION_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -483,7 +474,7 @@ public interface SlnDslPackage extends EPackage
   int CONDITIONAL__EXP = 0;
 
   /**
-   * The feature id for the '<em><b>Ins</b></em>' containment reference.
+   * The feature id for the '<em><b>Ins</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -588,10 +579,10 @@ public interface SlnDslPackage extends EPackage
   EReference getModel_Subs();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Model#getMain <em>Main</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Model#getMain <em>Main</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Main</em>'.
+   * @return the meta object for the containment reference list '<em>Main</em>'.
    * @see com.selenium.gram.xtext.slnDsl.Model#getMain()
    * @see #getModel()
    * @generated
@@ -620,10 +611,10 @@ public interface SlnDslPackage extends EPackage
   EReference getSubprocedure_Head();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getBody <em>Body</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @return the meta object for the containment reference list '<em>Body</em>'.
    * @see com.selenium.gram.xtext.slnDsl.Subprocedure#getBody()
    * @see #getSubprocedure()
    * @generated
@@ -876,17 +867,6 @@ public interface SlnDslPackage extends EPackage
   EReference getInstruction_Exp();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Instruction#getIns <em>Ins</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ins</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getIns()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Ins();
-
-  /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Definition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -940,10 +920,10 @@ public interface SlnDslPackage extends EPackage
   EReference getConditional_Exp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Conditional#getIns <em>Ins</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Conditional#getIns <em>Ins</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ins</em>'.
+   * @return the meta object for the containment reference list '<em>Ins</em>'.
    * @see com.selenium.gram.xtext.slnDsl.Conditional#getIns()
    * @see #getConditional()
    * @generated
@@ -1045,7 +1025,7 @@ public interface SlnDslPackage extends EPackage
     EReference MODEL__SUBS = eINSTANCE.getModel_Subs();
 
     /**
-     * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Main</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1071,7 +1051,7 @@ public interface SlnDslPackage extends EPackage
     EReference SUBPROCEDURE__HEAD = eINSTANCE.getSubprocedure_Head();
 
     /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1279,14 +1259,6 @@ public interface SlnDslPackage extends EPackage
     EReference INSTRUCTION__EXP = eINSTANCE.getInstruction_Exp();
 
     /**
-     * The meta object literal for the '<em><b>Ins</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__INS = eINSTANCE.getInstruction_Ins();
-
-    /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl <em>Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1331,7 +1303,7 @@ public interface SlnDslPackage extends EPackage
     EReference CONDITIONAL__EXP = eINSTANCE.getConditional_Exp();
 
     /**
-     * The meta object literal for the '<em><b>Ins</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Ins</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

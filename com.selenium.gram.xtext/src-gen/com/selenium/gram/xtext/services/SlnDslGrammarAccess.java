@@ -31,10 +31,10 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Le modele
 		// * / Model:
-		//	subs+=Subprocedure* "main" main=Instruction "endmain";
+		//	subs+=Subprocedure* "main" main+=Instruction+ "endmain";
 		public ParserRule getRule() { return rule; }
 
-		//subs+=Subprocedure* "main" main=Instruction "endmain"
+		//subs+=Subprocedure* "main" main+=Instruction+ "endmain"
 		public Group getGroup() { return cGroup; }
 
 		//subs+=Subprocedure*
@@ -46,7 +46,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"main"
 		public Keyword getMainKeyword_1() { return cMainKeyword_1; }
 
-		//main=Instruction
+		//main+=Instruction+
 		public Assignment getMainAssignment_2() { return cMainAssignment_2; }
 
 		//Instruction
@@ -67,10 +67,10 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndsubKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Subprocedure:
-		//	"sub" head=Head body=Instruction "endsub";
+		//	"sub" head=Head body+=Instruction+ "endsub";
 		public ParserRule getRule() { return rule; }
 
-		//"sub" head=Head body=Instruction "endsub"
+		//"sub" head=Head body+=Instruction+ "endsub"
 		public Group getGroup() { return cGroup; }
 
 		//"sub"
@@ -82,7 +82,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Head
 		public RuleCall getHeadHeadParserRuleCall_1_0() { return cHeadHeadParserRuleCall_1_0; }
 
-		//body=Instruction
+		//body+=Instruction+
 		public Assignment getBodyAssignment_2() { return cBodyAssignment_2; }
 
 		//Instruction
@@ -340,20 +340,21 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNumberLiteralParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Keyword cEqualsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cVarAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cVarExpressionParserRuleCall_2_1_0 = (RuleCall)cVarAssignment_2_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Assignment cVarAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
-		private final RuleCall cVarExpressionParserRuleCall_2_3_0 = (RuleCall)cVarAssignment_2_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cVarAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cVarExpressionParserRuleCall_2_2_0 = (RuleCall)cVarAssignment_2_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Assignment cVarAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
+		private final RuleCall cVarExpressionParserRuleCall_2_4_0 = (RuleCall)cVarAssignment_2_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		
 		/// *
 		// * Expression
 		// * / Expression:
-		//	var=VariableReference | NumberLiteral | "equals(" var=Expression "," var=Expression ")";
+		//	var=VariableReference | NumberLiteral | "equals" "(" var=Expression "," var=Expression ")";
 		public ParserRule getRule() { return rule; }
 
-		//var=VariableReference | NumberLiteral | "equals(" var=Expression "," var=Expression ")"
+		//var=VariableReference | NumberLiteral | "equals" "(" var=Expression "," var=Expression ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//var=VariableReference
@@ -365,29 +366,32 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//NumberLiteral
 		public RuleCall getNumberLiteralParserRuleCall_1() { return cNumberLiteralParserRuleCall_1; }
 
-		//"equals(" var=Expression "," var=Expression ")"
+		//"equals" "(" var=Expression "," var=Expression ")"
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"equals("
+		//"equals"
 		public Keyword getEqualsKeyword_2_0() { return cEqualsKeyword_2_0; }
 
+		//"("
+		public Keyword getLeftParenthesisKeyword_2_1() { return cLeftParenthesisKeyword_2_1; }
+
 		//var=Expression
-		public Assignment getVarAssignment_2_1() { return cVarAssignment_2_1; }
+		public Assignment getVarAssignment_2_2() { return cVarAssignment_2_2; }
 
 		//Expression
-		public RuleCall getVarExpressionParserRuleCall_2_1_0() { return cVarExpressionParserRuleCall_2_1_0; }
+		public RuleCall getVarExpressionParserRuleCall_2_2_0() { return cVarExpressionParserRuleCall_2_2_0; }
 
 		//","
-		public Keyword getCommaKeyword_2_2() { return cCommaKeyword_2_2; }
+		public Keyword getCommaKeyword_2_3() { return cCommaKeyword_2_3; }
 
 		//var=Expression
-		public Assignment getVarAssignment_2_3() { return cVarAssignment_2_3; }
+		public Assignment getVarAssignment_2_4() { return cVarAssignment_2_4; }
 
 		//Expression
-		public RuleCall getVarExpressionParserRuleCall_2_3_0() { return cVarExpressionParserRuleCall_2_3_0; }
+		public RuleCall getVarExpressionParserRuleCall_2_4_0() { return cVarExpressionParserRuleCall_2_4_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_2_4() { return cRightParenthesisKeyword_2_4; }
+		public Keyword getRightParenthesisKeyword_2_5() { return cRightParenthesisKeyword_2_5; }
 	}
 
 	public class InstructionElements extends AbstractParserRuleElementFinder {
@@ -409,21 +413,16 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cExpAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cExpExpressionParserRuleCall_5_2_0 = (RuleCall)cExpAssignment_5_2.eContents().get(0);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Keyword cLeftCurlyBracketKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cInsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cInsInstructionParserRuleCall_6_1_0 = (RuleCall)cInsAssignment_6_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		
 		/// *
 		// * Type of Instruction
 		// * / Instruction:
 		//	def=Definition | func=FunctionCall | cond=Conditional | loop=Loop | act=Action | var=VariableReference "="
-		//	exp=Expression | "{" ins+=Instruction+ "}";
+		//	exp=Expression;
 		public ParserRule getRule() { return rule; }
 
 		//def=Definition | func=FunctionCall | cond=Conditional | loop=Loop | act=Action | var=VariableReference "="
-		//exp=Expression | "{" ins+=Instruction+ "}"
+		//exp=Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//def=Definition
@@ -473,21 +472,6 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Expression
 		public RuleCall getExpExpressionParserRuleCall_5_2_0() { return cExpExpressionParserRuleCall_5_2_0; }
-
-		//"{" ins+=Instruction+ "}"
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_6_0() { return cLeftCurlyBracketKeyword_6_0; }
-
-		//ins+=Instruction+
-		public Assignment getInsAssignment_6_1() { return cInsAssignment_6_1; }
-
-		//Instruction
-		public RuleCall getInsInstructionParserRuleCall_6_1_0() { return cInsInstructionParserRuleCall_6_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6_2() { return cRightCurlyBracketKeyword_6_2; }
 	}
 
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
@@ -535,19 +519,17 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cThenKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cInsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cInsInstructionParserRuleCall_3_0 = (RuleCall)cInsAssignment_3.eContents().get(0);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
-		private final Keyword cElseKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
-		private final Assignment cInsAssignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
-		private final RuleCall cInsInstructionParserRuleCall_4_0_1_0 = (RuleCall)cInsAssignment_4_0_1.eContents().get(0);
-		private final Keyword cEndifKeyword_4_0_2 = (Keyword)cGroup_4_0.eContents().get(2);
-		private final Keyword cEndifKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cElseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cInsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cInsInstructionParserRuleCall_4_1_0 = (RuleCall)cInsAssignment_4_1.eContents().get(0);
+		private final Keyword cEndifKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Conditional:
-		//	"if" exp=Expression "then" ins=Instruction ("else" ins=Instruction "endif" | "endif");
+		//	"if" exp=Expression "then" ins+=Instruction+ ("else" ins+=Instruction+)? "endif";
 		public ParserRule getRule() { return rule; }
 
-		//"if" exp=Expression "then" ins=Instruction ("else" ins=Instruction "endif" | "endif")
+		//"if" exp=Expression "then" ins+=Instruction+ ("else" ins+=Instruction+)? "endif"
 		public Group getGroup() { return cGroup; }
 
 		//"if"
@@ -562,32 +544,26 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"then"
 		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
 
-		//ins=Instruction
+		//ins+=Instruction+
 		public Assignment getInsAssignment_3() { return cInsAssignment_3; }
 
 		//Instruction
 		public RuleCall getInsInstructionParserRuleCall_3_0() { return cInsInstructionParserRuleCall_3_0; }
 
-		//"else" ins=Instruction "endif" | "endif"
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
-
-		//"else" ins=Instruction "endif"
-		public Group getGroup_4_0() { return cGroup_4_0; }
+		//("else" ins+=Instruction+)?
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"else"
-		public Keyword getElseKeyword_4_0_0() { return cElseKeyword_4_0_0; }
+		public Keyword getElseKeyword_4_0() { return cElseKeyword_4_0; }
 
-		//ins=Instruction
-		public Assignment getInsAssignment_4_0_1() { return cInsAssignment_4_0_1; }
+		//ins+=Instruction+
+		public Assignment getInsAssignment_4_1() { return cInsAssignment_4_1; }
 
 		//Instruction
-		public RuleCall getInsInstructionParserRuleCall_4_0_1_0() { return cInsInstructionParserRuleCall_4_0_1_0; }
+		public RuleCall getInsInstructionParserRuleCall_4_1_0() { return cInsInstructionParserRuleCall_4_1_0; }
 
 		//"endif"
-		public Keyword getEndifKeyword_4_0_2() { return cEndifKeyword_4_0_2; }
-
-		//"endif"
-		public Keyword getEndifKeyword_4_1() { return cEndifKeyword_4_1; }
+		public Keyword getEndifKeyword_5() { return cEndifKeyword_5; }
 	}
 
 	public class LoopElements extends AbstractParserRuleElementFinder {
@@ -602,10 +578,10 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndwhileKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Loop:
-		//	"while" exp=Expression "do" ins+=Instruction "endwhile";
+		//	"while" exp=Expression "do" ins+=Instruction+ "endwhile";
 		public ParserRule getRule() { return rule; }
 
-		//"while" exp=Expression "do" ins+=Instruction "endwhile"
+		//"while" exp=Expression "do" ins+=Instruction+ "endwhile"
 		public Group getGroup() { return cGroup; }
 
 		//"while"
@@ -620,7 +596,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"do"
 		public Keyword getDoKeyword_2() { return cDoKeyword_2; }
 
-		//ins+=Instruction
+		//ins+=Instruction+
 		public Assignment getInsAssignment_3() { return cInsAssignment_3; }
 
 		//Instruction
@@ -727,7 +703,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Le modele
 	// * / Model:
-	//	subs+=Subprocedure* "main" main=Instruction "endmain";
+	//	subs+=Subprocedure* "main" main+=Instruction+ "endmain";
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -737,7 +713,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Subprocedure:
-	//	"sub" head=Head body=Instruction "endsub";
+	//	"sub" head=Head body+=Instruction+ "endsub";
 	public SubprocedureElements getSubprocedureAccess() {
 		return pSubprocedure;
 	}
@@ -823,7 +799,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Expression
 	// * / Expression:
-	//	var=VariableReference | NumberLiteral | "equals(" var=Expression "," var=Expression ")";
+	//	var=VariableReference | NumberLiteral | "equals" "(" var=Expression "," var=Expression ")";
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -836,7 +812,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	// * Type of Instruction
 	// * / Instruction:
 	//	def=Definition | func=FunctionCall | cond=Conditional | loop=Loop | act=Action | var=VariableReference "="
-	//	exp=Expression | "{" ins+=Instruction+ "}";
+	//	exp=Expression;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -856,7 +832,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Conditional:
-	//	"if" exp=Expression "then" ins=Instruction ("else" ins=Instruction "endif" | "endif");
+	//	"if" exp=Expression "then" ins+=Instruction+ ("else" ins+=Instruction+)? "endif";
 	public ConditionalElements getConditionalAccess() {
 		return pConditional;
 	}
@@ -866,7 +842,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Loop:
-	//	"while" exp=Expression "do" ins+=Instruction "endwhile";
+	//	"while" exp=Expression "do" ins+=Instruction+ "endwhile";
 	public LoopElements getLoopAccess() {
 		return pLoop;
 	}

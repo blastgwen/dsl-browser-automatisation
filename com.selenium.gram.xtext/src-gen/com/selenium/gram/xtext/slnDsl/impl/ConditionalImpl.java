@@ -7,14 +7,21 @@ import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,14 +50,14 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   protected Expression exp;
 
   /**
-   * The cached value of the '{@link #getIns() <em>Ins</em>}' containment reference.
+   * The cached value of the '{@link #getIns() <em>Ins</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getIns()
    * @generated
    * @ordered
    */
-  protected Instruction ins;
+  protected EList<Instruction> ins;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,47 +133,13 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * <!-- end-user-doc -->
    * @generated
    */
-  public Instruction getIns()
+  public EList<Instruction> getIns()
   {
+    if (ins == null)
+    {
+      ins = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.CONDITIONAL__INS);
+    }
     return ins;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetIns(Instruction newIns, NotificationChain msgs)
-  {
-    Instruction oldIns = ins;
-    ins = newIns;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.CONDITIONAL__INS, oldIns, newIns);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIns(Instruction newIns)
-  {
-    if (newIns != ins)
-    {
-      NotificationChain msgs = null;
-      if (ins != null)
-        msgs = ((InternalEObject)ins).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.CONDITIONAL__INS, null, msgs);
-      if (newIns != null)
-        msgs = ((InternalEObject)newIns).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.CONDITIONAL__INS, null, msgs);
-      msgs = basicSetIns(newIns, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.CONDITIONAL__INS, newIns, newIns));
   }
 
   /**
@@ -182,7 +155,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
       case SlnDslPackage.CONDITIONAL__EXP:
         return basicSetExp(null, msgs);
       case SlnDslPackage.CONDITIONAL__INS:
-        return basicSetIns(null, msgs);
+        return ((InternalEList<?>)getIns()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -210,6 +183,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -219,7 +193,8 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
         setExp((Expression)newValue);
         return;
       case SlnDslPackage.CONDITIONAL__INS:
-        setIns((Instruction)newValue);
+        getIns().clear();
+        getIns().addAll((Collection<? extends Instruction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,7 +214,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
         setExp((Expression)null);
         return;
       case SlnDslPackage.CONDITIONAL__INS:
-        setIns((Instruction)null);
+        getIns().clear();
         return;
     }
     super.eUnset(featureID);
@@ -258,7 +233,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
       case SlnDslPackage.CONDITIONAL__EXP:
         return exp != null;
       case SlnDslPackage.CONDITIONAL__INS:
-        return ins != null;
+        return ins != null && !ins.isEmpty();
     }
     return super.eIsSet(featureID);
   }

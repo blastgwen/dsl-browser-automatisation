@@ -2,8 +2,6 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getAct <em>Act</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getVar <em>Var</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Instruction#getIns <em>Ins</em>}</li>
  * </ul>
  * </p>
  *
@@ -212,21 +209,5 @@ public interface Instruction extends EObject
    * @generated
    */
   void setExp(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Ins</b></em>' containment reference list.
-   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ins</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Ins</em>' containment reference list.
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getInstruction_Ins()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Instruction> getIns();
 
 } // Instruction

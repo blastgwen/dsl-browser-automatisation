@@ -42,7 +42,6 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberLiteralAccess().getAlternatives(), "rule__NumberLiteral__Alternatives");
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
-					put(grammarAccess.getConditionalAccess().getAlternatives_4(), "rule__Conditional__Alternatives_4");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getSubprocedureAccess().getGroup(), "rule__Subprocedure__Group__0");
 					put(grammarAccess.getHeadAccess().getGroup_0(), "rule__Head__Group_0__0");
@@ -53,10 +52,9 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionCallAccess().getGroup_1_3(), "rule__FunctionCall__Group_1_3__0");
 					put(grammarAccess.getExpressionAccess().getGroup_2(), "rule__Expression__Group_2__0");
 					put(grammarAccess.getInstructionAccess().getGroup_5(), "rule__Instruction__Group_5__0");
-					put(grammarAccess.getInstructionAccess().getGroup_6(), "rule__Instruction__Group_6__0");
 					put(grammarAccess.getDefinitionAccess().getGroup(), "rule__Definition__Group__0");
 					put(grammarAccess.getConditionalAccess().getGroup(), "rule__Conditional__Group__0");
-					put(grammarAccess.getConditionalAccess().getGroup_4_0(), "rule__Conditional__Group_4_0__0");
+					put(grammarAccess.getConditionalAccess().getGroup_4(), "rule__Conditional__Group_4__0");
 					put(grammarAccess.getLoopAccess().getGroup(), "rule__Loop__Group__0");
 					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 					put(grammarAccess.getModelAccess().getSubsAssignment_0(), "rule__Model__SubsAssignment_0");
@@ -74,8 +72,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableReferenceAccess().getVarIDAssignment(), "rule__VariableReference__VarIDAssignment");
 					put(grammarAccess.getVariableNameAccess().getNameAssignment(), "rule__VariableName__NameAssignment");
 					put(grammarAccess.getExpressionAccess().getVarAssignment_0(), "rule__Expression__VarAssignment_0");
-					put(grammarAccess.getExpressionAccess().getVarAssignment_2_1(), "rule__Expression__VarAssignment_2_1");
-					put(grammarAccess.getExpressionAccess().getVarAssignment_2_3(), "rule__Expression__VarAssignment_2_3");
+					put(grammarAccess.getExpressionAccess().getVarAssignment_2_2(), "rule__Expression__VarAssignment_2_2");
+					put(grammarAccess.getExpressionAccess().getVarAssignment_2_4(), "rule__Expression__VarAssignment_2_4");
 					put(grammarAccess.getInstructionAccess().getDefAssignment_0(), "rule__Instruction__DefAssignment_0");
 					put(grammarAccess.getInstructionAccess().getFuncAssignment_1(), "rule__Instruction__FuncAssignment_1");
 					put(grammarAccess.getInstructionAccess().getCondAssignment_2(), "rule__Instruction__CondAssignment_2");
@@ -83,12 +81,11 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getActAssignment_4(), "rule__Instruction__ActAssignment_4");
 					put(grammarAccess.getInstructionAccess().getVarAssignment_5_0(), "rule__Instruction__VarAssignment_5_0");
 					put(grammarAccess.getInstructionAccess().getExpAssignment_5_2(), "rule__Instruction__ExpAssignment_5_2");
-					put(grammarAccess.getInstructionAccess().getInsAssignment_6_1(), "rule__Instruction__InsAssignment_6_1");
 					put(grammarAccess.getDefinitionAccess().getVarIDAssignment_1(), "rule__Definition__VarIDAssignment_1");
 					put(grammarAccess.getDefinitionAccess().getExpAssignment_3(), "rule__Definition__ExpAssignment_3");
 					put(grammarAccess.getConditionalAccess().getExpAssignment_1(), "rule__Conditional__ExpAssignment_1");
 					put(grammarAccess.getConditionalAccess().getInsAssignment_3(), "rule__Conditional__InsAssignment_3");
-					put(grammarAccess.getConditionalAccess().getInsAssignment_4_0_1(), "rule__Conditional__InsAssignment_4_0_1");
+					put(grammarAccess.getConditionalAccess().getInsAssignment_4_1(), "rule__Conditional__InsAssignment_4_1");
 					put(grammarAccess.getLoopAccess().getExpAssignment_1(), "rule__Loop__ExpAssignment_1");
 					put(grammarAccess.getLoopAccess().getInsAssignment_3(), "rule__Loop__InsAssignment_3");
 					put(grammarAccess.getActionAccess().getUrlAssignment_1(), "rule__Action__UrlAssignment_1");

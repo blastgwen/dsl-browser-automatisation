@@ -44,7 +44,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Instruction/act"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Instruction/var"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Instruction/exp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Instruction/ins"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Definition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Definition/varID"/>

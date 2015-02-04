@@ -12,21 +12,14 @@ import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getAct <em>Act</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getVar <em>Var</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl#getIns <em>Ins</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,16 +111,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * @ordered
    */
   protected Expression exp;
-
-  /**
-   * The cached value of the '{@link #getIns() <em>Ins</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIns()
-   * @generated
-   * @ordered
-   */
-  protected EList<Instruction> ins;
 
   /**
    * <!-- begin-user-doc -->
@@ -492,20 +474,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Instruction> getIns()
-  {
-    if (ins == null)
-    {
-      ins = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.INSTRUCTION__INS);
-    }
-    return ins;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -525,8 +493,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return basicSetVar(null, msgs);
       case SlnDslPackage.INSTRUCTION__EXP:
         return basicSetExp(null, msgs);
-      case SlnDslPackage.INSTRUCTION__INS:
-        return ((InternalEList<?>)getIns()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -555,8 +521,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return getVar();
       case SlnDslPackage.INSTRUCTION__EXP:
         return getExp();
-      case SlnDslPackage.INSTRUCTION__INS:
-        return getIns();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -566,7 +530,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -592,10 +555,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return;
       case SlnDslPackage.INSTRUCTION__EXP:
         setExp((Expression)newValue);
-        return;
-      case SlnDslPackage.INSTRUCTION__INS:
-        getIns().clear();
-        getIns().addAll((Collection<? extends Instruction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -632,9 +591,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
       case SlnDslPackage.INSTRUCTION__EXP:
         setExp((Expression)null);
         return;
-      case SlnDslPackage.INSTRUCTION__INS:
-        getIns().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -663,8 +619,6 @@ public class InstructionImpl extends MinimalEObjectImpl.Container implements Ins
         return var != null;
       case SlnDslPackage.INSTRUCTION__EXP:
         return exp != null;
-      case SlnDslPackage.INSTRUCTION__INS:
-        return ins != null && !ins.isEmpty();
     }
     return super.eIsSet(featureID);
   }

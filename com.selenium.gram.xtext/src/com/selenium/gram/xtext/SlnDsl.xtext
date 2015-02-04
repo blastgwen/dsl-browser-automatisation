@@ -7,11 +7,11 @@ generate slnDsl "http://www.selenium.com/gram/xtext/SlnDsl"
  */
 Model:
 	subs+=Subprocedure*
-	'main' main=Instruction 'endmain'
+	'main' main+=Instruction+ 'endmain'
 ;
 	
 Subprocedure:
-	'sub' head=Head body=Instruction 'endsub'
+	'sub' head=Head body+=Instruction+ 'endsub'
 	;
 
 Head:
@@ -71,7 +71,6 @@ Instruction:
 	| loop=Loop
 	| act=Action
 	| var=VariableReference '=' exp=Expression
-	| '{' ins+=Instruction+ '}'
 ;
 
 Definition:
@@ -79,11 +78,11 @@ Definition:
 ;
 
 Conditional:
-	'if' exp=Expression 'then' ins=Instruction ('else' ins=Instruction 'endif'| 'endif')
+	'if' exp=Expression 'then' ins+=Instruction+ ('else' ins+=Instruction+)? 'endif'
 ;
 
 Loop:
-	'while' exp=Expression 'do' ins+=Instruction 'endwhile'
+	'while' exp=Expression 'do' ins+=Instruction+ 'endwhile'
 ;
 
 Action:
