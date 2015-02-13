@@ -80,10 +80,10 @@ public class Interpreter {
 			Loop loop = (Loop) instruction;
 
 			if(loop.getWhile() != null){
-				this.executeWhile(loop.getWhile());
+				this.executeWhile(loop.getWhile(), variables);
 			}
 			else{
-				this.executeFor(loop.getFor());
+				this.executeFor(loop.getFor(), variables);
 			}
 		}
 		
@@ -110,16 +110,27 @@ public class Interpreter {
 		
 	}
 	
+	private Object computeExpression(Expression exp){
+		
+		
+		return null;
+	}
+	
+	
 	private Boolean getBooleanValue(Expression exp){
 		
 		return false;
 	}
 	
-	private void executeWhile(While whileInstruction){
-		
+	private void executeWhile(While whileInstruction, Map<String, Expression> variables) throws InterpretationException{
+		while(this.getBooleanValue(whileInstruction.getCond())){
+			for(Instruction ins : whileInstruction.getIns()){
+				this.executeInstruction(ins, variables);
+			}
+		}
 	}
 	
-	private void executeFor(Foreach forInstruction){
-		
+	private void executeFor(Foreach forInstruction, Map<String, Expression> variables){
+	
 	}
 }
