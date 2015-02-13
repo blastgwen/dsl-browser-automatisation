@@ -15,6 +15,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import com.selenium.gram.xtext.interpreter.InterpretationException;
 import com.selenium.gram.xtext.interpreter.Interpreter;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.impl.ModelImpl;
 
 /**
  * Our sample action implements workbench action delegate.
@@ -39,7 +40,7 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 	 * @see IWorkbenchWindowActionDelegate#run
 	 */
 	public void run(IAction action) {
-
+try {
 			IEditorPart activeEditor = window.getActivePage().getActiveEditor(); 
 
 			IFile file = (IFile) activeEditor.getEditorInput().getAdapter(IFile.class); 
@@ -47,12 +48,21 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 			System.out.println("Loading file: " + file.getFullPath().toString());
 
 			ResourceSet rs = new ResourceSetImpl();
+			
+			System.out.println("ici");
 
 			Resource resource = rs.getResource(URI.createURI(file.getFullPath().toString()), true);
 
+			System.out.println("la");
+			
 			EObject eobject = resource.getContents().get(0);
 			
-			if (eobject instanceof Model) {
+			System.out.println("Eobject : " + eobject.getClass());
+			
+			
+			if (eobject instanceof ModelImpl) {
+				
+				System.out.println("je suis un model");
 				
 				Model model = (Model) eobject;
 	
@@ -62,8 +72,12 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			} else {
+				System.out.println("je ne suis PAS un model");
 			}
-
+} catch (Exception e) {
+	e.printStackTrace();
+}
 	}
 
 	/**
