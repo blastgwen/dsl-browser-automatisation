@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_URL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'main'", "'endmain'", "'sub'", "'endsub'", "'()'", "'('", "'var'", "','", "')'", "'!'", "'sizeof'", "'All'", "'Any'", "'( element'", "'=='", "'<'", "'>'", "'='", "'if'", "'then'", "'else'", "'endif'", "'while'", "'do'", "'endwhile'", "'foreach'", "'in'", "'endfor'", "'open('", "'check'", "'click'", "'type('", "'verify'", "'select'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_URL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'main'", "'endmain'", "'sub'", "'endsub'", "'()'", "'('", "'var'", "','", "')'", "'!'", "'sizeof'", "'All'", "'Any'", "'->'", "'=='", "'<'", "'>'", "'='", "'if'", "'then'", "'else'", "'endif'", "'while'", "'do'", "'endwhile'", "'foreach'", "'in'", "'endfor'", "'open('", "'check'", "'click'", "'type('", "'verify'", "'select'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -1533,7 +1533,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:598:1: ruleExpression returns [EObject current=null] : ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:598:1: ruleExpression returns [EObject current=null] : ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1545,7 +1545,6 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         Token otherlv_8=null;
         Token otherlv_9=null;
         Token otherlv_10=null;
-        Token otherlv_11=null;
         Token otherlv_12=null;
         Token otherlv_14=null;
         Token otherlv_15=null;
@@ -1554,6 +1553,8 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         EObject lv_var_0_0 = null;
 
         EObject lv_exp_5_0 = null;
+
+        EObject lv_varName_11_0 = null;
 
         EObject lv_exp_13_0 = null;
 
@@ -1567,56 +1568,56 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:601:28: ( ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:602:1: ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:601:28: ( ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:602:1: ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:602:1: ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) )
-            int alt13=6;
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:602:1: ( ( (lv_var_0_0= ruleVariableReference ) ) | ruleNumberLiteral | ( (otherlv_2= '!' | otherlv_3= 'sizeof' ) otherlv_4= '(' ( (lv_exp_5_0= ruleExpression ) ) otherlv_6= ')' ) | ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' ) | ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) ) | ( (lv_act_20_0= ruleActionExpression ) ) )
+            int alt12=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
-                alt13=1;
+                alt12=1;
                 }
                 break;
             case RULE_INT:
             case RULE_STRING:
                 {
-                alt13=2;
+                alt12=2;
                 }
                 break;
             case 21:
             case 22:
                 {
-                alt13=3;
+                alt12=3;
                 }
                 break;
             case 23:
             case 24:
                 {
-                alt13=4;
+                alt12=4;
                 }
                 break;
             case 26:
             case 27:
             case 28:
                 {
-                alt13=5;
+                alt12=5;
                 }
                 break;
             case 44:
             case 45:
                 {
-                alt13=6;
+                alt12=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:602:2: ( (lv_var_0_0= ruleVariableReference ) )
                     {
@@ -1763,10 +1764,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:6: ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:6: ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:6: ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:7: (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '( element' (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' ) ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')'
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:6: ( (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:7: (otherlv_7= 'All' | otherlv_8= 'Any' ) otherlv_9= '(' otherlv_10= 'var' ( (lv_varName_11_0= ruleVariableName ) ) otherlv_12= '->' ( (lv_exp_13_0= ruleExpression ) ) otherlv_14= ')'
                     {
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:666:7: (otherlv_7= 'All' | otherlv_8= 'Any' )
                     int alt10=2;
@@ -1808,11 +1809,97 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_9=(Token)match(input,25,FOLLOW_25_in_ruleExpression1504); 
+                    otherlv_9=(Token)match(input,17,FOLLOW_17_in_ruleExpression1504); 
 
-                        	newLeafNode(otherlv_9, grammarAccess.getExpressionAccess().getElementKeyword_3_1());
+                        	newLeafNode(otherlv_9, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_3_1());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:679:1: (otherlv_10= '==' | otherlv_11= '<' | otherlv_12= '>' )
+                    otherlv_10=(Token)match(input,18,FOLLOW_18_in_ruleExpression1516); 
+
+                        	newLeafNode(otherlv_10, grammarAccess.getExpressionAccess().getVarKeyword_3_2());
+                        
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:683:1: ( (lv_varName_11_0= ruleVariableName ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:684:1: (lv_varName_11_0= ruleVariableName )
+                    {
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:684:1: (lv_varName_11_0= ruleVariableName )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:685:3: lv_varName_11_0= ruleVariableName
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getExpressionAccess().getVarNameVariableNameParserRuleCall_3_3_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleVariableName_in_ruleExpression1537);
+                    lv_varName_11_0=ruleVariableName();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getExpressionRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"varName",
+                            		lv_varName_11_0, 
+                            		"VariableName");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_12=(Token)match(input,25,FOLLOW_25_in_ruleExpression1549); 
+
+                        	newLeafNode(otherlv_12, grammarAccess.getExpressionAccess().getHyphenMinusGreaterThanSignKeyword_3_4());
+                        
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:705:1: ( (lv_exp_13_0= ruleExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:706:1: (lv_exp_13_0= ruleExpression )
+                    {
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:706:1: (lv_exp_13_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:707:3: lv_exp_13_0= ruleExpression
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getExpressionAccess().getExpExpressionParserRuleCall_3_5_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleExpression_in_ruleExpression1570);
+                    lv_exp_13_0=ruleExpression();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getExpressionRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"exp",
+                            		lv_exp_13_0, 
+                            		"Expression");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_14=(Token)match(input,20,FOLLOW_20_in_ruleExpression1582); 
+
+                        	newLeafNode(otherlv_14, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_3_6());
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:728:6: ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) )
+                    {
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:728:6: ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:728:7: (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) )
+                    {
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:728:7: (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' )
                     int alt11=3;
                     switch ( input.LA(1) ) {
                     case 26:
@@ -1839,115 +1926,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     switch (alt11) {
                         case 1 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:679:3: otherlv_10= '=='
+                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:728:9: otherlv_15= '=='
                             {
-                            otherlv_10=(Token)match(input,26,FOLLOW_26_in_ruleExpression1517); 
-
-                                	newLeafNode(otherlv_10, grammarAccess.getExpressionAccess().getEqualsSignEqualsSignKeyword_3_2_0());
-                                
-
-                            }
-                            break;
-                        case 2 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:684:7: otherlv_11= '<'
-                            {
-                            otherlv_11=(Token)match(input,27,FOLLOW_27_in_ruleExpression1535); 
-
-                                	newLeafNode(otherlv_11, grammarAccess.getExpressionAccess().getLessThanSignKeyword_3_2_1());
-                                
-
-                            }
-                            break;
-                        case 3 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:689:7: otherlv_12= '>'
-                            {
-                            otherlv_12=(Token)match(input,28,FOLLOW_28_in_ruleExpression1553); 
-
-                                	newLeafNode(otherlv_12, grammarAccess.getExpressionAccess().getGreaterThanSignKeyword_3_2_2());
-                                
-
-                            }
-                            break;
-
-                    }
-
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:693:2: ( (lv_exp_13_0= ruleExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:694:1: (lv_exp_13_0= ruleExpression )
-                    {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:694:1: (lv_exp_13_0= ruleExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:695:3: lv_exp_13_0= ruleExpression
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getExpressionAccess().getExpExpressionParserRuleCall_3_3_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleExpression1575);
-                    lv_exp_13_0=ruleExpression();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getExpressionRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"exp",
-                            		lv_exp_13_0, 
-                            		"Expression");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-                    otherlv_14=(Token)match(input,20,FOLLOW_20_in_ruleExpression1587); 
-
-                        	newLeafNode(otherlv_14, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_3_4());
-                        
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:716:6: ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) )
-                    {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:716:6: ( (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:716:7: (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' ) ( (lv_left_18_0= ruleExpression ) ) ( (lv_right_19_0= ruleExpression ) )
-                    {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:716:7: (otherlv_15= '==' | otherlv_16= '<' | otherlv_17= '>' )
-                    int alt12=3;
-                    switch ( input.LA(1) ) {
-                    case 26:
-                        {
-                        alt12=1;
-                        }
-                        break;
-                    case 27:
-                        {
-                        alt12=2;
-                        }
-                        break;
-                    case 28:
-                        {
-                        alt12=3;
-                        }
-                        break;
-                    default:
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 12, 0, input);
-
-                        throw nvae;
-                    }
-
-                    switch (alt12) {
-                        case 1 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:716:9: otherlv_15= '=='
-                            {
-                            otherlv_15=(Token)match(input,26,FOLLOW_26_in_ruleExpression1608); 
+                            otherlv_15=(Token)match(input,26,FOLLOW_26_in_ruleExpression1603); 
 
                                 	newLeafNode(otherlv_15, grammarAccess.getExpressionAccess().getEqualsSignEqualsSignKeyword_4_0_0());
                                 
@@ -1955,9 +1936,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:721:7: otherlv_16= '<'
+                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:733:7: otherlv_16= '<'
                             {
-                            otherlv_16=(Token)match(input,27,FOLLOW_27_in_ruleExpression1626); 
+                            otherlv_16=(Token)match(input,27,FOLLOW_27_in_ruleExpression1621); 
 
                                 	newLeafNode(otherlv_16, grammarAccess.getExpressionAccess().getLessThanSignKeyword_4_0_1());
                                 
@@ -1965,9 +1946,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 3 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:726:7: otherlv_17= '>'
+                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:738:7: otherlv_17= '>'
                             {
-                            otherlv_17=(Token)match(input,28,FOLLOW_28_in_ruleExpression1644); 
+                            otherlv_17=(Token)match(input,28,FOLLOW_28_in_ruleExpression1639); 
 
                                 	newLeafNode(otherlv_17, grammarAccess.getExpressionAccess().getGreaterThanSignKeyword_4_0_2());
                                 
@@ -1977,16 +1958,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:730:2: ( (lv_left_18_0= ruleExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:731:1: (lv_left_18_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:742:2: ( (lv_left_18_0= ruleExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:743:1: (lv_left_18_0= ruleExpression )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:731:1: (lv_left_18_0= ruleExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:732:3: lv_left_18_0= ruleExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:743:1: (lv_left_18_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:744:3: lv_left_18_0= ruleExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getExpressionAccess().getLeftExpressionParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleExpression1666);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleExpression1661);
                     lv_left_18_0=ruleExpression();
 
                     state._fsp--;
@@ -2008,16 +1989,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:748:2: ( (lv_right_19_0= ruleExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:749:1: (lv_right_19_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:760:2: ( (lv_right_19_0= ruleExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:761:1: (lv_right_19_0= ruleExpression )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:749:1: (lv_right_19_0= ruleExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:750:3: lv_right_19_0= ruleExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:761:1: (lv_right_19_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:762:3: lv_right_19_0= ruleExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_4_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleExpression1687);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleExpression1682);
                     lv_right_19_0=ruleExpression();
 
                     state._fsp--;
@@ -2046,18 +2027,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:767:6: ( (lv_act_20_0= ruleActionExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:779:6: ( (lv_act_20_0= ruleActionExpression ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:767:6: ( (lv_act_20_0= ruleActionExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:768:1: (lv_act_20_0= ruleActionExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:779:6: ( (lv_act_20_0= ruleActionExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:780:1: (lv_act_20_0= ruleActionExpression )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:768:1: (lv_act_20_0= ruleActionExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:769:3: lv_act_20_0= ruleActionExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:780:1: (lv_act_20_0= ruleActionExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:781:3: lv_act_20_0= ruleActionExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getExpressionAccess().getActActionExpressionParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleActionExpression_in_ruleExpression1715);
+                    pushFollow(FOLLOW_ruleActionExpression_in_ruleExpression1710);
                     lv_act_20_0=ruleActionExpression();
 
                     state._fsp--;
@@ -2103,7 +2084,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInstruction"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:793:1: entryRuleInstruction returns [EObject current=null] : iv_ruleInstruction= ruleInstruction EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:805:1: entryRuleInstruction returns [EObject current=null] : iv_ruleInstruction= ruleInstruction EOF ;
     public final EObject entryRuleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -2111,17 +2092,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:794:2: (iv_ruleInstruction= ruleInstruction EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:795:2: iv_ruleInstruction= ruleInstruction EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:806:2: (iv_ruleInstruction= ruleInstruction EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:807:2: iv_ruleInstruction= ruleInstruction EOF
             {
              newCompositeNode(grammarAccess.getInstructionRule()); 
-            pushFollow(FOLLOW_ruleInstruction_in_entryRuleInstruction1751);
+            pushFollow(FOLLOW_ruleInstruction_in_entryRuleInstruction1746);
             iv_ruleInstruction=ruleInstruction();
 
             state._fsp--;
 
              current =iv_ruleInstruction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInstruction1761); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInstruction1756); 
 
             }
 
@@ -2139,7 +2120,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstruction"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:802:1: ruleInstruction returns [EObject current=null] : ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:814:1: ruleInstruction returns [EObject current=null] : ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) ) ;
     public final EObject ruleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -2159,30 +2140,30 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:805:28: ( ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:806:1: ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:817:28: ( ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:1: ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:806:1: ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) )
-            int alt14=6;
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:1: ( ( (lv_def_0_0= ruleDefinition ) ) | ( (lv_func_1_0= ruleFunctionCall ) ) | ( (lv_cond_2_0= ruleConditional ) ) | ( (lv_loop_3_0= ruleLoop ) ) | ( (lv_act_4_0= ruleActionInstruction ) ) | ( (lv_ass_5_0= ruleAssignation ) ) )
+            int alt13=6;
             switch ( input.LA(1) ) {
             case 18:
                 {
-                alt14=1;
+                alt13=1;
                 }
                 break;
             case RULE_ID:
                 {
-                int LA14_2 = input.LA(2);
+                int LA13_2 = input.LA(2);
 
-                if ( ((LA14_2>=16 && LA14_2<=17)) ) {
-                    alt14=2;
+                if ( ((LA13_2>=16 && LA13_2<=17)) ) {
+                    alt13=2;
                 }
-                else if ( (LA14_2==29) ) {
-                    alt14=6;
+                else if ( (LA13_2==29) ) {
+                    alt13=6;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 14, 2, input);
+                        new NoViableAltException("", 13, 2, input);
 
                     throw nvae;
                 }
@@ -2190,13 +2171,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 break;
             case 30:
                 {
-                alt14=3;
+                alt13=3;
                 }
                 break;
             case 34:
             case 37:
                 {
-                alt14=4;
+                alt13=4;
                 }
                 break;
             case 40:
@@ -2204,30 +2185,30 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             case 42:
             case 43:
                 {
-                alt14=5;
+                alt13=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt13) {
                 case 1 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:806:2: ( (lv_def_0_0= ruleDefinition ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:2: ( (lv_def_0_0= ruleDefinition ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:806:2: ( (lv_def_0_0= ruleDefinition ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:807:1: (lv_def_0_0= ruleDefinition )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:2: ( (lv_def_0_0= ruleDefinition ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:819:1: (lv_def_0_0= ruleDefinition )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:807:1: (lv_def_0_0= ruleDefinition )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:808:3: lv_def_0_0= ruleDefinition
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:819:1: (lv_def_0_0= ruleDefinition )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:820:3: lv_def_0_0= ruleDefinition
                     {
                      
                     	        newCompositeNode(grammarAccess.getInstructionAccess().getDefDefinitionParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDefinition_in_ruleInstruction1807);
+                    pushFollow(FOLLOW_ruleDefinition_in_ruleInstruction1802);
                     lv_def_0_0=ruleDefinition();
 
                     state._fsp--;
@@ -2253,18 +2234,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:825:6: ( (lv_func_1_0= ruleFunctionCall ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:837:6: ( (lv_func_1_0= ruleFunctionCall ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:825:6: ( (lv_func_1_0= ruleFunctionCall ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:826:1: (lv_func_1_0= ruleFunctionCall )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:837:6: ( (lv_func_1_0= ruleFunctionCall ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:838:1: (lv_func_1_0= ruleFunctionCall )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:826:1: (lv_func_1_0= ruleFunctionCall )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:827:3: lv_func_1_0= ruleFunctionCall
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:838:1: (lv_func_1_0= ruleFunctionCall )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:839:3: lv_func_1_0= ruleFunctionCall
                     {
                      
                     	        newCompositeNode(grammarAccess.getInstructionAccess().getFuncFunctionCallParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleFunctionCall_in_ruleInstruction1834);
+                    pushFollow(FOLLOW_ruleFunctionCall_in_ruleInstruction1829);
                     lv_func_1_0=ruleFunctionCall();
 
                     state._fsp--;
@@ -2290,18 +2271,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:844:6: ( (lv_cond_2_0= ruleConditional ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:856:6: ( (lv_cond_2_0= ruleConditional ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:844:6: ( (lv_cond_2_0= ruleConditional ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:845:1: (lv_cond_2_0= ruleConditional )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:856:6: ( (lv_cond_2_0= ruleConditional ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:857:1: (lv_cond_2_0= ruleConditional )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:845:1: (lv_cond_2_0= ruleConditional )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:846:3: lv_cond_2_0= ruleConditional
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:857:1: (lv_cond_2_0= ruleConditional )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:858:3: lv_cond_2_0= ruleConditional
                     {
                      
                     	        newCompositeNode(grammarAccess.getInstructionAccess().getCondConditionalParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConditional_in_ruleInstruction1861);
+                    pushFollow(FOLLOW_ruleConditional_in_ruleInstruction1856);
                     lv_cond_2_0=ruleConditional();
 
                     state._fsp--;
@@ -2327,18 +2308,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:863:6: ( (lv_loop_3_0= ruleLoop ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:875:6: ( (lv_loop_3_0= ruleLoop ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:863:6: ( (lv_loop_3_0= ruleLoop ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:864:1: (lv_loop_3_0= ruleLoop )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:875:6: ( (lv_loop_3_0= ruleLoop ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:876:1: (lv_loop_3_0= ruleLoop )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:864:1: (lv_loop_3_0= ruleLoop )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:865:3: lv_loop_3_0= ruleLoop
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:876:1: (lv_loop_3_0= ruleLoop )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:877:3: lv_loop_3_0= ruleLoop
                     {
                      
                     	        newCompositeNode(grammarAccess.getInstructionAccess().getLoopLoopParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLoop_in_ruleInstruction1888);
+                    pushFollow(FOLLOW_ruleLoop_in_ruleInstruction1883);
                     lv_loop_3_0=ruleLoop();
 
                     state._fsp--;
@@ -2364,18 +2345,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:882:6: ( (lv_act_4_0= ruleActionInstruction ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:894:6: ( (lv_act_4_0= ruleActionInstruction ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:882:6: ( (lv_act_4_0= ruleActionInstruction ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:883:1: (lv_act_4_0= ruleActionInstruction )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:894:6: ( (lv_act_4_0= ruleActionInstruction ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:895:1: (lv_act_4_0= ruleActionInstruction )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:883:1: (lv_act_4_0= ruleActionInstruction )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:884:3: lv_act_4_0= ruleActionInstruction
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:895:1: (lv_act_4_0= ruleActionInstruction )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:896:3: lv_act_4_0= ruleActionInstruction
                     {
                      
                     	        newCompositeNode(grammarAccess.getInstructionAccess().getActActionInstructionParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleActionInstruction_in_ruleInstruction1915);
+                    pushFollow(FOLLOW_ruleActionInstruction_in_ruleInstruction1910);
                     lv_act_4_0=ruleActionInstruction();
 
                     state._fsp--;
@@ -2401,18 +2382,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:901:6: ( (lv_ass_5_0= ruleAssignation ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:913:6: ( (lv_ass_5_0= ruleAssignation ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:901:6: ( (lv_ass_5_0= ruleAssignation ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:902:1: (lv_ass_5_0= ruleAssignation )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:913:6: ( (lv_ass_5_0= ruleAssignation ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:914:1: (lv_ass_5_0= ruleAssignation )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:902:1: (lv_ass_5_0= ruleAssignation )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:903:3: lv_ass_5_0= ruleAssignation
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:914:1: (lv_ass_5_0= ruleAssignation )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:915:3: lv_ass_5_0= ruleAssignation
                     {
                      
                     	        newCompositeNode(grammarAccess.getInstructionAccess().getAssAssignationParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAssignation_in_ruleInstruction1942);
+                    pushFollow(FOLLOW_ruleAssignation_in_ruleInstruction1937);
                     lv_ass_5_0=ruleAssignation();
 
                     state._fsp--;
@@ -2458,7 +2439,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefinition"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:927:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:939:1: entryRuleDefinition returns [EObject current=null] : iv_ruleDefinition= ruleDefinition EOF ;
     public final EObject entryRuleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2466,17 +2447,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:928:2: (iv_ruleDefinition= ruleDefinition EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:929:2: iv_ruleDefinition= ruleDefinition EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:940:2: (iv_ruleDefinition= ruleDefinition EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:941:2: iv_ruleDefinition= ruleDefinition EOF
             {
              newCompositeNode(grammarAccess.getDefinitionRule()); 
-            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition1978);
+            pushFollow(FOLLOW_ruleDefinition_in_entryRuleDefinition1973);
             iv_ruleDefinition=ruleDefinition();
 
             state._fsp--;
 
              current =iv_ruleDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition1988); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDefinition1983); 
 
             }
 
@@ -2494,7 +2475,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefinition"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:936:1: ruleDefinition returns [EObject current=null] : (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:948:1: ruleDefinition returns [EObject current=null] : (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) ) ;
     public final EObject ruleDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -2508,26 +2489,26 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:939:28: ( (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:940:1: (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:951:28: ( (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:952:1: (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:940:1: (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:940:3: otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:952:1: (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:952:3: otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDefinition2025); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDefinition2020); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDefinitionAccess().getVarKeyword_0());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:944:1: ( (lv_varID_1_0= ruleVariableName ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:945:1: (lv_varID_1_0= ruleVariableName )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:956:1: ( (lv_varID_1_0= ruleVariableName ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:957:1: (lv_varID_1_0= ruleVariableName )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:945:1: (lv_varID_1_0= ruleVariableName )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:946:3: lv_varID_1_0= ruleVariableName
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:957:1: (lv_varID_1_0= ruleVariableName )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:958:3: lv_varID_1_0= ruleVariableName
             {
              
             	        newCompositeNode(grammarAccess.getDefinitionAccess().getVarIDVariableNameParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleVariableName_in_ruleDefinition2046);
+            pushFollow(FOLLOW_ruleVariableName_in_ruleDefinition2041);
             lv_varID_1_0=ruleVariableName();
 
             state._fsp--;
@@ -2549,20 +2530,20 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleDefinition2058); 
+            otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleDefinition2053); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDefinitionAccess().getEqualsSignKeyword_2());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:966:1: ( (lv_exp_3_0= ruleExpression ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:967:1: (lv_exp_3_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:978:1: ( (lv_exp_3_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:979:1: (lv_exp_3_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:967:1: (lv_exp_3_0= ruleExpression )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:968:3: lv_exp_3_0= ruleExpression
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:979:1: (lv_exp_3_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:980:3: lv_exp_3_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getDefinitionAccess().getExpExpressionParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleDefinition2079);
+            pushFollow(FOLLOW_ruleExpression_in_ruleDefinition2074);
             lv_exp_3_0=ruleExpression();
 
             state._fsp--;
@@ -2605,7 +2586,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAssignation"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:992:1: entryRuleAssignation returns [EObject current=null] : iv_ruleAssignation= ruleAssignation EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1004:1: entryRuleAssignation returns [EObject current=null] : iv_ruleAssignation= ruleAssignation EOF ;
     public final EObject entryRuleAssignation() throws RecognitionException {
         EObject current = null;
 
@@ -2613,17 +2594,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:993:2: (iv_ruleAssignation= ruleAssignation EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:994:2: iv_ruleAssignation= ruleAssignation EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1005:2: (iv_ruleAssignation= ruleAssignation EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1006:2: iv_ruleAssignation= ruleAssignation EOF
             {
              newCompositeNode(grammarAccess.getAssignationRule()); 
-            pushFollow(FOLLOW_ruleAssignation_in_entryRuleAssignation2115);
+            pushFollow(FOLLOW_ruleAssignation_in_entryRuleAssignation2110);
             iv_ruleAssignation=ruleAssignation();
 
             state._fsp--;
 
              current =iv_ruleAssignation; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAssignation2125); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAssignation2120); 
 
             }
 
@@ -2641,7 +2622,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssignation"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1001:1: ruleAssignation returns [EObject current=null] : ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1013:1: ruleAssignation returns [EObject current=null] : ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) ) ;
     public final EObject ruleAssignation() throws RecognitionException {
         EObject current = null;
 
@@ -2654,22 +2635,22 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1004:28: ( ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1005:1: ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1016:28: ( ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1017:1: ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1005:1: ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1005:2: ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1017:1: ( ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1017:2: ( (lv_var_0_0= ruleVariableReference ) ) otherlv_1= '=' ( (lv_exp_2_0= ruleExpression ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1005:2: ( (lv_var_0_0= ruleVariableReference ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1006:1: (lv_var_0_0= ruleVariableReference )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1017:2: ( (lv_var_0_0= ruleVariableReference ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1018:1: (lv_var_0_0= ruleVariableReference )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1006:1: (lv_var_0_0= ruleVariableReference )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1007:3: lv_var_0_0= ruleVariableReference
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1018:1: (lv_var_0_0= ruleVariableReference )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1019:3: lv_var_0_0= ruleVariableReference
             {
              
             	        newCompositeNode(grammarAccess.getAssignationAccess().getVarVariableReferenceParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleVariableReference_in_ruleAssignation2171);
+            pushFollow(FOLLOW_ruleVariableReference_in_ruleAssignation2166);
             lv_var_0_0=ruleVariableReference();
 
             state._fsp--;
@@ -2691,20 +2672,20 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleAssignation2183); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleAssignation2178); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAssignationAccess().getEqualsSignKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1027:1: ( (lv_exp_2_0= ruleExpression ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1028:1: (lv_exp_2_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1039:1: ( (lv_exp_2_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1040:1: (lv_exp_2_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1028:1: (lv_exp_2_0= ruleExpression )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1029:3: lv_exp_2_0= ruleExpression
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1040:1: (lv_exp_2_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1041:3: lv_exp_2_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getAssignationAccess().getExpExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleAssignation2204);
+            pushFollow(FOLLOW_ruleExpression_in_ruleAssignation2199);
             lv_exp_2_0=ruleExpression();
 
             state._fsp--;
@@ -2747,7 +2728,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditional"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1053:1: entryRuleConditional returns [EObject current=null] : iv_ruleConditional= ruleConditional EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1065:1: entryRuleConditional returns [EObject current=null] : iv_ruleConditional= ruleConditional EOF ;
     public final EObject entryRuleConditional() throws RecognitionException {
         EObject current = null;
 
@@ -2755,17 +2736,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1054:2: (iv_ruleConditional= ruleConditional EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1055:2: iv_ruleConditional= ruleConditional EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1066:2: (iv_ruleConditional= ruleConditional EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1067:2: iv_ruleConditional= ruleConditional EOF
             {
              newCompositeNode(grammarAccess.getConditionalRule()); 
-            pushFollow(FOLLOW_ruleConditional_in_entryRuleConditional2240);
+            pushFollow(FOLLOW_ruleConditional_in_entryRuleConditional2235);
             iv_ruleConditional=ruleConditional();
 
             state._fsp--;
 
              current =iv_ruleConditional; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConditional2250); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConditional2245); 
 
             }
 
@@ -2783,7 +2764,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditional"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1062:1: ruleConditional returns [EObject current=null] : (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1074:1: ruleConditional returns [EObject current=null] : (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) ;
     public final EObject ruleConditional() throws RecognitionException {
         EObject current = null;
 
@@ -2801,26 +2782,26 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1065:28: ( (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1066:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1077:28: ( (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1066:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1066:3: otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:3: otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif'
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleConditional2287); 
+            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleConditional2282); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getConditionalAccess().getIfKeyword_0());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1070:1: ( (lv_exp_1_0= ruleExpression ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1071:1: (lv_exp_1_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1082:1: ( (lv_exp_1_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1083:1: (lv_exp_1_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1071:1: (lv_exp_1_0= ruleExpression )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1072:3: lv_exp_1_0= ruleExpression
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1083:1: (lv_exp_1_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1084:3: lv_exp_1_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getConditionalAccess().getExpExpressionParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleConditional2308);
+            pushFollow(FOLLOW_ruleExpression_in_ruleConditional2303);
             lv_exp_1_0=ruleExpression();
 
             state._fsp--;
@@ -2842,33 +2823,33 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleConditional2320); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleConditional2315); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getConditionalAccess().getThenKeyword_2());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1092:1: ( (lv_ins_3_0= ruleInstruction ) )+
-            int cnt15=0;
-            loop15:
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1104:1: ( (lv_ins_3_0= ruleInstruction ) )+
+            int cnt14=0;
+            loop14:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA15_0==RULE_ID||LA15_0==18||LA15_0==30||LA15_0==34||LA15_0==37||(LA15_0>=40 && LA15_0<=43)) ) {
-                    alt15=1;
+                if ( (LA14_0==RULE_ID||LA14_0==18||LA14_0==30||LA14_0==34||LA14_0==37||(LA14_0>=40 && LA14_0<=43)) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt14) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1093:1: (lv_ins_3_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1105:1: (lv_ins_3_0= ruleInstruction )
             	    {
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1093:1: (lv_ins_3_0= ruleInstruction )
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1094:3: lv_ins_3_0= ruleInstruction
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1105:1: (lv_ins_3_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1106:3: lv_ins_3_0= ruleInstruction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleConditional2341);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleConditional2336);
             	    lv_ins_3_0=ruleInstruction();
 
             	    state._fsp--;
@@ -2892,52 +2873,52 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt15 >= 1 ) break loop15;
+            	    if ( cnt14 >= 1 ) break loop14;
                         EarlyExitException eee =
-                            new EarlyExitException(15, input);
+                            new EarlyExitException(14, input);
                         throw eee;
                 }
-                cnt15++;
+                cnt14++;
             } while (true);
 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1110:3: (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1122:3: (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA17_0==32) ) {
-                alt17=1;
+            if ( (LA16_0==32) ) {
+                alt16=1;
             }
-            switch (alt17) {
+            switch (alt16) {
                 case 1 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1110:5: otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1122:5: otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+
                     {
-                    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleConditional2355); 
+                    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleConditional2350); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getConditionalAccess().getElseKeyword_4_0());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1114:1: ( (lv_ins_5_0= ruleInstruction ) )+
-                    int cnt16=0;
-                    loop16:
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1126:1: ( (lv_ins_5_0= ruleInstruction ) )+
+                    int cnt15=0;
+                    loop15:
                     do {
-                        int alt16=2;
-                        int LA16_0 = input.LA(1);
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
 
-                        if ( (LA16_0==RULE_ID||LA16_0==18||LA16_0==30||LA16_0==34||LA16_0==37||(LA16_0>=40 && LA16_0<=43)) ) {
-                            alt16=1;
+                        if ( (LA15_0==RULE_ID||LA15_0==18||LA15_0==30||LA15_0==34||LA15_0==37||(LA15_0>=40 && LA15_0<=43)) ) {
+                            alt15=1;
                         }
 
 
-                        switch (alt16) {
+                        switch (alt15) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1115:1: (lv_ins_5_0= ruleInstruction )
+                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1127:1: (lv_ins_5_0= ruleInstruction )
                     	    {
-                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1115:1: (lv_ins_5_0= ruleInstruction )
-                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1116:3: lv_ins_5_0= ruleInstruction
+                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1127:1: (lv_ins_5_0= ruleInstruction )
+                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1128:3: lv_ins_5_0= ruleInstruction
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleInstruction_in_ruleConditional2376);
+                    	    pushFollow(FOLLOW_ruleInstruction_in_ruleConditional2371);
                     	    lv_ins_5_0=ruleInstruction();
 
                     	    state._fsp--;
@@ -2961,12 +2942,12 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt16 >= 1 ) break loop16;
+                    	    if ( cnt15 >= 1 ) break loop15;
                                 EarlyExitException eee =
-                                    new EarlyExitException(16, input);
+                                    new EarlyExitException(15, input);
                                 throw eee;
                         }
-                        cnt16++;
+                        cnt15++;
                     } while (true);
 
 
@@ -2975,7 +2956,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleConditional2391); 
+            otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleConditional2386); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getConditionalAccess().getEndifKeyword_5());
                 
@@ -3000,7 +2981,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLoop"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1144:1: entryRuleLoop returns [EObject current=null] : iv_ruleLoop= ruleLoop EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1156:1: entryRuleLoop returns [EObject current=null] : iv_ruleLoop= ruleLoop EOF ;
     public final EObject entryRuleLoop() throws RecognitionException {
         EObject current = null;
 
@@ -3008,17 +2989,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1145:2: (iv_ruleLoop= ruleLoop EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1146:2: iv_ruleLoop= ruleLoop EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1157:2: (iv_ruleLoop= ruleLoop EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1158:2: iv_ruleLoop= ruleLoop EOF
             {
              newCompositeNode(grammarAccess.getLoopRule()); 
-            pushFollow(FOLLOW_ruleLoop_in_entryRuleLoop2427);
+            pushFollow(FOLLOW_ruleLoop_in_entryRuleLoop2422);
             iv_ruleLoop=ruleLoop();
 
             state._fsp--;
 
              current =iv_ruleLoop; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLoop2437); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLoop2432); 
 
             }
 
@@ -3036,7 +3017,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLoop"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1153:1: ruleLoop returns [EObject current=null] : ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1165:1: ruleLoop returns [EObject current=null] : ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) ) ;
     public final EObject ruleLoop() throws RecognitionException {
         EObject current = null;
 
@@ -3048,39 +3029,39 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1156:28: ( ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1157:1: ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1168:28: ( ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1169:1: ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1157:1: ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1169:1: ( ( (lv_while_0_0= ruleWhile ) ) | ( (lv_for_1_0= ruleForeach ) ) )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA18_0==34) ) {
-                alt18=1;
+            if ( (LA17_0==34) ) {
+                alt17=1;
             }
-            else if ( (LA18_0==37) ) {
-                alt18=2;
+            else if ( (LA17_0==37) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt17) {
                 case 1 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1157:2: ( (lv_while_0_0= ruleWhile ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1169:2: ( (lv_while_0_0= ruleWhile ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1157:2: ( (lv_while_0_0= ruleWhile ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1158:1: (lv_while_0_0= ruleWhile )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1169:2: ( (lv_while_0_0= ruleWhile ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1170:1: (lv_while_0_0= ruleWhile )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1158:1: (lv_while_0_0= ruleWhile )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1159:3: lv_while_0_0= ruleWhile
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1170:1: (lv_while_0_0= ruleWhile )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1171:3: lv_while_0_0= ruleWhile
                     {
                      
                     	        newCompositeNode(grammarAccess.getLoopAccess().getWhileWhileParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleWhile_in_ruleLoop2483);
+                    pushFollow(FOLLOW_ruleWhile_in_ruleLoop2478);
                     lv_while_0_0=ruleWhile();
 
                     state._fsp--;
@@ -3106,18 +3087,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1176:6: ( (lv_for_1_0= ruleForeach ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1188:6: ( (lv_for_1_0= ruleForeach ) )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1176:6: ( (lv_for_1_0= ruleForeach ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1177:1: (lv_for_1_0= ruleForeach )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1188:6: ( (lv_for_1_0= ruleForeach ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1189:1: (lv_for_1_0= ruleForeach )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1177:1: (lv_for_1_0= ruleForeach )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1178:3: lv_for_1_0= ruleForeach
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1189:1: (lv_for_1_0= ruleForeach )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1190:3: lv_for_1_0= ruleForeach
                     {
                      
                     	        newCompositeNode(grammarAccess.getLoopAccess().getForForeachParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleForeach_in_ruleLoop2510);
+                    pushFollow(FOLLOW_ruleForeach_in_ruleLoop2505);
                     lv_for_1_0=ruleForeach();
 
                     state._fsp--;
@@ -3163,7 +3144,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWhile"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1202:1: entryRuleWhile returns [EObject current=null] : iv_ruleWhile= ruleWhile EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1214:1: entryRuleWhile returns [EObject current=null] : iv_ruleWhile= ruleWhile EOF ;
     public final EObject entryRuleWhile() throws RecognitionException {
         EObject current = null;
 
@@ -3171,17 +3152,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1203:2: (iv_ruleWhile= ruleWhile EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1204:2: iv_ruleWhile= ruleWhile EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1215:2: (iv_ruleWhile= ruleWhile EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1216:2: iv_ruleWhile= ruleWhile EOF
             {
              newCompositeNode(grammarAccess.getWhileRule()); 
-            pushFollow(FOLLOW_ruleWhile_in_entryRuleWhile2546);
+            pushFollow(FOLLOW_ruleWhile_in_entryRuleWhile2541);
             iv_ruleWhile=ruleWhile();
 
             state._fsp--;
 
              current =iv_ruleWhile; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWhile2556); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWhile2551); 
 
             }
 
@@ -3199,7 +3180,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWhile"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1211:1: ruleWhile returns [EObject current=null] : (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1223:1: ruleWhile returns [EObject current=null] : (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' ) ;
     public final EObject ruleWhile() throws RecognitionException {
         EObject current = null;
 
@@ -3216,30 +3197,30 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1214:28: ( (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1215:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1226:28: ( (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1227:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1215:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1215:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1227:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1227:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile'
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleWhile2593); 
+            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleWhile2588); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getWhileAccess().getWhileKeyword_0());
                 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleWhile2605); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleWhile2600); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getWhileAccess().getLeftParenthesisKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1223:1: ( (lv_cond_2_0= ruleExpression ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1224:1: (lv_cond_2_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1235:1: ( (lv_cond_2_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1236:1: (lv_cond_2_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1224:1: (lv_cond_2_0= ruleExpression )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1225:3: lv_cond_2_0= ruleExpression
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1236:1: (lv_cond_2_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1237:3: lv_cond_2_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getWhileAccess().getCondExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleWhile2626);
+            pushFollow(FOLLOW_ruleExpression_in_ruleWhile2621);
             lv_cond_2_0=ruleExpression();
 
             state._fsp--;
@@ -3261,37 +3242,37 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleWhile2638); 
+            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleWhile2633); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getWhileAccess().getRightParenthesisKeyword_3());
                 
-            otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleWhile2650); 
+            otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleWhile2645); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getWhileAccess().getDoKeyword_4());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1249:1: ( (lv_ins_5_0= ruleInstruction ) )+
-            int cnt19=0;
-            loop19:
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1261:1: ( (lv_ins_5_0= ruleInstruction ) )+
+            int cnt18=0;
+            loop18:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA19_0==RULE_ID||LA19_0==18||LA19_0==30||LA19_0==34||LA19_0==37||(LA19_0>=40 && LA19_0<=43)) ) {
-                    alt19=1;
+                if ( (LA18_0==RULE_ID||LA18_0==18||LA18_0==30||LA18_0==34||LA18_0==37||(LA18_0>=40 && LA18_0<=43)) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt18) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1250:1: (lv_ins_5_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1262:1: (lv_ins_5_0= ruleInstruction )
             	    {
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1250:1: (lv_ins_5_0= ruleInstruction )
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1251:3: lv_ins_5_0= ruleInstruction
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1262:1: (lv_ins_5_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1263:3: lv_ins_5_0= ruleInstruction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getWhileAccess().getInsInstructionParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleWhile2671);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleWhile2666);
             	    lv_ins_5_0=ruleInstruction();
 
             	    state._fsp--;
@@ -3315,15 +3296,15 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt19 >= 1 ) break loop19;
+            	    if ( cnt18 >= 1 ) break loop18;
                         EarlyExitException eee =
-                            new EarlyExitException(19, input);
+                            new EarlyExitException(18, input);
                         throw eee;
                 }
-                cnt19++;
+                cnt18++;
             } while (true);
 
-            otherlv_6=(Token)match(input,36,FOLLOW_36_in_ruleWhile2684); 
+            otherlv_6=(Token)match(input,36,FOLLOW_36_in_ruleWhile2679); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getWhileAccess().getEndwhileKeyword_6());
                 
@@ -3348,7 +3329,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleForeach"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1279:1: entryRuleForeach returns [EObject current=null] : iv_ruleForeach= ruleForeach EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1291:1: entryRuleForeach returns [EObject current=null] : iv_ruleForeach= ruleForeach EOF ;
     public final EObject entryRuleForeach() throws RecognitionException {
         EObject current = null;
 
@@ -3356,17 +3337,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1280:2: (iv_ruleForeach= ruleForeach EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1281:2: iv_ruleForeach= ruleForeach EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1292:2: (iv_ruleForeach= ruleForeach EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1293:2: iv_ruleForeach= ruleForeach EOF
             {
              newCompositeNode(grammarAccess.getForeachRule()); 
-            pushFollow(FOLLOW_ruleForeach_in_entryRuleForeach2720);
+            pushFollow(FOLLOW_ruleForeach_in_entryRuleForeach2715);
             iv_ruleForeach=ruleForeach();
 
             state._fsp--;
 
              current =iv_ruleForeach; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleForeach2730); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleForeach2725); 
 
             }
 
@@ -3384,7 +3365,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForeach"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1288:1: ruleForeach returns [EObject current=null] : (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1300:1: ruleForeach returns [EObject current=null] : (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' ) ;
     public final EObject ruleForeach() throws RecognitionException {
         EObject current = null;
 
@@ -3404,30 +3385,30 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1291:28: ( (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1292:1: (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1303:28: ( (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1304:1: (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1292:1: (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1292:3: otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1304:1: (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1304:3: otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleForeach2767); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleForeach2762); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getForeachAccess().getForeachKeyword_0());
                 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleForeach2779); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleForeach2774); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getForeachAccess().getLeftParenthesisKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1300:1: ( (lv_var_2_0= ruleVariableName ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1301:1: (lv_var_2_0= ruleVariableName )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1312:1: ( (lv_var_2_0= ruleVariableName ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1313:1: (lv_var_2_0= ruleVariableName )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1301:1: (lv_var_2_0= ruleVariableName )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1302:3: lv_var_2_0= ruleVariableName
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1313:1: (lv_var_2_0= ruleVariableName )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1314:3: lv_var_2_0= ruleVariableName
             {
              
             	        newCompositeNode(grammarAccess.getForeachAccess().getVarVariableNameParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleVariableName_in_ruleForeach2800);
+            pushFollow(FOLLOW_ruleVariableName_in_ruleForeach2795);
             lv_var_2_0=ruleVariableName();
 
             state._fsp--;
@@ -3449,20 +3430,20 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleForeach2812); 
+            otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleForeach2807); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getForeachAccess().getInKeyword_3());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1322:1: ( (lv_exp_4_0= ruleExpression ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1323:1: (lv_exp_4_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1334:1: ( (lv_exp_4_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1335:1: (lv_exp_4_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1323:1: (lv_exp_4_0= ruleExpression )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1324:3: lv_exp_4_0= ruleExpression
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1335:1: (lv_exp_4_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1336:3: lv_exp_4_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getForeachAccess().getExpExpressionParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleForeach2833);
+            pushFollow(FOLLOW_ruleExpression_in_ruleForeach2828);
             lv_exp_4_0=ruleExpression();
 
             state._fsp--;
@@ -3484,37 +3465,37 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleForeach2845); 
+            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleForeach2840); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getForeachAccess().getRightParenthesisKeyword_5());
                 
-            otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleForeach2857); 
+            otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleForeach2852); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getForeachAccess().getDoKeyword_6());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1348:1: ( (lv_ins_7_0= ruleInstruction ) )+
-            int cnt20=0;
-            loop20:
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1360:1: ( (lv_ins_7_0= ruleInstruction ) )+
+            int cnt19=0;
+            loop19:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA20_0==RULE_ID||LA20_0==18||LA20_0==30||LA20_0==34||LA20_0==37||(LA20_0>=40 && LA20_0<=43)) ) {
-                    alt20=1;
+                if ( (LA19_0==RULE_ID||LA19_0==18||LA19_0==30||LA19_0==34||LA19_0==37||(LA19_0>=40 && LA19_0<=43)) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt19) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1349:1: (lv_ins_7_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1361:1: (lv_ins_7_0= ruleInstruction )
             	    {
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1349:1: (lv_ins_7_0= ruleInstruction )
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1350:3: lv_ins_7_0= ruleInstruction
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1361:1: (lv_ins_7_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1362:3: lv_ins_7_0= ruleInstruction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getForeachAccess().getInsInstructionParserRuleCall_7_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleForeach2878);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleForeach2873);
             	    lv_ins_7_0=ruleInstruction();
 
             	    state._fsp--;
@@ -3538,15 +3519,15 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt20 >= 1 ) break loop20;
+            	    if ( cnt19 >= 1 ) break loop19;
                         EarlyExitException eee =
-                            new EarlyExitException(20, input);
+                            new EarlyExitException(19, input);
                         throw eee;
                 }
-                cnt20++;
+                cnt19++;
             } while (true);
 
-            otherlv_8=(Token)match(input,39,FOLLOW_39_in_ruleForeach2891); 
+            otherlv_8=(Token)match(input,39,FOLLOW_39_in_ruleForeach2886); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getForeachAccess().getEndforKeyword_8());
                 
@@ -3571,7 +3552,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionInstruction"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1378:1: entryRuleActionInstruction returns [EObject current=null] : iv_ruleActionInstruction= ruleActionInstruction EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1390:1: entryRuleActionInstruction returns [EObject current=null] : iv_ruleActionInstruction= ruleActionInstruction EOF ;
     public final EObject entryRuleActionInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -3579,17 +3560,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1379:2: (iv_ruleActionInstruction= ruleActionInstruction EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1380:2: iv_ruleActionInstruction= ruleActionInstruction EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1391:2: (iv_ruleActionInstruction= ruleActionInstruction EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1392:2: iv_ruleActionInstruction= ruleActionInstruction EOF
             {
              newCompositeNode(grammarAccess.getActionInstructionRule()); 
-            pushFollow(FOLLOW_ruleActionInstruction_in_entryRuleActionInstruction2927);
+            pushFollow(FOLLOW_ruleActionInstruction_in_entryRuleActionInstruction2922);
             iv_ruleActionInstruction=ruleActionInstruction();
 
             state._fsp--;
 
              current =iv_ruleActionInstruction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionInstruction2937); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionInstruction2932); 
 
             }
 
@@ -3607,7 +3588,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionInstruction"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1387:1: ruleActionInstruction returns [EObject current=null] : ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1399:1: ruleActionInstruction returns [EObject current=null] : ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) ) ;
     public final EObject ruleActionInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -3631,53 +3612,53 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1390:28: ( ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1391:1: ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1402:28: ( ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1403:1: ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1391:1: ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) )
-            int alt22=3;
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1403:1: ( (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' ) | ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' ) | (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' ) )
+            int alt21=3;
             switch ( input.LA(1) ) {
             case 40:
                 {
-                alt22=1;
+                alt21=1;
                 }
                 break;
             case 41:
             case 42:
                 {
-                alt22=2;
+                alt21=2;
                 }
                 break;
             case 43:
                 {
-                alt22=3;
+                alt21=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt22) {
+            switch (alt21) {
                 case 1 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1391:2: (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1403:2: (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1391:2: (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1391:4: otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')'
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1403:2: (otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1403:4: otherlv_0= 'open(' ( (lv_url_1_0= RULE_URL ) ) otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleActionInstruction2975); 
+                    otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleActionInstruction2970); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getActionInstructionAccess().getOpenKeyword_0_0());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1395:1: ( (lv_url_1_0= RULE_URL ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1396:1: (lv_url_1_0= RULE_URL )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1407:1: ( (lv_url_1_0= RULE_URL ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1408:1: (lv_url_1_0= RULE_URL )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1396:1: (lv_url_1_0= RULE_URL )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1397:3: lv_url_1_0= RULE_URL
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1408:1: (lv_url_1_0= RULE_URL )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1409:3: lv_url_1_0= RULE_URL
                     {
-                    lv_url_1_0=(Token)match(input,RULE_URL,FOLLOW_RULE_URL_in_ruleActionInstruction2992); 
+                    lv_url_1_0=(Token)match(input,RULE_URL,FOLLOW_RULE_URL_in_ruleActionInstruction2987); 
 
                     			newLeafNode(lv_url_1_0, grammarAccess.getActionInstructionAccess().getUrlURLTerminalRuleCall_0_1_0()); 
                     		
@@ -3697,7 +3678,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleActionInstruction3009); 
+                    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleActionInstruction3004); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getActionInstructionAccess().getRightParenthesisKeyword_0_2());
                         
@@ -3708,32 +3689,32 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1418:6: ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1430:6: ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1418:6: ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1418:7: (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')'
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1430:6: ( (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1430:7: (otherlv_3= 'check' | otherlv_4= 'click' ) otherlv_5= '(' ( (lv_element_6_0= ruleExpression ) ) otherlv_7= ')'
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1418:7: (otherlv_3= 'check' | otherlv_4= 'click' )
-                    int alt21=2;
-                    int LA21_0 = input.LA(1);
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1430:7: (otherlv_3= 'check' | otherlv_4= 'click' )
+                    int alt20=2;
+                    int LA20_0 = input.LA(1);
 
-                    if ( (LA21_0==41) ) {
-                        alt21=1;
+                    if ( (LA20_0==41) ) {
+                        alt20=1;
                     }
-                    else if ( (LA21_0==42) ) {
-                        alt21=2;
+                    else if ( (LA20_0==42) ) {
+                        alt20=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 21, 0, input);
+                            new NoViableAltException("", 20, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt21) {
+                    switch (alt20) {
                         case 1 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1418:9: otherlv_3= 'check'
+                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1430:9: otherlv_3= 'check'
                             {
-                            otherlv_3=(Token)match(input,41,FOLLOW_41_in_ruleActionInstruction3030); 
+                            otherlv_3=(Token)match(input,41,FOLLOW_41_in_ruleActionInstruction3025); 
 
                                 	newLeafNode(otherlv_3, grammarAccess.getActionInstructionAccess().getCheckKeyword_1_0_0());
                                 
@@ -3741,9 +3722,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1423:7: otherlv_4= 'click'
+                            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1435:7: otherlv_4= 'click'
                             {
-                            otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleActionInstruction3048); 
+                            otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleActionInstruction3043); 
 
                                 	newLeafNode(otherlv_4, grammarAccess.getActionInstructionAccess().getClickKeyword_1_0_1());
                                 
@@ -3753,20 +3734,20 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleActionInstruction3061); 
+                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleActionInstruction3056); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getActionInstructionAccess().getLeftParenthesisKeyword_1_1());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1431:1: ( (lv_element_6_0= ruleExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1432:1: (lv_element_6_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1443:1: ( (lv_element_6_0= ruleExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1444:1: (lv_element_6_0= ruleExpression )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1432:1: (lv_element_6_0= ruleExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1433:3: lv_element_6_0= ruleExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1444:1: (lv_element_6_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1445:3: lv_element_6_0= ruleExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getActionInstructionAccess().getElementExpressionParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleActionInstruction3082);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleActionInstruction3077);
                     lv_element_6_0=ruleExpression();
 
                     state._fsp--;
@@ -3788,7 +3769,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleActionInstruction3094); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleActionInstruction3089); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getActionInstructionAccess().getRightParenthesisKeyword_1_3());
                         
@@ -3799,25 +3780,25 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1454:6: (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1466:6: (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1454:6: (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1454:8: otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')'
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1466:6: (otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')' )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1466:8: otherlv_8= 'type(' ( (lv_element_9_0= ruleExpression ) ) otherlv_10= ',' ( (lv_value_11_0= ruleExpression ) ) otherlv_12= ')'
                     {
-                    otherlv_8=(Token)match(input,43,FOLLOW_43_in_ruleActionInstruction3114); 
+                    otherlv_8=(Token)match(input,43,FOLLOW_43_in_ruleActionInstruction3109); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getActionInstructionAccess().getTypeKeyword_2_0());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1458:1: ( (lv_element_9_0= ruleExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1459:1: (lv_element_9_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1470:1: ( (lv_element_9_0= ruleExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1471:1: (lv_element_9_0= ruleExpression )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1459:1: (lv_element_9_0= ruleExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1460:3: lv_element_9_0= ruleExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1471:1: (lv_element_9_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1472:3: lv_element_9_0= ruleExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getActionInstructionAccess().getElementExpressionParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleActionInstruction3135);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleActionInstruction3130);
                     lv_element_9_0=ruleExpression();
 
                     state._fsp--;
@@ -3839,20 +3820,20 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_10=(Token)match(input,19,FOLLOW_19_in_ruleActionInstruction3147); 
+                    otherlv_10=(Token)match(input,19,FOLLOW_19_in_ruleActionInstruction3142); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getActionInstructionAccess().getCommaKeyword_2_2());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1480:1: ( (lv_value_11_0= ruleExpression ) )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1481:1: (lv_value_11_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1492:1: ( (lv_value_11_0= ruleExpression ) )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1493:1: (lv_value_11_0= ruleExpression )
                     {
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1481:1: (lv_value_11_0= ruleExpression )
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1482:3: lv_value_11_0= ruleExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1493:1: (lv_value_11_0= ruleExpression )
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1494:3: lv_value_11_0= ruleExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getActionInstructionAccess().getValueExpressionParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleActionInstruction3168);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleActionInstruction3163);
                     lv_value_11_0=ruleExpression();
 
                     state._fsp--;
@@ -3874,7 +3855,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleActionInstruction3180); 
+                    otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleActionInstruction3175); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getActionInstructionAccess().getRightParenthesisKeyword_2_4());
                         
@@ -3905,7 +3886,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1510:1: entryRuleActionExpression returns [EObject current=null] : iv_ruleActionExpression= ruleActionExpression EOF ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1522:1: entryRuleActionExpression returns [EObject current=null] : iv_ruleActionExpression= ruleActionExpression EOF ;
     public final EObject entryRuleActionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3913,17 +3894,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1511:2: (iv_ruleActionExpression= ruleActionExpression EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1512:2: iv_ruleActionExpression= ruleActionExpression EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:2: (iv_ruleActionExpression= ruleActionExpression EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1524:2: iv_ruleActionExpression= ruleActionExpression EOF
             {
              newCompositeNode(grammarAccess.getActionExpressionRule()); 
-            pushFollow(FOLLOW_ruleActionExpression_in_entryRuleActionExpression3217);
+            pushFollow(FOLLOW_ruleActionExpression_in_entryRuleActionExpression3212);
             iv_ruleActionExpression=ruleActionExpression();
 
             state._fsp--;
 
              current =iv_ruleActionExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionExpression3227); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionExpression3222); 
 
             }
 
@@ -3941,7 +3922,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1519:1: ruleActionExpression returns [EObject current=null] : ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1531:1: ruleActionExpression returns [EObject current=null] : ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
     public final EObject ruleActionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3955,33 +3936,33 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1522:28: ( ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:1: ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1534:28: ( ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1535:1: ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:1: ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:2: (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1535:1: ( (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1535:2: (otherlv_0= 'verify' | otherlv_1= 'select' ) otherlv_2= '(' ( (lv_element_3_0= ruleExpression ) ) otherlv_4= ')'
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:2: (otherlv_0= 'verify' | otherlv_1= 'select' )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1535:2: (otherlv_0= 'verify' | otherlv_1= 'select' )
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA23_0==44) ) {
-                alt23=1;
+            if ( (LA22_0==44) ) {
+                alt22=1;
             }
-            else if ( (LA23_0==45) ) {
-                alt23=2;
+            else if ( (LA22_0==45) ) {
+                alt22=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
             }
-            switch (alt23) {
+            switch (alt22) {
                 case 1 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:4: otherlv_0= 'verify'
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1535:4: otherlv_0= 'verify'
                     {
-                    otherlv_0=(Token)match(input,44,FOLLOW_44_in_ruleActionExpression3265); 
+                    otherlv_0=(Token)match(input,44,FOLLOW_44_in_ruleActionExpression3260); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getActionExpressionAccess().getVerifyKeyword_0_0());
                         
@@ -3989,9 +3970,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1528:7: otherlv_1= 'select'
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1540:7: otherlv_1= 'select'
                     {
-                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleActionExpression3283); 
+                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleActionExpression3278); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getActionExpressionAccess().getSelectKeyword_0_1());
                         
@@ -4001,20 +3982,20 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleActionExpression3296); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleActionExpression3291); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getActionExpressionAccess().getLeftParenthesisKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1536:1: ( (lv_element_3_0= ruleExpression ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1537:1: (lv_element_3_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1548:1: ( (lv_element_3_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1549:1: (lv_element_3_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1537:1: (lv_element_3_0= ruleExpression )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1538:3: lv_element_3_0= ruleExpression
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1549:1: (lv_element_3_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1550:3: lv_element_3_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getActionExpressionAccess().getElementExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleActionExpression3317);
+            pushFollow(FOLLOW_ruleExpression_in_ruleActionExpression3312);
             lv_element_3_0=ruleExpression();
 
             state._fsp--;
@@ -4036,7 +4017,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleActionExpression3329); 
+            otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleActionExpression3324); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getActionExpressionAccess().getRightParenthesisKeyword_3());
                 
@@ -4123,93 +4104,93 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_17_in_ruleExpression1419 = new BitSet(new long[]{0x00003F245DE40070L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1440 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleExpression1452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleExpression1473 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_24_in_ruleExpression1491 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleExpression1504 = new BitSet(new long[]{0x000000001C000000L});
-    public static final BitSet FOLLOW_26_in_ruleExpression1517 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_27_in_ruleExpression1535 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_28_in_ruleExpression1553 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1575 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleExpression1587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleExpression1608 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_27_in_ruleExpression1626 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_28_in_ruleExpression1644 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1666 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_ruleExpression1715 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction1751 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInstruction1761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefinition_in_ruleInstruction1807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_ruleInstruction1834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditional_in_ruleInstruction1861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLoop_in_ruleInstruction1888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionInstruction_in_ruleInstruction1915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAssignation_in_ruleInstruction1942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition1978 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition1988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleDefinition2025 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleDefinition2046 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleDefinition2058 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleDefinition2079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAssignation_in_entryRuleAssignation2115 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAssignation2125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_ruleAssignation2171 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleAssignation2183 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleAssignation2204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConditional_in_entryRuleConditional2240 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConditional2250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleConditional2287 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleConditional2308 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleConditional2320 = new BitSet(new long[]{0x00000F2440040010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2341 = new BitSet(new long[]{0x00000F2740040010L});
-    public static final BitSet FOLLOW_32_in_ruleConditional2355 = new BitSet(new long[]{0x00000F2440040010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2376 = new BitSet(new long[]{0x00000F2640040010L});
-    public static final BitSet FOLLOW_33_in_ruleConditional2391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLoop_in_entryRuleLoop2427 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLoop2437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWhile_in_ruleLoop2483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForeach_in_ruleLoop2510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWhile_in_entryRuleWhile2546 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWhile2556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleWhile2593 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleWhile2605 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleWhile2626 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleWhile2638 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleWhile2650 = new BitSet(new long[]{0x00000F2440040010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleWhile2671 = new BitSet(new long[]{0x00000F3440040010L});
-    public static final BitSet FOLLOW_36_in_ruleWhile2684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForeach_in_entryRuleForeach2720 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleForeach2730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleForeach2767 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleForeach2779 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleForeach2800 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleForeach2812 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleForeach2833 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleForeach2845 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleForeach2857 = new BitSet(new long[]{0x00000F2440040010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleForeach2878 = new BitSet(new long[]{0x00000FA440040010L});
-    public static final BitSet FOLLOW_39_in_ruleForeach2891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionInstruction_in_entryRuleActionInstruction2927 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionInstruction2937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleActionInstruction2975 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_URL_in_ruleActionInstruction2992 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionInstruction3009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleActionInstruction3030 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_42_in_ruleActionInstruction3048 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleActionInstruction3061 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionInstruction3082 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionInstruction3094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleActionInstruction3114 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionInstruction3135 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleActionInstruction3147 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionInstruction3168 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionInstruction3180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_entryRuleActionExpression3217 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionExpression3227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleActionExpression3265 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_45_in_ruleActionExpression3283 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleActionExpression3296 = new BitSet(new long[]{0x00003F245DE40070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionExpression3317 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionExpression3329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleExpression1473 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_24_in_ruleExpression1491 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleExpression1504 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleExpression1516 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleExpression1537 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleExpression1549 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1570 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleExpression1582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleExpression1603 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_27_in_ruleExpression1621 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_28_in_ruleExpression1639 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1661 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpression1682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleExpression1710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction1746 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInstruction1756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefinition_in_ruleInstruction1802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_ruleInstruction1829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditional_in_ruleInstruction1856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLoop_in_ruleInstruction1883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionInstruction_in_ruleInstruction1910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAssignation_in_ruleInstruction1937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition1973 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDefinition1983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleDefinition2020 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleDefinition2041 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleDefinition2053 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleDefinition2074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAssignation_in_entryRuleAssignation2110 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAssignation2120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_ruleAssignation2166 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleAssignation2178 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleAssignation2199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConditional_in_entryRuleConditional2235 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConditional2245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleConditional2282 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleConditional2303 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleConditional2315 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2336 = new BitSet(new long[]{0x00000F2740040010L});
+    public static final BitSet FOLLOW_32_in_ruleConditional2350 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2371 = new BitSet(new long[]{0x00000F2640040010L});
+    public static final BitSet FOLLOW_33_in_ruleConditional2386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLoop_in_entryRuleLoop2422 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLoop2432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWhile_in_ruleLoop2478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForeach_in_ruleLoop2505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWhile_in_entryRuleWhile2541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWhile2551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleWhile2588 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleWhile2600 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleWhile2621 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleWhile2633 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleWhile2645 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleWhile2666 = new BitSet(new long[]{0x00000F3440040010L});
+    public static final BitSet FOLLOW_36_in_ruleWhile2679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForeach_in_entryRuleForeach2715 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleForeach2725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleForeach2762 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleForeach2774 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleForeach2795 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleForeach2807 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleForeach2828 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleForeach2840 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleForeach2852 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleForeach2873 = new BitSet(new long[]{0x00000FA440040010L});
+    public static final BitSet FOLLOW_39_in_ruleForeach2886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionInstruction_in_entryRuleActionInstruction2922 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionInstruction2932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleActionInstruction2970 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_URL_in_ruleActionInstruction2987 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionInstruction3004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleActionInstruction3025 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_42_in_ruleActionInstruction3043 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionInstruction3056 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionInstruction3077 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionInstruction3089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleActionInstruction3109 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionInstruction3130 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleActionInstruction3142 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionInstruction3163 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionInstruction3175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_entryRuleActionExpression3212 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionExpression3222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleActionExpression3260 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_45_in_ruleActionExpression3278 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionExpression3291 = new BitSet(new long[]{0x00003F245DE40070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionExpression3312 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionExpression3324 = new BitSet(new long[]{0x0000000000000002L});
 
 }

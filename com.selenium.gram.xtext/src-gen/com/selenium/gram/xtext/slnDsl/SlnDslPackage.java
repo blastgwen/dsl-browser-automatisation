@@ -336,13 +336,22 @@ public interface SlnDslPackage extends EPackage
   int EXPRESSION__EXP = 1;
 
   /**
+   * The feature id for the '<em><b>Var Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__VAR_NAME = 2;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__LEFT = 2;
+  int EXPRESSION__LEFT = 3;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -351,7 +360,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__RIGHT = 3;
+  int EXPRESSION__RIGHT = 4;
 
   /**
    * The feature id for the '<em><b>Act</b></em>' containment reference.
@@ -360,7 +369,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__ACT = 4;
+  int EXPRESSION__ACT = 5;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -369,7 +378,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 5;
+  int EXPRESSION_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -984,6 +993,17 @@ public interface SlnDslPackage extends EPackage
   EReference getExpression_Exp();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getVarName <em>Var Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var Name</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Expression#getVarName()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_VarName();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1575,6 +1595,14 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EReference EXPRESSION__EXP = eINSTANCE.getExpression_Exp();
+
+    /**
+     * The meta object literal for the '<em><b>Var Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__VAR_NAME = eINSTANCE.getExpression_VarName();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.

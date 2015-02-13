@@ -672,28 +672,40 @@ ruleNumberLiteral
     {
     	newLeafNode(otherlv_8, grammarAccess.getExpressionAccess().getAnyKeyword_3_0_1());
     }
-)	otherlv_9='( element' 
+)	otherlv_9='(' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getExpressionAccess().getElementKeyword_3_1());
+    	newLeafNode(otherlv_9, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_3_1());
     }
-(	otherlv_10='==' 
+	otherlv_10='var' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getExpressionAccess().getEqualsSignEqualsSignKeyword_3_2_0());
+    	newLeafNode(otherlv_10, grammarAccess.getExpressionAccess().getVarKeyword_3_2());
     }
-
-    |	otherlv_11='<' 
-    {
-    	newLeafNode(otherlv_11, grammarAccess.getExpressionAccess().getLessThanSignKeyword_3_2_1());
-    }
-
-    |	otherlv_12='>' 
-    {
-    	newLeafNode(otherlv_12, grammarAccess.getExpressionAccess().getGreaterThanSignKeyword_3_2_2());
-    }
-)(
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExpressionAccess().getExpExpressionParserRuleCall_3_3_0()); 
+	        newCompositeNode(grammarAccess.getExpressionAccess().getVarNameVariableNameParserRuleCall_3_3_0()); 
+	    }
+		lv_varName_11_0=ruleVariableName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"varName",
+        		lv_varName_11_0, 
+        		"VariableName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_12='->' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getExpressionAccess().getHyphenMinusGreaterThanSignKeyword_3_4());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExpressionAccess().getExpExpressionParserRuleCall_3_5_0()); 
 	    }
 		lv_exp_13_0=ruleExpression		{
 	        if ($current==null) {
@@ -710,7 +722,7 @@ ruleNumberLiteral
 )
 )	otherlv_14=')' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_3_4());
+    	newLeafNode(otherlv_14, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_3_6());
     }
 )
     |((	otherlv_15='==' 

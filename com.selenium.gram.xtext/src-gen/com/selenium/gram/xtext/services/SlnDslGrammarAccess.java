@@ -350,14 +350,14 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
 		private final Keyword cAllKeyword_3_0_0 = (Keyword)cAlternatives_3_0.eContents().get(0);
 		private final Keyword cAnyKeyword_3_0_1 = (Keyword)cAlternatives_3_0.eContents().get(1);
-		private final Keyword cElementKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Alternatives cAlternatives_3_2 = (Alternatives)cGroup_3.eContents().get(2);
-		private final Keyword cEqualsSignEqualsSignKeyword_3_2_0 = (Keyword)cAlternatives_3_2.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_3_2_1 = (Keyword)cAlternatives_3_2.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_3_2_2 = (Keyword)cAlternatives_3_2.eContents().get(2);
-		private final Assignment cExpAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cExpExpressionParserRuleCall_3_3_0 = (RuleCall)cExpAssignment_3_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cVarKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cVarNameAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cVarNameVariableNameParserRuleCall_3_3_0 = (RuleCall)cVarNameAssignment_3_3.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Assignment cExpAssignment_3_5 = (Assignment)cGroup_3.eContents().get(5);
+		private final RuleCall cExpExpressionParserRuleCall_3_5_0 = (RuleCall)cExpAssignment_3_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_6 = (Keyword)cGroup_3.eContents().get(6);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Alternatives cAlternatives_4_0 = (Alternatives)cGroup_4.eContents().get(0);
 		private final Keyword cEqualsSignEqualsSignKeyword_4_0_0 = (Keyword)cAlternatives_4_0.eContents().get(0);
@@ -373,12 +373,14 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Expression
 		// * / Expression:
-		//	var=VariableReference | NumberLiteral | ("!" | "sizeof") "(" exp=Expression ")" | ("All" | "Any") "( element" ("==" |
-		//	"<" | ">") exp=Expression ")" | ("==" | "<" | ">") left=Expression right=Expression | act=ActionExpression;
+		//	var=VariableReference | NumberLiteral | ("!" | "sizeof") "(" exp=Expression ")" | ("All" | "Any") "(" "var"
+		//	varName=VariableName "->" exp=Expression ")" | ("==" | "<" | ">") left=Expression right=Expression |
+		//	act=ActionExpression;
 		public ParserRule getRule() { return rule; }
 
-		//var=VariableReference | NumberLiteral | ("!" | "sizeof") "(" exp=Expression ")" | ("All" | "Any") "( element" ("==" |
-		//"<" | ">") exp=Expression ")" | ("==" | "<" | ">") left=Expression right=Expression | act=ActionExpression
+		//var=VariableReference | NumberLiteral | ("!" | "sizeof") "(" exp=Expression ")" | ("All" | "Any") "(" "var"
+		//varName=VariableName "->" exp=Expression ")" | ("==" | "<" | ">") left=Expression right=Expression |
+		//act=ActionExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//var=VariableReference
@@ -414,7 +416,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
 
-		//("All" | "Any") "( element" ("==" | "<" | ">") exp=Expression ")"
+		//("All" | "Any") "(" "var" varName=VariableName "->" exp=Expression ")"
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"All" | "Any"
@@ -426,29 +428,29 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"Any"
 		public Keyword getAnyKeyword_3_0_1() { return cAnyKeyword_3_0_1; }
 
-		//"( element"
-		public Keyword getElementKeyword_3_1() { return cElementKeyword_3_1; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_1() { return cLeftParenthesisKeyword_3_1; }
 
-		//"==" | "<" | ">"
-		public Alternatives getAlternatives_3_2() { return cAlternatives_3_2; }
+		//"var"
+		public Keyword getVarKeyword_3_2() { return cVarKeyword_3_2; }
 
-		//"=="
-		public Keyword getEqualsSignEqualsSignKeyword_3_2_0() { return cEqualsSignEqualsSignKeyword_3_2_0; }
+		//varName=VariableName
+		public Assignment getVarNameAssignment_3_3() { return cVarNameAssignment_3_3; }
 
-		//"<"
-		public Keyword getLessThanSignKeyword_3_2_1() { return cLessThanSignKeyword_3_2_1; }
+		//VariableName
+		public RuleCall getVarNameVariableNameParserRuleCall_3_3_0() { return cVarNameVariableNameParserRuleCall_3_3_0; }
 
-		//">"
-		public Keyword getGreaterThanSignKeyword_3_2_2() { return cGreaterThanSignKeyword_3_2_2; }
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_3_4() { return cHyphenMinusGreaterThanSignKeyword_3_4; }
 
 		//exp=Expression
-		public Assignment getExpAssignment_3_3() { return cExpAssignment_3_3; }
+		public Assignment getExpAssignment_3_5() { return cExpAssignment_3_5; }
 
 		//Expression
-		public RuleCall getExpExpressionParserRuleCall_3_3_0() { return cExpExpressionParserRuleCall_3_3_0; }
+		public RuleCall getExpExpressionParserRuleCall_3_5_0() { return cExpExpressionParserRuleCall_3_5_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3_4() { return cRightParenthesisKeyword_3_4; }
+		public Keyword getRightParenthesisKeyword_3_6() { return cRightParenthesisKeyword_3_6; }
 
 		//("==" | "<" | ">") left=Expression right=Expression
 		public Group getGroup_4() { return cGroup_4; }
@@ -1125,8 +1127,9 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Expression
 	// * / Expression:
-	//	var=VariableReference | NumberLiteral | ("!" | "sizeof") "(" exp=Expression ")" | ("All" | "Any") "( element" ("==" |
-	//	"<" | ">") exp=Expression ")" | ("==" | "<" | ">") left=Expression right=Expression | act=ActionExpression;
+	//	var=VariableReference | NumberLiteral | ("!" | "sizeof") "(" exp=Expression ")" | ("All" | "Any") "(" "var"
+	//	varName=VariableName "->" exp=Expression ")" | ("==" | "<" | ">") left=Expression right=Expression |
+	//	act=ActionExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}

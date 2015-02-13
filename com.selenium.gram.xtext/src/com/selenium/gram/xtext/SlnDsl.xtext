@@ -58,7 +58,7 @@ Expression:
 	var=VariableReference
 	| NumberLiteral
 	| ('!'|'sizeof') '(' exp=Expression ')'
-	| ('All' | 'Any') '( element' ('=='|'<'|'>') exp=Expression ')'
+	| ('All' | 'Any') '(' 'var'  varName=VariableName '->' exp=Expression ')'
 	| ('=='|'<'|'>') left=Expression right=Expression
 	| act=ActionExpression
 ;

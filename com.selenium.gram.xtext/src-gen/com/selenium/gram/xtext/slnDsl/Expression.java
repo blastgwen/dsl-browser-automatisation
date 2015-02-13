@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Expression#getVar <em>Var</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Expression#getExp <em>Exp</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Expression#getVarName <em>Var Name</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Expression#getLeft <em>Left</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Expression#getRight <em>Right</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Expression#getAct <em>Act</em>}</li>
@@ -77,6 +78,32 @@ public interface Expression extends EObject
    * @generated
    */
   void setExp(Expression value);
+
+  /**
+   * Returns the value of the '<em><b>Var Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Var Name</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Var Name</em>' containment reference.
+   * @see #setVarName(VariableName)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getExpression_VarName()
+   * @model containment="true"
+   * @generated
+   */
+  VariableName getVarName();
+
+  /**
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Expression#getVarName <em>Var Name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Var Name</em>' containment reference.
+   * @see #getVarName()
+   * @generated
+   */
+  void setVarName(VariableName value);
 
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
