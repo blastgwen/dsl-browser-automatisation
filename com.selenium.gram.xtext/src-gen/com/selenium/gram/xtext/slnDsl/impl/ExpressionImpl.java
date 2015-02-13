@@ -5,6 +5,7 @@ package com.selenium.gram.xtext.slnDsl.impl;
 import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
+import com.selenium.gram.xtext.slnDsl.VariableName;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl#getVar <em>Var</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl#getVarName <em>Var Name</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl#getRight <em>Right</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl#getAct <em>Act</em>}</li>
@@ -54,6 +56,16 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * @ordered
    */
   protected Expression exp;
+
+  /**
+   * The cached value of the '{@link #getVarName() <em>Var Name</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVarName()
+   * @generated
+   * @ordered
+   */
+  protected VariableName varName;
 
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -200,6 +212,54 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.EXPRESSION__EXP, newExp, newExp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableName getVarName()
+  {
+    return varName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVarName(VariableName newVarName, NotificationChain msgs)
+  {
+    VariableName oldVarName = varName;
+    varName = newVarName;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.EXPRESSION__VAR_NAME, oldVarName, newVarName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVarName(VariableName newVarName)
+  {
+    if (newVarName != varName)
+    {
+      NotificationChain msgs = null;
+      if (varName != null)
+        msgs = ((InternalEObject)varName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.EXPRESSION__VAR_NAME, null, msgs);
+      if (newVarName != null)
+        msgs = ((InternalEObject)newVarName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.EXPRESSION__VAR_NAME, null, msgs);
+      msgs = basicSetVarName(newVarName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.EXPRESSION__VAR_NAME, newVarName, newVarName));
   }
 
   /**
@@ -360,6 +420,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return basicSetVar(null, msgs);
       case SlnDslPackage.EXPRESSION__EXP:
         return basicSetExp(null, msgs);
+      case SlnDslPackage.EXPRESSION__VAR_NAME:
+        return basicSetVarName(null, msgs);
       case SlnDslPackage.EXPRESSION__LEFT:
         return basicSetLeft(null, msgs);
       case SlnDslPackage.EXPRESSION__RIGHT:
@@ -384,6 +446,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return getVar();
       case SlnDslPackage.EXPRESSION__EXP:
         return getExp();
+      case SlnDslPackage.EXPRESSION__VAR_NAME:
+        return getVarName();
       case SlnDslPackage.EXPRESSION__LEFT:
         return getLeft();
       case SlnDslPackage.EXPRESSION__RIGHT:
@@ -409,6 +473,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return;
       case SlnDslPackage.EXPRESSION__EXP:
         setExp((Expression)newValue);
+        return;
+      case SlnDslPackage.EXPRESSION__VAR_NAME:
+        setVarName((VariableName)newValue);
         return;
       case SlnDslPackage.EXPRESSION__LEFT:
         setLeft((Expression)newValue);
@@ -439,6 +506,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SlnDslPackage.EXPRESSION__EXP:
         setExp((Expression)null);
         return;
+      case SlnDslPackage.EXPRESSION__VAR_NAME:
+        setVarName((VariableName)null);
+        return;
       case SlnDslPackage.EXPRESSION__LEFT:
         setLeft((Expression)null);
         return;
@@ -466,6 +536,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return var != null;
       case SlnDslPackage.EXPRESSION__EXP:
         return exp != null;
+      case SlnDslPackage.EXPRESSION__VAR_NAME:
+        return varName != null;
       case SlnDslPackage.EXPRESSION__LEFT:
         return left != null;
       case SlnDslPackage.EXPRESSION__RIGHT:

@@ -222,7 +222,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (var=VariableReference | exp=Expression | exp=Expression | (left=Expression right=Expression) | act=ActionExpression)?
+	 *     (var=VariableReference | exp=Expression | (varName=VariableName exp=Expression) | (left=Expression right=Expression) | act=ActionExpression)?
 	 */
 	protected void sequence_Expression(EObject context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -43,7 +43,6 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getExpressionAccess().getAlternatives_2_0(), "rule__Expression__Alternatives_2_0");
 					put(grammarAccess.getExpressionAccess().getAlternatives_3_0(), "rule__Expression__Alternatives_3_0");
-					put(grammarAccess.getExpressionAccess().getAlternatives_3_2(), "rule__Expression__Alternatives_3_2");
 					put(grammarAccess.getExpressionAccess().getAlternatives_4_0(), "rule__Expression__Alternatives_4_0");
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
@@ -87,7 +86,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableNameAccess().getNameAssignment(), "rule__VariableName__NameAssignment");
 					put(grammarAccess.getExpressionAccess().getVarAssignment_0(), "rule__Expression__VarAssignment_0");
 					put(grammarAccess.getExpressionAccess().getExpAssignment_2_2(), "rule__Expression__ExpAssignment_2_2");
-					put(grammarAccess.getExpressionAccess().getExpAssignment_3_3(), "rule__Expression__ExpAssignment_3_3");
+					put(grammarAccess.getExpressionAccess().getVarNameAssignment_3_3(), "rule__Expression__VarNameAssignment_3_3");
+					put(grammarAccess.getExpressionAccess().getExpAssignment_3_5(), "rule__Expression__ExpAssignment_3_5");
 					put(grammarAccess.getExpressionAccess().getLeftAssignment_4_1(), "rule__Expression__LeftAssignment_4_1");
 					put(grammarAccess.getExpressionAccess().getRightAssignment_4_2(), "rule__Expression__RightAssignment_4_2");
 					put(grammarAccess.getExpressionAccess().getActAssignment_5(), "rule__Expression__ActAssignment_5");

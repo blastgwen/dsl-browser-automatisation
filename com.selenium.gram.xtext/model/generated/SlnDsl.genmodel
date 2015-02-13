@@ -36,6 +36,7 @@
     <genClasses ecoreClass="SlnDsl.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Expression/var"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Expression/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Expression/varName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Expression/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Expression/right"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Expression/act"/>

@@ -38,6 +38,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varName" eType="#//VariableName"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"

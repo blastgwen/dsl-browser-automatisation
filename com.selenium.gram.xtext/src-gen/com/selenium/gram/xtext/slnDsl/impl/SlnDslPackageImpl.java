@@ -452,7 +452,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Left()
+  public EReference getExpression_VarName()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -462,7 +462,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Right()
+  public EReference getExpression_Left()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
@@ -472,9 +472,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Act()
+  public EReference getExpression_Right()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Act()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -857,6 +867,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__VAR);
     createEReference(expressionEClass, EXPRESSION__EXP);
+    createEReference(expressionEClass, EXPRESSION__VAR_NAME);
     createEReference(expressionEClass, EXPRESSION__LEFT);
     createEReference(expressionEClass, EXPRESSION__RIGHT);
     createEReference(expressionEClass, EXPRESSION__ACT);
@@ -965,6 +976,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_Var(), this.getVariableReference(), null, "var", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_VarName(), this.getVariableName(), null, "varName", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Act(), this.getActionExpression(), null, "act", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
