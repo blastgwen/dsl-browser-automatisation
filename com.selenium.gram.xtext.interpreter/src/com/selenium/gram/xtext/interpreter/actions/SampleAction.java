@@ -11,11 +11,10 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-import org.eclipse.jface.dialogs.MessageDialog;
 
+import com.selenium.gram.xtext.interpreter.InterpretationException;
 import com.selenium.gram.xtext.interpreter.Interpreter;
 import com.selenium.gram.xtext.slnDsl.Model;
-import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
 /**
  * Our sample action implements workbench action delegate.
@@ -57,7 +56,12 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 				
 				Model model = (Model) eobject;
 	
-				new Interpreter().execute(model);
+				try {
+					new Interpreter().execute(model);
+				} catch (InterpretationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 	}
