@@ -1,10 +1,21 @@
 package com.selenium.gram.xtext.interpreter.actions;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.jface.dialogs.MessageDialog;
+
+import com.selenium.gram.xtext.interpreter.Interpreter;
+import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
 /**
  * Our sample action implements workbench action delegate.
@@ -29,10 +40,26 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 	 * @see IWorkbenchWindowActionDelegate#run
 	 */
 	public void run(IAction action) {
-		MessageDialog.openInformation(
-			window.getShell(),
-			"Interpreter",
-			"Hello, Eclipse world");
+
+			IEditorPart activeEditor = window.getActivePage().getActiveEditor(); 
+
+			IFile file = (IFile) activeEditor.getEditorInput().getAdapter(IFile.class); 
+
+			System.out.println("Loading file: " + file.getFullPath().toString());
+
+			ResourceSet rs = new ResourceSetImpl();
+
+			Resource resource = rs.getResource(URI.createURI(file.getFullPath().toString()), true);
+
+			EObject eobject = resource.getContents().get(0);
+			
+			if (eobject instanceof Model) {
+				
+				Model model = (Model) eobject;
+	
+				new Interpreter().execute(model);
+			}
+
 	}
 
 	/**
