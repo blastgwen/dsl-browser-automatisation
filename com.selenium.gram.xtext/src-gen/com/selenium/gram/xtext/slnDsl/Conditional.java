@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Conditional#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Conditional#getIns <em>Ins</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Conditional#getTrueIns <em>True Ins</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Conditional#getFalseIns <em>False Ins</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,19 +53,35 @@ public interface Conditional extends EObject
   void setExp(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Ins</b></em>' containment reference list.
+   * Returns the value of the '<em><b>True Ins</b></em>' containment reference list.
    * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ins</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>True Ins</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ins</em>' containment reference list.
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getConditional_Ins()
+   * @return the value of the '<em>True Ins</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getConditional_TrueIns()
    * @model containment="true"
    * @generated
    */
-  EList<Instruction> getIns();
+  EList<Instruction> getTrueIns();
+
+  /**
+   * Returns the value of the '<em><b>False Ins</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>False Ins</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>False Ins</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getConditional_FalseIns()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Instruction> getFalseIns();
 
 } // Conditional

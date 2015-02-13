@@ -194,7 +194,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (exp=Expression ins+=Instruction+ ins+=Instruction*)
+	 *     (exp=Expression trueIns+=Instruction+ falseIns+=Instruction*)
 	 */
 	protected void sequence_Conditional(EObject context, Conditional semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -47,10 +47,22 @@ public class Interpreter {
 		}		
 		// Execute une condition
 		if(instruction instanceof Conditional){
+			Conditional cond = (Conditional) instruction;
 			
+			if(this.getBooleanValue(cond.getExp())){
+				for(Instruction condIns : cond.getTrueIns()){
+					this.executeInstruction(condIns);
+				}
+			}
+			else{
+				for(Instruction condIns : cond.getFalseIns()){
+					this.executeInstruction(condIns);
+				}				
+			}
 		}
 		// Execute une boucle
 		if(instruction instanceof Loop){
+			Loop loop = (Loop) instruction;
 			
 		}
 		// Execute une action Selenium
@@ -66,5 +78,10 @@ public class Interpreter {
 	
 	private void executeFunction(FunctionReference ref){
 		
+	}
+	
+	private Boolean getBooleanValue(Expression exp){
+		
+		return false;
 	}
 }

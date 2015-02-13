@@ -7151,42 +7151,42 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__Group__3__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2609:1: rule__Conditional__Group__3__Impl : ( ( ( rule__Conditional__InsAssignment_3 ) ) ( ( rule__Conditional__InsAssignment_3 )* ) ) ;
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2609:1: rule__Conditional__Group__3__Impl : ( ( ( rule__Conditional__TrueInsAssignment_3 ) ) ( ( rule__Conditional__TrueInsAssignment_3 )* ) ) ;
     public final void rule__Conditional__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2613:1: ( ( ( ( rule__Conditional__InsAssignment_3 ) ) ( ( rule__Conditional__InsAssignment_3 )* ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2614:1: ( ( ( rule__Conditional__InsAssignment_3 ) ) ( ( rule__Conditional__InsAssignment_3 )* ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2613:1: ( ( ( ( rule__Conditional__TrueInsAssignment_3 ) ) ( ( rule__Conditional__TrueInsAssignment_3 )* ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2614:1: ( ( ( rule__Conditional__TrueInsAssignment_3 ) ) ( ( rule__Conditional__TrueInsAssignment_3 )* ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2614:1: ( ( ( rule__Conditional__InsAssignment_3 ) ) ( ( rule__Conditional__InsAssignment_3 )* ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2615:1: ( ( rule__Conditional__InsAssignment_3 ) ) ( ( rule__Conditional__InsAssignment_3 )* )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2614:1: ( ( ( rule__Conditional__TrueInsAssignment_3 ) ) ( ( rule__Conditional__TrueInsAssignment_3 )* ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2615:1: ( ( rule__Conditional__TrueInsAssignment_3 ) ) ( ( rule__Conditional__TrueInsAssignment_3 )* )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2615:1: ( ( rule__Conditional__InsAssignment_3 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2616:1: ( rule__Conditional__InsAssignment_3 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2615:1: ( ( rule__Conditional__TrueInsAssignment_3 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2616:1: ( rule__Conditional__TrueInsAssignment_3 )
             {
-             before(grammarAccess.getConditionalAccess().getInsAssignment_3()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2617:1: ( rule__Conditional__InsAssignment_3 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2617:2: rule__Conditional__InsAssignment_3
+             before(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2617:1: ( rule__Conditional__TrueInsAssignment_3 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2617:2: rule__Conditional__TrueInsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Conditional__InsAssignment_3_in_rule__Conditional__Group__3__Impl5315);
-            rule__Conditional__InsAssignment_3();
+            pushFollow(FOLLOW_rule__Conditional__TrueInsAssignment_3_in_rule__Conditional__Group__3__Impl5315);
+            rule__Conditional__TrueInsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConditionalAccess().getInsAssignment_3()); 
+             after(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); 
 
             }
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2620:1: ( ( rule__Conditional__InsAssignment_3 )* )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2621:1: ( rule__Conditional__InsAssignment_3 )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2620:1: ( ( rule__Conditional__TrueInsAssignment_3 )* )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2621:1: ( rule__Conditional__TrueInsAssignment_3 )*
             {
-             before(grammarAccess.getConditionalAccess().getInsAssignment_3()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2622:1: ( rule__Conditional__InsAssignment_3 )*
+             before(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2622:1: ( rule__Conditional__TrueInsAssignment_3 )*
             loop18:
             do {
                 int alt18=2;
@@ -7199,10 +7199,10 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2622:2: rule__Conditional__InsAssignment_3
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2622:2: rule__Conditional__TrueInsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Conditional__InsAssignment_3_in_rule__Conditional__Group__3__Impl5327);
-            	    rule__Conditional__InsAssignment_3();
+            	    pushFollow(FOLLOW_rule__Conditional__TrueInsAssignment_3_in_rule__Conditional__Group__3__Impl5327);
+            	    rule__Conditional__TrueInsAssignment_3();
 
             	    state._fsp--;
 
@@ -7215,7 +7215,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getConditionalAccess().getInsAssignment_3()); 
+             after(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); 
 
             }
 
@@ -7515,42 +7515,42 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__Group_4__1__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2746:1: rule__Conditional__Group_4__1__Impl : ( ( ( rule__Conditional__InsAssignment_4_1 ) ) ( ( rule__Conditional__InsAssignment_4_1 )* ) ) ;
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2746:1: rule__Conditional__Group_4__1__Impl : ( ( ( rule__Conditional__FalseInsAssignment_4_1 ) ) ( ( rule__Conditional__FalseInsAssignment_4_1 )* ) ) ;
     public final void rule__Conditional__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2750:1: ( ( ( ( rule__Conditional__InsAssignment_4_1 ) ) ( ( rule__Conditional__InsAssignment_4_1 )* ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2751:1: ( ( ( rule__Conditional__InsAssignment_4_1 ) ) ( ( rule__Conditional__InsAssignment_4_1 )* ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2750:1: ( ( ( ( rule__Conditional__FalseInsAssignment_4_1 ) ) ( ( rule__Conditional__FalseInsAssignment_4_1 )* ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2751:1: ( ( ( rule__Conditional__FalseInsAssignment_4_1 ) ) ( ( rule__Conditional__FalseInsAssignment_4_1 )* ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2751:1: ( ( ( rule__Conditional__InsAssignment_4_1 ) ) ( ( rule__Conditional__InsAssignment_4_1 )* ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2752:1: ( ( rule__Conditional__InsAssignment_4_1 ) ) ( ( rule__Conditional__InsAssignment_4_1 )* )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2751:1: ( ( ( rule__Conditional__FalseInsAssignment_4_1 ) ) ( ( rule__Conditional__FalseInsAssignment_4_1 )* ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2752:1: ( ( rule__Conditional__FalseInsAssignment_4_1 ) ) ( ( rule__Conditional__FalseInsAssignment_4_1 )* )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2752:1: ( ( rule__Conditional__InsAssignment_4_1 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2753:1: ( rule__Conditional__InsAssignment_4_1 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2752:1: ( ( rule__Conditional__FalseInsAssignment_4_1 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2753:1: ( rule__Conditional__FalseInsAssignment_4_1 )
             {
-             before(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2754:1: ( rule__Conditional__InsAssignment_4_1 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2754:2: rule__Conditional__InsAssignment_4_1
+             before(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2754:1: ( rule__Conditional__FalseInsAssignment_4_1 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2754:2: rule__Conditional__FalseInsAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Conditional__InsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5583);
-            rule__Conditional__InsAssignment_4_1();
+            pushFollow(FOLLOW_rule__Conditional__FalseInsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5583);
+            rule__Conditional__FalseInsAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); 
+             after(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); 
 
             }
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2757:1: ( ( rule__Conditional__InsAssignment_4_1 )* )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2758:1: ( rule__Conditional__InsAssignment_4_1 )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2757:1: ( ( rule__Conditional__FalseInsAssignment_4_1 )* )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2758:1: ( rule__Conditional__FalseInsAssignment_4_1 )*
             {
-             before(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2759:1: ( rule__Conditional__InsAssignment_4_1 )*
+             before(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2759:1: ( rule__Conditional__FalseInsAssignment_4_1 )*
             loop20:
             do {
                 int alt20=2;
@@ -7563,10 +7563,10 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt20) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2759:2: rule__Conditional__InsAssignment_4_1
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2759:2: rule__Conditional__FalseInsAssignment_4_1
             	    {
-            	    pushFollow(FOLLOW_rule__Conditional__InsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5595);
-            	    rule__Conditional__InsAssignment_4_1();
+            	    pushFollow(FOLLOW_rule__Conditional__FalseInsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5595);
+            	    rule__Conditional__FalseInsAssignment_4_1();
 
             	    state._fsp--;
 
@@ -7579,7 +7579,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); 
+             after(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); 
 
             }
 
@@ -11567,9 +11567,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Conditional__ExpAssignment_1"
 
 
-    // $ANTLR start "rule__Conditional__InsAssignment_3"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4336:1: rule__Conditional__InsAssignment_3 : ( ruleInstruction ) ;
-    public final void rule__Conditional__InsAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__TrueInsAssignment_3"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4336:1: rule__Conditional__TrueInsAssignment_3 : ( ruleInstruction ) ;
+    public final void rule__Conditional__TrueInsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -11580,13 +11580,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4341:1: ( ruleInstruction )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4342:1: ruleInstruction
             {
-             before(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Conditional__InsAssignment_38749);
+             before(grammarAccess.getConditionalAccess().getTrueInsInstructionParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Conditional__TrueInsAssignment_38749);
             ruleInstruction();
 
             state._fsp--;
 
-             after(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); 
+             after(grammarAccess.getConditionalAccess().getTrueInsInstructionParserRuleCall_3_0()); 
 
             }
 
@@ -11605,12 +11605,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__InsAssignment_3"
+    // $ANTLR end "rule__Conditional__TrueInsAssignment_3"
 
 
-    // $ANTLR start "rule__Conditional__InsAssignment_4_1"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4351:1: rule__Conditional__InsAssignment_4_1 : ( ruleInstruction ) ;
-    public final void rule__Conditional__InsAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__FalseInsAssignment_4_1"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4351:1: rule__Conditional__FalseInsAssignment_4_1 : ( ruleInstruction ) ;
+    public final void rule__Conditional__FalseInsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -11621,13 +11621,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4356:1: ( ruleInstruction )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:4357:1: ruleInstruction
             {
-             before(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Conditional__InsAssignment_4_18780);
+             before(grammarAccess.getConditionalAccess().getFalseInsInstructionParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Conditional__FalseInsAssignment_4_18780);
             ruleInstruction();
 
             state._fsp--;
 
-             after(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); 
+             after(grammarAccess.getConditionalAccess().getFalseInsInstructionParserRuleCall_4_1_0()); 
 
             }
 
@@ -11646,7 +11646,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__InsAssignment_4_1"
+    // $ANTLR end "rule__Conditional__FalseInsAssignment_4_1"
 
 
     // $ANTLR start "rule__Loop__WhileAssignment_0"
@@ -12379,8 +12379,8 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_35_in_rule__Conditional__Group__2__Impl5252 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Conditional__Group__3__Impl_in_rule__Conditional__Group__35283 = new BitSet(new long[]{0x0000003000000000L});
     public static final BitSet FOLLOW_rule__Conditional__Group__4_in_rule__Conditional__Group__35286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conditional__InsAssignment_3_in_rule__Conditional__Group__3__Impl5315 = new BitSet(new long[]{0x0000324420180042L});
-    public static final BitSet FOLLOW_rule__Conditional__InsAssignment_3_in_rule__Conditional__Group__3__Impl5327 = new BitSet(new long[]{0x0000324420180042L});
+    public static final BitSet FOLLOW_rule__Conditional__TrueInsAssignment_3_in_rule__Conditional__Group__3__Impl5315 = new BitSet(new long[]{0x0000324420180042L});
+    public static final BitSet FOLLOW_rule__Conditional__TrueInsAssignment_3_in_rule__Conditional__Group__3__Impl5327 = new BitSet(new long[]{0x0000324420180042L});
     public static final BitSet FOLLOW_rule__Conditional__Group__4__Impl_in_rule__Conditional__Group__45360 = new BitSet(new long[]{0x0000003000000000L});
     public static final BitSet FOLLOW_rule__Conditional__Group__5_in_rule__Conditional__Group__45363 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Conditional__Group_4__0_in_rule__Conditional__Group__4__Impl5390 = new BitSet(new long[]{0x0000000000000002L});
@@ -12390,8 +12390,8 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Conditional__Group_4__1_in_rule__Conditional__Group_4__05495 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_rule__Conditional__Group_4__0__Impl5523 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Conditional__Group_4__1__Impl_in_rule__Conditional__Group_4__15554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conditional__InsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5583 = new BitSet(new long[]{0x0000324420180042L});
-    public static final BitSet FOLLOW_rule__Conditional__InsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5595 = new BitSet(new long[]{0x0000324420180042L});
+    public static final BitSet FOLLOW_rule__Conditional__FalseInsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5583 = new BitSet(new long[]{0x0000324420180042L});
+    public static final BitSet FOLLOW_rule__Conditional__FalseInsAssignment_4_1_in_rule__Conditional__Group_4__1__Impl5595 = new BitSet(new long[]{0x0000324420180042L});
     public static final BitSet FOLLOW_rule__While__Group__0__Impl_in_rule__While__Group__05632 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_rule__While__Group__1_in_rule__While__Group__05635 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_38_in_rule__While__Group__0__Impl5663 = new BitSet(new long[]{0x0000000000000002L});
@@ -12519,8 +12519,8 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleVariableReference_in_rule__Assignation__VarAssignment_08656 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__Assignation__ExpAssignment_28687 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__Conditional__ExpAssignment_18718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Conditional__InsAssignment_38749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Conditional__InsAssignment_4_18780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Conditional__TrueInsAssignment_38749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Conditional__FalseInsAssignment_4_18780 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWhile_in_rule__Loop__WhileAssignment_08811 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForeach_in_rule__Loop__ForAssignment_18842 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__While__CondAssignment_28873 = new BitSet(new long[]{0x0000000000000002L});

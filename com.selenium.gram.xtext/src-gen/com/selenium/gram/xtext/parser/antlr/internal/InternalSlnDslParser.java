@@ -2764,7 +2764,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditional"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1074:1: ruleConditional returns [EObject current=null] : (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1074:1: ruleConditional returns [EObject current=null] : (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) ;
     public final EObject ruleConditional() throws RecognitionException {
         EObject current = null;
 
@@ -2774,19 +2774,19 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         Token otherlv_6=null;
         EObject lv_exp_1_0 = null;
 
-        EObject lv_ins_3_0 = null;
+        EObject lv_trueIns_3_0 = null;
 
-        EObject lv_ins_5_0 = null;
+        EObject lv_falseIns_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1077:28: ( (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1077:28: ( (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:3: otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_ins_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1078:3: otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif'
             {
             otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleConditional2282); 
 
@@ -2827,7 +2827,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getConditionalAccess().getThenKeyword_2());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1104:1: ( (lv_ins_3_0= ruleInstruction ) )+
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1104:1: ( (lv_trueIns_3_0= ruleInstruction ) )+
             int cnt14=0;
             loop14:
             do {
@@ -2841,16 +2841,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1105:1: (lv_ins_3_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1105:1: (lv_trueIns_3_0= ruleInstruction )
             	    {
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1105:1: (lv_ins_3_0= ruleInstruction )
-            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1106:3: lv_ins_3_0= ruleInstruction
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1105:1: (lv_trueIns_3_0= ruleInstruction )
+            	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1106:3: lv_trueIns_3_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); 
+            	    	        newCompositeNode(grammarAccess.getConditionalAccess().getTrueInsInstructionParserRuleCall_3_0()); 
             	    	    
             	    pushFollow(FOLLOW_ruleInstruction_in_ruleConditional2336);
-            	    lv_ins_3_0=ruleInstruction();
+            	    lv_trueIns_3_0=ruleInstruction();
 
             	    state._fsp--;
 
@@ -2860,8 +2860,8 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"ins",
-            	            		lv_ins_3_0, 
+            	           			"trueIns",
+            	            		lv_trueIns_3_0, 
             	            		"Instruction");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -2881,7 +2881,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 cnt14++;
             } while (true);
 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1122:3: (otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+ )?
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1122:3: (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2890,13 +2890,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1122:5: otherlv_4= 'else' ( (lv_ins_5_0= ruleInstruction ) )+
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1122:5: otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+
                     {
                     otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleConditional2350); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getConditionalAccess().getElseKeyword_4_0());
                         
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1126:1: ( (lv_ins_5_0= ruleInstruction ) )+
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1126:1: ( (lv_falseIns_5_0= ruleInstruction ) )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -2910,16 +2910,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1127:1: (lv_ins_5_0= ruleInstruction )
+                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1127:1: (lv_falseIns_5_0= ruleInstruction )
                     	    {
-                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1127:1: (lv_ins_5_0= ruleInstruction )
-                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1128:3: lv_ins_5_0= ruleInstruction
+                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1127:1: (lv_falseIns_5_0= ruleInstruction )
+                    	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1128:3: lv_falseIns_5_0= ruleInstruction
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getConditionalAccess().getFalseInsInstructionParserRuleCall_4_1_0()); 
                     	    	    
                     	    pushFollow(FOLLOW_ruleInstruction_in_ruleConditional2371);
-                    	    lv_ins_5_0=ruleInstruction();
+                    	    lv_falseIns_5_0=ruleInstruction();
 
                     	    state._fsp--;
 
@@ -2929,8 +2929,8 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     	    	        }
                     	           		add(
                     	           			current, 
-                    	           			"ins",
-                    	            		lv_ins_5_0, 
+                    	           			"falseIns",
+                    	            		lv_falseIns_5_0, 
                     	            		"Instruction");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    

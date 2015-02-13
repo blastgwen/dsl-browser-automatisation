@@ -547,13 +547,22 @@ public interface SlnDslPackage extends EPackage
   int CONDITIONAL__EXP = 0;
 
   /**
-   * The feature id for the '<em><b>Ins</b></em>' containment reference list.
+   * The feature id for the '<em><b>True Ins</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITIONAL__INS = 1;
+  int CONDITIONAL__TRUE_INS = 1;
+
+  /**
+   * The feature id for the '<em><b>False Ins</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL__FALSE_INS = 2;
 
   /**
    * The number of structural features of the '<em>Conditional</em>' class.
@@ -562,7 +571,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_FEATURE_COUNT = 2;
+  int CONDITIONAL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl <em>Loop</em>}' class.
@@ -1198,15 +1207,26 @@ public interface SlnDslPackage extends EPackage
   EReference getConditional_Exp();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Conditional#getIns <em>Ins</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Conditional#getTrueIns <em>True Ins</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ins</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Conditional#getIns()
+   * @return the meta object for the containment reference list '<em>True Ins</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Conditional#getTrueIns()
    * @see #getConditional()
    * @generated
    */
-  EReference getConditional_Ins();
+  EReference getConditional_TrueIns();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Conditional#getFalseIns <em>False Ins</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>False Ins</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Conditional#getFalseIns()
+   * @see #getConditional()
+   * @generated
+   */
+  EReference getConditional_FalseIns();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Loop <em>Loop</em>}'.
@@ -1757,12 +1777,20 @@ public interface SlnDslPackage extends EPackage
     EReference CONDITIONAL__EXP = eINSTANCE.getConditional_Exp();
 
     /**
-     * The meta object literal for the '<em><b>Ins</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>True Ins</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONDITIONAL__INS = eINSTANCE.getConditional_Ins();
+    EReference CONDITIONAL__TRUE_INS = eINSTANCE.getConditional_TrueIns();
+
+    /**
+     * The meta object literal for the '<em><b>False Ins</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDITIONAL__FALSE_INS = eINSTANCE.getConditional_FalseIns();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl <em>Loop</em>}' class.

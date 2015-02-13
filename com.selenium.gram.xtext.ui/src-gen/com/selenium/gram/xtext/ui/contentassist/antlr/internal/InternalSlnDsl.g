@@ -2613,14 +2613,14 @@ rule__Conditional__Group__3__Impl
 :
 (
 (
-{ before(grammarAccess.getConditionalAccess().getInsAssignment_3()); }
-(rule__Conditional__InsAssignment_3)
-{ after(grammarAccess.getConditionalAccess().getInsAssignment_3()); }
+{ before(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); }
+(rule__Conditional__TrueInsAssignment_3)
+{ after(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); }
 )
 (
-{ before(grammarAccess.getConditionalAccess().getInsAssignment_3()); }
-(rule__Conditional__InsAssignment_3)*
-{ after(grammarAccess.getConditionalAccess().getInsAssignment_3()); }
+{ before(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); }
+(rule__Conditional__TrueInsAssignment_3)*
+{ after(grammarAccess.getConditionalAccess().getTrueInsAssignment_3()); }
 )
 )
 
@@ -2750,14 +2750,14 @@ rule__Conditional__Group_4__1__Impl
 :
 (
 (
-{ before(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); }
-(rule__Conditional__InsAssignment_4_1)
-{ after(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); }
+{ before(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); }
+(rule__Conditional__FalseInsAssignment_4_1)
+{ after(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); }
 )
 (
-{ before(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); }
-(rule__Conditional__InsAssignment_4_1)*
-{ after(grammarAccess.getConditionalAccess().getInsAssignment_4_1()); }
+{ before(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); }
+(rule__Conditional__FalseInsAssignment_4_1)*
+{ after(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1()); }
 )
 )
 
@@ -4333,14 +4333,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Conditional__InsAssignment_3
+rule__Conditional__TrueInsAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); }
-	ruleInstruction{ after(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); }
+{ before(grammarAccess.getConditionalAccess().getTrueInsInstructionParserRuleCall_3_0()); }
+	ruleInstruction{ after(grammarAccess.getConditionalAccess().getTrueInsInstructionParserRuleCall_3_0()); }
 )
 
 ;
@@ -4348,14 +4348,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Conditional__InsAssignment_4_1
+rule__Conditional__FalseInsAssignment_4_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); }
-	ruleInstruction{ after(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); }
+{ before(grammarAccess.getConditionalAccess().getFalseInsInstructionParserRuleCall_4_1_0()); }
+	ruleInstruction{ after(grammarAccess.getConditionalAccess().getFalseInsInstructionParserRuleCall_4_1_0()); }
 )
 
 ;

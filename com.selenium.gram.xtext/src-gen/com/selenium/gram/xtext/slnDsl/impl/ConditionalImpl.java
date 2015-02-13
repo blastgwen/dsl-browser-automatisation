@@ -31,7 +31,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ConditionalImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ConditionalImpl#getIns <em>Ins</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ConditionalImpl#getTrueIns <em>True Ins</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ConditionalImpl#getFalseIns <em>False Ins</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,14 +51,24 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   protected Expression exp;
 
   /**
-   * The cached value of the '{@link #getIns() <em>Ins</em>}' containment reference list.
+   * The cached value of the '{@link #getTrueIns() <em>True Ins</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIns()
+   * @see #getTrueIns()
    * @generated
    * @ordered
    */
-  protected EList<Instruction> ins;
+  protected EList<Instruction> trueIns;
+
+  /**
+   * The cached value of the '{@link #getFalseIns() <em>False Ins</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFalseIns()
+   * @generated
+   * @ordered
+   */
+  protected EList<Instruction> falseIns;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,13 +144,27 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Instruction> getIns()
+  public EList<Instruction> getTrueIns()
   {
-    if (ins == null)
+    if (trueIns == null)
     {
-      ins = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.CONDITIONAL__INS);
+      trueIns = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.CONDITIONAL__TRUE_INS);
     }
-    return ins;
+    return trueIns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Instruction> getFalseIns()
+  {
+    if (falseIns == null)
+    {
+      falseIns = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.CONDITIONAL__FALSE_INS);
+    }
+    return falseIns;
   }
 
   /**
@@ -154,8 +179,10 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
     {
       case SlnDslPackage.CONDITIONAL__EXP:
         return basicSetExp(null, msgs);
-      case SlnDslPackage.CONDITIONAL__INS:
-        return ((InternalEList<?>)getIns()).basicRemove(otherEnd, msgs);
+      case SlnDslPackage.CONDITIONAL__TRUE_INS:
+        return ((InternalEList<?>)getTrueIns()).basicRemove(otherEnd, msgs);
+      case SlnDslPackage.CONDITIONAL__FALSE_INS:
+        return ((InternalEList<?>)getFalseIns()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -172,8 +199,10 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
     {
       case SlnDslPackage.CONDITIONAL__EXP:
         return getExp();
-      case SlnDslPackage.CONDITIONAL__INS:
-        return getIns();
+      case SlnDslPackage.CONDITIONAL__TRUE_INS:
+        return getTrueIns();
+      case SlnDslPackage.CONDITIONAL__FALSE_INS:
+        return getFalseIns();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -192,9 +221,13 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
       case SlnDslPackage.CONDITIONAL__EXP:
         setExp((Expression)newValue);
         return;
-      case SlnDslPackage.CONDITIONAL__INS:
-        getIns().clear();
-        getIns().addAll((Collection<? extends Instruction>)newValue);
+      case SlnDslPackage.CONDITIONAL__TRUE_INS:
+        getTrueIns().clear();
+        getTrueIns().addAll((Collection<? extends Instruction>)newValue);
+        return;
+      case SlnDslPackage.CONDITIONAL__FALSE_INS:
+        getFalseIns().clear();
+        getFalseIns().addAll((Collection<? extends Instruction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,8 +246,11 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
       case SlnDslPackage.CONDITIONAL__EXP:
         setExp((Expression)null);
         return;
-      case SlnDslPackage.CONDITIONAL__INS:
-        getIns().clear();
+      case SlnDslPackage.CONDITIONAL__TRUE_INS:
+        getTrueIns().clear();
+        return;
+      case SlnDslPackage.CONDITIONAL__FALSE_INS:
+        getFalseIns().clear();
         return;
     }
     super.eUnset(featureID);
@@ -232,8 +268,10 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
     {
       case SlnDslPackage.CONDITIONAL__EXP:
         return exp != null;
-      case SlnDslPackage.CONDITIONAL__INS:
-        return ins != null && !ins.isEmpty();
+      case SlnDslPackage.CONDITIONAL__TRUE_INS:
+        return trueIns != null && !trueIns.isEmpty();
+      case SlnDslPackage.CONDITIONAL__FALSE_INS:
+        return falseIns != null && !falseIns.isEmpty();
     }
     return super.eIsSet(featureID);
   }

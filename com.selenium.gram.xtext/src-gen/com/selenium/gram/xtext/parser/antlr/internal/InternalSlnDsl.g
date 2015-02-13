@@ -1104,16 +1104,16 @@ ruleConditional returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getConditionalAccess().getTrueInsInstructionParserRuleCall_3_0()); 
 	    }
-		lv_ins_3_0=ruleInstruction		{
+		lv_trueIns_3_0=ruleInstruction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionalRule());
 	        }
        		add(
        			$current, 
-       			"ins",
-        		lv_ins_3_0, 
+       			"trueIns",
+        		lv_trueIns_3_0, 
         		"Instruction");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1126,16 +1126,16 @@ ruleConditional returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionalAccess().getInsInstructionParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getConditionalAccess().getFalseInsInstructionParserRuleCall_4_1_0()); 
 	    }
-		lv_ins_5_0=ruleInstruction		{
+		lv_falseIns_5_0=ruleInstruction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionalRule());
 	        }
        		add(
        			$current, 
-       			"ins",
-        		lv_ins_5_0, 
+       			"falseIns",
+        		lv_falseIns_5_0, 
         		"Instruction");
 	        afterParserOrEnumRuleCall();
 	    }

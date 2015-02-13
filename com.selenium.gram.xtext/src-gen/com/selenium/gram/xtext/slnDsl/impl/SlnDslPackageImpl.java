@@ -642,9 +642,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConditional_Ins()
+  public EReference getConditional_TrueIns()
   {
     return (EReference)conditionalEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConditional_FalseIns()
+  {
+    return (EReference)conditionalEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -890,7 +900,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     conditionalEClass = createEClass(CONDITIONAL);
     createEReference(conditionalEClass, CONDITIONAL__EXP);
-    createEReference(conditionalEClass, CONDITIONAL__INS);
+    createEReference(conditionalEClass, CONDITIONAL__TRUE_INS);
+    createEReference(conditionalEClass, CONDITIONAL__FALSE_INS);
 
     loopEClass = createEClass(LOOP);
     createEReference(loopEClass, LOOP__WHILE);
@@ -999,7 +1010,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConditional_Exp(), this.getExpression(), null, "exp", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConditional_Ins(), this.getInstruction(), null, "ins", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditional_TrueIns(), this.getInstruction(), null, "trueIns", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditional_FalseIns(), this.getInstruction(), null, "falseIns", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLoop_While(), this.getWhile(), null, "while", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

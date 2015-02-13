@@ -84,7 +84,7 @@ Assignation:
 ;
 
 Conditional:
-	'if' exp=Expression 'then' ins+=Instruction+ ('else' ins+=Instruction+)? 'endif'
+	'if' exp=Expression 'then' trueIns+=Instruction+ ('else' falseIns+=Instruction+)? 'endif'
 ;
 
 /*

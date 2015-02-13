@@ -75,8 +75,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Conditional">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ins" upperBound="-1" eType="#//Instruction"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trueIns" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="falseIns" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Loop">
     <eStructuralFeatures xsi:type="ecore:EReference" name="while" eType="#//While"

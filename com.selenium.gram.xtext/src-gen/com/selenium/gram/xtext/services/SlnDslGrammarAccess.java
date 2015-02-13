@@ -623,19 +623,19 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cExpAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExpExpressionParserRuleCall_1_0 = (RuleCall)cExpAssignment_1.eContents().get(0);
 		private final Keyword cThenKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cInsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInsInstructionParserRuleCall_3_0 = (RuleCall)cInsAssignment_3.eContents().get(0);
+		private final Assignment cTrueInsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTrueInsInstructionParserRuleCall_3_0 = (RuleCall)cTrueInsAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cElseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cInsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cInsInstructionParserRuleCall_4_1_0 = (RuleCall)cInsAssignment_4_1.eContents().get(0);
+		private final Assignment cFalseInsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cFalseInsInstructionParserRuleCall_4_1_0 = (RuleCall)cFalseInsAssignment_4_1.eContents().get(0);
 		private final Keyword cEndifKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Conditional:
-		//	"if" exp=Expression "then" ins+=Instruction+ ("else" ins+=Instruction+)? "endif";
+		//	"if" exp=Expression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif";
 		public ParserRule getRule() { return rule; }
 
-		//"if" exp=Expression "then" ins+=Instruction+ ("else" ins+=Instruction+)? "endif"
+		//"if" exp=Expression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif"
 		public Group getGroup() { return cGroup; }
 
 		//"if"
@@ -650,23 +650,23 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"then"
 		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
 
-		//ins+=Instruction+
-		public Assignment getInsAssignment_3() { return cInsAssignment_3; }
+		//trueIns+=Instruction+
+		public Assignment getTrueInsAssignment_3() { return cTrueInsAssignment_3; }
 
 		//Instruction
-		public RuleCall getInsInstructionParserRuleCall_3_0() { return cInsInstructionParserRuleCall_3_0; }
+		public RuleCall getTrueInsInstructionParserRuleCall_3_0() { return cTrueInsInstructionParserRuleCall_3_0; }
 
-		//("else" ins+=Instruction+)?
+		//("else" falseIns+=Instruction+)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"else"
 		public Keyword getElseKeyword_4_0() { return cElseKeyword_4_0; }
 
-		//ins+=Instruction+
-		public Assignment getInsAssignment_4_1() { return cInsAssignment_4_1; }
+		//falseIns+=Instruction+
+		public Assignment getFalseInsAssignment_4_1() { return cFalseInsAssignment_4_1; }
 
 		//Instruction
-		public RuleCall getInsInstructionParserRuleCall_4_1_0() { return cInsInstructionParserRuleCall_4_1_0; }
+		public RuleCall getFalseInsInstructionParserRuleCall_4_1_0() { return cFalseInsInstructionParserRuleCall_4_1_0; }
 
 		//"endif"
 		public Keyword getEndifKeyword_5() { return cEndifKeyword_5; }
@@ -1175,7 +1175,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Conditional:
-	//	"if" exp=Expression "then" ins+=Instruction+ ("else" ins+=Instruction+)? "endif";
+	//	"if" exp=Expression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif";
 	public ConditionalElements getConditionalAccess() {
 		return pConditional;
 	}

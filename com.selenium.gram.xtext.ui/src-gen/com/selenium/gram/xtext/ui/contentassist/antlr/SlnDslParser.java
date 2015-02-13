@@ -102,8 +102,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignationAccess().getVarAssignment_0(), "rule__Assignation__VarAssignment_0");
 					put(grammarAccess.getAssignationAccess().getExpAssignment_2(), "rule__Assignation__ExpAssignment_2");
 					put(grammarAccess.getConditionalAccess().getExpAssignment_1(), "rule__Conditional__ExpAssignment_1");
-					put(grammarAccess.getConditionalAccess().getInsAssignment_3(), "rule__Conditional__InsAssignment_3");
-					put(grammarAccess.getConditionalAccess().getInsAssignment_4_1(), "rule__Conditional__InsAssignment_4_1");
+					put(grammarAccess.getConditionalAccess().getTrueInsAssignment_3(), "rule__Conditional__TrueInsAssignment_3");
+					put(grammarAccess.getConditionalAccess().getFalseInsAssignment_4_1(), "rule__Conditional__FalseInsAssignment_4_1");
 					put(grammarAccess.getLoopAccess().getWhileAssignment_0(), "rule__Loop__WhileAssignment_0");
 					put(grammarAccess.getLoopAccess().getForAssignment_1(), "rule__Loop__ForAssignment_1");
 					put(grammarAccess.getWhileAccess().getCondAssignment_2(), "rule__While__CondAssignment_2");
