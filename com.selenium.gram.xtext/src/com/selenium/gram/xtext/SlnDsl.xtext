@@ -104,7 +104,7 @@ Foreach:
 ;
 
 ActionInstruction:
-	'open(' url=URL')'
+	'open' '(' url=URL ')'
 	| ('check'|'click') '('element=Expression')'
 	| 'type(' element=Expression ',' value=Expression ')'
 ;
@@ -117,6 +117,7 @@ ActionExpression :
  * URL
  */
 terminal URL:
+    
     ('a'..'z')+ '://' // Protocol
  
     ( // Hostname
