@@ -11,6 +11,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
+import org.eclipse.jface.dialogs.MessageDialog;
 
 import com.selenium.gram.xtext.interpreter.InterpretationException;
 import com.selenium.gram.xtext.interpreter.Interpreter;
@@ -25,12 +26,12 @@ import com.selenium.gram.xtext.slnDsl.impl.ModelImpl;
  * delegated to it.
  * @see IWorkbenchWindowActionDelegate
  */
-public class SampleAction implements IWorkbenchWindowActionDelegate {
+public class Action implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;
 	/**
 	 * The constructor.
 	 */
-	public SampleAction() {
+	public Action() {
 	}
 
 	/**
@@ -40,44 +41,32 @@ public class SampleAction implements IWorkbenchWindowActionDelegate {
 	 * @see IWorkbenchWindowActionDelegate#run
 	 */
 	public void run(IAction action) {
-try {
-			IEditorPart activeEditor = window.getActivePage().getActiveEditor(); 
+		IEditorPart activeEditor = window.getActivePage().getActiveEditor(); 
 
-			IFile file = (IFile) activeEditor.getEditorInput().getAdapter(IFile.class); 
+		IFile file = (IFile) activeEditor.getEditorInput().getAdapter(IFile.class); 
 
-			System.out.println("Loading file: " + file.getFullPath().toString());
+		ResourceSet rs = new ResourceSetImpl();
 
-			ResourceSet rs = new ResourceSetImpl();
+		Resource resource = rs.getResource(URI.createURI(file.getFullPath().toString()), true);
+		
+		EObject eobject = resource.getContents().get(0);
+		
+		System.out.println("EObject :" + eobject.getClass());
+		if (eobject instanceof Model) {
 			
-			System.out.println("ici");
+			System.out.println("je suis un model");
+			
+			Model model = (Model) eobject;
 
-			Resource resource = rs.getResource(URI.createURI(file.getFullPath().toString()), true);
-
-			System.out.println("la");
-			
-			EObject eobject = resource.getContents().get(0);
-			
-			System.out.println("Eobject : " + eobject.getClass());
-			
-			
-			if (eobject instanceof ModelImpl) {
-				
-				System.out.println("je suis un model");
-				
-				Model model = (Model) eobject;
-	
-				try {
-					new Interpreter().execute(model);
-				} catch (InterpretationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			} else {
-				System.out.println("je ne suis PAS un model");
+			try {
+				new Interpreter().execute(model);
+			} catch (InterpretationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-} catch (Exception e) {
-	e.printStackTrace();
-}
+		} else {
+			System.out.println("je ne suis PAS un model");
+		}
 	}
 
 	/**
