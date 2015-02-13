@@ -815,9 +815,10 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cOpenKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cUrlAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cUrlURLTerminalRuleCall_0_1_0 = (RuleCall)cUrlAssignment_0_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cUrlAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cUrlURLTerminalRuleCall_0_2_0 = (RuleCall)cUrlAssignment_0_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Keyword cCheckKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
@@ -836,28 +837,31 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
 		
 		//ActionInstruction:
-		//	"open(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
+		//	"open" "(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
 		//	value=Expression ")";
 		public ParserRule getRule() { return rule; }
 
-		//"open(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression "," value=Expression
-		//")"
+		//"open" "(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
+		//value=Expression ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"open(" url=URL ")"
+		//"open" "(" url=URL ")"
 		public Group getGroup_0() { return cGroup_0; }
 
-		//"open("
+		//"open"
 		public Keyword getOpenKeyword_0_0() { return cOpenKeyword_0_0; }
 
+		//"("
+		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+
 		//url=URL
-		public Assignment getUrlAssignment_0_1() { return cUrlAssignment_0_1; }
+		public Assignment getUrlAssignment_0_2() { return cUrlAssignment_0_2; }
 
 		//URL
-		public RuleCall getUrlURLTerminalRuleCall_0_1_0() { return cUrlURLTerminalRuleCall_0_1_0; }
+		public RuleCall getUrlURLTerminalRuleCall_0_2_0() { return cUrlURLTerminalRuleCall_0_2_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
+		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
 
 		//("check" | "click") "(" element=Expression ")"
 		public Group getGroup_1() { return cGroup_1; }
@@ -1213,7 +1217,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionInstruction:
-	//	"open(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
+	//	"open" "(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
 	//	value=Expression ")";
 	public ActionInstructionElements getActionInstructionAccess() {
 		return pActionInstruction;

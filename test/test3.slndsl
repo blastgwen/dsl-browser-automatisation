@@ -1,0 +1,9 @@
+subprocedure
+	var jaune = 9	
+endsub
+
+main 
+	var rouge = 9	 
+	rouge = 10
+	myFunction(rouge)
+endmain

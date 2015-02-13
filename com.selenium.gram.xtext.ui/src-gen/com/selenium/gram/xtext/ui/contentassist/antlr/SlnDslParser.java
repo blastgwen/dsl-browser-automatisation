@@ -111,7 +111,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForeachAccess().getVarAssignment_2(), "rule__Foreach__VarAssignment_2");
 					put(grammarAccess.getForeachAccess().getExpAssignment_4(), "rule__Foreach__ExpAssignment_4");
 					put(grammarAccess.getForeachAccess().getInsAssignment_7(), "rule__Foreach__InsAssignment_7");
-					put(grammarAccess.getActionInstructionAccess().getUrlAssignment_0_1(), "rule__ActionInstruction__UrlAssignment_0_1");
+					put(grammarAccess.getActionInstructionAccess().getUrlAssignment_0_2(), "rule__ActionInstruction__UrlAssignment_0_2");
 					put(grammarAccess.getActionInstructionAccess().getElementAssignment_1_2(), "rule__ActionInstruction__ElementAssignment_1_2");
 					put(grammarAccess.getActionInstructionAccess().getElementAssignment_2_1(), "rule__ActionInstruction__ElementAssignment_2_1");
 					put(grammarAccess.getActionInstructionAccess().getValueAssignment_2_3(), "rule__ActionInstruction__ValueAssignment_2_3");

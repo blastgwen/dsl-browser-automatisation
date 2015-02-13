@@ -5,7 +5,7 @@ public class Interpreter {
 
 	public void execute(Model model) {
 		
-		System.out.println("---------- DEBUT INTERPRETER -------- ");
+		System.out.println("---------- DEBUT INTERPRETER --------");
 		
 	}
 }

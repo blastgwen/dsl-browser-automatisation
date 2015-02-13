@@ -1,0 +1,4 @@
+main 
+	var rouge = 9	 
+	rouge = 10
+endmain
