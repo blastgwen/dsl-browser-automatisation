@@ -8,18 +8,19 @@ import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
 import com.selenium.gram.xtext.slnDsl.Expression;
+import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
+import com.selenium.gram.xtext.slnDsl.While;
 
 public class Interpreter {
 
 	private Map<String, Subprocedure> subprocedures;
 	
-	private Map<String, Expression> variables = new HashMap<String, Expression>();
 	
 	public void execute(Model model) throws InterpretationException {
 				
@@ -30,12 +31,14 @@ public class Interpreter {
 			subprocedures.put(sub.getHead().getName().getName(), sub);
 		}
 		
+		Map<String, Expression> variables = new HashMap<String, Expression>();
+		
 		for(Instruction ins : model.getMain()){
-			this.executeInstruction(ins);
+			this.executeInstruction(ins, variables);
 		}
 	}
 	
-	private void executeInstruction(Instruction instruction) throws InterpretationException{
+	private void executeInstruction(Instruction instruction, Map<String, Expression> variables) throws InterpretationException{
 		// Déclaration d'une variable
 		if(instruction instanceof Definition){
 			Definition def = (Definition) instruction;
@@ -62,27 +65,43 @@ public class Interpreter {
 			
 			if(this.getBooleanValue(cond.getExp())){
 				for(Instruction condIns : cond.getTrueIns()){
-					this.executeInstruction(condIns);
+					this.executeInstruction(condIns, variables);
 				}
 			}
 			else{
 				for(Instruction condIns : cond.getFalseIns()){
-					this.executeInstruction(condIns);
+					this.executeInstruction(condIns, variables);
 				}				
 			}
 		}
+		
 		// Execute une boucle
 		if(instruction instanceof Loop){
 			Loop loop = (Loop) instruction;
-			
+
+			if(loop.getWhile() != null){
+				this.executeWhile(loop.getWhile());
+			}
+			else{
+				this.executeFor(loop.getFor());
+			}
 		}
+		
 		// Execute une action Selenium
 		if(instruction instanceof ActionInstruction){
-			
+			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);
 		}		
+		
 		// Execute une assignatio de variable
 		if(instruction instanceof Assignation){
+			Assignation assign = (Assignation) instruction;
 			
+			if(variables.containsKey(assign.getVar().getVarID().getName())){
+				variables.replace(assign.getVar().getVarID().getName(), assign.getExp());
+			}
+			else {
+				throw new InterpretationException(Assignation.class.getName());
+			}
 		}
 	}
 	
@@ -94,5 +113,13 @@ public class Interpreter {
 	private Boolean getBooleanValue(Expression exp){
 		
 		return false;
+	}
+	
+	private void executeWhile(While whileInstruction){
+		
+	}
+	
+	private void executeFor(Foreach forInstruction){
+		
 	}
 }
