@@ -1,8 +1,19 @@
 package com.selenium.gram.xtext.interpreter;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.selenium.gram.xtext.slnDsl.*;
+import com.selenium.gram.xtext.slnDsl.ActionInstruction;
+import com.selenium.gram.xtext.slnDsl.Assignation;
+import com.selenium.gram.xtext.slnDsl.Conditional;
+import com.selenium.gram.xtext.slnDsl.Definition;
+import com.selenium.gram.xtext.slnDsl.Expression;
+import com.selenium.gram.xtext.slnDsl.FunctionCall;
+import com.selenium.gram.xtext.slnDsl.FunctionReference;
+import com.selenium.gram.xtext.slnDsl.Instruction;
+import com.selenium.gram.xtext.slnDsl.Loop;
+import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.Subprocedure;
 
 public class Interpreter {
 

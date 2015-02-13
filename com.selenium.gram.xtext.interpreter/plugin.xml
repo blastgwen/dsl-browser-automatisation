@@ -16,13 +16,13 @@
             </separator>
          </menu>
          <action
-               label="&amp;Sample Action"
+               label="&amp;Action"
                icon="icons/sample.gif"
-               class="com.selenium.gram.xtext.interpreter.actions.SampleAction"
-               tooltip="Hello, Eclipse world"
+               class="com.selenium.gram.xtext.interpreter.actions.Action"
+               tooltip="Execute Interpreter"
                menubarPath="sampleMenu/sampleGroup"
                toolbarPath="sampleGroup"
-               id="com.selenium.gram.xtext.interpreter.actions.SampleAction">
+               id="com.selenium.gram.xtext.interpreter.actions.Action">
          </action>
       </actionSet>
    </extension>
