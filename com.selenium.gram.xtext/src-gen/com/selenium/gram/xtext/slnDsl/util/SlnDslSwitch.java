@@ -98,6 +98,7 @@ public class SlnDslSwitch<T> extends Switch<T>
         FunctionReference functionReference = (FunctionReference)theEObject;
         T result = caseFunctionReference(functionReference);
         if (result == null) result = caseFunctionCall(functionReference);
+        if (result == null) result = caseInstruction(functionReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -112,6 +113,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         FunctionCall functionCall = (FunctionCall)theEObject;
         T result = caseFunctionCall(functionCall);
+        if (result == null) result = caseInstruction(functionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -119,6 +121,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         VariableReference variableReference = (VariableReference)theEObject;
         T result = caseVariableReference(variableReference);
+        if (result == null) result = caseExpression(variableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,6 +139,22 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.LIST_EXPRESSION:
+      {
+        ListExpression listExpression = (ListExpression)theEObject;
+        T result = caseListExpression(listExpression);
+        if (result == null) result = caseExpression(listExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.BOOLEAN_EXPRESSION:
+      {
+        BooleanExpression booleanExpression = (BooleanExpression)theEObject;
+        T result = caseBooleanExpression(booleanExpression);
+        if (result == null) result = caseExpression(booleanExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.INSTRUCTION:
       {
         Instruction instruction = (Instruction)theEObject;
@@ -147,6 +166,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Definition definition = (Definition)theEObject;
         T result = caseDefinition(definition);
+        if (result == null) result = caseInstruction(definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -154,6 +174,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Assignation assignation = (Assignation)theEObject;
         T result = caseAssignation(assignation);
+        if (result == null) result = caseInstruction(assignation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,6 +182,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Conditional conditional = (Conditional)theEObject;
         T result = caseConditional(conditional);
+        if (result == null) result = caseInstruction(conditional);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -168,6 +190,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Loop loop = (Loop)theEObject;
         T result = caseLoop(loop);
+        if (result == null) result = caseInstruction(loop);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -189,6 +212,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionInstruction actionInstruction = (ActionInstruction)theEObject;
         T result = caseActionInstruction(actionInstruction);
+        if (result == null) result = caseInstruction(actionInstruction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -196,6 +220,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionExpression actionExpression = (ActionExpression)theEObject;
         T result = caseActionExpression(actionExpression);
+        if (result == null) result = caseExpression(actionExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -343,6 +368,38 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListExpression(ListExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanExpression(BooleanExpression object)
   {
     return null;
   }

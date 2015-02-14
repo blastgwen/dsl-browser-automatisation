@@ -73,6 +73,8 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.VARIABLE_REFERENCE: return createVariableReference();
       case SlnDslPackage.VARIABLE_NAME: return createVariableName();
       case SlnDslPackage.EXPRESSION: return createExpression();
+      case SlnDslPackage.LIST_EXPRESSION: return createListExpression();
+      case SlnDslPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
       case SlnDslPackage.INSTRUCTION: return createInstruction();
       case SlnDslPackage.DEFINITION: return createDefinition();
       case SlnDslPackage.ASSIGNATION: return createAssignation();
@@ -184,6 +186,28 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListExpression createListExpression()
+  {
+    ListExpressionImpl listExpression = new ListExpressionImpl();
+    return listExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanExpression createBooleanExpression()
+  {
+    BooleanExpressionImpl booleanExpression = new BooleanExpressionImpl();
+    return booleanExpression;
   }
 
   /**

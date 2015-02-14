@@ -2,7 +2,6 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface FunctionCall extends EObject
+public interface FunctionCall extends Instruction
 {
 } // FunctionCall

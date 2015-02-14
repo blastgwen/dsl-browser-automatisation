@@ -40,8 +40,12 @@ public class Interpreter {
 	
 	private void executeInstruction(Instruction instruction, Map<String, Expression> variables) throws InterpretationException{
 		// Déclaration d'une variable
+		System.out.println("execute instruction : " +instruction.eClass().getName());
 		if(instruction instanceof Definition){
+			System.out.println("execute def2");
 			Definition def = (Definition) instruction;
+			System.out.println("varial exp : "+def.getExp().getClass().getName());
+			System.out.println("var name"+def.getVarID());
 			if(variables.containsKey(def.getVarID().getName())){
 				throw new InterpretationException(Definition.class.getName());
 			}
@@ -51,6 +55,7 @@ public class Interpreter {
 		}
 		// Execute un appel de fonction
 		if(instruction instanceof FunctionReference){
+			System.out.println("execute func call : " +instruction.eClass().getName());
 			FunctionReference func = (FunctionReference) instruction;
 			if(subprocedures.containsKey(func.getFunctionName().getName())){
 				this.executeFunction(func);
@@ -61,6 +66,7 @@ public class Interpreter {
 		}		
 		// Execute une condition
 		if(instruction instanceof Conditional){
+			System.out.println("execute cond");
 			Conditional cond = (Conditional) instruction;
 			
 			if(this.getBooleanValue(cond.getExp())){
@@ -77,16 +83,18 @@ public class Interpreter {
 		
 		// Execute une boucle
 		if(instruction instanceof Loop){
+			System.out.println("execute boucle");
 			Loop loop = (Loop) instruction;
 
 			if(loop.getWhile() != null){
+				System.out.println("execute while");
 				this.executeWhile(loop.getWhile(), variables);
 			}
 			else{
+				System.out.println("execute for");
 				this.executeFor(loop.getFor(), variables);
 			}
 		}
-		
 		// Execute une action Selenium
 		if(instruction instanceof ActionInstruction){
 			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);

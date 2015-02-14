@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ActionExpressionImpl extends MinimalEObjectImpl.Container implements ActionExpression
+public class ActionExpressionImpl extends ExpressionImpl implements ActionExpression
 {
   /**
    * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.

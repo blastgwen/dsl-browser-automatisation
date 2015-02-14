@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
+public class LoopImpl extends InstructionImpl implements Loop
 {
   /**
    * The cached value of the '{@link #getWhile() <em>While</em>}' containment reference.

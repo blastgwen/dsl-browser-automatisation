@@ -4,8 +4,6 @@ package com.selenium.gram.xtext.slnDsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Conditional</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Conditional extends EObject
+public interface Conditional extends Instruction
 {
   /**
    * Returns the value of the '<em><b>Exp</b></em>' containment reference.

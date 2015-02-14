@@ -55,24 +55,37 @@ NumberLiteral:
  */
 
 Expression:
-	var=VariableReference
+	VariableReference
 	| NumberLiteral
-	| ('!'|'sizeof') '(' exp=Expression ')'
-	| ('All' | 'Any') '(' 'var'  varName=VariableName '->' exp=Expression ')'
-	| ('=='|'<'|'>') left=Expression right=Expression
-	| act=ActionExpression
+	| ListExpression
+	| BooleanExpression
+	| ActionExpression
+;
+
+ListExpression :
+	('All' | 'Any') '(' 'var'  varName=VariableName '->' exp=Expression ')'
+	| 'sizeof' '(' exp=Expression ')'
+;
+
+BooleanExpression :
+	BooleanOperator left=Expression right=Expression
+	| '!' exp = Expression
+;
+
+BooleanOperator :
+	('=='|'<'|'>')
 ;
 
 /*
  * Type of Instruction
  */
 Instruction:
-	def=Definition
-	| func=FunctionCall 
-	| cond=Conditional
-	| loop=Loop
-	| act=ActionInstruction
-	| ass=Assignation
+	Definition
+	| FunctionCall 
+	| Conditional
+	| Loop
+	| ActionInstruction
+	| Assignation
 ;
 
 Definition:

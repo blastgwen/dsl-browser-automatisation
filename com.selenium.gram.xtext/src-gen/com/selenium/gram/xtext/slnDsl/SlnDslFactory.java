@@ -104,6 +104,24 @@ public interface SlnDslFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>List Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Expression</em>'.
+   * @generated
+   */
+  ListExpression createListExpression();
+
+  /**
+   * Returns a new object of class '<em>Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Expression</em>'.
+   * @generated
+   */
+  BooleanExpression createBooleanExpression();
+
+  /**
    * Returns a new object of class '<em>Instruction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

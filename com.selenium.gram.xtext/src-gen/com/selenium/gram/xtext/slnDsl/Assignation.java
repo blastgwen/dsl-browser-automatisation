@@ -2,7 +2,6 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Assignation extends EObject
+public interface Assignation extends Instruction
 {
   /**
    * Returns the value of the '<em><b>Var</b></em>' containment reference.

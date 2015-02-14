@@ -168,6 +168,25 @@ public interface SlnDslPackage extends EPackage
   int HEAD_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl <em>Instruction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.InstructionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getInstruction()
+   * @generated
+   */
+  int INSTRUCTION = 11;
+
+  /**
+   * The number of structural features of the '<em>Instruction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.FunctionCallImpl <em>Function Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -184,7 +203,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_CALL_FEATURE_COUNT = 0;
+  int FUNCTION_CALL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.FunctionReferenceImpl <em>Function Reference</em>}' class.
@@ -252,6 +271,25 @@ public interface SlnDslPackage extends EPackage
   int FUNCTION_NAME_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 8;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -268,7 +306,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_REFERENCE__VAR_ID = 0;
+  int VARIABLE_REFERENCE__VAR_ID = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable Reference</em>' class.
@@ -277,7 +315,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_REFERENCE_FEATURE_COUNT = 1;
+  int VARIABLE_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.VariableNameImpl <em>Variable Name</em>}' class.
@@ -308,32 +346,14 @@ public interface SlnDslPackage extends EPackage
   int VARIABLE_NAME_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl <em>Expression</em>}' class.
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl <em>List Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl
-   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getExpression()
+   * @see com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getListExpression()
    * @generated
    */
-  int EXPRESSION = 8;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__VAR = 0;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__EXP = 1;
+  int LIST_EXPRESSION = 9;
 
   /**
    * The feature id for the '<em><b>Var Name</b></em>' containment reference.
@@ -342,7 +362,35 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__VAR_NAME = 2;
+  int LIST_EXPRESSION__VAR_NAME = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_EXPRESSION__EXP = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>List Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.BooleanExpressionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanExpression()
+   * @generated
+   */
+  int BOOLEAN_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -351,7 +399,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__LEFT = 3;
+  int BOOLEAN_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -360,98 +408,25 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__RIGHT = 4;
+  int BOOLEAN_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Act</b></em>' containment reference.
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__ACT = 5;
+  int BOOLEAN_EXPRESSION__EXP = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Expression</em>' class.
+   * The number of structural features of the '<em>Boolean Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 6;
-
-  /**
-   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl <em>Instruction</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.selenium.gram.xtext.slnDsl.impl.InstructionImpl
-   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getInstruction()
-   * @generated
-   */
-  int INSTRUCTION = 9;
-
-  /**
-   * The feature id for the '<em><b>Def</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__DEF = 0;
-
-  /**
-   * The feature id for the '<em><b>Func</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__FUNC = 1;
-
-  /**
-   * The feature id for the '<em><b>Cond</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__COND = 2;
-
-  /**
-   * The feature id for the '<em><b>Loop</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__LOOP = 3;
-
-  /**
-   * The feature id for the '<em><b>Act</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__ACT = 4;
-
-  /**
-   * The feature id for the '<em><b>Ass</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION__ASS = 5;
-
-  /**
-   * The number of structural features of the '<em>Instruction</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION_FEATURE_COUNT = 6;
+  int BOOLEAN_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl <em>Definition</em>}' class.
@@ -461,7 +436,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getDefinition()
    * @generated
    */
-  int DEFINITION = 10;
+  int DEFINITION = 12;
 
   /**
    * The feature id for the '<em><b>Var ID</b></em>' containment reference.
@@ -470,7 +445,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION__VAR_ID = 0;
+  int DEFINITION__VAR_ID = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -479,7 +454,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION__EXP = 1;
+  int DEFINITION__EXP = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Definition</em>' class.
@@ -488,7 +463,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION_FEATURE_COUNT = 2;
+  int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.AssignationImpl <em>Assignation</em>}' class.
@@ -498,7 +473,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getAssignation()
    * @generated
    */
-  int ASSIGNATION = 11;
+  int ASSIGNATION = 13;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -507,7 +482,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNATION__VAR = 0;
+  int ASSIGNATION__VAR = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -516,7 +491,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNATION__EXP = 1;
+  int ASSIGNATION__EXP = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Assignation</em>' class.
@@ -525,7 +500,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNATION_FEATURE_COUNT = 2;
+  int ASSIGNATION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ConditionalImpl <em>Conditional</em>}' class.
@@ -535,7 +510,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getConditional()
    * @generated
    */
-  int CONDITIONAL = 12;
+  int CONDITIONAL = 14;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -544,7 +519,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL__EXP = 0;
+  int CONDITIONAL__EXP = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>True Ins</b></em>' containment reference list.
@@ -553,7 +528,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL__TRUE_INS = 1;
+  int CONDITIONAL__TRUE_INS = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>False Ins</b></em>' containment reference list.
@@ -562,7 +537,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL__FALSE_INS = 2;
+  int CONDITIONAL__FALSE_INS = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Conditional</em>' class.
@@ -571,7 +546,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONDITIONAL_FEATURE_COUNT = 3;
+  int CONDITIONAL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.LoopImpl <em>Loop</em>}' class.
@@ -581,7 +556,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getLoop()
    * @generated
    */
-  int LOOP = 13;
+  int LOOP = 15;
 
   /**
    * The feature id for the '<em><b>While</b></em>' containment reference.
@@ -590,7 +565,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOOP__WHILE = 0;
+  int LOOP__WHILE = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>For</b></em>' containment reference.
@@ -599,7 +574,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOOP__FOR = 1;
+  int LOOP__FOR = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Loop</em>' class.
@@ -608,7 +583,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LOOP_FEATURE_COUNT = 2;
+  int LOOP_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.WhileImpl <em>While</em>}' class.
@@ -618,7 +593,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 14;
+  int WHILE = 16;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -655,7 +630,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getForeach()
    * @generated
    */
-  int FOREACH = 15;
+  int FOREACH = 17;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -701,7 +676,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionInstruction()
    * @generated
    */
-  int ACTION_INSTRUCTION = 16;
+  int ACTION_INSTRUCTION = 18;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -710,7 +685,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_INSTRUCTION__URL = 0;
+  int ACTION_INSTRUCTION__URL = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -719,7 +694,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_INSTRUCTION__ELEMENT = 1;
+  int ACTION_INSTRUCTION__ELEMENT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -728,7 +703,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_INSTRUCTION__VALUE = 2;
+  int ACTION_INSTRUCTION__VALUE = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Action Instruction</em>' class.
@@ -737,7 +712,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_INSTRUCTION_FEATURE_COUNT = 3;
+  int ACTION_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
@@ -747,7 +722,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionExpression()
    * @generated
    */
-  int ACTION_EXPRESSION = 17;
+  int ACTION_EXPRESSION = 19;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -756,7 +731,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_EXPRESSION__ELEMENT = 0;
+  int ACTION_EXPRESSION__ELEMENT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Action Expression</em>' class.
@@ -765,7 +740,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_EXPRESSION_FEATURE_COUNT = 1;
+  int ACTION_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -980,70 +955,79 @@ public interface SlnDslPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getVar <em>Var</em>}'.
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ListExpression <em>List Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Expression#getVar()
-   * @see #getExpression()
+   * @return the meta object for class '<em>List Expression</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ListExpression
    * @generated
    */
-  EReference getExpression_Var();
+  EClass getListExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Expression#getExp()
-   * @see #getExpression()
-   * @generated
-   */
-  EReference getExpression_Exp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getVarName <em>Var Name</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ListExpression#getVarName <em>Var Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Var Name</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Expression#getVarName()
-   * @see #getExpression()
+   * @see com.selenium.gram.xtext.slnDsl.ListExpression#getVarName()
+   * @see #getListExpression()
    * @generated
    */
-  EReference getExpression_VarName();
+  EReference getListExpression_VarName();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getLeft <em>Left</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ListExpression#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ListExpression#getExp()
+   * @see #getListExpression()
+   * @generated
+   */
+  EReference getListExpression_Exp();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.BooleanExpression <em>Boolean Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Expression</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BooleanExpression
+   * @generated
+   */
+  EClass getBooleanExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BooleanExpression#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Expression#getLeft()
-   * @see #getExpression()
+   * @see com.selenium.gram.xtext.slnDsl.BooleanExpression#getLeft()
+   * @see #getBooleanExpression()
    * @generated
    */
-  EReference getExpression_Left();
+  EReference getBooleanExpression_Left();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BooleanExpression#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Expression#getRight()
-   * @see #getExpression()
+   * @see com.selenium.gram.xtext.slnDsl.BooleanExpression#getRight()
+   * @see #getBooleanExpression()
    * @generated
    */
-  EReference getExpression_Right();
+  EReference getBooleanExpression_Right();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Expression#getAct <em>Act</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BooleanExpression#getExp <em>Exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Act</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Expression#getAct()
-   * @see #getExpression()
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BooleanExpression#getExp()
+   * @see #getBooleanExpression()
    * @generated
    */
-  EReference getExpression_Act();
+  EReference getBooleanExpression_Exp();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Instruction <em>Instruction</em>}'.
@@ -1054,72 +1038,6 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getInstruction();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Instruction#getDef <em>Def</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Def</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getDef()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Def();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Instruction#getFunc <em>Func</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Func</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getFunc()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Func();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Instruction#getCond <em>Cond</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cond</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getCond()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Cond();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Instruction#getLoop <em>Loop</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Loop</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getLoop()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Loop();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Instruction#getAct <em>Act</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Act</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getAct()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Act();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Instruction#getAss <em>Ass</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ass</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Instruction#getAss()
-   * @see #getInstruction()
-   * @generated
-   */
-  EReference getInstruction_Ass();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Definition <em>Definition</em>}'.
@@ -1601,20 +1519,14 @@ public interface SlnDslPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl <em>List Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getListExpression()
      * @generated
      */
-    EReference EXPRESSION__VAR = eINSTANCE.getExpression_Var();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRESSION__EXP = eINSTANCE.getExpression_Exp();
+    EClass LIST_EXPRESSION = eINSTANCE.getListExpression();
 
     /**
      * The meta object literal for the '<em><b>Var Name</b></em>' containment reference feature.
@@ -1622,7 +1534,25 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__VAR_NAME = eINSTANCE.getExpression_VarName();
+    EReference LIST_EXPRESSION__VAR_NAME = eINSTANCE.getListExpression_VarName();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_EXPRESSION__EXP = eINSTANCE.getListExpression_Exp();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.BooleanExpressionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanExpression()
+     * @generated
+     */
+    EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -1630,7 +1560,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__LEFT = eINSTANCE.getExpression_Left();
+    EReference BOOLEAN_EXPRESSION__LEFT = eINSTANCE.getBooleanExpression_Left();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -1638,15 +1568,15 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__RIGHT = eINSTANCE.getExpression_Right();
+    EReference BOOLEAN_EXPRESSION__RIGHT = eINSTANCE.getBooleanExpression_Right();
 
     /**
-     * The meta object literal for the '<em><b>Act</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__ACT = eINSTANCE.getExpression_Act();
+    EReference BOOLEAN_EXPRESSION__EXP = eINSTANCE.getBooleanExpression_Exp();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -1657,54 +1587,6 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass INSTRUCTION = eINSTANCE.getInstruction();
-
-    /**
-     * The meta object literal for the '<em><b>Def</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__DEF = eINSTANCE.getInstruction_Def();
-
-    /**
-     * The meta object literal for the '<em><b>Func</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__FUNC = eINSTANCE.getInstruction_Func();
-
-    /**
-     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__COND = eINSTANCE.getInstruction_Cond();
-
-    /**
-     * The meta object literal for the '<em><b>Loop</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__LOOP = eINSTANCE.getInstruction_Loop();
-
-    /**
-     * The meta object literal for the '<em><b>Act</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__ACT = eINSTANCE.getInstruction_Act();
-
-    /**
-     * The meta object literal for the '<em><b>Ass</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION__ASS = eINSTANCE.getInstruction_Ass();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl <em>Definition</em>}' class.

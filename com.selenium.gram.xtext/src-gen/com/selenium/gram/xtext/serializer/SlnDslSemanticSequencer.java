@@ -6,14 +6,14 @@ import com.selenium.gram.xtext.services.SlnDslGrammarAccess;
 import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
-import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionName;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.Head;
-import com.selenium.gram.xtext.slnDsl.Instruction;
+import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
@@ -42,38 +42,44 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SlnDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case SlnDslPackage.ACTION_EXPRESSION:
-				if(context == grammarAccess.getActionExpressionRule()) {
+				if(context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getExpressionRule()) {
 					sequence_ActionExpression(context, (ActionExpression) semanticObject); 
 					return; 
 				}
 				else break;
 			case SlnDslPackage.ACTION_INSTRUCTION:
-				if(context == grammarAccess.getActionInstructionRule()) {
+				if(context == grammarAccess.getActionInstructionRule() ||
+				   context == grammarAccess.getInstructionRule()) {
 					sequence_ActionInstruction(context, (ActionInstruction) semanticObject); 
 					return; 
 				}
 				else break;
 			case SlnDslPackage.ASSIGNATION:
-				if(context == grammarAccess.getAssignationRule()) {
+				if(context == grammarAccess.getAssignationRule() ||
+				   context == grammarAccess.getInstructionRule()) {
 					sequence_Assignation(context, (Assignation) semanticObject); 
 					return; 
 				}
 				else break;
+			case SlnDslPackage.BOOLEAN_EXPRESSION:
+				if(context == grammarAccess.getBooleanExpressionRule() ||
+				   context == grammarAccess.getExpressionRule()) {
+					sequence_BooleanExpression(context, (BooleanExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlnDslPackage.CONDITIONAL:
-				if(context == grammarAccess.getConditionalRule()) {
+				if(context == grammarAccess.getConditionalRule() ||
+				   context == grammarAccess.getInstructionRule()) {
 					sequence_Conditional(context, (Conditional) semanticObject); 
 					return; 
 				}
 				else break;
 			case SlnDslPackage.DEFINITION:
-				if(context == grammarAccess.getDefinitionRule()) {
+				if(context == grammarAccess.getDefinitionRule() ||
+				   context == grammarAccess.getInstructionRule()) {
 					sequence_Definition(context, (Definition) semanticObject); 
-					return; 
-				}
-				else break;
-			case SlnDslPackage.EXPRESSION:
-				if(context == grammarAccess.getExpressionRule()) {
-					sequence_Expression(context, (Expression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -91,7 +97,8 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else break;
 			case SlnDslPackage.FUNCTION_REFERENCE:
 				if(context == grammarAccess.getFunctionCallRule() ||
-				   context == grammarAccess.getFunctionReferenceRule()) {
+				   context == grammarAccess.getFunctionReferenceRule() ||
+				   context == grammarAccess.getInstructionRule()) {
 					sequence_FunctionReference(context, (FunctionReference) semanticObject); 
 					return; 
 				}
@@ -102,14 +109,16 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case SlnDslPackage.INSTRUCTION:
-				if(context == grammarAccess.getInstructionRule()) {
-					sequence_Instruction(context, (Instruction) semanticObject); 
+			case SlnDslPackage.LIST_EXPRESSION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getListExpressionRule()) {
+					sequence_ListExpression(context, (ListExpression) semanticObject); 
 					return; 
 				}
 				else break;
 			case SlnDslPackage.LOOP:
-				if(context == grammarAccess.getLoopRule()) {
+				if(context == grammarAccess.getInstructionRule() ||
+				   context == grammarAccess.getLoopRule()) {
 					sequence_Loop(context, (Loop) semanticObject); 
 					return; 
 				}
@@ -133,7 +142,8 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case SlnDslPackage.VARIABLE_REFERENCE:
-				if(context == grammarAccess.getVariableReferenceRule()) {
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getVariableReferenceRule()) {
 					sequence_VariableReference(context, (VariableReference) semanticObject); 
 					return; 
 				}
@@ -194,6 +204,15 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     ((left=Expression right=Expression) | exp=Expression)
+	 */
+	protected void sequence_BooleanExpression(EObject context, BooleanExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (exp=Expression trueIns+=Instruction+ falseIns+=Instruction*)
 	 */
 	protected void sequence_Conditional(EObject context, Conditional semanticObject) {
@@ -217,15 +236,6 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		feeder.accept(grammarAccess.getDefinitionAccess().getVarIDVariableNameParserRuleCall_1_0(), semanticObject.getVarID());
 		feeder.accept(grammarAccess.getDefinitionAccess().getExpExpressionParserRuleCall_3_0(), semanticObject.getExp());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (var=VariableReference | exp=Expression | (varName=VariableName exp=Expression) | (left=Expression right=Expression) | act=ActionExpression)?
-	 */
-	protected void sequence_Expression(EObject context, Expression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -274,16 +284,9 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         def=Definition | 
-	 *         func=FunctionCall | 
-	 *         cond=Conditional | 
-	 *         loop=Loop | 
-	 *         act=ActionInstruction | 
-	 *         ass=Assignation
-	 *     )
+	 *     ((varName=VariableName exp=Expression) | exp=Expression)
 	 */
-	protected void sequence_Instruction(EObject context, Instruction semanticObject) {
+	protected void sequence_ListExpression(EObject context, ListExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

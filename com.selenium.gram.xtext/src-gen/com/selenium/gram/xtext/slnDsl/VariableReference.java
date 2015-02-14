@@ -2,7 +2,6 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface VariableReference extends EObject
+public interface VariableReference extends Expression
 {
   /**
    * Returns the value of the '<em><b>Var ID</b></em>' reference.

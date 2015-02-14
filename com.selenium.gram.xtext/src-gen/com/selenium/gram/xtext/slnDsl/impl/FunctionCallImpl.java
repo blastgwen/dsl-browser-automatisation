@@ -7,8 +7,6 @@ import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Function Call</b></em>'.
@@ -18,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class FunctionCallImpl extends MinimalEObjectImpl.Container implements FunctionCall
+public class FunctionCallImpl extends InstructionImpl implements FunctionCall
 {
   /**
    * <!-- begin-user-doc -->
