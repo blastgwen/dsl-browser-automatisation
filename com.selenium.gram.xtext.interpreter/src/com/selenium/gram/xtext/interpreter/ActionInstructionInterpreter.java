@@ -24,7 +24,7 @@ public class ActionInstructionInterpreter {
 				WebDriver driver = sel.getDriver();
 				driver.get(act.getUrl());
 				System.out.println("J'ai fini l'action open");
-			} catch (Exception e){
+			} catch (Throwable e){
 				System.out.println(e);
 			}
 			
