@@ -53,7 +53,7 @@ public class Interpreter {
 		System.out.println("execute instruction : " +instruction.eClass().getName());
 
 		
-		if(instruction.eClass().getName().equals(Definition.class.getSimpleName())){
+		if(instruction instanceof Definition){
 			DefinitionImpl def = ((DefinitionImpl) instruction);
 
 			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
@@ -68,7 +68,7 @@ public class Interpreter {
 			}	
 		}
 		// Execute un appel de fonction
-		if(instruction.eClass().getName().equals(FunctionReference.class.getSimpleName())){
+		if(instruction instanceof FunctionReference){
 			System.out.println("execute func call : " +instruction.eClass().getName());
 			FunctionReference func = (FunctionReference) instruction;
 			if(subprocedures.containsKey(func.getFunctionName().getName())){
@@ -79,7 +79,7 @@ public class Interpreter {
 			}
 		}		
 		// Execute une condition
-		if(instruction.eClass().getName().equals(Conditional.class.getSimpleName())){
+		if(instruction instanceof Conditional){
 			System.out.println("execute cond");
 			Conditional cond = (Conditional) instruction;
 			
@@ -96,7 +96,7 @@ public class Interpreter {
 		}
 		
 		// Execute une boucle
-		if(instruction.eClass().getName().equals(Loop.class.getSimpleName())){
+		if(instruction instanceof Loop){
 			System.out.println("execute boucle");
 			Loop loop = (Loop) instruction;
 
@@ -109,14 +109,15 @@ public class Interpreter {
 				this.executeFor(loop.getFor(), variables);
 			}
 		}
+		
 		// Execute une action Selenium
-		if(instruction.eClass().getName().equals(ActionInstruction.class.getSimpleName())){
+		if(instruction instanceof ActionInstruction){
 			System.out.println("execute ActionInstruction : " + instruction.getClass().getName());
 			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);
 		}		
 		
 		// Execute une assignatio de variable
-		if(instruction.eClass().getName().equals(Assignation.class.getSimpleName())){
+		if(instruction instanceof Assignation){
 			Assignation assign = (Assignation) instruction;
 			
 			if(variables.containsKey(assign.getVar().getVarID().getName())){
