@@ -3,8 +3,11 @@ package com.selenium.gram.xtext.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.selenium.gram.xtext.services.SlnDslGrammarAccess;
+import com.selenium.gram.xtext.slnDsl.ActionCheck;
+import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionExpression;
-import com.selenium.gram.xtext.slnDsl.ActionInstruction;
+import com.selenium.gram.xtext.slnDsl.ActionOpen;
+import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.Conditional;
@@ -16,6 +19,7 @@ import com.selenium.gram.xtext.slnDsl.Head;
 import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.VariableName;
@@ -41,6 +45,22 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SlnDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case SlnDslPackage.ACTION_CHECK:
+				if(context == grammarAccess.getActionCheckRule() ||
+				   context == grammarAccess.getActionInstructionRule() ||
+				   context == grammarAccess.getInstructionRule()) {
+					sequence_ActionCheck(context, (ActionCheck) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.ACTION_CLICK:
+				if(context == grammarAccess.getActionClickRule() ||
+				   context == grammarAccess.getActionInstructionRule() ||
+				   context == grammarAccess.getInstructionRule()) {
+					sequence_ActionClick(context, (ActionClick) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlnDslPackage.ACTION_EXPRESSION:
 				if(context == grammarAccess.getActionExpressionRule() ||
 				   context == grammarAccess.getExpressionRule()) {
@@ -48,10 +68,19 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case SlnDslPackage.ACTION_INSTRUCTION:
+			case SlnDslPackage.ACTION_OPEN:
 				if(context == grammarAccess.getActionInstructionRule() ||
+				   context == grammarAccess.getActionOpenRule() ||
 				   context == grammarAccess.getInstructionRule()) {
-					sequence_ActionInstruction(context, (ActionInstruction) semanticObject); 
+					sequence_ActionOpen(context, (ActionOpen) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.ACTION_TYPE:
+				if(context == grammarAccess.getActionInstructionRule() ||
+				   context == grammarAccess.getActionTypeRule() ||
+				   context == grammarAccess.getInstructionRule()) {
+					sequence_ActionType(context, (ActionType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -129,6 +158,13 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case SlnDslPackage.NUM_LITERAL_EXPRESSION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getNumLiteralExpressionRule()) {
+					sequence_NumLiteralExpression(context, (NumLiteralExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlnDslPackage.SUBPROCEDURE:
 				if(context == grammarAccess.getSubprocedureRule()) {
 					sequence_Subprocedure(context, (Subprocedure) semanticObject); 
@@ -160,6 +196,44 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (type=ClickableElement element=NumberLiteral)
+	 */
+	protected void sequence_ActionCheck(EObject context, ActionCheck semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__TYPE));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__ELEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionCheckAccess().getTypeClickableElementTerminalRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0(), semanticObject.getElement());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=ClickableElement element=NumberLiteral)
+	 */
+	protected void sequence_ActionClick(EObject context, ActionClick semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CLICK__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CLICK__TYPE));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CLICK__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CLICK__ELEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionClickAccess().getTypeClickableElementTerminalRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0(), semanticObject.getElement());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     element=Expression
 	 */
 	protected void sequence_ActionExpression(EObject context, ActionExpression semanticObject) {
@@ -176,10 +250,36 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (url=URL | element=Expression | (element=Expression value=Expression))
+	 *     url=URL
 	 */
-	protected void sequence_ActionInstruction(EObject context, ActionInstruction semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_ActionOpen(EObject context, ActionOpen semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_OPEN__URL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_OPEN__URL));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionOpenAccess().getUrlURLTerminalRuleCall_2_0(), semanticObject.getUrl());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (nameElement=NumberLiteral value=Expression)
+	 */
+	protected void sequence_ActionType(EObject context, ActionType semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_TYPE__NAME_ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_TYPE__NAME_ELEMENT));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_TYPE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_TYPE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionTypeAccess().getNameElementNumberLiteralParserRuleCall_2_0(), semanticObject.getNameElement());
+		feeder.accept(grammarAccess.getActionTypeAccess().getValueExpressionParserRuleCall_4_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -306,6 +406,22 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=NumberLiteral
+	 */
+	protected void sequence_NumLiteralExpression(EObject context, NumLiteralExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.NUM_LITERAL_EXPRESSION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.NUM_LITERAL_EXPRESSION__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNumLiteralExpressionAccess().getValueNumberLiteralParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

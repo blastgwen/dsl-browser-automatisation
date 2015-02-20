@@ -19,14 +19,12 @@ public class SlnDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SlnDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ActionExpression_SelectKeyword_0_1_or_VerifyKeyword_0_0;
-	protected AbstractElementAlias match_ActionInstruction_CheckKeyword_1_0_0_or_ClickKeyword_1_0_1;
 	protected AbstractElementAlias match_ListExpression_AllKeyword_0_0_0_or_AnyKeyword_0_0_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SlnDslGrammarAccess) access;
 		match_ActionExpression_SelectKeyword_0_1_or_VerifyKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getActionExpressionAccess().getSelectKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getActionExpressionAccess().getVerifyKeyword_0_0()));
-		match_ActionInstruction_CheckKeyword_1_0_0_or_ClickKeyword_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getActionInstructionAccess().getCheckKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getActionInstructionAccess().getClickKeyword_1_0_1()));
 		match_ListExpression_AllKeyword_0_0_0_or_AnyKeyword_0_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListExpressionAccess().getAllKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getListExpressionAccess().getAnyKeyword_0_0_1()));
 	}
 	
@@ -34,8 +32,6 @@ public class SlnDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getBooleanOperatorRule())
 			return getBooleanOperatorToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getNumberLiteralRule())
-			return getNumberLiteralToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -50,17 +46,6 @@ public class SlnDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "==";
 	}
 	
-	/**
-	 * NumberLiteral:
-	 * 	INT | STRING
-	 * ;
-	 */
-	protected String getNumberLiteralToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
-	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
@@ -69,8 +54,6 @@ public class SlnDslSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_ActionExpression_SelectKeyword_0_1_or_VerifyKeyword_0_0.equals(syntax))
 				emit_ActionExpression_SelectKeyword_0_1_or_VerifyKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ActionInstruction_CheckKeyword_1_0_0_or_ClickKeyword_1_0_1.equals(syntax))
-				emit_ActionInstruction_CheckKeyword_1_0_0_or_ClickKeyword_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ListExpression_AllKeyword_0_0_0_or_AnyKeyword_0_0_1.equals(syntax))
 				emit_ListExpression_AllKeyword_0_0_0_or_AnyKeyword_0_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -82,14 +65,6 @@ public class SlnDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'verify' | 'select'
 	 */
 	protected void emit_ActionExpression_SelectKeyword_0_1_or_VerifyKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'check' | 'click'
-	 */
-	protected void emit_ActionInstruction_CheckKeyword_1_0_0_or_ClickKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

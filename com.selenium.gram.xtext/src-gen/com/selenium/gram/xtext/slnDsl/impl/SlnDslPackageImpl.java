@@ -2,8 +2,12 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
+import com.selenium.gram.xtext.slnDsl.ActionCheck;
+import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
+import com.selenium.gram.xtext.slnDsl.ActionOpen;
+import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.Conditional;
@@ -18,6 +22,7 @@ import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslFactory;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
@@ -108,6 +113,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass numLiteralExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass listExpressionEClass = null;
 
   /**
@@ -172,6 +184,34 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * @generated
    */
   private EClass actionInstructionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionClickEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionOpenEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionCheckEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -441,6 +481,26 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
   public EClass getExpression()
   {
     return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumLiteralExpression()
+  {
+    return numLiteralExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNumLiteralExpression_Value()
+  {
+    return (EAttribute)numLiteralExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -738,9 +798,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionInstruction_Url()
+  public EClass getActionClick()
   {
-    return (EAttribute)actionInstructionEClass.getEStructuralFeatures().get(0);
+    return actionClickEClass;
   }
 
   /**
@@ -748,9 +808,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActionInstruction_Element()
+  public EAttribute getActionClick_Type()
   {
-    return (EReference)actionInstructionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)actionClickEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -758,9 +818,89 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActionInstruction_Value()
+  public EAttribute getActionClick_Element()
   {
-    return (EReference)actionInstructionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)actionClickEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionOpen()
+  {
+    return actionOpenEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionOpen_Url()
+  {
+    return (EAttribute)actionOpenEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionCheck()
+  {
+    return actionCheckEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionCheck_Type()
+  {
+    return (EAttribute)actionCheckEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionCheck_Element()
+  {
+    return (EAttribute)actionCheckEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionType()
+  {
+    return actionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionType_NameElement()
+  {
+    return (EAttribute)actionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionType_Value()
+  {
+    return (EReference)actionTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -842,6 +982,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     expressionEClass = createEClass(EXPRESSION);
 
+    numLiteralExpressionEClass = createEClass(NUM_LITERAL_EXPRESSION);
+    createEAttribute(numLiteralExpressionEClass, NUM_LITERAL_EXPRESSION__VALUE);
+
     listExpressionEClass = createEClass(LIST_EXPRESSION);
     createEReference(listExpressionEClass, LIST_EXPRESSION__VAR_NAME);
     createEReference(listExpressionEClass, LIST_EXPRESSION__EXP);
@@ -880,9 +1023,21 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEReference(foreachEClass, FOREACH__INS);
 
     actionInstructionEClass = createEClass(ACTION_INSTRUCTION);
-    createEAttribute(actionInstructionEClass, ACTION_INSTRUCTION__URL);
-    createEReference(actionInstructionEClass, ACTION_INSTRUCTION__ELEMENT);
-    createEReference(actionInstructionEClass, ACTION_INSTRUCTION__VALUE);
+
+    actionClickEClass = createEClass(ACTION_CLICK);
+    createEAttribute(actionClickEClass, ACTION_CLICK__TYPE);
+    createEAttribute(actionClickEClass, ACTION_CLICK__ELEMENT);
+
+    actionOpenEClass = createEClass(ACTION_OPEN);
+    createEAttribute(actionOpenEClass, ACTION_OPEN__URL);
+
+    actionCheckEClass = createEClass(ACTION_CHECK);
+    createEAttribute(actionCheckEClass, ACTION_CHECK__TYPE);
+    createEAttribute(actionCheckEClass, ACTION_CHECK__ELEMENT);
+
+    actionTypeEClass = createEClass(ACTION_TYPE);
+    createEAttribute(actionTypeEClass, ACTION_TYPE__NAME_ELEMENT);
+    createEReference(actionTypeEClass, ACTION_TYPE__VALUE);
 
     actionExpressionEClass = createEClass(ACTION_EXPRESSION);
     createEReference(actionExpressionEClass, ACTION_EXPRESSION__ELEMENT);
@@ -920,6 +1075,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     functionReferenceEClass.getESuperTypes().add(this.getFunctionCall());
     functionCallEClass.getESuperTypes().add(this.getInstruction());
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
+    numLiteralExpressionEClass.getESuperTypes().add(this.getExpression());
     listExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
     definitionEClass.getESuperTypes().add(this.getInstruction());
@@ -927,6 +1083,10 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     conditionalEClass.getESuperTypes().add(this.getInstruction());
     loopEClass.getESuperTypes().add(this.getInstruction());
     actionInstructionEClass.getESuperTypes().add(this.getInstruction());
+    actionClickEClass.getESuperTypes().add(this.getActionInstruction());
+    actionOpenEClass.getESuperTypes().add(this.getActionInstruction());
+    actionCheckEClass.getESuperTypes().add(this.getActionInstruction());
+    actionTypeEClass.getESuperTypes().add(this.getActionInstruction());
     actionExpressionEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
@@ -958,6 +1118,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getVariableName_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(numLiteralExpressionEClass, NumLiteralExpression.class, "NumLiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNumLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, NumLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listExpressionEClass, ListExpression.class, "ListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListExpression_VarName(), this.getVariableName(), null, "varName", null, 0, 1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -997,9 +1160,21 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getForeach_Ins(), this.getInstruction(), null, "ins", null, 0, -1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionInstructionEClass, ActionInstruction.class, "ActionInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionInstruction_Url(), ecorePackage.getEString(), "url", null, 0, 1, ActionInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActionInstruction_Element(), this.getExpression(), null, "element", null, 0, 1, ActionInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActionInstruction_Value(), this.getExpression(), null, "value", null, 0, 1, ActionInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionClickEClass, ActionClick.class, "ActionClick", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionClick_Type(), ecorePackage.getEString(), "type", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getActionClick_Element(), ecorePackage.getEString(), "element", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionOpenEClass, ActionOpen.class, "ActionOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionOpen_Url(), ecorePackage.getEString(), "url", null, 0, 1, ActionOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionCheckEClass, ActionCheck.class, "ActionCheck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionCheck_Type(), ecorePackage.getEString(), "type", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getActionCheck_Element(), ecorePackage.getEString(), "element", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionTypeEClass, ActionType.class, "ActionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionType_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionType_Value(), this.getExpression(), null, "value", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionExpressionEClass, ActionExpression.class, "ActionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActionExpression_Element(), this.getExpression(), null, "element", null, 0, 1, ActionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

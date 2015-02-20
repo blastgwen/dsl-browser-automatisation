@@ -175,7 +175,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 11;
+  int INSTRUCTION = 12;
 
   /**
    * The number of structural features of the '<em>Instruction</em>' class.
@@ -346,6 +346,34 @@ public interface SlnDslPackage extends EPackage
   int VARIABLE_NAME_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl <em>Num Literal Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNumLiteralExpression()
+   * @generated
+   */
+  int NUM_LITERAL_EXPRESSION = 9;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUM_LITERAL_EXPRESSION__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Num Literal Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUM_LITERAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl <em>List Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -353,7 +381,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getListExpression()
    * @generated
    */
-  int LIST_EXPRESSION = 9;
+  int LIST_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Var Name</b></em>' containment reference.
@@ -390,7 +418,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanExpression()
    * @generated
    */
-  int BOOLEAN_EXPRESSION = 10;
+  int BOOLEAN_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -436,7 +464,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getDefinition()
    * @generated
    */
-  int DEFINITION = 12;
+  int DEFINITION = 13;
 
   /**
    * The feature id for the '<em><b>Var ID</b></em>' containment reference.
@@ -473,7 +501,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getAssignation()
    * @generated
    */
-  int ASSIGNATION = 13;
+  int ASSIGNATION = 14;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -510,7 +538,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getConditional()
    * @generated
    */
-  int CONDITIONAL = 14;
+  int CONDITIONAL = 15;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -556,7 +584,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getLoop()
    * @generated
    */
-  int LOOP = 15;
+  int LOOP = 16;
 
   /**
    * The feature id for the '<em><b>While</b></em>' containment reference.
@@ -593,7 +621,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 16;
+  int WHILE = 17;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -630,7 +658,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getForeach()
    * @generated
    */
-  int FOREACH = 17;
+  int FOREACH = 18;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -676,34 +704,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionInstruction()
    * @generated
    */
-  int ACTION_INSTRUCTION = 18;
-
-  /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_INSTRUCTION__URL = INSTRUCTION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_INSTRUCTION__ELEMENT = INSTRUCTION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_INSTRUCTION__VALUE = INSTRUCTION_FEATURE_COUNT + 2;
+  int ACTION_INSTRUCTION = 19;
 
   /**
    * The number of structural features of the '<em>Action Instruction</em>' class.
@@ -712,7 +713,146 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
+  int ACTION_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionClickImpl <em>Action Click</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.ActionClickImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionClick()
+   * @generated
+   */
+  int ACTION_CLICK = 20;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_CLICK__TYPE = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_CLICK__ELEMENT = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Click</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_CLICK_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionOpenImpl <em>Action Open</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.ActionOpenImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionOpen()
+   * @generated
+   */
+  int ACTION_OPEN = 21;
+
+  /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_OPEN__URL = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Action Open</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_OPEN_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl <em>Action Check</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionCheck()
+   * @generated
+   */
+  int ACTION_CHECK = 22;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_CHECK__TYPE = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_CHECK__ELEMENT = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Check</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_CHECK_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl <em>Action Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionType()
+   * @generated
+   */
+  int ACTION_TYPE = 23;
+
+  /**
+   * The feature id for the '<em><b>Name Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_TYPE__NAME_ELEMENT = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_TYPE__VALUE = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_TYPE_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
@@ -722,7 +862,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionExpression()
    * @generated
    */
-  int ACTION_EXPRESSION = 19;
+  int ACTION_EXPRESSION = 24;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -953,6 +1093,27 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getExpression();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.NumLiteralExpression <em>Num Literal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Num Literal Expression</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NumLiteralExpression
+   * @generated
+   */
+  EClass getNumLiteralExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.NumLiteralExpression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NumLiteralExpression#getValue()
+   * @see #getNumLiteralExpression()
+   * @generated
+   */
+  EAttribute getNumLiteralExpression_Value();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ListExpression <em>List Expression</em>}'.
@@ -1264,37 +1425,121 @@ public interface SlnDslPackage extends EPackage
   EClass getActionInstruction();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionInstruction#getUrl <em>Url</em>}'.
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionClick <em>Action Click</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Click</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionClick
+   * @generated
+   */
+  EClass getActionClick();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionClick#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionClick#getType()
+   * @see #getActionClick()
+   * @generated
+   */
+  EAttribute getActionClick_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionClick#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Element</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionClick#getElement()
+   * @see #getActionClick()
+   * @generated
+   */
+  EAttribute getActionClick_Element();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionOpen <em>Action Open</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Open</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionOpen
+   * @generated
+   */
+  EClass getActionOpen();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl <em>Url</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Url</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionInstruction#getUrl()
-   * @see #getActionInstruction()
+   * @see com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl()
+   * @see #getActionOpen()
    * @generated
    */
-  EAttribute getActionInstruction_Url();
+  EAttribute getActionOpen_Url();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionInstruction#getElement <em>Element</em>}'.
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionCheck <em>Action Check</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionInstruction#getElement()
-   * @see #getActionInstruction()
+   * @return the meta object for class '<em>Action Check</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionCheck
    * @generated
    */
-  EReference getActionInstruction_Element();
+  EClass getActionCheck();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionInstruction#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionCheck#getType()
+   * @see #getActionCheck()
+   * @generated
+   */
+  EAttribute getActionCheck_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Element</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionCheck#getElement()
+   * @see #getActionCheck()
+   * @generated
+   */
+  EAttribute getActionCheck_Element();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionType <em>Action Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Type</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionType
+   * @generated
+   */
+  EClass getActionType();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionType#getNameElement <em>Name Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name Element</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionType#getNameElement()
+   * @see #getActionType()
+   * @generated
+   */
+  EAttribute getActionType_NameElement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionType#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionInstruction#getValue()
-   * @see #getActionInstruction()
+   * @see com.selenium.gram.xtext.slnDsl.ActionType#getValue()
+   * @see #getActionType()
    * @generated
    */
-  EReference getActionInstruction_Value();
+  EReference getActionType_Value();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionExpression <em>Action Expression</em>}'.
@@ -1517,6 +1762,24 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl <em>Num Literal Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNumLiteralExpression()
+     * @generated
+     */
+    EClass NUM_LITERAL_EXPRESSION = eINSTANCE.getNumLiteralExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUM_LITERAL_EXPRESSION__VALUE = eINSTANCE.getNumLiteralExpression_Value();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl <em>List Expression</em>}' class.
@@ -1771,20 +2034,92 @@ public interface SlnDslPackage extends EPackage
     EClass ACTION_INSTRUCTION = eINSTANCE.getActionInstruction();
 
     /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionClickImpl <em>Action Click</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.ActionClickImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionClick()
+     * @generated
+     */
+    EClass ACTION_CLICK = eINSTANCE.getActionClick();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_CLICK__TYPE = eINSTANCE.getActionClick_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_CLICK__ELEMENT = eINSTANCE.getActionClick_Element();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionOpenImpl <em>Action Open</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.ActionOpenImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionOpen()
+     * @generated
+     */
+    EClass ACTION_OPEN = eINSTANCE.getActionOpen();
+
+    /**
      * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_INSTRUCTION__URL = eINSTANCE.getActionInstruction_Url();
+    EAttribute ACTION_OPEN__URL = eINSTANCE.getActionOpen_Url();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl <em>Action Check</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionCheck()
+     * @generated
+     */
+    EClass ACTION_CHECK = eINSTANCE.getActionCheck();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTION_INSTRUCTION__ELEMENT = eINSTANCE.getActionInstruction_Element();
+    EAttribute ACTION_CHECK__TYPE = eINSTANCE.getActionCheck_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_CHECK__ELEMENT = eINSTANCE.getActionCheck_Element();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl <em>Action Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionType()
+     * @generated
+     */
+    EClass ACTION_TYPE = eINSTANCE.getActionType();
+
+    /**
+     * The meta object literal for the '<em><b>Name Element</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_TYPE__NAME_ELEMENT = eINSTANCE.getActionType_NameElement();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -1792,7 +2127,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTION_INSTRUCTION__VALUE = eINSTANCE.getActionInstruction_Value();
+    EReference ACTION_TYPE__VALUE = eINSTANCE.getActionType_Value();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionExpressionImpl <em>Action Expression</em>}' class.

@@ -139,6 +139,14 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.NUM_LITERAL_EXPRESSION:
+      {
+        NumLiteralExpression numLiteralExpression = (NumLiteralExpression)theEObject;
+        T result = caseNumLiteralExpression(numLiteralExpression);
+        if (result == null) result = caseExpression(numLiteralExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.LIST_EXPRESSION:
       {
         ListExpression listExpression = (ListExpression)theEObject;
@@ -213,6 +221,42 @@ public class SlnDslSwitch<T> extends Switch<T>
         ActionInstruction actionInstruction = (ActionInstruction)theEObject;
         T result = caseActionInstruction(actionInstruction);
         if (result == null) result = caseInstruction(actionInstruction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.ACTION_CLICK:
+      {
+        ActionClick actionClick = (ActionClick)theEObject;
+        T result = caseActionClick(actionClick);
+        if (result == null) result = caseActionInstruction(actionClick);
+        if (result == null) result = caseInstruction(actionClick);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.ACTION_OPEN:
+      {
+        ActionOpen actionOpen = (ActionOpen)theEObject;
+        T result = caseActionOpen(actionOpen);
+        if (result == null) result = caseActionInstruction(actionOpen);
+        if (result == null) result = caseInstruction(actionOpen);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.ACTION_CHECK:
+      {
+        ActionCheck actionCheck = (ActionCheck)theEObject;
+        T result = caseActionCheck(actionCheck);
+        if (result == null) result = caseActionInstruction(actionCheck);
+        if (result == null) result = caseInstruction(actionCheck);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.ACTION_TYPE:
+      {
+        ActionType actionType = (ActionType)theEObject;
+        T result = caseActionType(actionType);
+        if (result == null) result = caseActionInstruction(actionType);
+        if (result == null) result = caseInstruction(actionType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -373,6 +417,22 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Num Literal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Num Literal Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumLiteralExpression(NumLiteralExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>List Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -528,6 +588,70 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseActionInstruction(ActionInstruction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Click</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Click</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionClick(ActionClick object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Open</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Open</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionOpen(ActionOpen object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Check</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Check</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionCheck(ActionCheck object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionType(ActionType object)
   {
     return null;
   }

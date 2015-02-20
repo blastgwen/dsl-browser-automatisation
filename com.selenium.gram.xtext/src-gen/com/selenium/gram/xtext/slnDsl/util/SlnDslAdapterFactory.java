@@ -120,6 +120,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
+      public Adapter caseNumLiteralExpression(NumLiteralExpression object)
+      {
+        return createNumLiteralExpressionAdapter();
+      }
+      @Override
       public Adapter caseListExpression(ListExpression object)
       {
         return createListExpressionAdapter();
@@ -168,6 +173,26 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseActionInstruction(ActionInstruction object)
       {
         return createActionInstructionAdapter();
+      }
+      @Override
+      public Adapter caseActionClick(ActionClick object)
+      {
+        return createActionClickAdapter();
+      }
+      @Override
+      public Adapter caseActionOpen(ActionOpen object)
+      {
+        return createActionOpenAdapter();
+      }
+      @Override
+      public Adapter caseActionCheck(ActionCheck object)
+      {
+        return createActionCheckAdapter();
+      }
+      @Override
+      public Adapter caseActionType(ActionType object)
+      {
+        return createActionTypeAdapter();
       }
       @Override
       public Adapter caseActionExpression(ActionExpression object)
@@ -332,6 +357,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.NumLiteralExpression <em>Num Literal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.NumLiteralExpression
+   * @generated
+   */
+  public Adapter createNumLiteralExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ListExpression <em>List Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -477,6 +517,66 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionInstructionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionClick <em>Action Click</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ActionClick
+   * @generated
+   */
+  public Adapter createActionClickAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionOpen <em>Action Open</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ActionOpen
+   * @generated
+   */
+  public Adapter createActionOpenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionCheck <em>Action Check</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ActionCheck
+   * @generated
+   */
+  public Adapter createActionCheckAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionType <em>Action Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ActionType
+   * @generated
+   */
+  public Adapter createActionTypeAdapter()
   {
     return null;
   }

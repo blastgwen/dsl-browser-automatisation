@@ -73,6 +73,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.VARIABLE_REFERENCE: return createVariableReference();
       case SlnDslPackage.VARIABLE_NAME: return createVariableName();
       case SlnDslPackage.EXPRESSION: return createExpression();
+      case SlnDslPackage.NUM_LITERAL_EXPRESSION: return createNumLiteralExpression();
       case SlnDslPackage.LIST_EXPRESSION: return createListExpression();
       case SlnDslPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
       case SlnDslPackage.INSTRUCTION: return createInstruction();
@@ -83,6 +84,10 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.WHILE: return createWhile();
       case SlnDslPackage.FOREACH: return createForeach();
       case SlnDslPackage.ACTION_INSTRUCTION: return createActionInstruction();
+      case SlnDslPackage.ACTION_CLICK: return createActionClick();
+      case SlnDslPackage.ACTION_OPEN: return createActionOpen();
+      case SlnDslPackage.ACTION_CHECK: return createActionCheck();
+      case SlnDslPackage.ACTION_TYPE: return createActionType();
       case SlnDslPackage.ACTION_EXPRESSION: return createActionExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -193,6 +198,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public NumLiteralExpression createNumLiteralExpression()
+  {
+    NumLiteralExpressionImpl numLiteralExpression = new NumLiteralExpressionImpl();
+    return numLiteralExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ListExpression createListExpression()
   {
     ListExpressionImpl listExpression = new ListExpressionImpl();
@@ -296,6 +312,50 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     ActionInstructionImpl actionInstruction = new ActionInstructionImpl();
     return actionInstruction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionClick createActionClick()
+  {
+    ActionClickImpl actionClick = new ActionClickImpl();
+    return actionClick;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionOpen createActionOpen()
+  {
+    ActionOpenImpl actionOpen = new ActionOpenImpl();
+    return actionOpen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionCheck createActionCheck()
+  {
+    ActionCheckImpl actionCheck = new ActionCheckImpl();
+    return actionCheck;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionType createActionType()
+  {
+    ActionTypeImpl actionType = new ActionTypeImpl();
+    return actionType;
   }
 
   /**

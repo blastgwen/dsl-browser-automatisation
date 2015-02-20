@@ -48,7 +48,6 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
 					put(grammarAccess.getActionInstructionAccess().getAlternatives(), "rule__ActionInstruction__Alternatives");
-					put(grammarAccess.getActionInstructionAccess().getAlternatives_1_0(), "rule__ActionInstruction__Alternatives_1_0");
 					put(grammarAccess.getActionExpressionAccess().getAlternatives_0(), "rule__ActionExpression__Alternatives_0");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getSubprocedureAccess().getGroup(), "rule__Subprocedure__Group__0");
@@ -68,9 +67,10 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConditionalAccess().getGroup_4(), "rule__Conditional__Group_4__0");
 					put(grammarAccess.getWhileAccess().getGroup(), "rule__While__Group__0");
 					put(grammarAccess.getForeachAccess().getGroup(), "rule__Foreach__Group__0");
-					put(grammarAccess.getActionInstructionAccess().getGroup_0(), "rule__ActionInstruction__Group_0__0");
-					put(grammarAccess.getActionInstructionAccess().getGroup_1(), "rule__ActionInstruction__Group_1__0");
-					put(grammarAccess.getActionInstructionAccess().getGroup_2(), "rule__ActionInstruction__Group_2__0");
+					put(grammarAccess.getActionClickAccess().getGroup(), "rule__ActionClick__Group__0");
+					put(grammarAccess.getActionOpenAccess().getGroup(), "rule__ActionOpen__Group__0");
+					put(grammarAccess.getActionCheckAccess().getGroup(), "rule__ActionCheck__Group__0");
+					put(grammarAccess.getActionTypeAccess().getGroup(), "rule__ActionType__Group__0");
 					put(grammarAccess.getActionExpressionAccess().getGroup(), "rule__ActionExpression__Group__0");
 					put(grammarAccess.getModelAccess().getSubsAssignment_0(), "rule__Model__SubsAssignment_0");
 					put(grammarAccess.getModelAccess().getMainAssignment_2(), "rule__Model__MainAssignment_2");
@@ -86,6 +86,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionCallAccess().getArgsAssignment_1_3_1(), "rule__FunctionCall__ArgsAssignment_1_3_1");
 					put(grammarAccess.getVariableReferenceAccess().getVarIDAssignment(), "rule__VariableReference__VarIDAssignment");
 					put(grammarAccess.getVariableNameAccess().getNameAssignment(), "rule__VariableName__NameAssignment");
+					put(grammarAccess.getNumLiteralExpressionAccess().getValueAssignment(), "rule__NumLiteralExpression__ValueAssignment");
 					put(grammarAccess.getListExpressionAccess().getVarNameAssignment_0_3(), "rule__ListExpression__VarNameAssignment_0_3");
 					put(grammarAccess.getListExpressionAccess().getExpAssignment_0_5(), "rule__ListExpression__ExpAssignment_0_5");
 					put(grammarAccess.getListExpressionAccess().getExpAssignment_1_2(), "rule__ListExpression__ExpAssignment_1_2");
@@ -106,10 +107,13 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForeachAccess().getVarAssignment_2(), "rule__Foreach__VarAssignment_2");
 					put(grammarAccess.getForeachAccess().getExpAssignment_4(), "rule__Foreach__ExpAssignment_4");
 					put(grammarAccess.getForeachAccess().getInsAssignment_7(), "rule__Foreach__InsAssignment_7");
-					put(grammarAccess.getActionInstructionAccess().getUrlAssignment_0_2(), "rule__ActionInstruction__UrlAssignment_0_2");
-					put(grammarAccess.getActionInstructionAccess().getElementAssignment_1_2(), "rule__ActionInstruction__ElementAssignment_1_2");
-					put(grammarAccess.getActionInstructionAccess().getElementAssignment_2_1(), "rule__ActionInstruction__ElementAssignment_2_1");
-					put(grammarAccess.getActionInstructionAccess().getValueAssignment_2_3(), "rule__ActionInstruction__ValueAssignment_2_3");
+					put(grammarAccess.getActionClickAccess().getTypeAssignment_2(), "rule__ActionClick__TypeAssignment_2");
+					put(grammarAccess.getActionClickAccess().getElementAssignment_4(), "rule__ActionClick__ElementAssignment_4");
+					put(grammarAccess.getActionOpenAccess().getUrlAssignment_2(), "rule__ActionOpen__UrlAssignment_2");
+					put(grammarAccess.getActionCheckAccess().getTypeAssignment_2(), "rule__ActionCheck__TypeAssignment_2");
+					put(grammarAccess.getActionCheckAccess().getElementAssignment_4(), "rule__ActionCheck__ElementAssignment_4");
+					put(grammarAccess.getActionTypeAccess().getNameElementAssignment_2(), "rule__ActionType__NameElementAssignment_2");
+					put(grammarAccess.getActionTypeAccess().getValueAssignment_4(), "rule__ActionType__ValueAssignment_4");
 					put(grammarAccess.getActionExpressionAccess().getElementAssignment_2(), "rule__ActionExpression__ElementAssignment_2");
 				}
 			};

@@ -104,6 +104,15 @@ public interface SlnDslFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Num Literal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Num Literal Expression</em>'.
+   * @generated
+   */
+  NumLiteralExpression createNumLiteralExpression();
+
+  /**
    * Returns a new object of class '<em>List Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -192,6 +201,42 @@ public interface SlnDslFactory extends EFactory
    * @generated
    */
   ActionInstruction createActionInstruction();
+
+  /**
+   * Returns a new object of class '<em>Action Click</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Click</em>'.
+   * @generated
+   */
+  ActionClick createActionClick();
+
+  /**
+   * Returns a new object of class '<em>Action Open</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Open</em>'.
+   * @generated
+   */
+  ActionOpen createActionOpen();
+
+  /**
+   * Returns a new object of class '<em>Action Check</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Check</em>'.
+   * @generated
+   */
+  ActionCheck createActionCheck();
+
+  /**
+   * Returns a new object of class '<em>Action Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Type</em>'.
+   * @generated
+   */
+  ActionType createActionType();
 
   /**
    * Returns a new object of class '<em>Action Expression</em>'.

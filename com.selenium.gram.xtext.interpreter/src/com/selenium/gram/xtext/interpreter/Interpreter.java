@@ -3,6 +3,7 @@ package com.selenium.gram.xtext.interpreter;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.Conditional;
@@ -116,6 +117,7 @@ public class Interpreter {
 				throw new InterpretationException(Assignation.class.getName());
 			}
 		}
+		
 	}
 	
 	

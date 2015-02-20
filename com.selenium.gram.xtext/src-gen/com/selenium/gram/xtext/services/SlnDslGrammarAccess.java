@@ -336,7 +336,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cVariableReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cNumberLiteralParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cNumLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cListExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cBooleanExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cActionExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
@@ -344,17 +344,17 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Expression
 		// * / Expression:
-		//	VariableReference | NumberLiteral | ListExpression | BooleanExpression | ActionExpression;
+		//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | ActionExpression;
 		public ParserRule getRule() { return rule; }
 
-		//VariableReference | NumberLiteral | ListExpression | BooleanExpression | ActionExpression
+		//VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | ActionExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//VariableReference
 		public RuleCall getVariableReferenceParserRuleCall_0() { return cVariableReferenceParserRuleCall_0; }
 
-		//NumberLiteral
-		public RuleCall getNumberLiteralParserRuleCall_1() { return cNumberLiteralParserRuleCall_1; }
+		//NumLiteralExpression
+		public RuleCall getNumLiteralExpressionParserRuleCall_1() { return cNumLiteralExpressionParserRuleCall_1; }
 
 		//ListExpression
 		public RuleCall getListExpressionParserRuleCall_2() { return cListExpressionParserRuleCall_2; }
@@ -364,6 +364,22 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ActionExpression
 		public RuleCall getActionExpressionParserRuleCall_4() { return cActionExpressionParserRuleCall_4; }
+	}
+
+	public class NumLiteralExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumLiteralExpression");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueNumberLiteralParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//NumLiteralExpression:
+		//	value=NumberLiteral;
+		public ParserRule getRule() { return rule; }
+
+		//value=NumberLiteral
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//NumberLiteral
+		public RuleCall getValueNumberLiteralParserRuleCall_0() { return cValueNumberLiteralParserRuleCall_0; }
 	}
 
 	public class ListExpressionElements extends AbstractParserRuleElementFinder {
@@ -829,103 +845,193 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ActionInstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionInstruction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cOpenKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cUrlAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cUrlURLTerminalRuleCall_0_2_0 = (RuleCall)cUrlAssignment_0_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Keyword cCheckKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
-		private final Keyword cClickKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cElementAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cElementExpressionParserRuleCall_1_2_0 = (RuleCall)cElementAssignment_1_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cElementAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cElementExpressionParserRuleCall_2_1_0 = (RuleCall)cElementAssignment_2_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Assignment cValueAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
-		private final RuleCall cValueExpressionParserRuleCall_2_3_0 = (RuleCall)cValueAssignment_2_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final RuleCall cActionOpenParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cActionClickParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cActionCheckParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cActionTypeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//ActionInstruction:
-		//	"open" "(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
-		//	value=Expression ")";
+		//	ActionOpen | ActionClick | ActionCheck | ActionType;
 		public ParserRule getRule() { return rule; }
 
-		//"open" "(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
-		//value=Expression ")"
+		//ActionOpen | ActionClick | ActionCheck | ActionType
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"open" "(" url=URL ")"
-		public Group getGroup_0() { return cGroup_0; }
+		//ActionOpen
+		public RuleCall getActionOpenParserRuleCall_0() { return cActionOpenParserRuleCall_0; }
 
-		//"open"
-		public Keyword getOpenKeyword_0_0() { return cOpenKeyword_0_0; }
+		//ActionClick
+		public RuleCall getActionClickParserRuleCall_1() { return cActionClickParserRuleCall_1; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+		//ActionCheck
+		public RuleCall getActionCheckParserRuleCall_2() { return cActionCheckParserRuleCall_2; }
 
-		//url=URL
-		public Assignment getUrlAssignment_0_2() { return cUrlAssignment_0_2; }
+		//ActionType
+		public RuleCall getActionTypeParserRuleCall_3() { return cActionTypeParserRuleCall_3; }
+	}
 
-		//URL
-		public RuleCall getUrlURLTerminalRuleCall_0_2_0() { return cUrlURLTerminalRuleCall_0_2_0; }
+	public class ActionClickElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionClick");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeClickableElementTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElementNumberLiteralParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//ActionClick:
+		//	"click" "(" type=ClickableElement "," element=NumberLiteral ")";
+		public ParserRule getRule() { return rule; }
 
-		//")"
-		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
-
-		//("check" | "click") "(" element=Expression ")"
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"check" | "click"
-		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
-
-		//"check"
-		public Keyword getCheckKeyword_1_0_0() { return cCheckKeyword_1_0_0; }
+		//"click" "(" type=ClickableElement "," element=NumberLiteral ")"
+		public Group getGroup() { return cGroup; }
 
 		//"click"
-		public Keyword getClickKeyword_1_0_1() { return cClickKeyword_1_0_1; }
+		public Keyword getClickKeyword_0() { return cClickKeyword_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//element=Expression
-		public Assignment getElementAssignment_1_2() { return cElementAssignment_1_2; }
+		//type=ClickableElement
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
-		//Expression
-		public RuleCall getElementExpressionParserRuleCall_1_2_0() { return cElementExpressionParserRuleCall_1_2_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
-
-		//"type(" element=Expression "," value=Expression ")"
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"type("
-		public Keyword getTypeKeyword_2_0() { return cTypeKeyword_2_0; }
-
-		//element=Expression
-		public Assignment getElementAssignment_2_1() { return cElementAssignment_2_1; }
-
-		//Expression
-		public RuleCall getElementExpressionParserRuleCall_2_1_0() { return cElementExpressionParserRuleCall_2_1_0; }
+		//ClickableElement
+		public RuleCall getTypeClickableElementTerminalRuleCall_2_0() { return cTypeClickableElementTerminalRuleCall_2_0; }
 
 		//","
-		public Keyword getCommaKeyword_2_2() { return cCommaKeyword_2_2; }
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//value=Expression
-		public Assignment getValueAssignment_2_3() { return cValueAssignment_2_3; }
+		//element=NumberLiteral
+		public Assignment getElementAssignment_4() { return cElementAssignment_4; }
 
-		//Expression
-		public RuleCall getValueExpressionParserRuleCall_2_3_0() { return cValueExpressionParserRuleCall_2_3_0; }
+		//NumberLiteral
+		public RuleCall getElementNumberLiteralParserRuleCall_4_0() { return cElementNumberLiteralParserRuleCall_4_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_2_4() { return cRightParenthesisKeyword_2_4; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class ActionOpenElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionOpen");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOpenKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cUrlAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cUrlURLTerminalRuleCall_2_0 = (RuleCall)cUrlAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ActionOpen:
+		//	"open" "(" url=URL ")";
+		public ParserRule getRule() { return rule; }
+
+		//"open" "(" url=URL ")"
+		public Group getGroup() { return cGroup; }
+
+		//"open"
+		public Keyword getOpenKeyword_0() { return cOpenKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//url=URL
+		public Assignment getUrlAssignment_2() { return cUrlAssignment_2; }
+
+		//URL
+		public RuleCall getUrlURLTerminalRuleCall_2_0() { return cUrlURLTerminalRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class ActionCheckElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionCheck");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCheckKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeClickableElementTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElementNumberLiteralParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//ActionCheck:
+		//	"check" "(" type=ClickableElement "," element=NumberLiteral ")";
+		public ParserRule getRule() { return rule; }
+
+		//"check" "(" type=ClickableElement "," element=NumberLiteral ")"
+		public Group getGroup() { return cGroup; }
+
+		//"check"
+		public Keyword getCheckKeyword_0() { return cCheckKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//type=ClickableElement
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+
+		//ClickableElement
+		public RuleCall getTypeClickableElementTerminalRuleCall_2_0() { return cTypeClickableElementTerminalRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//element=NumberLiteral
+		public Assignment getElementAssignment_4() { return cElementAssignment_4; }
+
+		//NumberLiteral
+		public RuleCall getElementNumberLiteralParserRuleCall_4_0() { return cElementNumberLiteralParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class ActionTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameElementNumberLiteralParserRuleCall_2_0 = (RuleCall)cNameElementAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValueExpressionParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//ActionType:
+		//	"type" "(" nameElement=NumberLiteral "," value=Expression ")";
+		public ParserRule getRule() { return rule; }
+
+		//"type" "(" nameElement=NumberLiteral "," value=Expression ")"
+		public Group getGroup() { return cGroup; }
+
+		//"type"
+		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//nameElement=NumberLiteral
+		public Assignment getNameElementAssignment_2() { return cNameElementAssignment_2; }
+
+		//NumberLiteral
+		public RuleCall getNameElementNumberLiteralParserRuleCall_2_0() { return cNameElementNumberLiteralParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//value=Expression
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+
+		//Expression
+		public RuleCall getValueExpressionParserRuleCall_4_0() { return cValueExpressionParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class ActionExpressionElements extends AbstractParserRuleElementFinder {
@@ -979,6 +1085,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final VariableNameElements pVariableName;
 	private final NumberLiteralElements pNumberLiteral;
 	private final ExpressionElements pExpression;
+	private final NumLiteralExpressionElements pNumLiteralExpression;
 	private final ListExpressionElements pListExpression;
 	private final BooleanExpressionElements pBooleanExpression;
 	private final BooleanOperatorElements pBooleanOperator;
@@ -990,7 +1097,12 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final WhileElements pWhile;
 	private final ForeachElements pForeach;
 	private final ActionInstructionElements pActionInstruction;
+	private final ActionClickElements pActionClick;
+	private final ActionOpenElements pActionOpen;
+	private final ActionCheckElements pActionCheck;
+	private final ActionTypeElements pActionType;
 	private final ActionExpressionElements pActionExpression;
+	private final TerminalRule tClickableElement;
 	private final TerminalRule tURL;
 	
 	private final Grammar grammar;
@@ -1012,6 +1124,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVariableName = new VariableNameElements();
 		this.pNumberLiteral = new NumberLiteralElements();
 		this.pExpression = new ExpressionElements();
+		this.pNumLiteralExpression = new NumLiteralExpressionElements();
 		this.pListExpression = new ListExpressionElements();
 		this.pBooleanExpression = new BooleanExpressionElements();
 		this.pBooleanOperator = new BooleanOperatorElements();
@@ -1023,7 +1136,12 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pWhile = new WhileElements();
 		this.pForeach = new ForeachElements();
 		this.pActionInstruction = new ActionInstructionElements();
+		this.pActionClick = new ActionClickElements();
+		this.pActionOpen = new ActionOpenElements();
+		this.pActionCheck = new ActionCheckElements();
+		this.pActionType = new ActionTypeElements();
 		this.pActionExpression = new ActionExpressionElements();
+		this.tClickableElement = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ClickableElement");
 		this.tURL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "URL");
 	}
 	
@@ -1153,13 +1271,23 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Expression
 	// * / Expression:
-	//	VariableReference | NumberLiteral | ListExpression | BooleanExpression | ActionExpression;
+	//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | ActionExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
 	
 	public ParserRule getExpressionRule() {
 		return getExpressionAccess().getRule();
+	}
+
+	//NumLiteralExpression:
+	//	value=NumberLiteral;
+	public NumLiteralExpressionElements getNumLiteralExpressionAccess() {
+		return pNumLiteralExpression;
+	}
+	
+	public ParserRule getNumLiteralExpressionRule() {
+		return getNumLiteralExpressionAccess().getRule();
 	}
 
 	//ListExpression:
@@ -1267,14 +1395,53 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionInstruction:
-	//	"open" "(" url=URL ")" | ("check" | "click") "(" element=Expression ")" | "type(" element=Expression ","
-	//	value=Expression ")";
+	//	ActionOpen | ActionClick | ActionCheck | ActionType;
 	public ActionInstructionElements getActionInstructionAccess() {
 		return pActionInstruction;
 	}
 	
 	public ParserRule getActionInstructionRule() {
 		return getActionInstructionAccess().getRule();
+	}
+
+	//ActionClick:
+	//	"click" "(" type=ClickableElement "," element=NumberLiteral ")";
+	public ActionClickElements getActionClickAccess() {
+		return pActionClick;
+	}
+	
+	public ParserRule getActionClickRule() {
+		return getActionClickAccess().getRule();
+	}
+
+	//ActionOpen:
+	//	"open" "(" url=URL ")";
+	public ActionOpenElements getActionOpenAccess() {
+		return pActionOpen;
+	}
+	
+	public ParserRule getActionOpenRule() {
+		return getActionOpenAccess().getRule();
+	}
+
+	//ActionCheck:
+	//	"check" "(" type=ClickableElement "," element=NumberLiteral ")";
+	public ActionCheckElements getActionCheckAccess() {
+		return pActionCheck;
+	}
+	
+	public ParserRule getActionCheckRule() {
+		return getActionCheckAccess().getRule();
+	}
+
+	//ActionType:
+	//	"type" "(" nameElement=NumberLiteral "," value=Expression ")";
+	public ActionTypeElements getActionTypeAccess() {
+		return pActionType;
+	}
+	
+	public ParserRule getActionTypeRule() {
+		return getActionTypeAccess().getRule();
 	}
 
 	//ActionExpression:
@@ -1286,6 +1453,12 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getActionExpressionRule() {
 		return getActionExpressionAccess().getRule();
 	}
+
+	//terminal ClickableElement:
+	//	"button" | "image" | "link";
+	public TerminalRule getClickableElementRule() {
+		return tClickableElement;
+	} 
 
 	/// *
 	// * URL

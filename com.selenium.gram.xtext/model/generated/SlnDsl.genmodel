@@ -34,6 +34,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//VariableName/name"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Expression"/>
+    <genClasses ecoreClass="SlnDsl.ecore#//NumLiteralExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//NumLiteralExpression/value"/>
+    </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ListExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ListExpression/varName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ListExpression/exp"/>
@@ -70,10 +73,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Foreach/exp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Foreach/ins"/>
     </genClasses>
-    <genClasses ecoreClass="SlnDsl.ecore#//ActionInstruction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionInstruction/url"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionInstruction/element"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionInstruction/value"/>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionInstruction"/>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionClick">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/element"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionOpen">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionOpen/url"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionCheck">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionCheck/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionCheck/element"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionType/nameElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionType/value"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionExpression/element"/>

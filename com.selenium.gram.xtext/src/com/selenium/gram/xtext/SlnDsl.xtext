@@ -56,10 +56,14 @@ NumberLiteral:
 
 Expression:
 	VariableReference
-	| NumberLiteral
+	| NumLiteralExpression
 	| ListExpression
 	| BooleanExpression
 	| ActionExpression
+;
+
+NumLiteralExpression:
+	value = NumberLiteral
 ;
 
 ListExpression :
@@ -117,15 +121,36 @@ Foreach:
 ;
 
 ActionInstruction:
-	'open' '(' url=URL ')'
-	| ('check'|'click') '('element=Expression')'
-	| 'type(' element=Expression ',' value=Expression ')'
+	ActionOpen
+	| ActionClick
+	| ActionCheck
+	| ActionType
 ;
 
+ActionClick:
+	'click' '('type=ClickableElement ',' element=NumberLiteral ')'
+;
+
+ActionOpen:
+	'open' '(' url=URL ')'
+;
+
+ActionCheck:
+	'check' '('type=ClickableElement ',' element=NumberLiteral')'
+;
+
+ActionType:
+	'type' '(' nameElement=NumberLiteral ',' value=Expression ')'
+;
 ActionExpression :
 	('verify'|'select') '(' element=Expression ')'
 ;
 
+terminal ClickableElement:
+	'button'|
+	'image'|
+	'link'
+;
 /*
  * URL
  */
