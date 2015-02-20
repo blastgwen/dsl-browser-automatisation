@@ -2,6 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package com.selenium.gram.xtext.slnDsl;
  * @model
  * @generated
  */
-public interface ActionClick extends ActionInstruction
+public interface ActionClick extends EObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.

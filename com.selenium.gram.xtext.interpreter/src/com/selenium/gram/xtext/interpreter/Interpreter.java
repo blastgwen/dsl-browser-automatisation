@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EClass;
+
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
@@ -49,6 +51,7 @@ public class Interpreter {
 	private void executeInstruction(Instruction instruction, Map<String, Expression> variables) throws InterpretationException{
 		// Déclaration d'une variable
 		System.out.println("execute instruction : " +instruction.eClass().getName());
+
 		
 		if(instruction.eClass().getName().equals(Definition.class.getSimpleName())){
 			DefinitionImpl def = ((DefinitionImpl) instruction);
@@ -108,6 +111,7 @@ public class Interpreter {
 		}
 		// Execute une action Selenium
 		if(instruction.eClass().getName().equals(ActionInstruction.class.getSimpleName())){
+			System.out.println("execute ActionInstruction : " + instruction.getClass().getName());
 			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);
 		}		
 		

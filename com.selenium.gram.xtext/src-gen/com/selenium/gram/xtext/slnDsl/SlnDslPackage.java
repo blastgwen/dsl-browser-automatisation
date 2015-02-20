@@ -707,13 +707,22 @@ public interface SlnDslPackage extends EPackage
   int ACTION_INSTRUCTION = 19;
 
   /**
+   * The feature id for the '<em><b>Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_INSTRUCTION__ACTION = INSTRUCTION_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Action Instruction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+  int ACTION_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionClickImpl <em>Action Click</em>}' class.
@@ -732,7 +741,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_CLICK__TYPE = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+  int ACTION_CLICK__TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -741,7 +750,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_CLICK__ELEMENT = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+  int ACTION_CLICK__ELEMENT = 1;
 
   /**
    * The number of structural features of the '<em>Action Click</em>' class.
@@ -750,7 +759,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_CLICK_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 2;
+  int ACTION_CLICK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionOpenImpl <em>Action Open</em>}' class.
@@ -769,7 +778,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_OPEN__URL = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+  int ACTION_OPEN__URL = 0;
 
   /**
    * The number of structural features of the '<em>Action Open</em>' class.
@@ -778,7 +787,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_OPEN_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+  int ACTION_OPEN_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl <em>Action Check</em>}' class.
@@ -797,7 +806,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_CHECK__TYPE = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+  int ACTION_CHECK__TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -806,7 +815,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_CHECK__ELEMENT = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+  int ACTION_CHECK__ELEMENT = 1;
 
   /**
    * The number of structural features of the '<em>Action Check</em>' class.
@@ -815,7 +824,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_CHECK_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 2;
+  int ACTION_CHECK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl <em>Action Type</em>}' class.
@@ -834,7 +843,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_TYPE__NAME_ELEMENT = ACTION_INSTRUCTION_FEATURE_COUNT + 0;
+  int ACTION_TYPE__NAME_ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -843,7 +852,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_TYPE__VALUE = ACTION_INSTRUCTION_FEATURE_COUNT + 1;
+  int ACTION_TYPE__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Action Type</em>' class.
@@ -852,7 +861,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_TYPE_FEATURE_COUNT = ACTION_INSTRUCTION_FEATURE_COUNT + 2;
+  int ACTION_TYPE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
@@ -1423,6 +1432,17 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getActionInstruction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionInstruction#getAction <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Action</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionInstruction#getAction()
+   * @see #getActionInstruction()
+   * @generated
+   */
+  EReference getActionInstruction_Action();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionClick <em>Action Click</em>}'.
@@ -2032,6 +2052,14 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass ACTION_INSTRUCTION = eINSTANCE.getActionInstruction();
+
+    /**
+     * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_INSTRUCTION__ACTION = eINSTANCE.getActionInstruction_Action();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionClickImpl <em>Action Click</em>}' class.

@@ -2,6 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ package com.selenium.gram.xtext.slnDsl;
  * @model
  * @generated
  */
-public interface ActionOpen extends ActionInstruction
+public interface ActionOpen extends EObject
 {
   /**
    * Returns the value of the '<em><b>Url</b></em>' attribute.

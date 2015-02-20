@@ -121,10 +121,10 @@ Foreach:
 ;
 
 ActionInstruction:
-	ActionOpen
-	| ActionClick
-	| ActionCheck
-	| ActionType
+	action=ActionOpen
+	| action=ActionClick
+	| action=ActionCheck
+	| action=ActionType
 ;
 
 ActionClick:
