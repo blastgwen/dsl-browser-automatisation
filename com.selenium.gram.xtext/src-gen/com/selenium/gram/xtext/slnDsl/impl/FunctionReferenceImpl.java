@@ -2,25 +2,17 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.FunctionName;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,13 +22,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.FunctionReferenceImpl#getFunctionName <em>Function Name</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.FunctionReferenceImpl#getArgs <em>Args</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionReference
+public class FunctionReferenceImpl extends MinimalEObjectImpl.Container implements FunctionReference
 {
   /**
    * The cached value of the '{@link #getFunctionName() <em>Function Name</em>}' reference.
@@ -47,16 +38,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
    * @ordered
    */
   protected FunctionName functionName;
-
-  /**
-   * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArgs()
-   * @generated
-   * @ordered
-   */
-  protected EList<Expression> args;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,36 +108,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Expression> getArgs()
-  {
-    if (args == null)
-    {
-      args = new EObjectContainmentEList<Expression>(Expression.class, this, SlnDslPackage.FUNCTION_REFERENCE__ARGS);
-    }
-    return args;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
-        return ((InternalEList<?>)getArgs()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -165,8 +116,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         if (resolve) return getFunctionName();
         return basicGetFunctionName();
-      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
-        return getArgs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -176,7 +125,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -184,10 +132,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
     {
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         setFunctionName((FunctionName)newValue);
-        return;
-      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
-        getArgs().clear();
-        getArgs().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -206,9 +150,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         setFunctionName((FunctionName)null);
         return;
-      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
-        getArgs().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -225,8 +166,6 @@ public class FunctionReferenceImpl extends FunctionCallImpl implements FunctionR
     {
       case SlnDslPackage.FUNCTION_REFERENCE__FUNCTION_NAME:
         return functionName != null;
-      case SlnDslPackage.FUNCTION_REFERENCE__ARGS:
-        return args != null && !args.isEmpty();
     }
     return super.eIsSet(featureID);
   }

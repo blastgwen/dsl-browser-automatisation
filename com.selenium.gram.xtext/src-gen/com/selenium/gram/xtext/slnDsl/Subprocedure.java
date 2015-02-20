@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getHead <em>Head</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getDefs <em>Defs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -50,6 +51,22 @@ public interface Subprocedure extends EObject
    * @generated
    */
   void setHead(Head value);
+
+  /**
+   * Returns the value of the '<em><b>Defs</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Definition}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Defs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Defs</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getSubprocedure_Defs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Definition> getDefs();
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference list.

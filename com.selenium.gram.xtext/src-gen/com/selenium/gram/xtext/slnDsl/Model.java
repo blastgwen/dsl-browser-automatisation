@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Model#getSubs <em>Subs</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Model#getDefs <em>Defs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Model#getMain <em>Main</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +41,22 @@ public interface Model extends EObject
    * @generated
    */
   EList<Subprocedure> getSubs();
+
+  /**
+   * Returns the value of the '<em><b>Defs</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Definition}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Defs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Defs</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getModel_Defs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Definition> getDefs();
 
   /**
    * Returns the value of the '<em><b>Main</b></em>' containment reference list.

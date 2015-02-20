@@ -2,6 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,8 +12,7 @@ package com.selenium.gram.xtext.slnDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Loop#getWhile <em>While</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Loop#getFor <em>For</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Loop#getIns <em>Ins</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,55 +23,19 @@ package com.selenium.gram.xtext.slnDsl;
 public interface Loop extends Instruction
 {
   /**
-   * Returns the value of the '<em><b>While</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ins</b></em>' containment reference list.
+   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>While</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Ins</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>While</em>' containment reference.
-   * @see #setWhile(While)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getLoop_While()
+   * @return the value of the '<em>Ins</em>' containment reference list.
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getLoop_Ins()
    * @model containment="true"
    * @generated
    */
-  While getWhile();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Loop#getWhile <em>While</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>While</em>' containment reference.
-   * @see #getWhile()
-   * @generated
-   */
-  void setWhile(While value);
-
-  /**
-   * Returns the value of the '<em><b>For</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>For</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>For</em>' containment reference.
-   * @see #setFor(Foreach)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getLoop_For()
-   * @model containment="true"
-   * @generated
-   */
-  Foreach getFor();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Loop#getFor <em>For</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>For</em>' containment reference.
-   * @see #getFor()
-   * @generated
-   */
-  void setFor(Foreach value);
+  EList<Instruction> getIns();
 
 } // Loop

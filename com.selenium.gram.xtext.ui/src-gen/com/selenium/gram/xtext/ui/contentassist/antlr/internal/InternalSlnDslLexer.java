@@ -51,6 +51,7 @@ public class InternalSlnDslLexer extends Lexer {
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__40=40;
     public static final int RULE_CLICKABLEELEMENT=7;
     public static final int T__41=41;
@@ -178,10 +179,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:16:7: ( 'verify' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:16:9: 'verify'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:16:7: ( 'main' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:16:9: 'main'
             {
-            match("verify"); 
+            match("main"); 
 
 
             }
@@ -199,10 +200,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:17:7: ( 'select' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:17:9: 'select'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:17:7: ( 'endmain' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:17:9: 'endmain'
             {
-            match("select"); 
+            match("endmain"); 
 
 
             }
@@ -220,10 +221,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:18:7: ( 'main' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:18:9: 'main'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:18:7: ( 'sub' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:18:9: 'sub'
             {
-            match("main"); 
+            match("sub"); 
 
 
             }
@@ -241,10 +242,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:19:7: ( 'endmain' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:19:9: 'endmain'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:19:7: ( 'endsub' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:19:9: 'endsub'
             {
-            match("endmain"); 
+            match("endsub"); 
 
 
             }
@@ -262,10 +263,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:20:7: ( 'sub' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:20:9: 'sub'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:20:7: ( '()' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:20:9: '()'
             {
-            match("sub"); 
+            match("()"); 
 
 
             }
@@ -283,11 +284,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:21:7: ( 'endsub' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:21:9: 'endsub'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:21:7: ( '(' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:21:9: '('
             {
-            match("endsub"); 
-
+            match('('); 
 
             }
 
@@ -304,10 +304,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:22:7: ( '()' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:22:9: '()'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:22:7: ( 'var' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:22:9: 'var'
             {
-            match("()"); 
+            match("var"); 
 
 
             }
@@ -325,10 +325,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:23:7: ( '(' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:23:9: '('
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:23:7: ( ')' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:23:9: ')'
             {
-            match('('); 
+            match(')'); 
 
             }
 
@@ -345,11 +345,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:24:7: ( 'var' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:24:9: 'var'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:24:7: ( ',' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:24:9: ','
             {
-            match("var"); 
-
+            match(','); 
 
             }
 
@@ -366,10 +365,11 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:25:7: ( ')' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:25:9: ')'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:25:7: ( 'sizeof' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:25:9: 'sizeof'
             {
-            match(')'); 
+            match("sizeof"); 
+
 
             }
 
@@ -386,10 +386,11 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:26:7: ( ',' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:26:9: ','
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:26:7: ( '->' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:26:9: '->'
             {
-            match(','); 
+            match("->"); 
+
 
             }
 
@@ -406,10 +407,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:27:7: ( '->' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:27:9: '->'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:27:7: ( 'verify' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:27:9: 'verify'
             {
-            match("->"); 
+            match("verify"); 
 
 
             }
@@ -427,10 +428,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:28:7: ( 'sizeof' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:28:9: 'sizeof'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:28:7: ( 'exist' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:28:9: 'exist'
             {
-            match("sizeof"); 
+            match("exist"); 
 
 
             }
@@ -777,15 +778,36 @@ public class InternalSlnDslLexer extends Lexer {
     }
     // $ANTLR end "T__46"
 
+    // $ANTLR start "T__47"
+    public final void mT__47() throws RecognitionException {
+        try {
+            int _type = T__47;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:45:7: ( 'select' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:45:9: 'select'
+            {
+            match("select"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__47"
+
     // $ANTLR start "RULE_CLICKABLEELEMENT"
     public final void mRULE_CLICKABLEELEMENT() throws RecognitionException {
         try {
             int _type = RULE_CLICKABLEELEMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5135:23: ( ( 'button' | 'image' | 'link' ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5135:25: ( 'button' | 'image' | 'link' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5833:23: ( ( 'button' | 'image' | 'link' ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5833:25: ( 'button' | 'image' | 'link' )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5135:25: ( 'button' | 'image' | 'link' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5833:25: ( 'button' | 'image' | 'link' )
             int alt1=3;
             switch ( input.LA(1) ) {
             case 'b':
@@ -812,7 +834,7 @@ public class InternalSlnDslLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5135:26: 'button'
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5833:26: 'button'
                     {
                     match("button"); 
 
@@ -820,7 +842,7 @@ public class InternalSlnDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5135:35: 'image'
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5833:35: 'image'
                     {
                     match("image"); 
 
@@ -828,7 +850,7 @@ public class InternalSlnDslLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5135:43: 'link'
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5833:43: 'link'
                     {
                     match("link"); 
 
@@ -854,10 +876,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_URL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:10: ( ( 'a' .. 'z' )+ '://' ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ | ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ) ( ':' ( '0' .. '9' )+ )? ( '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ( '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )* )? )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:12: ( 'a' .. 'z' )+ '://' ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ | ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ) ( ':' ( '0' .. '9' )+ )? ( '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ( '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )* )?
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:10: ( ( 'a' .. 'z' )+ '://' ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ | ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ) ( ':' ( '0' .. '9' )+ )? ( '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ( '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )* )? )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:12: ( 'a' .. 'z' )+ '://' ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ | ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ) ( ':' ( '0' .. '9' )+ )? ( '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* ( '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )* )?
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:12: ( 'a' .. 'z' )+
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:12: ( 'a' .. 'z' )+
             int cnt2=0;
             loop2:
             do {
@@ -871,7 +893,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:13: 'a' .. 'z'
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:13: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
@@ -889,7 +911,7 @@ public class InternalSlnDslLexer extends Lexer {
 
             match("://"); 
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:30: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ | ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:30: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ | ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )* )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -907,9 +929,9 @@ public class InternalSlnDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:31: ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:31: ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+ '.' ( '0' .. '9' )+
                     {
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:31: ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:31: ( '0' .. '9' )+
                     int cnt3=0;
                     loop3:
                     do {
@@ -923,7 +945,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:32: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:32: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -940,7 +962,7 @@ public class InternalSlnDslLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:47: ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:47: ( '0' .. '9' )+
                     int cnt4=0;
                     loop4:
                     do {
@@ -954,7 +976,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:48: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:48: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -971,7 +993,7 @@ public class InternalSlnDslLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:63: ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:63: ( '0' .. '9' )+
                     int cnt5=0;
                     loop5:
                     do {
@@ -985,7 +1007,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:64: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:64: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1002,7 +1024,7 @@ public class InternalSlnDslLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:79: ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:79: ( '0' .. '9' )+
                     int cnt6=0;
                     loop6:
                     do {
@@ -1016,7 +1038,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:80: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:80: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1036,7 +1058,7 @@ public class InternalSlnDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:91: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:91: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )*
                     {
                     if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                         input.consume();
@@ -1047,56 +1069,56 @@ public class InternalSlnDslLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:111: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:111: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
                     loop7:
                     do {
                         int alt7=9;
                         alt7 = dfa7.predict(input);
                         switch (alt7) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:112: 'a' .. 'z'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:112: 'a' .. 'z'
                     	    {
                     	    matchRange('a','z'); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:121: 'A' .. 'Z'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:121: 'A' .. 'Z'
                     	    {
                     	    matchRange('A','Z'); 
 
                     	    }
                     	    break;
                     	case 3 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:130: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:130: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
                     	    }
                     	    break;
                     	case 4 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:139: '$'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:139: '$'
                     	    {
                     	    match('$'); 
 
                     	    }
                     	    break;
                     	case 5 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:143: '-'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:143: '-'
                     	    {
                     	    match('-'); 
 
                     	    }
                     	    break;
                     	case 6 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:147: '_'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:147: '_'
                     	    {
                     	    match('_'); 
 
                     	    }
                     	    break;
                     	case 7 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:151: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:151: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
                     	    {
                     	    match('\\'); 
                     	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -1121,7 +1143,7 @@ public class InternalSlnDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 8 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:214: '%' '0' .. '9' '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:214: '%' '0' .. '9' '0' .. '9'
                     	    {
                     	    match('%'); 
                     	    matchRange('0','9'); 
@@ -1135,7 +1157,7 @@ public class InternalSlnDslLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:238: ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:238: ( '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )*
                     loop9:
                     do {
                         int alt9=2;
@@ -1148,7 +1170,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:239: '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:239: '.' ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
                     	    {
                     	    match('.'); 
                     	    if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
@@ -1160,56 +1182,56 @@ public class InternalSlnDslLexer extends Lexer {
                     	        recover(mse);
                     	        throw mse;}
 
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:263: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:263: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
                     	    loop8:
                     	    do {
                     	        int alt8=9;
                     	        alt8 = dfa8.predict(input);
                     	        switch (alt8) {
                     	    	case 1 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:264: 'a' .. 'z'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:264: 'a' .. 'z'
                     	    	    {
                     	    	    matchRange('a','z'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 2 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:273: 'A' .. 'Z'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:273: 'A' .. 'Z'
                     	    	    {
                     	    	    matchRange('A','Z'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 3 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:282: '0' .. '9'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:282: '0' .. '9'
                     	    	    {
                     	    	    matchRange('0','9'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 4 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:291: '$'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:291: '$'
                     	    	    {
                     	    	    match('$'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 5 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:295: '-'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:295: '-'
                     	    	    {
                     	    	    match('-'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 6 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:299: '_'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:299: '_'
                     	    	    {
                     	    	    match('_'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 7 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:303: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:303: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
                     	    	    {
                     	    	    match('\\'); 
                     	    	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -1234,7 +1256,7 @@ public class InternalSlnDslLexer extends Lexer {
                     	    	    }
                     	    	    break;
                     	    	case 8 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:366: '%' '0' .. '9' '0' .. '9'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:366: '%' '0' .. '9' '0' .. '9'
                     	    	    {
                     	    	    match('%'); 
                     	    	    matchRange('0','9'); 
@@ -1263,7 +1285,7 @@ public class InternalSlnDslLexer extends Lexer {
 
             }
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:393: ( ':' ( '0' .. '9' )+ )?
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:393: ( ':' ( '0' .. '9' )+ )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1272,10 +1294,10 @@ public class InternalSlnDslLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:394: ':' ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:394: ':' ( '0' .. '9' )+
                     {
                     match(':'); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:398: ( '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:398: ( '0' .. '9' )+
                     int cnt11=0;
                     loop11:
                     do {
@@ -1289,7 +1311,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:399: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:399: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1311,7 +1333,7 @@ public class InternalSlnDslLexer extends Lexer {
 
             }
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:412: ( '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:412: ( '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )* )*
             loop14:
             do {
                 int alt14=2;
@@ -1324,80 +1346,80 @@ public class InternalSlnDslLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:413: '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:413: '/' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
             	    {
             	    match('/'); 
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:417: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:417: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*
             	    loop13:
             	    do {
             	        int alt13=12;
             	        alt13 = dfa13.predict(input);
             	        switch (alt13) {
             	    	case 1 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:418: 'a' .. 'z'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:418: 'a' .. 'z'
             	    	    {
             	    	    matchRange('a','z'); 
 
             	    	    }
             	    	    break;
             	    	case 2 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:427: 'A' .. 'Z'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:427: 'A' .. 'Z'
             	    	    {
             	    	    matchRange('A','Z'); 
 
             	    	    }
             	    	    break;
             	    	case 3 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:436: '0' .. '9'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:436: '0' .. '9'
             	    	    {
             	    	    matchRange('0','9'); 
 
             	    	    }
             	    	    break;
             	    	case 4 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:445: '$'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:445: '$'
             	    	    {
             	    	    match('$'); 
 
             	    	    }
             	    	    break;
             	    	case 5 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:449: '-'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:449: '-'
             	    	    {
             	    	    match('-'); 
 
             	    	    }
             	    	    break;
             	    	case 6 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:453: '_'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:453: '_'
             	    	    {
             	    	    match('_'); 
 
             	    	    }
             	    	    break;
             	    	case 7 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:457: '~'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:457: '~'
             	    	    {
             	    	    match('~'); 
 
             	    	    }
             	    	    break;
             	    	case 8 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:461: '+'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:461: '+'
             	    	    {
             	    	    match('+'); 
 
             	    	    }
             	    	    break;
             	    	case 9 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:465: '.'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:465: '.'
             	    	    {
             	    	    match('.'); 
 
             	    	    }
             	    	    break;
             	    	case 10 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:469: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:469: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             	    	    {
             	    	    match('\\'); 
             	    	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -1422,7 +1444,7 @@ public class InternalSlnDslLexer extends Lexer {
             	    	    }
             	    	    break;
             	    	case 11 :
-            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:532: '%' '0' .. '9' '0' .. '9'
+            	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:532: '%' '0' .. '9' '0' .. '9'
             	    	    {
             	    	    match('%'); 
             	    	    matchRange('0','9'); 
@@ -1445,7 +1467,7 @@ public class InternalSlnDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:558: ( '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )* )?
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:558: ( '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )* )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1454,10 +1476,10 @@ public class InternalSlnDslLexer extends Lexer {
             }
             switch (alt18) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:559: '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:559: '?' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )*
                     {
                     match('?'); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:563: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:563: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -1465,70 +1487,70 @@ public class InternalSlnDslLexer extends Lexer {
                         alt15 = dfa15.predict(input);
                         switch (alt15) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:564: 'a' .. 'z'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:564: 'a' .. 'z'
                     	    {
                     	    matchRange('a','z'); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:573: 'A' .. 'Z'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:573: 'A' .. 'Z'
                     	    {
                     	    matchRange('A','Z'); 
 
                     	    }
                     	    break;
                     	case 3 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:582: '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:582: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
                     	    }
                     	    break;
                     	case 4 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:591: '$'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:591: '$'
                     	    {
                     	    match('$'); 
 
                     	    }
                     	    break;
                     	case 5 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:595: '-'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:595: '-'
                     	    {
                     	    match('-'); 
 
                     	    }
                     	    break;
                     	case 6 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:599: '_'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:599: '_'
                     	    {
                     	    match('_'); 
 
                     	    }
                     	    break;
                     	case 7 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:603: '='
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:603: '='
                     	    {
                     	    match('='); 
 
                     	    }
                     	    break;
                     	case 8 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:607: '&'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:607: '&'
                     	    {
                     	    match('&'); 
 
                     	    }
                     	    break;
                     	case 9 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:611: ';'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:611: ';'
                     	    {
                     	    match(';'); 
 
                     	    }
                     	    break;
                     	case 10 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:615: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:615: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
                     	    {
                     	    match('\\'); 
                     	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -1553,7 +1575,7 @@ public class InternalSlnDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 11 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:678: '%' '0' .. '9' '0' .. '9'
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:678: '%' '0' .. '9' '0' .. '9'
                     	    {
                     	    match('%'); 
                     	    matchRange('0','9'); 
@@ -1571,7 +1593,7 @@ public class InternalSlnDslLexer extends Lexer {
                         cnt15++;
                     } while (true);
 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:702: ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:702: ( '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+ )*
                     loop17:
                     do {
                         int alt17=2;
@@ -1584,10 +1606,10 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:703: '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:703: '+' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+
                     	    {
                     	    match('+'); 
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:707: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:707: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+
                     	    int cnt16=0;
                     	    loop16:
                     	    do {
@@ -1595,70 +1617,70 @@ public class InternalSlnDslLexer extends Lexer {
                     	        alt16 = dfa16.predict(input);
                     	        switch (alt16) {
                     	    	case 1 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:708: 'a' .. 'z'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:708: 'a' .. 'z'
                     	    	    {
                     	    	    matchRange('a','z'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 2 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:717: 'A' .. 'Z'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:717: 'A' .. 'Z'
                     	    	    {
                     	    	    matchRange('A','Z'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 3 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:726: '0' .. '9'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:726: '0' .. '9'
                     	    	    {
                     	    	    matchRange('0','9'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 4 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:735: '$'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:735: '$'
                     	    	    {
                     	    	    match('$'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 5 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:739: '-'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:739: '-'
                     	    	    {
                     	    	    match('-'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 6 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:743: '_'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:743: '_'
                     	    	    {
                     	    	    match('_'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 7 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:747: '='
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:747: '='
                     	    	    {
                     	    	    match('='); 
 
                     	    	    }
                     	    	    break;
                     	    	case 8 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:751: '&'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:751: '&'
                     	    	    {
                     	    	    match('&'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 9 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:755: ';'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:755: ';'
                     	    	    {
                     	    	    match(';'); 
 
                     	    	    }
                     	    	    break;
                     	    	case 10 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:759: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:759: '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
                     	    	    {
                     	    	    match('\\'); 
                     	    	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -1683,7 +1705,7 @@ public class InternalSlnDslLexer extends Lexer {
                     	    	    }
                     	    	    break;
                     	    	case 11 :
-                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5137:822: '%' '0' .. '9' '0' .. '9'
+                    	    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5835:822: '%' '0' .. '9' '0' .. '9'
                     	    	    {
                     	    	    match('%'); 
                     	    	    matchRange('0','9'); 
@@ -1732,10 +1754,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5139:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5139:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5837:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5837:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5139:11: ( '^' )?
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5837:11: ( '^' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -1744,7 +1766,7 @@ public class InternalSlnDslLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5139:11: '^'
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5837:11: '^'
                     {
                     match('^'); 
 
@@ -1762,7 +1784,7 @@ public class InternalSlnDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5139:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5837:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop20:
             do {
                 int alt20=2;
@@ -1811,10 +1833,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5141:10: ( ( '0' .. '9' )+ )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5141:12: ( '0' .. '9' )+
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5839:10: ( ( '0' .. '9' )+ )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5839:12: ( '0' .. '9' )+
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5141:12: ( '0' .. '9' )+
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5839:12: ( '0' .. '9' )+
             int cnt21=0;
             loop21:
             do {
@@ -1828,7 +1850,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5141:13: '0' .. '9'
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5839:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1860,10 +1882,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -1881,10 +1903,10 @@ public class InternalSlnDslLexer extends Lexer {
             }
             switch (alt24) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop22:
                     do {
                         int alt22=3;
@@ -1900,7 +1922,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt22) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:21: '\\\\' .
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1908,7 +1930,7 @@ public class InternalSlnDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1933,10 +1955,10 @@ public class InternalSlnDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop23:
                     do {
                         int alt23=3;
@@ -1952,7 +1974,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                         switch (alt23) {
                     	case 1 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:54: '\\\\' .
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1960,7 +1982,7 @@ public class InternalSlnDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5143:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5841:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2003,12 +2025,12 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5145:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5145:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5843:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5843:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5145:24: ( options {greedy=false; } : . )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5843:24: ( options {greedy=false; } : . )*
             loop25:
             do {
                 int alt25=2;
@@ -2033,7 +2055,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                 switch (alt25) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5145:52: .
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5843:52: .
             	    {
             	    matchAny(); 
 
@@ -2063,12 +2085,12 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop26:
             do {
                 int alt26=2;
@@ -2081,7 +2103,7 @@ public class InternalSlnDslLexer extends Lexer {
 
                 switch (alt26) {
             	case 1 :
-            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2101,7 +2123,7 @@ public class InternalSlnDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:40: ( ( '\\r' )? '\\n' )?
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:40: ( ( '\\r' )? '\\n' )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -2110,9 +2132,9 @@ public class InternalSlnDslLexer extends Lexer {
             }
             switch (alt28) {
                 case 1 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:41: ( '\\r' )? '\\n'
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:41: ( '\\r' )?
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:41: ( '\\r' )?
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -2121,7 +2143,7 @@ public class InternalSlnDslLexer extends Lexer {
                     }
                     switch (alt27) {
                         case 1 :
-                            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5147:41: '\\r'
+                            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5845:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2153,10 +2175,10 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5149:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5149:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5847:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5847:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5149:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5847:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt29=0;
             loop29:
             do {
@@ -2210,8 +2232,8 @@ public class InternalSlnDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5151:16: ( . )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5151:18: .
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5849:16: ( . )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:5849:18: .
             {
             matchAny(); 
 
@@ -2226,8 +2248,8 @@ public class InternalSlnDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_CLICKABLEELEMENT | RULE_URL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt30=43;
+        // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | RULE_CLICKABLEELEMENT | RULE_URL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt30=44;
         alt30 = dfa30.predict(input);
         switch (alt30) {
             case 1 :
@@ -2469,63 +2491,70 @@ public class InternalSlnDslLexer extends Lexer {
                 }
                 break;
             case 35 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:214: RULE_CLICKABLEELEMENT
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:214: T__47
+                {
+                mT__47(); 
+
+                }
+                break;
+            case 36 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:220: RULE_CLICKABLEELEMENT
                 {
                 mRULE_CLICKABLEELEMENT(); 
 
                 }
                 break;
-            case 36 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:236: RULE_URL
+            case 37 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:242: RULE_URL
                 {
                 mRULE_URL(); 
 
                 }
                 break;
-            case 37 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:245: RULE_ID
+            case 38 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:251: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 38 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:253: RULE_INT
+            case 39 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:259: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 39 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:262: RULE_STRING
+            case 40 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:268: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 40 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:274: RULE_ML_COMMENT
+            case 41 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:280: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 41 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:290: RULE_SL_COMMENT
+            case 42 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:296: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 42 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:306: RULE_WS
+            case 43 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:312: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 43 :
-                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:314: RULE_ANY_OTHER
+            case 44 :
+                // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1:320: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2599,7 +2628,7 @@ public class InternalSlnDslLexer extends Lexer {
             this.transition = DFA7_transition;
         }
         public String getDescription() {
-            return "()* loopback of 5137:111: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*";
+            return "()* loopback of 5835:111: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*";
         }
     }
     static final String DFA8_eotS =
@@ -2658,7 +2687,7 @@ public class InternalSlnDslLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "()* loopback of 5137:263: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*";
+            return "()* loopback of 5835:263: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*";
         }
     }
     static final String DFA13_eotS =
@@ -2720,7 +2749,7 @@ public class InternalSlnDslLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "()* loopback of 5137:417: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*";
+            return "()* loopback of 5835:417: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '~' | '+' | '.' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )*";
         }
     }
     static final String DFA15_eotS =
@@ -2782,7 +2811,7 @@ public class InternalSlnDslLexer extends Lexer {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 5137:563: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+";
+            return "()+ loopback of 5835:563: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+";
         }
     }
     static final String DFA16_eotS =
@@ -2844,123 +2873,124 @@ public class InternalSlnDslLexer extends Lexer {
             this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "()+ loopback of 5137:707: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+";
+            return "()+ loopback of 5835:707: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '$' | '-' | '_' | '=' | '&' | ';' | '\\\\' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) | '%' '0' .. '9' '0' .. '9' )+";
         }
     }
     static final String DFA30_eotS =
-        "\1\uffff\1\42\1\44\2\uffff\4\42\1\62\2\uffff\1\37\1\uffff\12\42"+
-        "\1\37\2\uffff\3\37\2\uffff\2\42\5\uffff\2\42\1\uffff\7\42\6\uffff"+
-        "\1\123\1\124\4\42\1\131\6\42\5\uffff\1\140\1\141\1\42\1\143\1\42"+
-        "\1\145\4\42\2\uffff\4\42\1\uffff\6\42\2\uffff\1\42\1\uffff\1\42"+
-        "\1\uffff\1\42\1\173\5\42\1\u0081\1\42\1\u0083\1\u0084\4\42\1\u0089"+
-        "\1\42\1\u008b\3\42\1\uffff\2\42\1\u0091\2\42\1\uffff\1\u008b\2\uffff"+
-        "\1\u0094\1\42\1\u0096\1\u0097\1\uffff\1\42\1\uffff\1\u0099\1\u009a"+
-        "\1\u009b\1\42\1\u009d\1\uffff\1\42\1\u009f\1\uffff\1\42\2\uffff"+
-        "\1\u008b\3\uffff\1\u00a1\1\uffff\1\42\1\uffff\1\u00a3\1\uffff\1"+
-        "\u00a4\2\uffff";
+        "\1\uffff\1\42\1\44\2\uffff\3\42\1\61\1\42\2\uffff\1\37\1\uffff"+
+        "\12\42\1\37\2\uffff\3\37\2\uffff\2\42\5\uffff\1\42\1\uffff\7\42"+
+        "\2\uffff\2\42\4\uffff\1\125\1\126\4\42\1\133\6\42\5\uffff\1\142"+
+        "\1\143\4\42\1\154\2\42\1\157\1\42\2\uffff\4\42\1\uffff\6\42\2\uffff"+
+        "\1\173\6\42\1\u0082\1\uffff\2\42\1\uffff\2\42\1\u0087\1\u0088\4"+
+        "\42\1\u008d\1\42\1\u008f\1\uffff\2\42\1\u0092\2\42\1\u0095\1\uffff"+
+        "\3\42\1\u008f\2\uffff\1\u0099\1\42\1\u009b\1\u009c\1\uffff\1\42"+
+        "\1\uffff\1\42\1\u009f\1\uffff\1\42\1\u00a1\1\uffff\1\u00a2\1\u00a3"+
+        "\1\u00a4\1\uffff\1\42\2\uffff\1\u008f\1\u00a6\1\uffff\1\42\4\uffff"+
+        "\1\u00a8\1\uffff\1\u00a9\2\uffff";
     static final String DFA30_eofS =
-        "\u00a5\uffff";
+        "\u00aa\uffff";
     static final String DFA30_minS =
-        "\1\0\1\154\1\75\2\uffff\4\72\1\51\2\uffff\1\76\1\uffff\12\72\1"+
-        "\101\2\uffff\2\0\1\52\2\uffff\1\154\1\171\5\uffff\2\72\1\uffff\7"+
-        "\72\6\uffff\2\60\4\72\1\60\6\72\5\uffff\2\60\1\72\1\60\1\72\1\60"+
-        "\4\72\2\uffff\4\72\1\uffff\6\72\2\uffff\1\72\1\uffff\1\72\1\uffff"+
-        "\1\72\1\60\5\72\1\60\1\72\2\60\4\72\1\60\1\72\1\60\3\72\1\uffff"+
-        "\2\72\1\60\2\72\1\uffff\1\60\2\uffff\1\60\1\72\2\60\1\uffff\1\72"+
-        "\1\uffff\3\60\1\72\1\60\1\uffff\1\72\1\60\1\uffff\1\72\2\uffff\1"+
-        "\60\3\uffff\1\60\1\uffff\1\72\1\uffff\1\60\1\uffff\1\60\2\uffff";
+        "\1\0\1\154\1\75\2\uffff\3\72\1\51\1\72\2\uffff\1\76\1\uffff\12"+
+        "\72\1\101\2\uffff\2\0\1\52\2\uffff\1\154\1\171\5\uffff\1\72\1\uffff"+
+        "\7\72\2\uffff\2\72\4\uffff\2\60\4\72\1\60\6\72\5\uffff\2\60\4\72"+
+        "\1\60\2\72\1\60\1\72\2\uffff\4\72\1\uffff\6\72\2\uffff\1\60\6\72"+
+        "\1\60\1\uffff\2\72\1\uffff\2\72\2\60\4\72\1\60\1\72\1\60\1\uffff"+
+        "\2\72\1\60\2\72\1\60\1\uffff\3\72\1\60\2\uffff\1\60\1\72\2\60\1"+
+        "\uffff\1\72\1\uffff\1\72\1\60\1\uffff\1\72\1\60\1\uffff\3\60\1\uffff"+
+        "\1\72\2\uffff\2\60\1\uffff\1\72\4\uffff\1\60\1\uffff\1\60\2\uffff";
     static final String DFA30_maxS =
-        "\1\uffff\1\156\1\75\2\uffff\4\172\1\51\2\uffff\1\76\1\uffff\13"+
-        "\172\2\uffff\2\uffff\1\57\2\uffff\1\154\1\171\5\uffff\2\172\1\uffff"+
-        "\7\172\6\uffff\15\172\5\uffff\12\172\2\uffff\4\172\1\uffff\6\172"+
-        "\2\uffff\1\172\1\uffff\1\172\1\uffff\25\172\1\uffff\5\172\1\uffff"+
-        "\1\172\2\uffff\4\172\1\uffff\1\172\1\uffff\5\172\1\uffff\2\172\1"+
-        "\uffff\1\172\2\uffff\1\172\3\uffff\1\172\1\uffff\1\172\1\uffff\1"+
-        "\172\1\uffff\1\172\2\uffff";
+        "\1\uffff\1\156\1\75\2\uffff\3\172\1\51\1\172\2\uffff\1\76\1\uffff"+
+        "\13\172\2\uffff\2\uffff\1\57\2\uffff\1\154\1\171\5\uffff\1\172\1"+
+        "\uffff\7\172\2\uffff\2\172\4\uffff\15\172\5\uffff\13\172\2\uffff"+
+        "\4\172\1\uffff\6\172\2\uffff\10\172\1\uffff\2\172\1\uffff\13\172"+
+        "\1\uffff\6\172\1\uffff\4\172\2\uffff\4\172\1\uffff\1\172\1\uffff"+
+        "\2\172\1\uffff\2\172\1\uffff\3\172\1\uffff\1\172\2\uffff\2\172\1"+
+        "\uffff\1\172\4\uffff\1\172\1\uffff\1\172\2\uffff";
     static final String DFA30_acceptS =
-        "\3\uffff\1\4\1\5\5\uffff\1\17\1\20\1\uffff\1\23\13\uffff\1\45\1"+
-        "\46\3\uffff\1\52\1\53\2\uffff\1\45\1\3\1\24\1\4\1\5\2\uffff\1\44"+
-        "\7\uffff\1\14\1\15\1\17\1\20\1\21\1\23\15\uffff\1\46\1\47\1\50\1"+
-        "\51\1\52\12\uffff\1\25\1\35\4\uffff\1\32\6\uffff\1\1\1\2\1\uffff"+
-        "\1\16\1\uffff\1\12\25\uffff\1\10\5\uffff\1\30\1\uffff\1\26\1\42"+
-        "\4\uffff\1\40\1\uffff\1\43\5\uffff\1\27\2\uffff\1\31\1\uffff\1\37"+
-        "\1\41\1\uffff\1\6\1\7\1\22\1\uffff\1\13\1\uffff\1\36\1\uffff\1\11"+
-        "\1\uffff\1\34\1\33";
+        "\3\uffff\1\4\1\5\5\uffff\1\15\1\16\1\uffff\1\23\13\uffff\1\46\1"+
+        "\47\3\uffff\1\53\1\54\2\uffff\1\46\1\3\1\24\1\4\1\5\1\uffff\1\45"+
+        "\7\uffff\1\12\1\13\2\uffff\1\15\1\16\1\20\1\23\15\uffff\1\47\1\50"+
+        "\1\51\1\52\1\53\13\uffff\1\25\1\35\4\uffff\1\32\6\uffff\1\1\1\2"+
+        "\10\uffff\1\10\2\uffff\1\14\13\uffff\1\6\6\uffff\1\30\4\uffff\1"+
+        "\26\1\42\4\uffff\1\40\1\uffff\1\44\2\uffff\1\27\2\uffff\1\22\3\uffff"+
+        "\1\31\1\uffff\1\37\1\41\2\uffff\1\11\1\uffff\1\36\1\17\1\43\1\21"+
+        "\1\uffff\1\7\1\uffff\1\34\1\33";
     static final String DFA30_specialS =
-        "\1\0\32\uffff\1\2\1\1\u0088\uffff}>";
+        "\1\1\32\uffff\1\0\1\2\u008d\uffff}>";
     static final String[] DFA30_transitionS = {
-            "\11\37\2\36\2\37\1\36\22\37\1\36\1\15\1\33\4\37\1\34\1\11\1"+
+            "\11\37\2\36\2\37\1\36\22\37\1\36\1\15\1\33\4\37\1\34\1\10\1"+
             "\12\2\37\1\13\1\14\1\37\1\35\12\32\2\37\1\3\1\2\1\4\2\37\1\1"+
-            "\31\31\3\37\1\30\1\31\1\37\1\27\1\25\1\23\1\21\1\10\1\22\2\27"+
-            "\1\16\2\27\1\26\1\7\1\27\1\24\3\27\1\6\1\17\1\27\1\5\1\20\3"+
+            "\31\31\3\37\1\30\1\31\1\37\1\27\1\25\1\23\1\21\1\6\1\22\2\27"+
+            "\1\16\2\27\1\26\1\5\1\27\1\24\3\27\1\7\1\17\1\27\1\11\1\20\3"+
             "\27\uff85\37",
             "\1\40\1\uffff\1\41",
             "\1\43",
             "",
             "",
-            "\1\51\46\uffff\1\50\3\52\1\47\25\52",
-            "\1\51\46\uffff\4\52\1\53\3\52\1\55\13\52\1\54\5\52",
-            "\1\51\46\uffff\1\56\31\52",
-            "\1\51\46\uffff\13\52\1\60\1\52\1\57\14\52",
-            "\1\61",
+            "\1\50\46\uffff\1\47\31\51",
+            "\1\50\46\uffff\13\51\1\54\1\51\1\52\11\51\1\53\2\51",
+            "\1\50\46\uffff\4\51\1\57\3\51\1\56\13\51\1\55\5\51",
+            "\1\60",
+            "\1\50\46\uffff\1\62\3\51\1\63\25\51",
             "",
             "",
-            "\1\65",
+            "\1\66",
             "",
-            "\1\51\46\uffff\5\52\1\67\6\52\1\71\1\70\14\52",
-            "\1\51\46\uffff\7\52\1\72\20\52\1\73\1\52",
-            "\1\51\46\uffff\7\52\1\74\22\52",
-            "\1\51\46\uffff\16\52\1\75\13\52",
-            "\1\51\46\uffff\16\52\1\76\13\52",
-            "\1\51\46\uffff\7\52\1\100\3\52\1\77\16\52",
-            "\1\51\46\uffff\17\52\1\101\12\52",
-            "\1\51\46\uffff\24\52\1\102\5\52",
-            "\1\51\46\uffff\10\52\1\103\21\52",
-            "\1\51\46\uffff\32\52",
+            "\1\50\46\uffff\5\51\1\70\6\51\1\72\1\71\14\51",
+            "\1\50\46\uffff\7\51\1\73\20\51\1\74\1\51",
+            "\1\50\46\uffff\7\51\1\75\22\51",
+            "\1\50\46\uffff\16\51\1\76\13\51",
+            "\1\50\46\uffff\16\51\1\77\13\51",
+            "\1\50\46\uffff\7\51\1\101\3\51\1\100\16\51",
+            "\1\50\46\uffff\17\51\1\102\12\51",
+            "\1\50\46\uffff\24\51\1\103\5\51",
+            "\1\50\46\uffff\10\51\1\104\21\51",
+            "\1\50\46\uffff\32\51",
             "\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
             "",
-            "\0\105",
-            "\0\105",
-            "\1\106\4\uffff\1\107",
+            "\0\106",
+            "\0\106",
+            "\1\107\4\uffff\1\110",
             "",
             "",
-            "\1\111",
             "\1\112",
+            "\1\113",
             "",
             "",
             "",
             "",
             "",
-            "\1\51\46\uffff\21\52\1\113\10\52",
-            "\1\51\46\uffff\21\52\1\114\10\52",
+            "\1\50\46\uffff\10\51\1\114\21\51",
             "",
-            "\1\51\46\uffff\32\52",
-            "\1\51\46\uffff\13\52\1\115\16\52",
-            "\1\51\46\uffff\1\52\1\116\30\52",
-            "\1\51\46\uffff\31\52\1\117",
-            "\1\51\46\uffff\10\52\1\120\21\52",
-            "\1\51\46\uffff\3\52\1\121\26\52",
-            "\1\51\46\uffff\22\52\1\122\7\52",
-            "",
+            "\1\50\46\uffff\32\51",
+            "\1\50\46\uffff\3\51\1\115\26\51",
+            "\1\50\46\uffff\10\51\1\116\21\51",
+            "\1\50\46\uffff\22\51\1\117\7\51",
+            "\1\50\46\uffff\1\51\1\120\30\51",
+            "\1\50\46\uffff\31\51\1\121",
+            "\1\50\46\uffff\13\51\1\122\16\51",
             "",
             "",
+            "\1\50\46\uffff\21\51\1\123\10\51",
+            "\1\50\46\uffff\21\51\1\124\10\51",
             "",
             "",
             "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\1\125\31\52",
-            "\1\51\46\uffff\4\52\1\126\25\52",
-            "\1\51\46\uffff\17\52\1\127\12\52",
-            "\1\51\46\uffff\10\52\1\130\21\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\21\52\1\132\10\52",
-            "\1\51\46\uffff\10\52\1\133\21\52",
-            "\1\51\46\uffff\4\52\1\134\25\52",
-            "\1\51\46\uffff\4\52\1\135\25\52",
-            "\1\51\46\uffff\23\52\1\136\6\52",
-            "\1\51\46\uffff\15\52\1\137\14\52",
+            "",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\1\127\31\51",
+            "\1\50\46\uffff\4\51\1\130\25\51",
+            "\1\50\46\uffff\17\51\1\131\12\51",
+            "\1\50\46\uffff\10\51\1\132\21\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\21\51\1\134\10\51",
+            "\1\50\46\uffff\10\51\1\135\21\51",
+            "\1\50\46\uffff\4\51\1\136\25\51",
+            "\1\50\46\uffff\4\51\1\137\25\51",
+            "\1\50\46\uffff\23\51\1\140\6\51",
+            "\1\50\46\uffff\15\51\1\141\14\51",
             "",
             "",
             "",
@@ -2968,95 +2998,99 @@ public class InternalSlnDslLexer extends Lexer {
             "",
             "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\1\51\46\uffff\10\52\1\142\21\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\4\52\1\144\25\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\4\52\1\146\25\52",
-            "\1\51\46\uffff\15\52\1\147\14\52",
-            "\1\51\46\uffff\5\52\1\154\2\52\1\152\3\52\1\150\5\52\1\151"+
-            "\3\52\1\153\3\52",
-            "\1\51\46\uffff\4\52\1\155\25\52",
+            "\1\50\46\uffff\15\51\1\144\14\51",
+            "\1\50\46\uffff\5\51\1\151\2\51\1\147\3\51\1\145\5\51\1\146"+
+            "\3\51\1\150\3\51",
+            "\1\50\46\uffff\22\51\1\152\7\51",
+            "\1\50\46\uffff\4\51\1\153\25\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\4\51\1\155\25\51",
+            "\1\50\46\uffff\4\51\1\156\25\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\10\51\1\160\21\51",
             "",
             "",
-            "\1\51\46\uffff\6\52\1\156\23\52",
-            "\1\51\46\uffff\15\52\1\157\14\52",
-            "\1\51\46\uffff\4\52\1\160\25\52",
-            "\1\51\46\uffff\13\52\1\161\16\52",
+            "\1\50\46\uffff\6\51\1\161\23\51",
+            "\1\50\46\uffff\15\51\1\162\14\51",
+            "\1\50\46\uffff\4\51\1\163\25\51",
+            "\1\50\46\uffff\13\51\1\164\16\51",
             "",
-            "\1\51\46\uffff\4\52\1\162\25\52",
-            "\1\51\46\uffff\2\52\1\163\27\52",
-            "\1\51\46\uffff\2\52\1\164\27\52",
-            "\1\51\46\uffff\15\52\1\165\14\52",
-            "\1\51\46\uffff\23\52\1\166\6\52",
-            "\1\51\46\uffff\12\52\1\167\17\52",
-            "",
-            "",
-            "\1\51\46\uffff\5\52\1\170\24\52",
-            "",
-            "\1\51\46\uffff\2\52\1\171\27\52",
-            "",
-            "\1\51\46\uffff\16\52\1\172\13\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\1\174\31\52",
-            "\1\51\46\uffff\24\52\1\175\5\52",
-            "\1\51\46\uffff\5\52\1\176\24\52",
-            "\1\51\46\uffff\7\52\1\177\22\52",
-            "\1\51\46\uffff\16\52\1\u0080\13\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\4\52\1\u0082\25\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\4\52\1\u0085\25\52",
-            "\1\51\46\uffff\1\u0086\31\52",
-            "\1\51\46\uffff\12\52\1\u0087\17\52",
-            "\1\51\46\uffff\12\52\1\u0088\17\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\16\52\1\u008a\13\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\30\52\1\u008c\1\52",
-            "\1\51\46\uffff\23\52\1\u008d\6\52",
-            "\1\51\46\uffff\5\52\1\u008e\24\52",
-            "",
-            "\1\51\46\uffff\10\52\1\u008f\21\52",
-            "\1\51\46\uffff\1\52\1\u0090\30\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\10\52\1\u0092\21\52",
-            "\1\51\46\uffff\21\52\1\u0093\10\52",
-            "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
+            "\1\50\46\uffff\4\51\1\165\25\51",
+            "\1\50\46\uffff\2\51\1\166\27\51",
+            "\1\50\46\uffff\2\51\1\167\27\51",
+            "\1\50\46\uffff\15\51\1\170\14\51",
+            "\1\50\46\uffff\23\51\1\171\6\51",
+            "\1\50\46\uffff\12\51\1\172\17\51",
             "",
             "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\2\52\1\u0095\27\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\1\174\31\51",
+            "\1\50\46\uffff\24\51\1\175\5\51",
+            "\1\50\46\uffff\5\51\1\176\24\51",
+            "\1\50\46\uffff\7\51\1\177\22\51",
+            "\1\50\46\uffff\16\51\1\u0080\13\51",
+            "\1\50\46\uffff\23\51\1\u0081\6\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
             "",
-            "\1\51\46\uffff\15\52\1\u0098\14\52",
+            "\1\50\46\uffff\16\51\1\u0083\13\51",
+            "\1\50\46\uffff\2\51\1\u0084\27\51",
             "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "\1\51\46\uffff\15\52\1\u009c\14\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
+            "\1\50\46\uffff\5\51\1\u0085\24\51",
+            "\1\50\46\uffff\4\51\1\u0086\25\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\4\51\1\u0089\25\51",
+            "\1\50\46\uffff\1\u008a\31\51",
+            "\1\50\46\uffff\12\51\1\u008b\17\51",
+            "\1\50\46\uffff\12\51\1\u008c\17\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\16\51\1\u008e\13\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
             "",
-            "\1\51\46\uffff\13\52\1\u009e\16\52",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
+            "\1\50\46\uffff\10\51\1\u0090\21\51",
+            "\1\50\46\uffff\1\51\1\u0091\30\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\10\51\1\u0093\21\51",
+            "\1\50\46\uffff\21\51\1\u0094\10\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
             "",
-            "\1\51\46\uffff\7\52\1\u00a0\22\52",
+            "\1\50\46\uffff\5\51\1\u0096\24\51",
+            "\1\50\46\uffff\23\51\1\u0097\6\51",
+            "\1\50\46\uffff\30\51\1\u0098\1\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
             "",
             "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\1\50\46\uffff\2\51\1\u009a\27\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "",
+            "\1\50\46\uffff\15\51\1\u009d\14\51",
+            "",
+            "\1\50\46\uffff\15\51\1\u009e\14\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "",
+            "\1\50\46\uffff\13\51\1\u00a0\16\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "",
+            "\1\50\46\uffff\7\51\1\u00a5\22\51",
+            "",
+            "",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
+            "",
+            "\1\50\46\uffff\4\51\1\u00a7\25\51",
             "",
             "",
             "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
             "",
-            "\1\51\46\uffff\4\52\1\u00a2\25\52",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
             "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
-            "",
-            "\12\42\1\51\6\uffff\32\42\4\uffff\1\42\1\uffff\32\52",
+            "\12\42\1\50\6\uffff\32\42\4\uffff\1\42\1\uffff\32\51",
             "",
             ""
     };
@@ -3091,13 +3125,23 @@ public class InternalSlnDslLexer extends Lexer {
             this.transition = DFA30_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_CLICKABLEELEMENT | RULE_URL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | RULE_CLICKABLEELEMENT | RULE_URL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA30_27 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA30_27>='\u0000' && LA30_27<='\uFFFF')) ) {s = 70;}
+
+                        else s = 31;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA30_0 = input.LA(1);
 
                         s = -1;
@@ -3109,15 +3153,15 @@ public class InternalSlnDslLexer extends Lexer {
 
                         else if ( (LA30_0=='>') ) {s = 4;}
 
-                        else if ( (LA30_0=='v') ) {s = 5;}
+                        else if ( (LA30_0=='m') ) {s = 5;}
 
-                        else if ( (LA30_0=='s') ) {s = 6;}
+                        else if ( (LA30_0=='e') ) {s = 6;}
 
-                        else if ( (LA30_0=='m') ) {s = 7;}
+                        else if ( (LA30_0=='s') ) {s = 7;}
 
-                        else if ( (LA30_0=='e') ) {s = 8;}
+                        else if ( (LA30_0=='(') ) {s = 8;}
 
-                        else if ( (LA30_0=='(') ) {s = 9;}
+                        else if ( (LA30_0=='v') ) {s = 9;}
 
                         else if ( (LA30_0==')') ) {s = 10;}
 
@@ -3165,21 +3209,11 @@ public class InternalSlnDslLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 2 : 
                         int LA30_28 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA30_28>='\u0000' && LA30_28<='\uFFFF')) ) {s = 69;}
-
-                        else s = 31;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA30_27 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA30_27>='\u0000' && LA30_27<='\uFFFF')) ) {s = 69;}
+                        if ( ((LA30_28>='\u0000' && LA30_28<='\uFFFF')) ) {s = 70;}
 
                         else s = 31;
 

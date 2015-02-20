@@ -122,6 +122,15 @@ public interface SlnDslFactory extends EFactory
   ListExpression createListExpression();
 
   /**
+   * Returns a new object of class '<em>Boolean List Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean List Expression</em>'.
+   * @generated
+   */
+  BooleanListExpression createBooleanListExpression();
+
+  /**
    * Returns a new object of class '<em>Boolean Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -129,6 +138,42 @@ public interface SlnDslFactory extends EFactory
    * @generated
    */
   BooleanExpression createBooleanExpression();
+
+  /**
+   * Returns a new object of class '<em>Verify Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verify Action</em>'.
+   * @generated
+   */
+  VerifyAction createVerifyAction();
+
+  /**
+   * Returns a new object of class '<em>Exist Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exist Action</em>'.
+   * @generated
+   */
+  ExistAction createExistAction();
+
+  /**
+   * Returns a new object of class '<em>Binary Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binary Boolean Expression</em>'.
+   * @generated
+   */
+  BinaryBooleanExpression createBinaryBooleanExpression();
+
+  /**
+   * Returns a new object of class '<em>Negation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Negation Expression</em>'.
+   * @generated
+   */
+  NegationExpression createNegationExpression();
 
   /**
    * Returns a new object of class '<em>Instruction</em>'.
@@ -239,13 +284,13 @@ public interface SlnDslFactory extends EFactory
   ActionType createActionType();
 
   /**
-   * Returns a new object of class '<em>Action Expression</em>'.
+   * Returns a new object of class '<em>Action Select Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Expression</em>'.
+   * @return a new object of class '<em>Action Select Expression</em>'.
    * @generated
    */
-  ActionExpression createActionExpression();
+  ActionSelectExpression createActionSelectExpression();
 
   /**
    * Returns the package supported by this factory.

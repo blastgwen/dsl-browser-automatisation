@@ -3,8 +3,8 @@
 package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.Expression;
+import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
-import com.selenium.gram.xtext.slnDsl.While;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -13,38 +13,39 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>While</b></em>'.
+ * An implementation of the model object '<em><b>Negation Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.WhileImpl#getCond <em>Cond</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.NegationExpressionImpl#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class WhileImpl extends LoopImpl implements While
+public class NegationExpressionImpl extends MinimalEObjectImpl.Container implements NegationExpression
 {
   /**
-   * The cached value of the '{@link #getCond() <em>Cond</em>}' containment reference.
+   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCond()
+   * @see #getExp()
    * @generated
    * @ordered
    */
-  protected Expression cond;
+  protected Expression exp;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected WhileImpl()
+  protected NegationExpressionImpl()
   {
     super();
   }
@@ -57,7 +58,7 @@ public class WhileImpl extends LoopImpl implements While
   @Override
   protected EClass eStaticClass()
   {
-    return SlnDslPackage.Literals.WHILE;
+    return SlnDslPackage.Literals.NEGATION_EXPRESSION;
   }
 
   /**
@@ -65,9 +66,9 @@ public class WhileImpl extends LoopImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCond()
+  public Expression getExp()
   {
-    return cond;
+    return exp;
   }
 
   /**
@@ -75,13 +76,13 @@ public class WhileImpl extends LoopImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCond(Expression newCond, NotificationChain msgs)
+  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
   {
-    Expression oldCond = cond;
-    cond = newCond;
+    Expression oldExp = exp;
+    exp = newExp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.WHILE__COND, oldCond, newCond);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.NEGATION_EXPRESSION__EXP, oldExp, newExp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +93,20 @@ public class WhileImpl extends LoopImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCond(Expression newCond)
+  public void setExp(Expression newExp)
   {
-    if (newCond != cond)
+    if (newExp != exp)
     {
       NotificationChain msgs = null;
-      if (cond != null)
-        msgs = ((InternalEObject)cond).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.WHILE__COND, null, msgs);
-      if (newCond != null)
-        msgs = ((InternalEObject)newCond).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.WHILE__COND, null, msgs);
-      msgs = basicSetCond(newCond, msgs);
+      if (exp != null)
+        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.NEGATION_EXPRESSION__EXP, null, msgs);
+      if (newExp != null)
+        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.NEGATION_EXPRESSION__EXP, null, msgs);
+      msgs = basicSetExp(newExp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.WHILE__COND, newCond, newCond));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.NEGATION_EXPRESSION__EXP, newExp, newExp));
   }
 
   /**
@@ -118,8 +119,8 @@ public class WhileImpl extends LoopImpl implements While
   {
     switch (featureID)
     {
-      case SlnDslPackage.WHILE__COND:
-        return basicSetCond(null, msgs);
+      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
+        return basicSetExp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +135,8 @@ public class WhileImpl extends LoopImpl implements While
   {
     switch (featureID)
     {
-      case SlnDslPackage.WHILE__COND:
-        return getCond();
+      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
+        return getExp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +151,8 @@ public class WhileImpl extends LoopImpl implements While
   {
     switch (featureID)
     {
-      case SlnDslPackage.WHILE__COND:
-        setCond((Expression)newValue);
+      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
+        setExp((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +168,8 @@ public class WhileImpl extends LoopImpl implements While
   {
     switch (featureID)
     {
-      case SlnDslPackage.WHILE__COND:
-        setCond((Expression)null);
+      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
+        setExp((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +185,10 @@ public class WhileImpl extends LoopImpl implements While
   {
     switch (featureID)
     {
-      case SlnDslPackage.WHILE__COND:
-        return cond != null;
+      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
+        return exp != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //WhileImpl
+} //NegationExpressionImpl

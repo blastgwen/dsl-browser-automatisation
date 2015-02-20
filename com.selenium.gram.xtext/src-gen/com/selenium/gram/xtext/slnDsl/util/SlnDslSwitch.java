@@ -97,8 +97,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         FunctionReference functionReference = (FunctionReference)theEObject;
         T result = caseFunctionReference(functionReference);
-        if (result == null) result = caseFunctionCall(functionReference);
-        if (result == null) result = caseInstruction(functionReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -155,11 +153,46 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.BOOLEAN_LIST_EXPRESSION:
+      {
+        BooleanListExpression booleanListExpression = (BooleanListExpression)theEObject;
+        T result = caseBooleanListExpression(booleanListExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.BOOLEAN_EXPRESSION:
       {
         BooleanExpression booleanExpression = (BooleanExpression)theEObject;
         T result = caseBooleanExpression(booleanExpression);
         if (result == null) result = caseExpression(booleanExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.VERIFY_ACTION:
+      {
+        VerifyAction verifyAction = (VerifyAction)theEObject;
+        T result = caseVerifyAction(verifyAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.EXIST_ACTION:
+      {
+        ExistAction existAction = (ExistAction)theEObject;
+        T result = caseExistAction(existAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION:
+      {
+        BinaryBooleanExpression binaryBooleanExpression = (BinaryBooleanExpression)theEObject;
+        T result = caseBinaryBooleanExpression(binaryBooleanExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.NEGATION_EXPRESSION:
+      {
+        NegationExpression negationExpression = (NegationExpression)theEObject;
+        T result = caseNegationExpression(negationExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -174,7 +207,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Definition definition = (Definition)theEObject;
         T result = caseDefinition(definition);
-        if (result == null) result = caseInstruction(definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -206,6 +238,8 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         While while_ = (While)theEObject;
         T result = caseWhile(while_);
+        if (result == null) result = caseLoop(while_);
+        if (result == null) result = caseInstruction(while_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,6 +247,8 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Foreach foreach = (Foreach)theEObject;
         T result = caseForeach(foreach);
+        if (result == null) result = caseLoop(foreach);
+        if (result == null) result = caseInstruction(foreach);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -252,11 +288,11 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlnDslPackage.ACTION_EXPRESSION:
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION:
       {
-        ActionExpression actionExpression = (ActionExpression)theEObject;
-        T result = caseActionExpression(actionExpression);
-        if (result == null) result = caseExpression(actionExpression);
+        ActionSelectExpression actionSelectExpression = (ActionSelectExpression)theEObject;
+        T result = caseActionSelectExpression(actionSelectExpression);
+        if (result == null) result = caseExpression(actionSelectExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -441,6 +477,22 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean List Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean List Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanListExpression(BooleanListExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -452,6 +504,70 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBooleanExpression(BooleanExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Verify Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verify Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerifyAction(VerifyAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exist Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exist Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExistAction(ExistAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binary Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binary Boolean Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinaryBooleanExpression(BinaryBooleanExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Negation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Negation Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNegationExpression(NegationExpression object)
   {
     return null;
   }
@@ -649,17 +765,17 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Action Select Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Action Select Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActionExpression(ActionExpression object)
+  public T caseActionSelectExpression(ActionSelectExpression object)
   {
     return null;
   }
