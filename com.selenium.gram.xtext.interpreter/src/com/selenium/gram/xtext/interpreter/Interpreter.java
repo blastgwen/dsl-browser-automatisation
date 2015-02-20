@@ -16,6 +16,7 @@ import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.While;
+import com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl;
 
 public class Interpreter {
 
@@ -41,20 +42,23 @@ public class Interpreter {
 	private void executeInstruction(Instruction instruction, Map<String, Expression> variables) throws InterpretationException{
 		// Déclaration d'une variable
 		System.out.println("execute instruction : " +instruction.eClass().getName());
-		if(instruction instanceof Definition){
-			System.out.println("execute def2");
-			Definition def = (Definition) instruction;
-			System.out.println("varial exp : "+def.getExp().getClass().getName());
-			System.out.println("var name"+def.getVarID());
-			if(variables.containsKey(def.getVarID().getName())){
+		
+		if(instruction.eClass().getName().equals(Definition.class.getSimpleName())){
+			DefinitionImpl def = ((DefinitionImpl) instruction);
+
+			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
+			
+			if(variables.containsKey(((Definition) instruction).getVarID().getName())){
+				
 				throw new InterpretationException(Definition.class.getName());
 			}
 			else {
+				System.out.println("exec def : "+def.getVarID() + ", exp : "+def.getExp());
 				variables.put(def.getVarID().getName(), def.getExp());
-			}		
+			}	
 		}
 		// Execute un appel de fonction
-		if(instruction instanceof FunctionReference){
+		if(instruction.eClass().getName().equals(FunctionReference.class.getSimpleName())){
 			System.out.println("execute func call : " +instruction.eClass().getName());
 			FunctionReference func = (FunctionReference) instruction;
 			if(subprocedures.containsKey(func.getFunctionName().getName())){
@@ -65,7 +69,7 @@ public class Interpreter {
 			}
 		}		
 		// Execute une condition
-		if(instruction instanceof Conditional){
+		if(instruction.eClass().getName().equals(Conditional.class.getSimpleName())){
 			System.out.println("execute cond");
 			Conditional cond = (Conditional) instruction;
 			
@@ -82,7 +86,7 @@ public class Interpreter {
 		}
 		
 		// Execute une boucle
-		if(instruction instanceof Loop){
+		if(instruction.eClass().getName().equals(Loop.class.getSimpleName())){
 			System.out.println("execute boucle");
 			Loop loop = (Loop) instruction;
 
@@ -96,15 +100,16 @@ public class Interpreter {
 			}
 		}
 		// Execute une action Selenium
-		if(instruction instanceof ActionInstruction){
+		if(instruction.eClass().getName().equals(ActionInstruction.class.getSimpleName())){
 			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);
 		}		
 		
 		// Execute une assignatio de variable
-		if(instruction instanceof Assignation){
+		if(instruction.eClass().getName().equals(Assignation.class.getSimpleName())){
 			Assignation assign = (Assignation) instruction;
 			
 			if(variables.containsKey(assign.getVar().getVarID().getName())){
+				System.out.println("exec assignation : "+assign.getVar() + ", exp : "+assign.getExp());
 				variables.replace(assign.getVar().getVarID().getName(), assign.getExp());
 			}
 			else {

@@ -60,7 +60,7 @@ public class Action implements IWorkbenchWindowActionDelegate {
 
 			try {
 				new Interpreter().execute(model);
-			} catch (InterpretationException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
