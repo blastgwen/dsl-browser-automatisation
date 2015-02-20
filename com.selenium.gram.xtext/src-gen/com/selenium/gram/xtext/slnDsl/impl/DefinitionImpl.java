@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class DefinitionImpl extends InstructionImpl implements Definition
+public class DefinitionImpl extends MinimalEObjectImpl.Container implements Definition
 {
   /**
    * The cached value of the '{@link #getVarID() <em>Var ID</em>}' containment reference.

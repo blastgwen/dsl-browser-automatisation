@@ -130,9 +130,34 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createListExpressionAdapter();
       }
       @Override
+      public Adapter caseBooleanListExpression(BooleanListExpression object)
+      {
+        return createBooleanListExpressionAdapter();
+      }
+      @Override
       public Adapter caseBooleanExpression(BooleanExpression object)
       {
         return createBooleanExpressionAdapter();
+      }
+      @Override
+      public Adapter caseVerifyAction(VerifyAction object)
+      {
+        return createVerifyActionAdapter();
+      }
+      @Override
+      public Adapter caseExistAction(ExistAction object)
+      {
+        return createExistActionAdapter();
+      }
+      @Override
+      public Adapter caseBinaryBooleanExpression(BinaryBooleanExpression object)
+      {
+        return createBinaryBooleanExpressionAdapter();
+      }
+      @Override
+      public Adapter caseNegationExpression(NegationExpression object)
+      {
+        return createNegationExpressionAdapter();
       }
       @Override
       public Adapter caseInstruction(Instruction object)
@@ -195,9 +220,9 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createActionTypeAdapter();
       }
       @Override
-      public Adapter caseActionExpression(ActionExpression object)
+      public Adapter caseActionSelectExpression(ActionSelectExpression object)
       {
-        return createActionExpressionAdapter();
+        return createActionSelectExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -387,6 +412,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.BooleanListExpression <em>Boolean List Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.BooleanListExpression
+   * @generated
+   */
+  public Adapter createBooleanListExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.BooleanExpression <em>Boolean Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -397,6 +437,66 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.VerifyAction <em>Verify Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.VerifyAction
+   * @generated
+   */
+  public Adapter createVerifyActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ExistAction <em>Exist Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.ExistAction
+   * @generated
+   */
+  public Adapter createExistActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression <em>Binary Boolean Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression
+   * @generated
+   */
+  public Adapter createBinaryBooleanExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.NegationExpression <em>Negation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.NegationExpression
+   * @generated
+   */
+  public Adapter createNegationExpressionAdapter()
   {
     return null;
   }
@@ -582,16 +682,16 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionExpression <em>Action Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression <em>Action Select Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.selenium.gram.xtext.slnDsl.ActionExpression
+   * @see com.selenium.gram.xtext.slnDsl.ActionSelectExpression
    * @generated
    */
-  public Adapter createActionExpressionAdapter()
+  public Adapter createActionSelectExpressionAdapter()
   {
     return null;
   }

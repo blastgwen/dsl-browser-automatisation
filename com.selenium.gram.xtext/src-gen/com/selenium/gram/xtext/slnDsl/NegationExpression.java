@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Boolean Expression</b></em>'.
+ * A representation of the model object '<em><b>Negation Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.BooleanExpression#getExp <em>Exp</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.NegationExpression#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getBooleanExpression()
+ * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getNegationExpression()
  * @model
  * @generated
  */
-public interface BooleanExpression extends Expression
+public interface NegationExpression extends EObject
 {
   /**
    * Returns the value of the '<em><b>Exp</b></em>' containment reference.
@@ -31,21 +31,21 @@ public interface BooleanExpression extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(EObject)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getBooleanExpression_Exp()
+   * @see #setExp(Expression)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getNegationExpression_Exp()
    * @model containment="true"
    * @generated
    */
-  EObject getExp();
+  Expression getExp();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.BooleanExpression#getExp <em>Exp</em>}' containment reference.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.NegationExpression#getExp <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Exp</em>' containment reference.
    * @see #getExp()
    * @generated
    */
-  void setExp(EObject value);
+  void setExp(Expression value);
 
-} // BooleanExpression
+} // NegationExpression

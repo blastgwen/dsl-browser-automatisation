@@ -4,25 +4,16 @@ package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Foreach;
-import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.VariableName;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,13 +24,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ForeachImpl#getVar <em>Var</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ForeachImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ForeachImpl#getIns <em>Ins</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
+public class ForeachImpl extends LoopImpl implements Foreach
 {
   /**
    * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
@@ -60,16 +50,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * @ordered
    */
   protected Expression exp;
-
-  /**
-   * The cached value of the '{@link #getIns() <em>Ins</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIns()
-   * @generated
-   * @ordered
-   */
-  protected EList<Instruction> ins;
 
   /**
    * <!-- begin-user-doc -->
@@ -193,20 +173,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Instruction> getIns()
-  {
-    if (ins == null)
-    {
-      ins = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.FOREACH__INS);
-    }
-    return ins;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -216,8 +182,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
         return basicSetVar(null, msgs);
       case SlnDslPackage.FOREACH__EXP:
         return basicSetExp(null, msgs);
-      case SlnDslPackage.FOREACH__INS:
-        return ((InternalEList<?>)getIns()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -236,8 +200,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
         return getVar();
       case SlnDslPackage.FOREACH__EXP:
         return getExp();
-      case SlnDslPackage.FOREACH__INS:
-        return getIns();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -247,7 +209,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -258,10 +219,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
         return;
       case SlnDslPackage.FOREACH__EXP:
         setExp((Expression)newValue);
-        return;
-      case SlnDslPackage.FOREACH__INS:
-        getIns().clear();
-        getIns().addAll((Collection<? extends Instruction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,9 +240,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
       case SlnDslPackage.FOREACH__EXP:
         setExp((Expression)null);
         return;
-      case SlnDslPackage.FOREACH__INS:
-        getIns().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -304,8 +258,6 @@ public class ForeachImpl extends MinimalEObjectImpl.Container implements Foreach
         return var != null;
       case SlnDslPackage.FOREACH__EXP:
         return exp != null;
-      case SlnDslPackage.FOREACH__INS:
-        return ins != null && !ins.isEmpty();
     }
     return super.eIsSet(featureID);
   }

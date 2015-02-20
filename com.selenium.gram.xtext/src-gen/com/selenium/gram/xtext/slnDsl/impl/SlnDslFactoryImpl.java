@@ -75,7 +75,12 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.EXPRESSION: return createExpression();
       case SlnDslPackage.NUM_LITERAL_EXPRESSION: return createNumLiteralExpression();
       case SlnDslPackage.LIST_EXPRESSION: return createListExpression();
+      case SlnDslPackage.BOOLEAN_LIST_EXPRESSION: return createBooleanListExpression();
       case SlnDslPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
+      case SlnDslPackage.VERIFY_ACTION: return createVerifyAction();
+      case SlnDslPackage.EXIST_ACTION: return createExistAction();
+      case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION: return createBinaryBooleanExpression();
+      case SlnDslPackage.NEGATION_EXPRESSION: return createNegationExpression();
       case SlnDslPackage.INSTRUCTION: return createInstruction();
       case SlnDslPackage.DEFINITION: return createDefinition();
       case SlnDslPackage.ASSIGNATION: return createAssignation();
@@ -88,7 +93,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.ACTION_OPEN: return createActionOpen();
       case SlnDslPackage.ACTION_CHECK: return createActionCheck();
       case SlnDslPackage.ACTION_TYPE: return createActionType();
-      case SlnDslPackage.ACTION_EXPRESSION: return createActionExpression();
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION: return createActionSelectExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -220,10 +225,65 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public BooleanListExpression createBooleanListExpression()
+  {
+    BooleanListExpressionImpl booleanListExpression = new BooleanListExpressionImpl();
+    return booleanListExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BooleanExpression createBooleanExpression()
   {
     BooleanExpressionImpl booleanExpression = new BooleanExpressionImpl();
     return booleanExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerifyAction createVerifyAction()
+  {
+    VerifyActionImpl verifyAction = new VerifyActionImpl();
+    return verifyAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExistAction createExistAction()
+  {
+    ExistActionImpl existAction = new ExistActionImpl();
+    return existAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BinaryBooleanExpression createBinaryBooleanExpression()
+  {
+    BinaryBooleanExpressionImpl binaryBooleanExpression = new BinaryBooleanExpressionImpl();
+    return binaryBooleanExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NegationExpression createNegationExpression()
+  {
+    NegationExpressionImpl negationExpression = new NegationExpressionImpl();
+    return negationExpression;
   }
 
   /**
@@ -363,10 +423,10 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActionExpression createActionExpression()
+  public ActionSelectExpression createActionSelectExpression()
   {
-    ActionExpressionImpl actionExpression = new ActionExpressionImpl();
-    return actionExpression;
+    ActionSelectExpressionImpl actionSelectExpression = new ActionSelectExpressionImpl();
+    return actionSelectExpression;
   }
 
   /**

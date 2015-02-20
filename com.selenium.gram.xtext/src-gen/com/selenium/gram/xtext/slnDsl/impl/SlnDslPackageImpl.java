@@ -4,14 +4,17 @@ package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.ActionCheck;
 import com.selenium.gram.xtext.slnDsl.ActionClick;
-import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
+import com.selenium.gram.xtext.slnDsl.ActionSelectExpression;
 import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
+import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
+import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
+import com.selenium.gram.xtext.slnDsl.ExistAction;
 import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
@@ -22,12 +25,14 @@ import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslFactory;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.VariableName;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
+import com.selenium.gram.xtext.slnDsl.VerifyAction;
 import com.selenium.gram.xtext.slnDsl.While;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -127,7 +132,42 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass booleanListExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass booleanExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass verifyActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass existActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass binaryBooleanExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass negationExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -218,7 +258,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionExpressionEClass = null;
+  private EClass actionSelectExpressionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -308,9 +348,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Main()
+  public EReference getModel_Defs()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Main()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -338,9 +388,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubprocedure_Body()
+  public EReference getSubprocedure_Defs()
   {
     return (EReference)subprocedureEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubprocedure_Body()
+  {
+    return (EReference)subprocedureEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -398,16 +458,6 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionReference_Args()
-  {
-    return (EReference)functionReferenceEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getFunctionName()
   {
     return functionNameEClass;
@@ -431,6 +481,26 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
   public EClass getFunctionCall()
   {
     return functionCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Ref()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Args()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -518,7 +588,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListExpression_VarName()
+  public EReference getListExpression_Exp()
   {
     return (EReference)listExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -528,9 +598,39 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListExpression_Exp()
+  public EClass getBooleanListExpression()
   {
-    return (EReference)listExpressionEClass.getEStructuralFeatures().get(1);
+    return booleanListExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanListExpression_Op()
+  {
+    return (EAttribute)booleanListExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanListExpression_VarName()
+  {
+    return (EReference)booleanListExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanListExpression_Exp()
+  {
+    return (EReference)booleanListExpressionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -548,7 +648,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBooleanExpression_Left()
+  public EReference getBooleanExpression_Exp()
   {
     return (EReference)booleanExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -558,9 +658,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBooleanExpression_Right()
+  public EClass getVerifyAction()
   {
-    return (EReference)booleanExpressionEClass.getEStructuralFeatures().get(1);
+    return verifyActionEClass;
   }
 
   /**
@@ -568,9 +668,99 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBooleanExpression_Exp()
+  public EAttribute getVerifyAction_NameElement()
   {
-    return (EReference)booleanExpressionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)verifyActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVerifyAction_Value()
+  {
+    return (EReference)verifyActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExistAction()
+  {
+    return existActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExistAction_NameElement()
+  {
+    return (EAttribute)existActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBinaryBooleanExpression()
+  {
+    return binaryBooleanExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBinaryBooleanExpression_Op()
+  {
+    return (EAttribute)binaryBooleanExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinaryBooleanExpression_Left()
+  {
+    return (EReference)binaryBooleanExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinaryBooleanExpression_Right()
+  {
+    return (EReference)binaryBooleanExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNegationExpression()
+  {
+    return negationExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNegationExpression_Exp()
+  {
+    return (EReference)negationExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -698,19 +888,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLoop_While()
+  public EReference getLoop_Ins()
   {
     return (EReference)loopEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getLoop_For()
-  {
-    return (EReference)loopEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -731,16 +911,6 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
   public EReference getWhile_Cond()
   {
     return (EReference)whileEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getWhile_Ins()
-  {
-    return (EReference)whileEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -771,16 +941,6 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
   public EReference getForeach_Exp()
   {
     return (EReference)foreachEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getForeach_Ins()
-  {
-    return (EReference)foreachEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -918,9 +1078,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getActionExpression()
+  public EClass getActionSelectExpression()
   {
-    return actionExpressionEClass;
+    return actionSelectExpressionEClass;
   }
 
   /**
@@ -928,9 +1088,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActionExpression_Element()
+  public EReference getActionSelectExpression_Element()
   {
-    return (EReference)actionExpressionEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionSelectExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -965,10 +1125,12 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__SUBS);
+    createEReference(modelEClass, MODEL__DEFS);
     createEReference(modelEClass, MODEL__MAIN);
 
     subprocedureEClass = createEClass(SUBPROCEDURE);
     createEReference(subprocedureEClass, SUBPROCEDURE__HEAD);
+    createEReference(subprocedureEClass, SUBPROCEDURE__DEFS);
     createEReference(subprocedureEClass, SUBPROCEDURE__BODY);
 
     headEClass = createEClass(HEAD);
@@ -977,12 +1139,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     functionReferenceEClass = createEClass(FUNCTION_REFERENCE);
     createEReference(functionReferenceEClass, FUNCTION_REFERENCE__FUNCTION_NAME);
-    createEReference(functionReferenceEClass, FUNCTION_REFERENCE__ARGS);
 
     functionNameEClass = createEClass(FUNCTION_NAME);
     createEAttribute(functionNameEClass, FUNCTION_NAME__NAME);
 
     functionCallEClass = createEClass(FUNCTION_CALL);
+    createEReference(functionCallEClass, FUNCTION_CALL__REF);
+    createEReference(functionCallEClass, FUNCTION_CALL__ARGS);
 
     variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
     createEReference(variableReferenceEClass, VARIABLE_REFERENCE__VAR_ID);
@@ -996,13 +1159,30 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEAttribute(numLiteralExpressionEClass, NUM_LITERAL_EXPRESSION__VALUE);
 
     listExpressionEClass = createEClass(LIST_EXPRESSION);
-    createEReference(listExpressionEClass, LIST_EXPRESSION__VAR_NAME);
     createEReference(listExpressionEClass, LIST_EXPRESSION__EXP);
 
+    booleanListExpressionEClass = createEClass(BOOLEAN_LIST_EXPRESSION);
+    createEAttribute(booleanListExpressionEClass, BOOLEAN_LIST_EXPRESSION__OP);
+    createEReference(booleanListExpressionEClass, BOOLEAN_LIST_EXPRESSION__VAR_NAME);
+    createEReference(booleanListExpressionEClass, BOOLEAN_LIST_EXPRESSION__EXP);
+
     booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
-    createEReference(booleanExpressionEClass, BOOLEAN_EXPRESSION__LEFT);
-    createEReference(booleanExpressionEClass, BOOLEAN_EXPRESSION__RIGHT);
     createEReference(booleanExpressionEClass, BOOLEAN_EXPRESSION__EXP);
+
+    verifyActionEClass = createEClass(VERIFY_ACTION);
+    createEAttribute(verifyActionEClass, VERIFY_ACTION__NAME_ELEMENT);
+    createEReference(verifyActionEClass, VERIFY_ACTION__VALUE);
+
+    existActionEClass = createEClass(EXIST_ACTION);
+    createEAttribute(existActionEClass, EXIST_ACTION__NAME_ELEMENT);
+
+    binaryBooleanExpressionEClass = createEClass(BINARY_BOOLEAN_EXPRESSION);
+    createEAttribute(binaryBooleanExpressionEClass, BINARY_BOOLEAN_EXPRESSION__OP);
+    createEReference(binaryBooleanExpressionEClass, BINARY_BOOLEAN_EXPRESSION__LEFT);
+    createEReference(binaryBooleanExpressionEClass, BINARY_BOOLEAN_EXPRESSION__RIGHT);
+
+    negationExpressionEClass = createEClass(NEGATION_EXPRESSION);
+    createEReference(negationExpressionEClass, NEGATION_EXPRESSION__EXP);
 
     instructionEClass = createEClass(INSTRUCTION);
 
@@ -1020,17 +1200,14 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEReference(conditionalEClass, CONDITIONAL__FALSE_INS);
 
     loopEClass = createEClass(LOOP);
-    createEReference(loopEClass, LOOP__WHILE);
-    createEReference(loopEClass, LOOP__FOR);
+    createEReference(loopEClass, LOOP__INS);
 
     whileEClass = createEClass(WHILE);
     createEReference(whileEClass, WHILE__COND);
-    createEReference(whileEClass, WHILE__INS);
 
     foreachEClass = createEClass(FOREACH);
     createEReference(foreachEClass, FOREACH__VAR);
     createEReference(foreachEClass, FOREACH__EXP);
-    createEReference(foreachEClass, FOREACH__INS);
 
     actionInstructionEClass = createEClass(ACTION_INSTRUCTION);
     createEReference(actionInstructionEClass, ACTION_INSTRUCTION__ACTION);
@@ -1050,8 +1227,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEAttribute(actionTypeEClass, ACTION_TYPE__NAME_ELEMENT);
     createEReference(actionTypeEClass, ACTION_TYPE__VALUE);
 
-    actionExpressionEClass = createEClass(ACTION_EXPRESSION);
-    createEReference(actionExpressionEClass, ACTION_EXPRESSION__ELEMENT);
+    actionSelectExpressionEClass = createEClass(ACTION_SELECT_EXPRESSION);
+    createEReference(actionSelectExpressionEClass, ACTION_SELECT_EXPRESSION__ELEMENT);
   }
 
   /**
@@ -1083,26 +1260,28 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    functionReferenceEClass.getESuperTypes().add(this.getFunctionCall());
     functionCallEClass.getESuperTypes().add(this.getInstruction());
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
     numLiteralExpressionEClass.getESuperTypes().add(this.getExpression());
     listExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
-    definitionEClass.getESuperTypes().add(this.getInstruction());
     assignationEClass.getESuperTypes().add(this.getInstruction());
     conditionalEClass.getESuperTypes().add(this.getInstruction());
     loopEClass.getESuperTypes().add(this.getInstruction());
+    whileEClass.getESuperTypes().add(this.getLoop());
+    foreachEClass.getESuperTypes().add(this.getLoop());
     actionInstructionEClass.getESuperTypes().add(this.getInstruction());
-    actionExpressionEClass.getESuperTypes().add(this.getExpression());
+    actionSelectExpressionEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Subs(), this.getSubprocedure(), null, "subs", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Main(), this.getInstruction(), null, "main", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subprocedureEClass, Subprocedure.class, "Subprocedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubprocedure_Head(), this.getHead(), null, "head", null, 0, 1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubprocedure_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubprocedure_Body(), this.getInstruction(), null, "body", null, 0, -1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1111,12 +1290,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     initEClass(functionReferenceEClass, FunctionReference.class, "FunctionReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFunctionReference_FunctionName(), this.getFunctionName(), null, "functionName", null, 0, 1, FunctionReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionReference_Args(), this.getExpression(), null, "args", null, 0, -1, FunctionReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionNameEClass, FunctionName.class, "FunctionName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionName_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionCall_Ref(), this.getFunctionReference(), null, "ref", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCall_Args(), this.getExpression(), null, "args", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableReference_VarID(), this.getVariableName(), null, "varID", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1130,13 +1310,30 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getNumLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, NumLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listExpressionEClass, ListExpression.class, "ListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListExpression_VarName(), this.getVariableName(), null, "varName", null, 0, 1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(booleanListExpressionEClass, BooleanListExpression.class, "BooleanListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanListExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, BooleanListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBooleanListExpression_VarName(), this.getVariableName(), null, "varName", null, 0, 1, BooleanListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBooleanListExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, BooleanListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBooleanExpression_Left(), this.getExpression(), null, "left", null, 0, 1, BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBooleanExpression_Right(), this.getExpression(), null, "right", null, 0, 1, BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBooleanExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBooleanExpression_Exp(), ecorePackage.getEObject(), null, "exp", null, 0, 1, BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(verifyActionEClass, VerifyAction.class, "VerifyAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVerifyAction_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerifyAction_Value(), this.getExpression(), null, "value", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(existActionEClass, ExistAction.class, "ExistAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExistAction_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, ExistAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(binaryBooleanExpressionEClass, BinaryBooleanExpression.class, "BinaryBooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBinaryBooleanExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, BinaryBooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinaryBooleanExpression_Left(), this.getExpression(), null, "left", null, 0, 1, BinaryBooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinaryBooleanExpression_Right(), this.getExpression(), null, "right", null, 0, 1, BinaryBooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(negationExpressionEClass, NegationExpression.class, "NegationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNegationExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, NegationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1154,17 +1351,14 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getConditional_FalseIns(), this.getInstruction(), null, "falseIns", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLoop_While(), this.getWhile(), null, "while", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLoop_For(), this.getForeach(), null, "for", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLoop_Ins(), this.getInstruction(), null, "ins", null, 0, -1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWhile_Cond(), this.getExpression(), null, "cond", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWhile_Ins(), this.getInstruction(), null, "ins", null, 0, -1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(foreachEClass, Foreach.class, "Foreach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getForeach_Var(), this.getVariableName(), null, "var", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeach_Exp(), this.getExpression(), null, "exp", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getForeach_Ins(), this.getInstruction(), null, "ins", null, 0, -1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionInstructionEClass, ActionInstruction.class, "ActionInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActionInstruction_Action(), ecorePackage.getEObject(), null, "action", null, 0, 1, ActionInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1184,8 +1378,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getActionType_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getActionType_Value(), this.getExpression(), null, "value", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actionExpressionEClass, ActionExpression.class, "ActionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActionExpression_Element(), this.getExpression(), null, "element", null, 0, 1, ActionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(actionSelectExpressionEClass, ActionSelectExpression.class, "ActionSelectExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActionSelectExpression_Element(), this.getExpression(), null, "element", null, 0, 1, ActionSelectExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

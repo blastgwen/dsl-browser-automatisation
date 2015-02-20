@@ -2,6 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
+import com.selenium.gram.xtext.slnDsl.Definition;
 import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getSubs <em>Subs</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getDefs <em>Defs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getMain <em>Main</em>}</li>
  * </ul>
  * </p>
@@ -46,6 +48,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<Subprocedure> subs;
+
+  /**
+   * The cached value of the '{@link #getDefs() <em>Defs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDefs()
+   * @generated
+   * @ordered
+   */
+  protected EList<Definition> defs;
 
   /**
    * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference list.
@@ -97,6 +109,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Definition> getDefs()
+  {
+    if (defs == null)
+    {
+      defs = new EObjectContainmentEList<Definition>(Definition.class, this, SlnDslPackage.MODEL__DEFS);
+    }
+    return defs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Instruction> getMain()
   {
     if (main == null)
@@ -118,6 +144,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SlnDslPackage.MODEL__SUBS:
         return ((InternalEList<?>)getSubs()).basicRemove(otherEnd, msgs);
+      case SlnDslPackage.MODEL__DEFS:
+        return ((InternalEList<?>)getDefs()).basicRemove(otherEnd, msgs);
       case SlnDslPackage.MODEL__MAIN:
         return ((InternalEList<?>)getMain()).basicRemove(otherEnd, msgs);
     }
@@ -136,6 +164,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SlnDslPackage.MODEL__SUBS:
         return getSubs();
+      case SlnDslPackage.MODEL__DEFS:
+        return getDefs();
       case SlnDslPackage.MODEL__MAIN:
         return getMain();
     }
@@ -156,6 +186,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SlnDslPackage.MODEL__SUBS:
         getSubs().clear();
         getSubs().addAll((Collection<? extends Subprocedure>)newValue);
+        return;
+      case SlnDslPackage.MODEL__DEFS:
+        getDefs().clear();
+        getDefs().addAll((Collection<? extends Definition>)newValue);
         return;
       case SlnDslPackage.MODEL__MAIN:
         getMain().clear();
@@ -178,6 +212,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SlnDslPackage.MODEL__SUBS:
         getSubs().clear();
         return;
+      case SlnDslPackage.MODEL__DEFS:
+        getDefs().clear();
+        return;
       case SlnDslPackage.MODEL__MAIN:
         getMain().clear();
         return;
@@ -197,6 +234,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SlnDslPackage.MODEL__SUBS:
         return subs != null && !subs.isEmpty();
+      case SlnDslPackage.MODEL__DEFS:
+        return defs != null && !defs.isEmpty();
       case SlnDslPackage.MODEL__MAIN:
         return main != null && !main.isEmpty();
     }

@@ -2,9 +2,6 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Foreach#getVar <em>Var</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Foreach#getExp <em>Exp</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Foreach#getIns <em>Ins</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Foreach extends EObject
+public interface Foreach extends Loop
 {
   /**
    * Returns the value of the '<em><b>Var</b></em>' containment reference.
@@ -77,21 +73,5 @@ public interface Foreach extends EObject
    * @generated
    */
   void setExp(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Ins</b></em>' containment reference list.
-   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ins</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Ins</em>' containment reference list.
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getForeach_Ins()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Instruction> getIns();
 
 } // Foreach

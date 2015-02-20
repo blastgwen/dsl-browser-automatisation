@@ -7,7 +7,6 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 
 import com.selenium.gram.xtext.slnDsl.ActionClick;
-import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
@@ -53,7 +52,7 @@ public class Interpreter {
 		System.out.println("execute instruction : " +instruction.eClass().getName());
 
 		
-		if(instruction.eClass().getName().equals(Definition.class.getSimpleName())){
+		if(instruction instanceof Definition){
 			DefinitionImpl def = ((DefinitionImpl) instruction);
 
 			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
@@ -68,7 +67,7 @@ public class Interpreter {
 			}	
 		}
 		// Execute un appel de fonction
-		if(instruction.eClass().getName().equals(FunctionReference.class.getSimpleName())){
+		if(instruction instanceof FunctionReference){
 			System.out.println("execute func call : " +instruction.eClass().getName());
 			FunctionReference func = (FunctionReference) instruction;
 			if(subprocedures.containsKey(func.getFunctionName().getName())){
@@ -79,7 +78,7 @@ public class Interpreter {
 			}
 		}		
 		// Execute une condition
-		if(instruction.eClass().getName().equals(Conditional.class.getSimpleName())){
+		if(instruction instanceof Conditional){
 			System.out.println("execute cond");
 			Conditional cond = (Conditional) instruction;
 			
@@ -96,27 +95,24 @@ public class Interpreter {
 		}
 		
 		// Execute une boucle
-		if(instruction.eClass().getName().equals(Loop.class.getSimpleName())){
-			System.out.println("execute boucle");
-			Loop loop = (Loop) instruction;
-
-			if(loop.getWhile() != null){
-				System.out.println("execute while");
-				this.executeWhile(loop.getWhile(), variables);
-			}
-			else{
-				System.out.println("execute for");
-				this.executeFor(loop.getFor(), variables);
-			}
+		if(instruction instanceof While){
+			System.out.println("execute boucle while");
+			this.executeWhile((While) instruction, variables);
 		}
+		
+		if(instruction instanceof Foreach){
+			System.out.println("execute for");
+			this.executeFor((Foreach) instruction, variables);
+		}
+		
 		// Execute une action Selenium
-		if(instruction.eClass().getName().equals(ActionInstruction.class.getSimpleName())){
+		if(instruction instanceof ActionInstruction){
 			System.out.println("execute ActionInstruction : " + instruction.getClass().getName());
 			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);
 		}		
 		
 		// Execute une assignatio de variable
-		if(instruction.eClass().getName().equals(Assignation.class.getSimpleName())){
+		if(instruction instanceof Assignation){
 			Assignation assign = (Assignation) instruction;
 			
 			if(variables.containsKey(assign.getVar().getVarID().getName())){
@@ -166,12 +162,10 @@ public class Interpreter {
 		}
 		
 		if(exp.eClass().getName().equals(BooleanExpression.class.getSimpleName())){
-				
-		}
-		
-		if(exp.eClass().getName().equals(ActionExpression.class.getSimpleName())){
+			BooleanExpression bo = (BooleanExpression) exp;
 			
 		}
+		
 		
 		throw new InterpretationException("Expression inconnue : "+exp.eClass().getName());
 	}
