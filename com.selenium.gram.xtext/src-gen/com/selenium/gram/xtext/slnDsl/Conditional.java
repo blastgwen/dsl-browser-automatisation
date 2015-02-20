@@ -33,12 +33,12 @@ public interface Conditional extends Instruction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(Expression)
+   * @see #setExp(BooleanExpression)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getConditional_Exp()
    * @model containment="true"
    * @generated
    */
-  Expression getExp();
+  BooleanExpression getExp();
 
   /**
    * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Conditional#getExp <em>Exp</em>}' containment reference.
@@ -48,7 +48,7 @@ public interface Conditional extends Instruction
    * @see #getExp()
    * @generated
    */
-  void setExp(Expression value);
+  void setExp(BooleanExpression value);
 
   /**
    * Returns the value of the '<em><b>True Ins</b></em>' containment reference list.

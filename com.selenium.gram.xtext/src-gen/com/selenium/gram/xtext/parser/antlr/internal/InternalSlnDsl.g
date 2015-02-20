@@ -1032,7 +1032,65 @@ ruleBooleanExpression returns [EObject current=null]
 	    }
 
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBooleanExpressionAccess().getExpBooleanValueParserRuleCall_5_0()); 
+	    }
+		lv_exp_5_0=ruleBooleanValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBooleanExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"exp",
+        		lv_exp_5_0, 
+        		"BooleanValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleBooleanValue
+entryRuleBooleanValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBooleanValueRule()); }
+	 iv_ruleBooleanValue=ruleBooleanValue 
+	 { $current=$iv_ruleBooleanValue.current; } 
+	 EOF 
+;
+
+// Rule BooleanValue
+ruleBooleanValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_BOOLEAN
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getBooleanValueAccess().getValueBOOLEANTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getBooleanValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"BOOLEAN");
+	    }
+
+)
+)
 ;
 
 
@@ -1539,9 +1597,9 @@ ruleConditional returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionalAccess().getExpExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getConditionalAccess().getExpBooleanExpressionParserRuleCall_1_0()); 
 	    }
-		lv_exp_1_0=ruleExpression		{
+		lv_exp_1_0=ruleBooleanExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionalRule());
 	        }
@@ -1549,7 +1607,7 @@ ruleConditional returns [EObject current=null]
        			$current, 
        			"exp",
         		lv_exp_1_0, 
-        		"Expression");
+        		"BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1674,9 +1732,9 @@ ruleWhile returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getWhileAccess().getCondExpressionParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getWhileAccess().getCondBooleanExpressionParserRuleCall_2_0()); 
 	    }
-		lv_cond_2_0=ruleExpression		{
+		lv_cond_2_0=ruleBooleanExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getWhileRule());
 	        }
@@ -1684,7 +1742,7 @@ ruleWhile returns [EObject current=null]
        			$current, 
        			"cond",
         		lv_cond_2_0, 
-        		"Expression");
+        		"BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2241,6 +2299,8 @@ ruleActionSelectExpression returns [EObject current=null]
 
 
 
+
+RULE_BOOLEAN : ('true'|'false');
 
 RULE_CLICKABLEELEMENT : ('button'|'image'|'link');
 

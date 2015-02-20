@@ -30,12 +30,12 @@ public interface While extends Loop
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cond</em>' containment reference.
-   * @see #setCond(Expression)
+   * @see #setCond(BooleanExpression)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getWhile_Cond()
    * @model containment="true"
    * @generated
    */
-  Expression getCond();
+  BooleanExpression getCond();
 
   /**
    * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.While#getCond <em>Cond</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface While extends Loop
    * @see #getCond()
    * @generated
    */
-  void setCond(Expression value);
+  void setCond(BooleanExpression value);
 
 } // While

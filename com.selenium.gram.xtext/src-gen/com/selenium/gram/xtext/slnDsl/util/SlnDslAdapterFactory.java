@@ -140,6 +140,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createBooleanExpressionAdapter();
       }
       @Override
+      public Adapter caseBooleanValue(BooleanValue object)
+      {
+        return createBooleanValueAdapter();
+      }
+      @Override
       public Adapter caseVerifyAction(VerifyAction object)
       {
         return createVerifyActionAdapter();
@@ -437,6 +442,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.BooleanValue <em>Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.BooleanValue
+   * @generated
+   */
+  public Adapter createBooleanValueAdapter()
   {
     return null;
   }

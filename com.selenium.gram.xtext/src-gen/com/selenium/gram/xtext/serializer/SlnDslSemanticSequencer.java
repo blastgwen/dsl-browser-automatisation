@@ -13,6 +13,7 @@ import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
+import com.selenium.gram.xtext.slnDsl.BooleanValue;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
 import com.selenium.gram.xtext.slnDsl.ExistAction;
@@ -112,6 +113,12 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case SlnDslPackage.BOOLEAN_LIST_EXPRESSION:
 				if(context == grammarAccess.getBooleanListExpressionRule()) {
 					sequence_BooleanListExpression(context, (BooleanListExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.BOOLEAN_VALUE:
+				if(context == grammarAccess.getBooleanValueRule()) {
+					sequence_BooleanValue(context, (BooleanValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -371,7 +378,14 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression)
+	 *     (
+	 *         exp=BinaryBooleanExpression | 
+	 *         exp=NegationExpression | 
+	 *         exp=VerifyAction | 
+	 *         exp=ExistAction | 
+	 *         exp=BooleanListExpression | 
+	 *         exp=BooleanValue
+	 *     )
 	 */
 	protected void sequence_BooleanExpression(EObject context, BooleanExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -402,7 +416,23 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (exp=Expression trueIns+=Instruction+ falseIns+=Instruction*)
+	 *     value=BOOLEAN
+	 */
+	protected void sequence_BooleanValue(EObject context, BooleanValue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BOOLEAN_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BOOLEAN_VALUE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBooleanValueAccess().getValueBOOLEANTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (exp=BooleanExpression trueIns+=Instruction+ falseIns+=Instruction*)
 	 */
 	protected void sequence_Conditional(EObject context, Conditional semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -622,7 +652,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (cond=Expression ins+=Instruction+)
+	 *     (cond=BooleanExpression ins+=Instruction+)
 	 */
 	protected void sequence_While(EObject context, While semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

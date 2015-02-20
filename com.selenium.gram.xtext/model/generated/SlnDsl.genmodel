@@ -52,6 +52,9 @@
     <genClasses ecoreClass="SlnDsl.ecore#//BooleanExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//BooleanExpression/exp"/>
     </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//BooleanValue/value"/>
+    </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//VerifyAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//VerifyAction/nameElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//VerifyAction/value"/>

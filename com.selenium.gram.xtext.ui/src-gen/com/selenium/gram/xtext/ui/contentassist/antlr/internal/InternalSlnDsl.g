@@ -476,6 +476,34 @@ finally {
 
 
 
+// Entry rule entryRuleBooleanValue
+entryRuleBooleanValue 
+:
+{ before(grammarAccess.getBooleanValueRule()); }
+	 ruleBooleanValue
+{ after(grammarAccess.getBooleanValueRule()); } 
+	 EOF 
+;
+
+// Rule BooleanValue
+ruleBooleanValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getBooleanValueAccess().getValueAssignment()); }
+(rule__BooleanValue__ValueAssignment)
+{ after(grammarAccess.getBooleanValueAccess().getValueAssignment()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleVerifyAction
 entryRuleVerifyAction 
 :
@@ -1146,6 +1174,12 @@ rule__BooleanExpression__Alternatives
 { before(grammarAccess.getBooleanExpressionAccess().getExpAssignment_4()); }
 (rule__BooleanExpression__ExpAssignment_4)
 { after(grammarAccess.getBooleanExpressionAccess().getExpAssignment_4()); }
+)
+
+    |(
+{ before(grammarAccess.getBooleanExpressionAccess().getExpAssignment_5()); }
+(rule__BooleanExpression__ExpAssignment_5)
+{ after(grammarAccess.getBooleanExpressionAccess().getExpAssignment_5()); }
 )
 
 ;
@@ -5364,6 +5398,36 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__BooleanExpression__ExpAssignment_5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBooleanExpressionAccess().getExpBooleanValueParserRuleCall_5_0()); }
+	ruleBooleanValue{ after(grammarAccess.getBooleanExpressionAccess().getExpBooleanValueParserRuleCall_5_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BooleanValue__ValueAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBooleanValueAccess().getValueBOOLEANTerminalRuleCall_0()); }
+	RULE_BOOLEAN{ after(grammarAccess.getBooleanValueAccess().getValueBOOLEANTerminalRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__VerifyAction__NameElementAssignment_2
     @init {
 		int stackSize = keepStackSize();
@@ -5535,8 +5599,8 @@ rule__Conditional__ExpAssignment_1
     }
 :
 (
-{ before(grammarAccess.getConditionalAccess().getExpExpressionParserRuleCall_1_0()); }
-	ruleExpression{ after(grammarAccess.getConditionalAccess().getExpExpressionParserRuleCall_1_0()); }
+{ before(grammarAccess.getConditionalAccess().getExpBooleanExpressionParserRuleCall_1_0()); }
+	ruleBooleanExpression{ after(grammarAccess.getConditionalAccess().getExpBooleanExpressionParserRuleCall_1_0()); }
 )
 
 ;
@@ -5580,8 +5644,8 @@ rule__While__CondAssignment_2
     }
 :
 (
-{ before(grammarAccess.getWhileAccess().getCondExpressionParserRuleCall_2_0()); }
-	ruleExpression{ after(grammarAccess.getWhileAccess().getCondExpressionParserRuleCall_2_0()); }
+{ before(grammarAccess.getWhileAccess().getCondBooleanExpressionParserRuleCall_2_0()); }
+	ruleBooleanExpression{ after(grammarAccess.getWhileAccess().getCondBooleanExpressionParserRuleCall_2_0()); }
 )
 
 ;
@@ -5829,6 +5893,8 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
+RULE_BOOLEAN : ('true'|'false');
 
 RULE_CLICKABLEELEMENT : ('button'|'image'|'link');
 

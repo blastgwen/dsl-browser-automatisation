@@ -90,6 +90,15 @@ BooleanExpression :
 	| exp=VerifyAction
 	| exp=ExistAction
 	| exp=BooleanListExpression
+	| exp=BooleanValue
+;
+
+BooleanValue:
+	value=BOOLEAN
+;
+
+terminal BOOLEAN:
+	'true' | 'false'
 ;
 
 VerifyAction :
@@ -132,7 +141,7 @@ Assignation:
 ;
 
 Conditional:
-	'if' exp=Expression 'then' trueIns+=Instruction+ ('else' falseIns+=Instruction+)? 'endif'
+	'if' exp=BooleanExpression 'then' trueIns+=Instruction+ ('else' falseIns+=Instruction+)? 'endif'
 ;
 
 /*
@@ -145,7 +154,7 @@ Loop:
 ;
 
 While:
-	'while' '(' cond=Expression ')' 'do' ins+=Instruction+ 'endwhile'
+	'while' '(' cond=BooleanExpression ')' 'do' ins+=Instruction+ 'endwhile'
 ;
 Foreach:
 	'foreach' '(' var=VariableName 'in' exp=Expression ')' 'do' ins+=Instruction+ 'endfor'

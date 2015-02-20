@@ -100,6 +100,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_2(), "rule__BooleanExpression__ExpAssignment_2");
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_3(), "rule__BooleanExpression__ExpAssignment_3");
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_4(), "rule__BooleanExpression__ExpAssignment_4");
+					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_5(), "rule__BooleanExpression__ExpAssignment_5");
+					put(grammarAccess.getBooleanValueAccess().getValueAssignment(), "rule__BooleanValue__ValueAssignment");
 					put(grammarAccess.getVerifyActionAccess().getNameElementAssignment_2(), "rule__VerifyAction__NameElementAssignment_2");
 					put(grammarAccess.getVerifyActionAccess().getValueAssignment_4(), "rule__VerifyAction__ValueAssignment_4");
 					put(grammarAccess.getExistActionAccess().getNameElementAssignment_2(), "rule__ExistAction__NameElementAssignment_2");
