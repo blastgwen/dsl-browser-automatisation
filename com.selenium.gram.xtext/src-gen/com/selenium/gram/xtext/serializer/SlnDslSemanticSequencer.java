@@ -207,7 +207,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionCheckAccess().getTypeClickableElementTerminalRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0(), semanticObject.getElement());
 		feeder.finish();
 	}
@@ -226,7 +226,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionClickAccess().getTypeClickableElementTerminalRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getActionClickAccess().getTypeClickableElementParserRuleCall_2_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0(), semanticObject.getElement());
 		feeder.finish();
 	}

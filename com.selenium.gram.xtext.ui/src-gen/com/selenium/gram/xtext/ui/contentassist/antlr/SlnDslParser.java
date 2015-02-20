@@ -49,6 +49,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
 					put(grammarAccess.getActionInstructionAccess().getAlternatives(), "rule__ActionInstruction__Alternatives");
 					put(grammarAccess.getActionExpressionAccess().getAlternatives_0(), "rule__ActionExpression__Alternatives_0");
+					put(grammarAccess.getClickableElementAccess().getAlternatives(), "rule__ClickableElement__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getSubprocedureAccess().getGroup(), "rule__Subprocedure__Group__0");
 					put(grammarAccess.getHeadAccess().getGroup_0(), "rule__Head__Group_0__0");

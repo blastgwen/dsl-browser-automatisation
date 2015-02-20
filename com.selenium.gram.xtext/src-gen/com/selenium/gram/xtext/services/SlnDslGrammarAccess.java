@@ -892,7 +892,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeClickableElementTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeClickableElementParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cElementNumberLiteralParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
@@ -915,7 +915,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
 		//ClickableElement
-		public RuleCall getTypeClickableElementTerminalRuleCall_2_0() { return cTypeClickableElementTerminalRuleCall_2_0; }
+		public RuleCall getTypeClickableElementParserRuleCall_2_0() { return cTypeClickableElementParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
@@ -968,7 +968,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCheckKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeClickableElementTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeClickableElementParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cElementNumberLiteralParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
@@ -991,7 +991,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
 		//ClickableElement
-		public RuleCall getTypeClickableElementTerminalRuleCall_2_0() { return cTypeClickableElementTerminalRuleCall_2_0; }
+		public RuleCall getTypeClickableElementParserRuleCall_2_0() { return cTypeClickableElementParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
@@ -1089,6 +1089,30 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
+
+	public class ClickableElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ClickableElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cButtonKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cImageKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cLinkKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		//ClickableElement:
+		//	"button" | "image" | "link";
+		public ParserRule getRule() { return rule; }
+
+		//"button" | "image" | "link"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"button"
+		public Keyword getButtonKeyword_0() { return cButtonKeyword_0; }
+
+		//"image"
+		public Keyword getImageKeyword_1() { return cImageKeyword_1; }
+
+		//"link"
+		public Keyword getLinkKeyword_2() { return cLinkKeyword_2; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -1118,7 +1142,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActionCheckElements pActionCheck;
 	private final ActionTypeElements pActionType;
 	private final ActionExpressionElements pActionExpression;
-	private final TerminalRule tClickableElement;
+	private final ClickableElementElements pClickableElement;
 	private final TerminalRule tURL;
 	
 	private final Grammar grammar;
@@ -1157,7 +1181,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pActionCheck = new ActionCheckElements();
 		this.pActionType = new ActionTypeElements();
 		this.pActionExpression = new ActionExpressionElements();
-		this.tClickableElement = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ClickableElement");
+		this.pClickableElement = new ClickableElementElements();
 		this.tURL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "URL");
 	}
 	
@@ -1470,11 +1494,15 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getActionExpressionAccess().getRule();
 	}
 
-	//terminal ClickableElement:
+	//ClickableElement:
 	//	"button" | "image" | "link";
-	public TerminalRule getClickableElementRule() {
-		return tClickableElement;
-	} 
+	public ClickableElementElements getClickableElementAccess() {
+		return pClickableElement;
+	}
+	
+	public ParserRule getClickableElementRule() {
+		return getClickableElementAccess().getRule();
+	}
 
 	/// *
 	// * URL

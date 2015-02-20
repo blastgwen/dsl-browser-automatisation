@@ -128,7 +128,7 @@ ActionInstruction:
 ;
 
 ActionClick:
-	'click' '('type=ClickableElement ',' element=NumberLiteral ')'
+	'click' '(' type=ClickableElement ',' element=NumberLiteral ')'
 ;
 
 ActionOpen:
@@ -146,7 +146,7 @@ ActionExpression :
 	('verify'|'select') '(' element=Expression ')'
 ;
 
-terminal ClickableElement:
+ClickableElement:
 	'button'|
 	'image'|
 	'link'

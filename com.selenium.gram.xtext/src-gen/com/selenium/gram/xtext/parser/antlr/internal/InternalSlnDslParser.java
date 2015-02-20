@@ -21,13 +21,14 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_CLICKABLEELEMENT", "RULE_URL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'main'", "'endmain'", "'sub'", "'endsub'", "'()'", "'('", "'var'", "','", "')'", "'All'", "'Any'", "'->'", "'sizeof'", "'!'", "'=='", "'<'", "'>'", "'='", "'if'", "'then'", "'else'", "'endif'", "'while'", "'do'", "'endwhile'", "'foreach'", "'in'", "'endfor'", "'click'", "'open'", "'check'", "'type'", "'verify'", "'select'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_URL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'main'", "'endmain'", "'sub'", "'endsub'", "'()'", "'('", "'var'", "','", "')'", "'All'", "'Any'", "'->'", "'sizeof'", "'!'", "'=='", "'<'", "'>'", "'='", "'if'", "'then'", "'else'", "'endif'", "'while'", "'do'", "'endwhile'", "'foreach'", "'in'", "'endfor'", "'click'", "'open'", "'check'", "'type'", "'verify'", "'select'", "'button'", "'image'", "'link'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int RULE_ID=4;
@@ -36,16 +37,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final int T__28=28;
     public static final int RULE_INT=5;
     public static final int T__29=29;
-    public static final int RULE_URL=8;
+    public static final int RULE_URL=7;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=9;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
     public static final int RULE_STRING=6;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -57,13 +58,14 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_WS=11;
-    public static final int RULE_ANY_OTHER=12;
+    public static final int RULE_WS=10;
+    public static final int RULE_ANY_OTHER=11;
+    public static final int T__48=48;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__40=40;
-    public static final int RULE_CLICKABLEELEMENT=7;
     public static final int T__41=41;
     public static final int T__42=42;
     public static final int T__43=43;
@@ -169,7 +171,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==15) ) {
+                if ( (LA1_0==14) ) {
                     alt1=1;
                 }
 
@@ -212,7 +214,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_1=(Token)match(input,13,FOLLOW_13_in_ruleModel144); 
+            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleModel144); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getModelAccess().getMainKeyword_1());
                 
@@ -223,7 +225,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_ID||LA2_0==19||LA2_0==31||LA2_0==35||LA2_0==38||(LA2_0>=41 && LA2_0<=44)) ) {
+                if ( (LA2_0==RULE_ID||LA2_0==18||LA2_0==30||LA2_0==34||LA2_0==37||(LA2_0>=40 && LA2_0<=43)) ) {
                     alt2=1;
                 }
 
@@ -270,7 +272,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 cnt2++;
             } while (true);
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleModel178); 
+            otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleModel178); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getModelAccess().getEndmainKeyword_3());
                 
@@ -351,7 +353,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:145:1: (otherlv_0= 'sub' ( (lv_head_1_0= ruleHead ) ) ( (lv_body_2_0= ruleInstruction ) )+ otherlv_3= 'endsub' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:145:3: otherlv_0= 'sub' ( (lv_head_1_0= ruleHead ) ) ( (lv_body_2_0= ruleInstruction ) )+ otherlv_3= 'endsub'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleSubprocedure261); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleSubprocedure261); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSubprocedureAccess().getSubKeyword_0());
                 
@@ -393,7 +395,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==RULE_ID||LA3_0==19||LA3_0==31||LA3_0==35||LA3_0==38||(LA3_0>=41 && LA3_0<=44)) ) {
+                if ( (LA3_0==RULE_ID||LA3_0==18||LA3_0==30||LA3_0==34||LA3_0==37||(LA3_0>=40 && LA3_0<=43)) ) {
                     alt3=1;
                 }
 
@@ -440,7 +442,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 cnt3++;
             } while (true);
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSubprocedure316); 
+            otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleSubprocedure316); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSubprocedureAccess().getEndsubKeyword_3());
                 
@@ -533,10 +535,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             if ( (LA5_0==RULE_ID) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==18) ) {
+                if ( (LA5_1==17) ) {
                     alt5=2;
                 }
-                else if ( (LA5_1==17) ) {
+                else if ( (LA5_1==16) ) {
                     alt5=1;
                 }
                 else {
@@ -590,7 +592,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleHead421); 
+                    otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleHead421); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getHeadAccess().getLeftParenthesisRightParenthesisKeyword_0_1());
                         
@@ -637,11 +639,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleHead462); 
+                    otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleHead462); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getHeadAccess().getLeftParenthesisKeyword_1_1());
                         
-                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleHead474); 
+                    otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleHead474); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getHeadAccess().getVarKeyword_1_2());
                         
@@ -682,7 +684,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         int alt4=2;
                         int LA4_0 = input.LA(1);
 
-                        if ( (LA4_0==20) ) {
+                        if ( (LA4_0==19) ) {
                             alt4=1;
                         }
 
@@ -691,11 +693,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:277:4: otherlv_6= ',' otherlv_7= 'var' ( (lv_argsID_8_0= ruleVariableName ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,20,FOLLOW_20_in_ruleHead508); 
+                    	    otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleHead508); 
 
                     	        	newLeafNode(otherlv_6, grammarAccess.getHeadAccess().getCommaKeyword_1_4_0());
                     	        
-                    	    otherlv_7=(Token)match(input,19,FOLLOW_19_in_ruleHead520); 
+                    	    otherlv_7=(Token)match(input,18,FOLLOW_18_in_ruleHead520); 
 
                     	        	newLeafNode(otherlv_7, grammarAccess.getHeadAccess().getVarKeyword_1_4_1());
                     	        
@@ -739,7 +741,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_9=(Token)match(input,21,FOLLOW_21_in_ruleHead555); 
+                    otherlv_9=(Token)match(input,20,FOLLOW_20_in_ruleHead555); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getHeadAccess().getRightParenthesisKeyword_1_5());
                         
@@ -1015,10 +1017,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             if ( (LA7_0==RULE_ID) ) {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==18) ) {
+                if ( (LA7_1==17) ) {
                     alt7=2;
                 }
-                else if ( (LA7_1==17) ) {
+                else if ( (LA7_1==16) ) {
                     alt7=1;
                 }
                 else {
@@ -1053,7 +1055,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                             current = this_FunctionReference_0; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleFunctionCall841); 
+                    otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleFunctionCall841); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisRightParenthesisKeyword_0_1());
                         
@@ -1081,7 +1083,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                             current = this_FunctionReference_2; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleFunctionCall882); 
+                    otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleFunctionCall882); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1_1());
                         
@@ -1122,7 +1124,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         int alt6=2;
                         int LA6_0 = input.LA(1);
 
-                        if ( (LA6_0==20) ) {
+                        if ( (LA6_0==19) ) {
                             alt6=1;
                         }
 
@@ -1131,7 +1133,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:446:4: otherlv_5= ',' ( (lv_args_6_0= ruleExpression ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleFunctionCall916); 
+                    	    otherlv_5=(Token)match(input,19,FOLLOW_19_in_ruleFunctionCall916); 
 
                     	        	newLeafNode(otherlv_5, grammarAccess.getFunctionCallAccess().getCommaKeyword_1_3_0());
                     	        
@@ -1175,7 +1177,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleFunctionCall951); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleFunctionCall951); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_1_4());
                         
@@ -1569,23 +1571,23 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 alt9=2;
                 }
                 break;
+            case 21:
             case 22:
-            case 23:
-            case 25:
+            case 24:
                 {
                 alt9=3;
                 }
                 break;
+            case 25:
             case 26:
             case 27:
             case 28:
-            case 29:
                 {
                 alt9=4;
                 }
                 break;
+            case 44:
             case 45:
-            case 46:
                 {
                 alt9=5;
                 }
@@ -1873,10 +1875,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( ((LA11_0>=22 && LA11_0<=23)) ) {
+            if ( ((LA11_0>=21 && LA11_0<=22)) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==25) ) {
+            else if ( (LA11_0==24) ) {
                 alt11=2;
             }
             else {
@@ -1896,10 +1898,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
-                    if ( (LA10_0==22) ) {
+                    if ( (LA10_0==21) ) {
                         alt10=1;
                     }
-                    else if ( (LA10_0==23) ) {
+                    else if ( (LA10_0==22) ) {
                         alt10=2;
                     }
                     else {
@@ -1912,7 +1914,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:711:5: otherlv_0= 'All'
                             {
-                            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleListExpression1630); 
+                            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleListExpression1630); 
 
                                 	newLeafNode(otherlv_0, grammarAccess.getListExpressionAccess().getAllKeyword_0_0_0());
                                 
@@ -1922,7 +1924,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:716:7: otherlv_1= 'Any'
                             {
-                            otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleListExpression1648); 
+                            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleListExpression1648); 
 
                                 	newLeafNode(otherlv_1, grammarAccess.getListExpressionAccess().getAnyKeyword_0_0_1());
                                 
@@ -1932,11 +1934,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleListExpression1661); 
+                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleListExpression1661); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getListExpressionAccess().getLeftParenthesisKeyword_0_1());
                         
-                    otherlv_3=(Token)match(input,19,FOLLOW_19_in_ruleListExpression1673); 
+                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleListExpression1673); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getListExpressionAccess().getVarKeyword_0_2());
                         
@@ -1971,7 +1973,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleListExpression1706); 
+                    otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleListExpression1706); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getListExpressionAccess().getHyphenMinusGreaterThanSignKeyword_0_4());
                         
@@ -2006,7 +2008,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleListExpression1739); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleListExpression1739); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getListExpressionAccess().getRightParenthesisKeyword_0_6());
                         
@@ -2022,11 +2024,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:773:6: (otherlv_8= 'sizeof' otherlv_9= '(' ( (lv_exp_10_0= ruleExpression ) ) otherlv_11= ')' )
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:773:8: otherlv_8= 'sizeof' otherlv_9= '(' ( (lv_exp_10_0= ruleExpression ) ) otherlv_11= ')'
                     {
-                    otherlv_8=(Token)match(input,25,FOLLOW_25_in_ruleListExpression1759); 
+                    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleListExpression1759); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getListExpressionAccess().getSizeofKeyword_1_0());
                         
-                    otherlv_9=(Token)match(input,18,FOLLOW_18_in_ruleListExpression1771); 
+                    otherlv_9=(Token)match(input,17,FOLLOW_17_in_ruleListExpression1771); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getListExpressionAccess().getLeftParenthesisKeyword_1_1());
                         
@@ -2061,7 +2063,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleListExpression1804); 
+                    otherlv_11=(Token)match(input,20,FOLLOW_20_in_ruleListExpression1804); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getListExpressionAccess().getRightParenthesisKeyword_1_3());
                         
@@ -2150,10 +2152,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( ((LA12_0>=27 && LA12_0<=29)) ) {
+            if ( ((LA12_0>=26 && LA12_0<=28)) ) {
                 alt12=1;
             }
-            else if ( (LA12_0==26) ) {
+            else if ( (LA12_0==25) ) {
                 alt12=2;
             }
             else {
@@ -2254,7 +2256,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:869:6: (otherlv_3= '!' ( (lv_exp_4_0= ruleExpression ) ) )
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:869:8: otherlv_3= '!' ( (lv_exp_4_0= ruleExpression ) )
                     {
-                    otherlv_3=(Token)match(input,26,FOLLOW_26_in_ruleBooleanExpression1954); 
+                    otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleBooleanExpression1954); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getBooleanExpressionAccess().getExclamationMarkKeyword_1_0());
                         
@@ -2367,17 +2369,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:912:1: (kw= '==' | kw= '<' | kw= '>' )
             int alt13=3;
             switch ( input.LA(1) ) {
-            case 27:
+            case 26:
                 {
                 alt13=1;
                 }
                 break;
-            case 28:
+            case 27:
                 {
                 alt13=2;
                 }
                 break;
-            case 29:
+            case 28:
                 {
                 alt13=3;
                 }
@@ -2393,7 +2395,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:913:2: kw= '=='
                     {
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleBooleanOperator2062); 
+                    kw=(Token)match(input,26,FOLLOW_26_in_ruleBooleanOperator2062); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBooleanOperatorAccess().getEqualsSignEqualsSignKeyword_0()); 
@@ -2404,7 +2406,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:920:2: kw= '<'
                     {
-                    kw=(Token)match(input,28,FOLLOW_28_in_ruleBooleanOperator2081); 
+                    kw=(Token)match(input,27,FOLLOW_27_in_ruleBooleanOperator2081); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBooleanOperatorAccess().getLessThanSignKeyword_1()); 
@@ -2415,7 +2417,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 case 3 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:927:2: kw= '>'
                     {
-                    kw=(Token)match(input,29,FOLLOW_29_in_ruleBooleanOperator2100); 
+                    kw=(Token)match(input,28,FOLLOW_28_in_ruleBooleanOperator2100); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBooleanOperatorAccess().getGreaterThanSignKeyword_2()); 
@@ -2506,7 +2508,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:953:1: (this_Definition_0= ruleDefinition | this_FunctionCall_1= ruleFunctionCall | this_Conditional_2= ruleConditional | this_Loop_3= ruleLoop | this_ActionInstruction_4= ruleActionInstruction | this_Assignation_5= ruleAssignation )
             int alt14=6;
             switch ( input.LA(1) ) {
-            case 19:
+            case 18:
                 {
                 alt14=1;
                 }
@@ -2515,10 +2517,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 {
                 int LA14_2 = input.LA(2);
 
-                if ( ((LA14_2>=17 && LA14_2<=18)) ) {
+                if ( ((LA14_2>=16 && LA14_2<=17)) ) {
                     alt14=2;
                 }
-                else if ( (LA14_2==30) ) {
+                else if ( (LA14_2==29) ) {
                     alt14=6;
                 }
                 else {
@@ -2529,21 +2531,21 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt14=3;
                 }
                 break;
-            case 35:
-            case 38:
+            case 34:
+            case 37:
                 {
                 alt14=4;
                 }
                 break;
+            case 40:
             case 41:
             case 42:
             case 43:
-            case 44:
                 {
                 alt14=5;
                 }
@@ -2741,7 +2743,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1033:1: (otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) ) )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1033:3: otherlv_0= 'var' ( (lv_varID_1_0= ruleVariableName ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleDefinition2414); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDefinition2414); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDefinitionAccess().getVarKeyword_0());
                 
@@ -2776,7 +2778,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,30,FOLLOW_30_in_ruleDefinition2447); 
+            otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleDefinition2447); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDefinitionAccess().getEqualsSignKeyword_2());
                 
@@ -2918,7 +2920,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleAssignation2572); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleAssignation2572); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAssignationAccess().getEqualsSignKeyword_1());
                 
@@ -3034,7 +3036,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1159:1: (otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1159:3: otherlv_0= 'if' ( (lv_exp_1_0= ruleExpression ) ) otherlv_2= 'then' ( (lv_trueIns_3_0= ruleInstruction ) )+ (otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+ )? otherlv_6= 'endif'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleConditional2676); 
+            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleConditional2676); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getConditionalAccess().getIfKeyword_0());
                 
@@ -3069,7 +3071,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleConditional2709); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleConditional2709); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getConditionalAccess().getThenKeyword_2());
                 
@@ -3080,7 +3082,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==RULE_ID||LA15_0==19||LA15_0==31||LA15_0==35||LA15_0==38||(LA15_0>=41 && LA15_0<=44)) ) {
+                if ( (LA15_0==RULE_ID||LA15_0==18||LA15_0==30||LA15_0==34||LA15_0==37||(LA15_0>=40 && LA15_0<=43)) ) {
                     alt15=1;
                 }
 
@@ -3131,14 +3133,14 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==33) ) {
+            if ( (LA17_0==32) ) {
                 alt17=1;
             }
             switch (alt17) {
                 case 1 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1203:5: otherlv_4= 'else' ( (lv_falseIns_5_0= ruleInstruction ) )+
                     {
-                    otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleConditional2744); 
+                    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleConditional2744); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getConditionalAccess().getElseKeyword_4_0());
                         
@@ -3149,7 +3151,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                         int alt16=2;
                         int LA16_0 = input.LA(1);
 
-                        if ( (LA16_0==RULE_ID||LA16_0==19||LA16_0==31||LA16_0==35||LA16_0==38||(LA16_0>=41 && LA16_0<=44)) ) {
+                        if ( (LA16_0==RULE_ID||LA16_0==18||LA16_0==30||LA16_0==34||LA16_0==37||(LA16_0>=40 && LA16_0<=43)) ) {
                             alt16=1;
                         }
 
@@ -3202,7 +3204,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,34,FOLLOW_34_in_ruleConditional2780); 
+            otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleConditional2780); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getConditionalAccess().getEndifKeyword_5());
                 
@@ -3282,10 +3284,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==35) ) {
+            if ( (LA18_0==34) ) {
                 alt18=1;
             }
-            else if ( (LA18_0==38) ) {
+            else if ( (LA18_0==37) ) {
                 alt18=2;
             }
             else {
@@ -3449,11 +3451,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1308:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1308:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_cond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'do' ( (lv_ins_5_0= ruleInstruction ) )+ otherlv_6= 'endwhile'
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleWhile2982); 
+            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleWhile2982); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getWhileAccess().getWhileKeyword_0());
                 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleWhile2994); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleWhile2994); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getWhileAccess().getLeftParenthesisKeyword_1());
                 
@@ -3488,11 +3490,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleWhile3027); 
+            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleWhile3027); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getWhileAccess().getRightParenthesisKeyword_3());
                 
-            otherlv_4=(Token)match(input,36,FOLLOW_36_in_ruleWhile3039); 
+            otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleWhile3039); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getWhileAccess().getDoKeyword_4());
                 
@@ -3503,7 +3505,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( (LA19_0==RULE_ID||LA19_0==19||LA19_0==31||LA19_0==35||LA19_0==38||(LA19_0>=41 && LA19_0<=44)) ) {
+                if ( (LA19_0==RULE_ID||LA19_0==18||LA19_0==30||LA19_0==34||LA19_0==37||(LA19_0>=40 && LA19_0<=43)) ) {
                     alt19=1;
                 }
 
@@ -3550,7 +3552,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 cnt19++;
             } while (true);
 
-            otherlv_6=(Token)match(input,37,FOLLOW_37_in_ruleWhile3073); 
+            otherlv_6=(Token)match(input,36,FOLLOW_36_in_ruleWhile3073); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getWhileAccess().getEndwhileKeyword_6());
                 
@@ -3637,11 +3639,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1385:1: (otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1385:3: otherlv_0= 'foreach' otherlv_1= '(' ( (lv_var_2_0= ruleVariableName ) ) otherlv_3= 'in' ( (lv_exp_4_0= ruleExpression ) ) otherlv_5= ')' otherlv_6= 'do' ( (lv_ins_7_0= ruleInstruction ) )+ otherlv_8= 'endfor'
             {
-            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleForeach3156); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleForeach3156); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getForeachAccess().getForeachKeyword_0());
                 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleForeach3168); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleForeach3168); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getForeachAccess().getLeftParenthesisKeyword_1());
                 
@@ -3676,7 +3678,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,39,FOLLOW_39_in_ruleForeach3201); 
+            otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleForeach3201); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getForeachAccess().getInKeyword_3());
                 
@@ -3711,11 +3713,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleForeach3234); 
+            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleForeach3234); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getForeachAccess().getRightParenthesisKeyword_5());
                 
-            otherlv_6=(Token)match(input,36,FOLLOW_36_in_ruleForeach3246); 
+            otherlv_6=(Token)match(input,35,FOLLOW_35_in_ruleForeach3246); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getForeachAccess().getDoKeyword_6());
                 
@@ -3726,7 +3728,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( (LA20_0==RULE_ID||LA20_0==19||LA20_0==31||LA20_0==35||LA20_0==38||(LA20_0>=41 && LA20_0<=44)) ) {
+                if ( (LA20_0==RULE_ID||LA20_0==18||LA20_0==30||LA20_0==34||LA20_0==37||(LA20_0>=40 && LA20_0<=43)) ) {
                     alt20=1;
                 }
 
@@ -3773,7 +3775,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 cnt20++;
             } while (true);
 
-            otherlv_8=(Token)match(input,40,FOLLOW_40_in_ruleForeach3280); 
+            otherlv_8=(Token)match(input,39,FOLLOW_39_in_ruleForeach3280); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getForeachAccess().getEndforKeyword_8());
                 
@@ -3856,22 +3858,22 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1484:1: ( ( (lv_action_0_0= ruleActionOpen ) ) | ( (lv_action_1_0= ruleActionClick ) ) | ( (lv_action_2_0= ruleActionCheck ) ) | ( (lv_action_3_0= ruleActionType ) ) )
             int alt21=4;
             switch ( input.LA(1) ) {
-            case 42:
+            case 41:
                 {
                 alt21=1;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt21=2;
                 }
                 break;
-            case 43:
+            case 42:
                 {
                 alt21=3;
                 }
                 break;
-            case 44:
+            case 43:
                 {
                 alt21=4;
                 }
@@ -4089,54 +4091,60 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionClick"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1576:1: ruleActionClick returns [EObject current=null] : (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1576:1: ruleActionClick returns [EObject current=null] : (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) ;
     public final EObject ruleActionClick() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_type_2_0=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
+        AntlrDatatypeRuleToken lv_type_2_0 = null;
+
         AntlrDatatypeRuleToken lv_element_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1579:28: ( (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1580:1: (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1579:28: ( (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1580:1: (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1580:1: (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1580:3: otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1580:1: (otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1580:3: otherlv_0= 'click' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_41_in_ruleActionClick3536); 
+            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleActionClick3536); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionClickAccess().getClickKeyword_0());
                 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleActionClick3548); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleActionClick3548); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getActionClickAccess().getLeftParenthesisKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1588:1: ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1589:1: (lv_type_2_0= RULE_CLICKABLEELEMENT )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1588:1: ( (lv_type_2_0= ruleClickableElement ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1589:1: (lv_type_2_0= ruleClickableElement )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1589:1: (lv_type_2_0= RULE_CLICKABLEELEMENT )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1590:3: lv_type_2_0= RULE_CLICKABLEELEMENT
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1589:1: (lv_type_2_0= ruleClickableElement )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1590:3: lv_type_2_0= ruleClickableElement
             {
-            lv_type_2_0=(Token)match(input,RULE_CLICKABLEELEMENT,FOLLOW_RULE_CLICKABLEELEMENT_in_ruleActionClick3565); 
+             
+            	        newCompositeNode(grammarAccess.getActionClickAccess().getTypeClickableElementParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleClickableElement_in_ruleActionClick3569);
+            lv_type_2_0=ruleClickableElement();
 
-            			newLeafNode(lv_type_2_0, grammarAccess.getActionClickAccess().getTypeClickableElementTerminalRuleCall_2_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getActionClickRule());
+            	            current = createModelElementForParent(grammarAccess.getActionClickRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"type",
                     		lv_type_2_0, 
                     		"ClickableElement");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -4144,7 +4152,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleActionClick3582); 
+            otherlv_3=(Token)match(input,19,FOLLOW_19_in_ruleActionClick3581); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getActionClickAccess().getCommaKeyword_3());
                 
@@ -4157,7 +4165,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionClick3603);
+            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionClick3602);
             lv_element_4_0=ruleNumberLiteral();
 
             state._fsp--;
@@ -4179,7 +4187,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleActionClick3615); 
+            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleActionClick3614); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getActionClickAccess().getRightParenthesisKeyword_5());
                 
@@ -4216,13 +4224,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1642:2: iv_ruleActionOpen= ruleActionOpen EOF
             {
              newCompositeNode(grammarAccess.getActionOpenRule()); 
-            pushFollow(FOLLOW_ruleActionOpen_in_entryRuleActionOpen3651);
+            pushFollow(FOLLOW_ruleActionOpen_in_entryRuleActionOpen3650);
             iv_ruleActionOpen=ruleActionOpen();
 
             state._fsp--;
 
              current =iv_ruleActionOpen; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionOpen3661); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionOpen3660); 
 
             }
 
@@ -4258,11 +4266,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1653:1: (otherlv_0= 'open' otherlv_1= '(' ( (lv_url_2_0= RULE_URL ) ) otherlv_3= ')' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1653:3: otherlv_0= 'open' otherlv_1= '(' ( (lv_url_2_0= RULE_URL ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,42,FOLLOW_42_in_ruleActionOpen3698); 
+            otherlv_0=(Token)match(input,41,FOLLOW_41_in_ruleActionOpen3697); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionOpenAccess().getOpenKeyword_0());
                 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleActionOpen3710); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleActionOpen3709); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getActionOpenAccess().getLeftParenthesisKeyword_1());
                 
@@ -4272,7 +4280,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1662:1: (lv_url_2_0= RULE_URL )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1663:3: lv_url_2_0= RULE_URL
             {
-            lv_url_2_0=(Token)match(input,RULE_URL,FOLLOW_RULE_URL_in_ruleActionOpen3727); 
+            lv_url_2_0=(Token)match(input,RULE_URL,FOLLOW_RULE_URL_in_ruleActionOpen3726); 
 
             			newLeafNode(lv_url_2_0, grammarAccess.getActionOpenAccess().getUrlURLTerminalRuleCall_2_0()); 
             		
@@ -4292,7 +4300,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleActionOpen3744); 
+            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleActionOpen3743); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getActionOpenAccess().getRightParenthesisKeyword_3());
                 
@@ -4329,13 +4337,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1693:2: iv_ruleActionCheck= ruleActionCheck EOF
             {
              newCompositeNode(grammarAccess.getActionCheckRule()); 
-            pushFollow(FOLLOW_ruleActionCheck_in_entryRuleActionCheck3780);
+            pushFollow(FOLLOW_ruleActionCheck_in_entryRuleActionCheck3779);
             iv_ruleActionCheck=ruleActionCheck();
 
             state._fsp--;
 
              current =iv_ruleActionCheck; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionCheck3790); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionCheck3789); 
 
             }
 
@@ -4353,54 +4361,60 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionCheck"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1700:1: ruleActionCheck returns [EObject current=null] : (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1700:1: ruleActionCheck returns [EObject current=null] : (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) ;
     public final EObject ruleActionCheck() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_type_2_0=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
+        AntlrDatatypeRuleToken lv_type_2_0 = null;
+
         AntlrDatatypeRuleToken lv_element_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1703:28: ( (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1704:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1703:28: ( (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1704:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1704:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1704:3: otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1704:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1704:3: otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,43,FOLLOW_43_in_ruleActionCheck3827); 
+            otherlv_0=(Token)match(input,42,FOLLOW_42_in_ruleActionCheck3826); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionCheckAccess().getCheckKeyword_0());
                 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleActionCheck3839); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleActionCheck3838); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getActionCheckAccess().getLeftParenthesisKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1712:1: ( (lv_type_2_0= RULE_CLICKABLEELEMENT ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1713:1: (lv_type_2_0= RULE_CLICKABLEELEMENT )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1712:1: ( (lv_type_2_0= ruleClickableElement ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1713:1: (lv_type_2_0= ruleClickableElement )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1713:1: (lv_type_2_0= RULE_CLICKABLEELEMENT )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1714:3: lv_type_2_0= RULE_CLICKABLEELEMENT
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1713:1: (lv_type_2_0= ruleClickableElement )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1714:3: lv_type_2_0= ruleClickableElement
             {
-            lv_type_2_0=(Token)match(input,RULE_CLICKABLEELEMENT,FOLLOW_RULE_CLICKABLEELEMENT_in_ruleActionCheck3856); 
+             
+            	        newCompositeNode(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleClickableElement_in_ruleActionCheck3859);
+            lv_type_2_0=ruleClickableElement();
 
-            			newLeafNode(lv_type_2_0, grammarAccess.getActionCheckAccess().getTypeClickableElementTerminalRuleCall_2_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getActionCheckRule());
+            	            current = createModelElementForParent(grammarAccess.getActionCheckRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"type",
                     		lv_type_2_0, 
                     		"ClickableElement");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -4408,7 +4422,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleActionCheck3873); 
+            otherlv_3=(Token)match(input,19,FOLLOW_19_in_ruleActionCheck3871); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getActionCheckAccess().getCommaKeyword_3());
                 
@@ -4421,7 +4435,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionCheck3894);
+            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionCheck3892);
             lv_element_4_0=ruleNumberLiteral();
 
             state._fsp--;
@@ -4443,7 +4457,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleActionCheck3906); 
+            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleActionCheck3904); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getActionCheckAccess().getRightParenthesisKeyword_5());
                 
@@ -4480,13 +4494,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1766:2: iv_ruleActionType= ruleActionType EOF
             {
              newCompositeNode(grammarAccess.getActionTypeRule()); 
-            pushFollow(FOLLOW_ruleActionType_in_entryRuleActionType3942);
+            pushFollow(FOLLOW_ruleActionType_in_entryRuleActionType3940);
             iv_ruleActionType=ruleActionType();
 
             state._fsp--;
 
              current =iv_ruleActionType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionType3952); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionType3950); 
 
             }
 
@@ -4526,11 +4540,11 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1777:1: (otherlv_0= 'type' otherlv_1= '(' ( (lv_nameElement_2_0= ruleNumberLiteral ) ) otherlv_3= ',' ( (lv_value_4_0= ruleExpression ) ) otherlv_5= ')' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1777:3: otherlv_0= 'type' otherlv_1= '(' ( (lv_nameElement_2_0= ruleNumberLiteral ) ) otherlv_3= ',' ( (lv_value_4_0= ruleExpression ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,44,FOLLOW_44_in_ruleActionType3989); 
+            otherlv_0=(Token)match(input,43,FOLLOW_43_in_ruleActionType3987); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionTypeAccess().getTypeKeyword_0());
                 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleActionType4001); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleActionType3999); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getActionTypeAccess().getLeftParenthesisKeyword_1());
                 
@@ -4543,7 +4557,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getActionTypeAccess().getNameElementNumberLiteralParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionType4022);
+            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionType4020);
             lv_nameElement_2_0=ruleNumberLiteral();
 
             state._fsp--;
@@ -4565,7 +4579,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleActionType4034); 
+            otherlv_3=(Token)match(input,19,FOLLOW_19_in_ruleActionType4032); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getActionTypeAccess().getCommaKeyword_3());
                 
@@ -4578,7 +4592,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getActionTypeAccess().getValueExpressionParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleActionType4055);
+            pushFollow(FOLLOW_ruleExpression_in_ruleActionType4053);
             lv_value_4_0=ruleExpression();
 
             state._fsp--;
@@ -4600,7 +4614,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleActionType4067); 
+            otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleActionType4065); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getActionTypeAccess().getRightParenthesisKeyword_5());
                 
@@ -4637,13 +4651,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1839:2: iv_ruleActionExpression= ruleActionExpression EOF
             {
              newCompositeNode(grammarAccess.getActionExpressionRule()); 
-            pushFollow(FOLLOW_ruleActionExpression_in_entryRuleActionExpression4103);
+            pushFollow(FOLLOW_ruleActionExpression_in_entryRuleActionExpression4101);
             iv_ruleActionExpression=ruleActionExpression();
 
             state._fsp--;
 
              current =iv_ruleActionExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionExpression4113); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionExpression4111); 
 
             }
 
@@ -4685,10 +4699,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==45) ) {
+            if ( (LA22_0==44) ) {
                 alt22=1;
             }
-            else if ( (LA22_0==46) ) {
+            else if ( (LA22_0==45) ) {
                 alt22=2;
             }
             else {
@@ -4701,7 +4715,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1850:4: otherlv_0= 'verify'
                     {
-                    otherlv_0=(Token)match(input,45,FOLLOW_45_in_ruleActionExpression4151); 
+                    otherlv_0=(Token)match(input,44,FOLLOW_44_in_ruleActionExpression4149); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getActionExpressionAccess().getVerifyKeyword_0_0());
                         
@@ -4711,7 +4725,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1855:7: otherlv_1= 'select'
                     {
-                    otherlv_1=(Token)match(input,46,FOLLOW_46_in_ruleActionExpression4169); 
+                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleActionExpression4167); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getActionExpressionAccess().getSelectKeyword_0_1());
                         
@@ -4721,7 +4735,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleActionExpression4182); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleActionExpression4180); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getActionExpressionAccess().getLeftParenthesisKeyword_1());
                 
@@ -4734,7 +4748,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getActionExpressionAccess().getElementExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleActionExpression4203);
+            pushFollow(FOLLOW_ruleExpression_in_ruleActionExpression4201);
             lv_element_3_0=ruleExpression();
 
             state._fsp--;
@@ -4756,7 +4770,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleActionExpression4215); 
+            otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleActionExpression4213); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getActionExpressionAccess().getRightParenthesisKeyword_3());
                 
@@ -4779,6 +4793,134 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleActionExpression"
 
+
+    // $ANTLR start "entryRuleClickableElement"
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1893:1: entryRuleClickableElement returns [String current=null] : iv_ruleClickableElement= ruleClickableElement EOF ;
+    public final String entryRuleClickableElement() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleClickableElement = null;
+
+
+        try {
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1894:2: (iv_ruleClickableElement= ruleClickableElement EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1895:2: iv_ruleClickableElement= ruleClickableElement EOF
+            {
+             newCompositeNode(grammarAccess.getClickableElementRule()); 
+            pushFollow(FOLLOW_ruleClickableElement_in_entryRuleClickableElement4250);
+            iv_ruleClickableElement=ruleClickableElement();
+
+            state._fsp--;
+
+             current =iv_ruleClickableElement.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClickableElement4261); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleClickableElement"
+
+
+    // $ANTLR start "ruleClickableElement"
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1902:1: ruleClickableElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'button' | kw= 'image' | kw= 'link' ) ;
+    public final AntlrDatatypeRuleToken ruleClickableElement() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1905:28: ( (kw= 'button' | kw= 'image' | kw= 'link' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1906:1: (kw= 'button' | kw= 'image' | kw= 'link' )
+            {
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1906:1: (kw= 'button' | kw= 'image' | kw= 'link' )
+            int alt23=3;
+            switch ( input.LA(1) ) {
+            case 46:
+                {
+                alt23=1;
+                }
+                break;
+            case 47:
+                {
+                alt23=2;
+                }
+                break;
+            case 48:
+                {
+                alt23=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 23, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt23) {
+                case 1 :
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1907:2: kw= 'button'
+                    {
+                    kw=(Token)match(input,46,FOLLOW_46_in_ruleClickableElement4299); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getClickableElementAccess().getButtonKeyword_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1914:2: kw= 'image'
+                    {
+                    kw=(Token)match(input,47,FOLLOW_47_in_ruleClickableElement4318); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getClickableElementAccess().getImageKeyword_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1921:2: kw= 'link'
+                    {
+                    kw=(Token)match(input,48,FOLLOW_48_in_ruleClickableElement4337); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getClickableElementAccess().getLinkKeyword_2()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleClickableElement"
+
     // Delegated rules
 
 
@@ -4786,28 +4928,28 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSubprocedure_in_ruleModel131 = new BitSet(new long[]{0x000000000000A000L});
-    public static final BitSet FOLLOW_13_in_ruleModel144 = new BitSet(new long[]{0x00001E4880080010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleModel165 = new BitSet(new long[]{0x00001E4880084010L});
-    public static final BitSet FOLLOW_14_in_ruleModel178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubprocedure_in_ruleModel131 = new BitSet(new long[]{0x0000000000005000L});
+    public static final BitSet FOLLOW_12_in_ruleModel144 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleModel165 = new BitSet(new long[]{0x00000F2440042010L});
+    public static final BitSet FOLLOW_13_in_ruleModel178 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSubprocedure_in_entryRuleSubprocedure214 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSubprocedure224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleSubprocedure261 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleHead_in_ruleSubprocedure282 = new BitSet(new long[]{0x00001E4880080010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleSubprocedure303 = new BitSet(new long[]{0x00001E4880090010L});
-    public static final BitSet FOLLOW_16_in_ruleSubprocedure316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleSubprocedure261 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleHead_in_ruleSubprocedure282 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleSubprocedure303 = new BitSet(new long[]{0x00000F2440048010L});
+    public static final BitSet FOLLOW_15_in_ruleSubprocedure316 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleHead_in_entryRuleHead352 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleHead362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionName_in_ruleHead409 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleHead421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionName_in_ruleHead450 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleHead462 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleHead474 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleHead495 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_ruleHead508 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleHead520 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleHead541 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_ruleHead555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionName_in_ruleHead409 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleHead421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionName_in_ruleHead450 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleHead462 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleHead474 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleHead495 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_19_in_ruleHead508 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleHead520 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleHead541 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_20_in_ruleHead555 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFunctionReference_in_entryRuleFunctionReference592 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFunctionReference602 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionReference646 = new BitSet(new long[]{0x0000000000000002L});
@@ -4816,14 +4958,14 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionName732 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall772 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionReference_in_ruleFunctionCall830 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleFunctionCall841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionReference_in_ruleFunctionCall871 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleFunctionCall882 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall903 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_ruleFunctionCall916 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall937 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_ruleFunctionCall951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionReference_in_ruleFunctionCall830 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleFunctionCall841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionReference_in_ruleFunctionCall871 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleFunctionCall882 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall903 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_19_in_ruleFunctionCall916 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCall937 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_20_in_ruleFunctionCall951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableReference_in_entryRuleVariableReference988 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVariableReference998 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleVariableReference1042 = new BitSet(new long[]{0x0000000000000002L});
@@ -4846,30 +4988,30 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleNumLiteralExpression1546 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleListExpression_in_entryRuleListExpression1581 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleListExpression1591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleListExpression1630 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_23_in_ruleListExpression1648 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleListExpression1661 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleListExpression1673 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleListExpression1694 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleListExpression1706 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression1727 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleListExpression1739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleListExpression1759 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleListExpression1771 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression1792 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleListExpression1804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleListExpression1630 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_22_in_ruleListExpression1648 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleListExpression1661 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleListExpression1673 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleListExpression1694 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleListExpression1706 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression1727 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleListExpression1739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleListExpression1759 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleListExpression1771 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression1792 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleListExpression1804 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanExpression_in_entryRuleBooleanExpression1841 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBooleanExpression1851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanOperator_in_ruleBooleanExpression1893 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleBooleanExpression1913 = new BitSet(new long[]{0x00007E48BEC80070L});
+    public static final BitSet FOLLOW_ruleBooleanOperator_in_ruleBooleanExpression1893 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleBooleanExpression1913 = new BitSet(new long[]{0x00003F245F640070L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleBooleanExpression1934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleBooleanExpression1954 = new BitSet(new long[]{0x00007E48BEC80070L});
+    public static final BitSet FOLLOW_25_in_ruleBooleanExpression1954 = new BitSet(new long[]{0x00003F245F640070L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleBooleanExpression1975 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanOperator_in_entryRuleBooleanOperator2013 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBooleanOperator2024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleBooleanOperator2062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleBooleanOperator2081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleBooleanOperator2100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleBooleanOperator2062 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleBooleanOperator2081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleBooleanOperator2100 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction2140 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstruction2150 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDefinition_in_ruleInstruction2197 = new BitSet(new long[]{0x0000000000000002L});
@@ -4880,48 +5022,48 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleAssignation_in_ruleInstruction2332 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDefinition_in_entryRuleDefinition2367 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDefinition2377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleDefinition2414 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleDefinition2435 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleDefinition2447 = new BitSet(new long[]{0x00007E48BEC80070L});
+    public static final BitSet FOLLOW_18_in_ruleDefinition2414 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleDefinition2435 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleDefinition2447 = new BitSet(new long[]{0x00003F245F640070L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleDefinition2468 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAssignation_in_entryRuleAssignation2504 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAssignation2514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_ruleAssignation2560 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleAssignation2572 = new BitSet(new long[]{0x00007E48BEC80070L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_ruleAssignation2560 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleAssignation2572 = new BitSet(new long[]{0x00003F245F640070L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleAssignation2593 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConditional_in_entryRuleConditional2629 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleConditional2639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleConditional2676 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleConditional2697 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleConditional2709 = new BitSet(new long[]{0x00001E4880080010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2730 = new BitSet(new long[]{0x00001E4E80080010L});
-    public static final BitSet FOLLOW_33_in_ruleConditional2744 = new BitSet(new long[]{0x00001E4880080010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2765 = new BitSet(new long[]{0x00001E4C80080010L});
-    public static final BitSet FOLLOW_34_in_ruleConditional2780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleConditional2676 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleConditional2697 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleConditional2709 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2730 = new BitSet(new long[]{0x00000F2740040010L});
+    public static final BitSet FOLLOW_32_in_ruleConditional2744 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleConditional2765 = new BitSet(new long[]{0x00000F2640040010L});
+    public static final BitSet FOLLOW_33_in_ruleConditional2780 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLoop_in_entryRuleLoop2816 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLoop2826 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWhile_in_ruleLoop2872 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForeach_in_ruleLoop2899 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWhile_in_entryRuleWhile2935 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleWhile2945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleWhile2982 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleWhile2994 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleWhile3015 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleWhile3027 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleWhile3039 = new BitSet(new long[]{0x00001E4880080010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleWhile3060 = new BitSet(new long[]{0x00001E6880080010L});
-    public static final BitSet FOLLOW_37_in_ruleWhile3073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleWhile2982 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleWhile2994 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleWhile3015 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleWhile3027 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleWhile3039 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleWhile3060 = new BitSet(new long[]{0x00000F3440040010L});
+    public static final BitSet FOLLOW_36_in_ruleWhile3073 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForeach_in_entryRuleForeach3109 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleForeach3119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleForeach3156 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleForeach3168 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleVariableName_in_ruleForeach3189 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_ruleForeach3201 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleForeach3222 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleForeach3234 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleForeach3246 = new BitSet(new long[]{0x00001E4880080010L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleForeach3267 = new BitSet(new long[]{0x00001F4880080010L});
-    public static final BitSet FOLLOW_40_in_ruleForeach3280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleForeach3156 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleForeach3168 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleVariableName_in_ruleForeach3189 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleForeach3201 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleForeach3222 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleForeach3234 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleForeach3246 = new BitSet(new long[]{0x00000F2440040010L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleForeach3267 = new BitSet(new long[]{0x00000FA440040010L});
+    public static final BitSet FOLLOW_39_in_ruleForeach3280 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionInstruction_in_entryRuleActionInstruction3316 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionInstruction3326 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionOpen_in_ruleActionInstruction3372 = new BitSet(new long[]{0x0000000000000002L});
@@ -4930,40 +5072,45 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleActionType_in_ruleActionInstruction3453 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionClick_in_entryRuleActionClick3489 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionClick3499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleActionClick3536 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleActionClick3548 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_CLICKABLEELEMENT_in_ruleActionClick3565 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionClick3582 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionClick3603 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleActionClick3615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionOpen_in_entryRuleActionOpen3651 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionOpen3661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleActionOpen3698 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleActionOpen3710 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_RULE_URL_in_ruleActionOpen3727 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleActionOpen3744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionCheck_in_entryRuleActionCheck3780 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionCheck3790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleActionCheck3827 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleActionCheck3839 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_CLICKABLEELEMENT_in_ruleActionCheck3856 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionCheck3873 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionCheck3894 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleActionCheck3906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionType_in_entryRuleActionType3942 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionType3952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleActionType3989 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleActionType4001 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionType4022 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionType4034 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionType4055 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleActionType4067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_entryRuleActionExpression4103 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionExpression4113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleActionExpression4151 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_46_in_ruleActionExpression4169 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleActionExpression4182 = new BitSet(new long[]{0x00007E48BEC80070L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionExpression4203 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleActionExpression4215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleActionClick3536 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionClick3548 = new BitSet(new long[]{0x0001C00000000000L});
+    public static final BitSet FOLLOW_ruleClickableElement_in_ruleActionClick3569 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleActionClick3581 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionClick3602 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionClick3614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionOpen_in_entryRuleActionOpen3650 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionOpen3660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleActionOpen3697 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionOpen3709 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_URL_in_ruleActionOpen3726 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionOpen3743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionCheck_in_entryRuleActionCheck3779 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionCheck3789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleActionCheck3826 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionCheck3838 = new BitSet(new long[]{0x0001C00000000000L});
+    public static final BitSet FOLLOW_ruleClickableElement_in_ruleActionCheck3859 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleActionCheck3871 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionCheck3892 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionCheck3904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionType_in_entryRuleActionType3940 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionType3950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleActionType3987 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionType3999 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionType4020 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleActionType4032 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionType4053 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionType4065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_entryRuleActionExpression4101 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionExpression4111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleActionExpression4149 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_45_in_ruleActionExpression4167 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionExpression4180 = new BitSet(new long[]{0x00003F245F640070L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionExpression4201 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionExpression4213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClickableElement_in_entryRuleClickableElement4250 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClickableElement4261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleClickableElement4299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleClickableElement4318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleClickableElement4337 = new BitSet(new long[]{0x0000000000000002L});
 
 }

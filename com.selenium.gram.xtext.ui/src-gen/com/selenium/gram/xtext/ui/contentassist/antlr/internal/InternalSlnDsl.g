@@ -812,6 +812,34 @@ finally {
 
 
 
+// Entry rule entryRuleClickableElement
+entryRuleClickableElement 
+:
+{ before(grammarAccess.getClickableElementRule()); }
+	 ruleClickableElement
+{ after(grammarAccess.getClickableElementRule()); } 
+	 EOF 
+;
+
+// Rule ClickableElement
+ruleClickableElement
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getClickableElementAccess().getAlternatives()); }
+(rule__ClickableElement__Alternatives)
+{ after(grammarAccess.getClickableElementAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 
 rule__Head__Alternatives
     @init {
@@ -1144,6 +1172,40 @@ rule__ActionExpression__Alternatives_0
 	'select' 
 
 { after(grammarAccess.getActionExpressionAccess().getSelectKeyword_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ClickableElement__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getClickableElementAccess().getButtonKeyword_0()); }
+
+	'button' 
+
+{ after(grammarAccess.getClickableElementAccess().getButtonKeyword_0()); }
+)
+
+    |(
+{ before(grammarAccess.getClickableElementAccess().getImageKeyword_1()); }
+
+	'image' 
+
+{ after(grammarAccess.getClickableElementAccess().getImageKeyword_1()); }
+)
+
+    |(
+{ before(grammarAccess.getClickableElementAccess().getLinkKeyword_2()); }
+
+	'link' 
+
+{ after(grammarAccess.getClickableElementAccess().getLinkKeyword_2()); }
 )
 
 ;
@@ -5017,8 +5079,8 @@ rule__ActionClick__TypeAssignment_2
     }
 :
 (
-{ before(grammarAccess.getActionClickAccess().getTypeClickableElementTerminalRuleCall_2_0()); }
-	RULE_CLICKABLEELEMENT{ after(grammarAccess.getActionClickAccess().getTypeClickableElementTerminalRuleCall_2_0()); }
+{ before(grammarAccess.getActionClickAccess().getTypeClickableElementParserRuleCall_2_0()); }
+	ruleClickableElement{ after(grammarAccess.getActionClickAccess().getTypeClickableElementParserRuleCall_2_0()); }
 )
 
 ;
@@ -5062,8 +5124,8 @@ rule__ActionCheck__TypeAssignment_2
     }
 :
 (
-{ before(grammarAccess.getActionCheckAccess().getTypeClickableElementTerminalRuleCall_2_0()); }
-	RULE_CLICKABLEELEMENT{ after(grammarAccess.getActionCheckAccess().getTypeClickableElementTerminalRuleCall_2_0()); }
+{ before(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); }
+	ruleClickableElement{ after(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); }
 )
 
 ;
@@ -5131,8 +5193,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-
-RULE_CLICKABLEELEMENT : ('button'|'image'|'link');
 
 RULE_URL : ('a'..'z')+ '://' (('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+|('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')* ('.' ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')*)*) (':' ('0'..'9')+)? ('/' ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'~'|'+'|'.'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')*)* ('?' ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'='|'&'|';'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')+ ('+' ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'='|'&'|';'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')+)*)?;
 

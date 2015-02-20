@@ -1587,19 +1587,19 @@ ruleActionClick returns [EObject current=null]
     }
 (
 (
-		lv_type_2_0=RULE_CLICKABLEELEMENT
-		{
-			newLeafNode(lv_type_2_0, grammarAccess.getActionClickAccess().getTypeClickableElementTerminalRuleCall_2_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getActionClickAccess().getTypeClickableElementParserRuleCall_2_0()); 
+	    }
+		lv_type_2_0=ruleClickableElement		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getActionClickRule());
+	            $current = createModelElementForParent(grammarAccess.getActionClickRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"type",
         		lv_type_2_0, 
         		"ClickableElement");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -1711,19 +1711,19 @@ ruleActionCheck returns [EObject current=null]
     }
 (
 (
-		lv_type_2_0=RULE_CLICKABLEELEMENT
-		{
-			newLeafNode(lv_type_2_0, grammarAccess.getActionCheckAccess().getTypeClickableElementTerminalRuleCall_2_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); 
+	    }
+		lv_type_2_0=ruleClickableElement		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getActionCheckRule());
+	            $current = createModelElementForParent(grammarAccess.getActionCheckRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"type",
         		lv_type_2_0, 
         		"ClickableElement");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -1889,7 +1889,46 @@ ruleActionExpression returns [EObject current=null]
 
 
 
-RULE_CLICKABLEELEMENT : ('button'|'image'|'link');
+// Entry rule entryRuleClickableElement
+entryRuleClickableElement returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getClickableElementRule()); } 
+	 iv_ruleClickableElement=ruleClickableElement 
+	 { $current=$iv_ruleClickableElement.current.getText(); }  
+	 EOF 
+;
+
+// Rule ClickableElement
+ruleClickableElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='button' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getClickableElementAccess().getButtonKeyword_0()); 
+    }
+
+    |
+	kw='image' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getClickableElementAccess().getImageKeyword_1()); 
+    }
+
+    |
+	kw='link' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getClickableElementAccess().getLinkKeyword_2()); 
+    }
+)
+    ;
+
+
+
+
 
 RULE_URL : ('a'..'z')+ '://' (('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+ '.' ('0'..'9')+|('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')* ('.' ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')*)*) (':' ('0'..'9')+)? ('/' ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'~'|'+'|'.'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')*)* ('?' ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'='|'&'|';'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')+ ('+' ('a'..'z'|'A'..'Z'|'0'..'9'|'$'|'-'|'_'|'='|'&'|';'|'\\' ('0'..'9'|'a'..'f'|'A'..'F') ('0'..'9'|'a'..'f'|'A'..'F')|'%' '0'..'9' '0'..'9')+)*)?;
 
