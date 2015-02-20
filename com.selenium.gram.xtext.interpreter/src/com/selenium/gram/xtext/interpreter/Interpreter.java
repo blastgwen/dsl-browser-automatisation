@@ -7,7 +7,6 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 
 import com.selenium.gram.xtext.slnDsl.ActionClick;
-import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
@@ -96,18 +95,14 @@ public class Interpreter {
 		}
 		
 		// Execute une boucle
-		if(instruction instanceof Loop){
-			System.out.println("execute boucle");
-			Loop loop = (Loop) instruction;
-
-			if(loop.getWhile() != null){
-				System.out.println("execute while");
-				this.executeWhile(loop.getWhile(), variables);
-			}
-			else{
-				System.out.println("execute for");
-				this.executeFor(loop.getFor(), variables);
-			}
+		if(instruction instanceof While){
+			System.out.println("execute boucle while");
+			this.executeWhile((While) instruction, variables);
+		}
+		
+		if(instruction instanceof Foreach){
+			System.out.println("execute for");
+			this.executeFor((Foreach) instruction, variables);
 		}
 		
 		// Execute une action Selenium
@@ -167,12 +162,10 @@ public class Interpreter {
 		}
 		
 		if(exp.eClass().getName().equals(BooleanExpression.class.getSimpleName())){
-				
-		}
-		
-		if(exp.eClass().getName().equals(ActionExpression.class.getSimpleName())){
+			BooleanExpression bo = (BooleanExpression) exp;
 			
 		}
+		
 		
 		throw new InterpretationException("Expression inconnue : "+exp.eClass().getName());
 	}
