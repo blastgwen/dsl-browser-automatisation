@@ -7,11 +7,17 @@ generate slnDsl "http://www.selenium.com/gram/xtext/SlnDsl"
  */
 Model:
 	subs+=Subprocedure*
-	'main' main+=Instruction+ 'endmain'
+	'main' 
+	defs+=Definition*
+	main+=Instruction+ 
+	'endmain'
 ;
 	
 Subprocedure:
-	'sub' head=Head body+=Instruction+ 'endsub'
+	'sub' head=Head 
+	defs+=Definition*
+	body+=Instruction+	
+	'endsub'
 	;
 
 Head:
@@ -31,8 +37,8 @@ FunctionName:
 ;
 
 FunctionCall:
-	FunctionReference '()' 
-	| FunctionReference '(' args+=Expression (',' args+=Expression)* ')'
+	ref=FunctionReference '()' 
+	| ref=FunctionReference '(' args+=Expression (',' args+=Expression)* ')'
 ;
 
 /*
@@ -59,21 +65,47 @@ Expression:
 	| NumLiteralExpression
 	| ListExpression
 	| BooleanExpression
-	| ActionExpression
-;
+	| ActionSelectExpression
+;	
 
 NumLiteralExpression:
 	value = NumberLiteral
 ;
 
 ListExpression :
-	('All' | 'Any') '(' 'var'  varName=VariableName '->' exp=Expression ')'
-	| 'sizeof' '(' exp=Expression ')'
+	'sizeof' '(' exp=Expression ')'
+;
+
+BooleanListExpression :
+	 op=BooleanListOperator '(' 'var'  varName=VariableName '->' exp=Expression ')'
+;
+
+BooleanListOperator:
+	'All' | 'Any'
 ;
 
 BooleanExpression :
-	BooleanOperator left=Expression right=Expression
-	| '!' exp = Expression
+	exp=BinaryBooleanExpression
+	| exp=NegationExpression
+	| exp=VerifyAction
+	| exp=ExistAction
+	| exp=BooleanListExpression
+;
+
+VerifyAction :
+	'verify' '(' nameElement=NumberLiteral ',' value=Expression ')'
+;
+
+ExistAction :
+	'exist' '(' nameElement = NumberLiteral ')'
+;
+
+BinaryBooleanExpression:
+	op=BooleanOperator left=Expression right=Expression
+;
+
+NegationExpression :
+	'!' exp = Expression
 ;
 
 BooleanOperator :
@@ -84,8 +116,7 @@ BooleanOperator :
  * Type of Instruction
  */
 Instruction:
-	Definition
-	| FunctionCall 
+	FunctionCall 
 	| Conditional
 	| Loop
 	| ActionInstruction
@@ -109,8 +140,8 @@ Conditional:
  */
 
 Loop:
-	while=While
-	| for=Foreach
+	While
+	| Foreach
 ;
 
 While:
@@ -142,8 +173,8 @@ ActionCheck:
 ActionType:
 	'type' '(' nameElement=NumberLiteral ',' value=Expression ')'
 ;
-ActionExpression :
-	('verify'|'select') '(' element=Expression ')'
+ActionSelectExpression :
+	'select' '(' element=Expression ')'
 ;
 
 terminal ClickableElement:
