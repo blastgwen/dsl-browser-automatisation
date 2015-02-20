@@ -1,11 +1,14 @@
 package com.selenium.gram.xtext.interpreter;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.selenium.gram.xtext.slnDsl.ActionClick;
+import com.selenium.gram.xtext.slnDsl.ActionExpression;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
 import com.selenium.gram.xtext.slnDsl.Expression;
@@ -13,9 +16,12 @@ import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.Instruction;
+import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
+import com.selenium.gram.xtext.slnDsl.VariableReference;
 import com.selenium.gram.xtext.slnDsl.While;
 import com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl;
 
@@ -116,8 +122,7 @@ public class Interpreter {
 			else {
 				throw new InterpretationException(Assignation.class.getName());
 			}
-		}
-		
+		}		
 	}
 	
 	
@@ -125,10 +130,46 @@ public class Interpreter {
 		
 	}
 	
-	private Object computeExpression(Expression exp){
+	private Object computeExpression(Expression exp, Map<String, Expression> variables) 
+			throws InterpretationException{
 		
+		if(exp.eClass().getName().equals(VariableReference.class.getSimpleName())){
+			VariableReference ref = (VariableReference) exp;
+			if(variables.containsKey(ref.getVarID().getName())){
+				return computeExpression(variables.get(ref.getVarID().getName()), variables);
+			}
+			else {
+				throw new UnknownVariableException(ref.getVarID().getName());
+			}
+		}
 		
-		return null;
+		if(exp.eClass().getName().equals(NumLiteralExpression.class.getSimpleName())){
+			NumLiteralExpression val = ((NumLiteralExpression)exp);
+			Double result = null;
+			try{
+				Double.parseDouble(val.getValue());
+			}
+			catch(NumberFormatException e){}
+			
+			ExpressionValueType type = ExpressionValueType.literal;
+			if(result != null){
+				type = ExpressionValueType.numeric;
+			}
+		}
+		
+		if(exp.eClass().getName().equals(ListExpression.class.getSimpleName())){
+			
+		}
+		
+		if(exp.eClass().getName().equals(BooleanExpression.class.getSimpleName())){
+				
+		}
+		
+		if(exp.eClass().getName().equals(ActionExpression.class.getSimpleName())){
+			
+		}
+		
+		throw new InterpretationException("Expression inconnue : "+exp.eClass().getName());
 	}
 	
 	
