@@ -1,11 +1,9 @@
 package com.selenium.gram.xtext.interpreter;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 
 public class SeleniumDriver {
 	
