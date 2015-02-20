@@ -2,7 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Expression;
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.While;
 
@@ -37,7 +37,7 @@ public class WhileImpl extends LoopImpl implements While
    * @generated
    * @ordered
    */
-  protected Expression cond;
+  protected BooleanExpression cond;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class WhileImpl extends LoopImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCond()
+  public BooleanExpression getCond()
   {
     return cond;
   }
@@ -75,9 +75,9 @@ public class WhileImpl extends LoopImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCond(Expression newCond, NotificationChain msgs)
+  public NotificationChain basicSetCond(BooleanExpression newCond, NotificationChain msgs)
   {
-    Expression oldCond = cond;
+    BooleanExpression oldCond = cond;
     cond = newCond;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class WhileImpl extends LoopImpl implements While
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCond(Expression newCond)
+  public void setCond(BooleanExpression newCond)
   {
     if (newCond != cond)
     {
@@ -151,7 +151,7 @@ public class WhileImpl extends LoopImpl implements While
     switch (featureID)
     {
       case SlnDslPackage.WHILE__COND:
-        setCond((Expression)newValue);
+        setCond((BooleanExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class WhileImpl extends LoopImpl implements While
     switch (featureID)
     {
       case SlnDslPackage.WHILE__COND:
-        setCond((Expression)null);
+        setCond((BooleanExpression)null);
         return;
     }
     super.eUnset(featureID);

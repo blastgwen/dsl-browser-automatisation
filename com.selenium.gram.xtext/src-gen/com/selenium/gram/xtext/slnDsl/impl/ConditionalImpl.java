@@ -2,8 +2,8 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.Conditional;
-import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
@@ -47,7 +47,7 @@ public class ConditionalImpl extends InstructionImpl implements Conditional
    * @generated
    * @ordered
    */
-  protected Expression exp;
+  protected BooleanExpression exp;
 
   /**
    * The cached value of the '{@link #getTrueIns() <em>True Ins</em>}' containment reference list.
@@ -95,7 +95,7 @@ public class ConditionalImpl extends InstructionImpl implements Conditional
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExp()
+  public BooleanExpression getExp()
   {
     return exp;
   }
@@ -105,9 +105,9 @@ public class ConditionalImpl extends InstructionImpl implements Conditional
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
+  public NotificationChain basicSetExp(BooleanExpression newExp, NotificationChain msgs)
   {
-    Expression oldExp = exp;
+    BooleanExpression oldExp = exp;
     exp = newExp;
     if (eNotificationRequired())
     {
@@ -122,7 +122,7 @@ public class ConditionalImpl extends InstructionImpl implements Conditional
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExp(Expression newExp)
+  public void setExp(BooleanExpression newExp)
   {
     if (newExp != exp)
     {
@@ -218,7 +218,7 @@ public class ConditionalImpl extends InstructionImpl implements Conditional
     switch (featureID)
     {
       case SlnDslPackage.CONDITIONAL__EXP:
-        setExp((Expression)newValue);
+        setExp((BooleanExpression)newValue);
         return;
       case SlnDslPackage.CONDITIONAL__TRUE_INS:
         getTrueIns().clear();
@@ -243,7 +243,7 @@ public class ConditionalImpl extends InstructionImpl implements Conditional
     switch (featureID)
     {
       case SlnDslPackage.CONDITIONAL__EXP:
-        setExp((Expression)null);
+        setExp((BooleanExpression)null);
         return;
       case SlnDslPackage.CONDITIONAL__TRUE_INS:
         getTrueIns().clear();

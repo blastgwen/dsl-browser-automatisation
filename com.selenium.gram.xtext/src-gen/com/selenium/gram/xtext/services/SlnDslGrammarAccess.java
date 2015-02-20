@@ -523,13 +523,16 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpExistActionParserRuleCall_3_0 = (RuleCall)cExpAssignment_3.eContents().get(0);
 		private final Assignment cExpAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
 		private final RuleCall cExpBooleanListExpressionParserRuleCall_4_0 = (RuleCall)cExpAssignment_4.eContents().get(0);
+		private final Assignment cExpAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cExpBooleanValueParserRuleCall_5_0 = (RuleCall)cExpAssignment_5.eContents().get(0);
 		
 		//BooleanExpression:
-		//	exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction |
-		//	exp=BooleanListExpression;
+		//	exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression
+		//	| exp=BooleanValue;
 		public ParserRule getRule() { return rule; }
 
-		//exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression
+		//exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression |
+		//exp=BooleanValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//exp=BinaryBooleanExpression
@@ -561,6 +564,28 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//BooleanListExpression
 		public RuleCall getExpBooleanListExpressionParserRuleCall_4_0() { return cExpBooleanListExpressionParserRuleCall_4_0; }
+
+		//exp=BooleanValue
+		public Assignment getExpAssignment_5() { return cExpAssignment_5; }
+
+		//BooleanValue
+		public RuleCall getExpBooleanValueParserRuleCall_5_0() { return cExpBooleanValueParserRuleCall_5_0; }
+	}
+
+	public class BooleanValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BooleanValue");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueBOOLEANTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//BooleanValue:
+		//	value=BOOLEAN;
+		public ParserRule getRule() { return rule; }
+
+		//value=BOOLEAN
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//BOOLEAN
+		public RuleCall getValueBOOLEANTerminalRuleCall_0() { return cValueBOOLEANTerminalRuleCall_0; }
 	}
 
 	public class VerifyActionElements extends AbstractParserRuleElementFinder {
@@ -830,7 +855,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cExpAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExpExpressionParserRuleCall_1_0 = (RuleCall)cExpAssignment_1.eContents().get(0);
+		private final RuleCall cExpBooleanExpressionParserRuleCall_1_0 = (RuleCall)cExpAssignment_1.eContents().get(0);
 		private final Keyword cThenKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTrueInsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTrueInsInstructionParserRuleCall_3_0 = (RuleCall)cTrueInsAssignment_3.eContents().get(0);
@@ -841,20 +866,20 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndifKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Conditional:
-		//	"if" exp=Expression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif";
+		//	"if" exp=BooleanExpression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif";
 		public ParserRule getRule() { return rule; }
 
-		//"if" exp=Expression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif"
+		//"if" exp=BooleanExpression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif"
 		public Group getGroup() { return cGroup; }
 
 		//"if"
 		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
 
-		//exp=Expression
+		//exp=BooleanExpression
 		public Assignment getExpAssignment_1() { return cExpAssignment_1; }
 
-		//Expression
-		public RuleCall getExpExpressionParserRuleCall_1_0() { return cExpExpressionParserRuleCall_1_0; }
+		//BooleanExpression
+		public RuleCall getExpBooleanExpressionParserRuleCall_1_0() { return cExpBooleanExpressionParserRuleCall_1_0; }
 
 		//"then"
 		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
@@ -909,7 +934,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cCondAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCondExpressionParserRuleCall_2_0 = (RuleCall)cCondAssignment_2.eContents().get(0);
+		private final RuleCall cCondBooleanExpressionParserRuleCall_2_0 = (RuleCall)cCondAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cDoKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cInsAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -917,10 +942,10 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndwhileKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//While:
-		//	"while" "(" cond=Expression ")" "do" ins+=Instruction+ "endwhile";
+		//	"while" "(" cond=BooleanExpression ")" "do" ins+=Instruction+ "endwhile";
 		public ParserRule getRule() { return rule; }
 
-		//"while" "(" cond=Expression ")" "do" ins+=Instruction+ "endwhile"
+		//"while" "(" cond=BooleanExpression ")" "do" ins+=Instruction+ "endwhile"
 		public Group getGroup() { return cGroup; }
 
 		//"while"
@@ -929,11 +954,11 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//cond=Expression
+		//cond=BooleanExpression
 		public Assignment getCondAssignment_2() { return cCondAssignment_2; }
 
-		//Expression
-		public RuleCall getCondExpressionParserRuleCall_2_0() { return cCondExpressionParserRuleCall_2_0; }
+		//BooleanExpression
+		public RuleCall getCondBooleanExpressionParserRuleCall_2_0() { return cCondBooleanExpressionParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1291,6 +1316,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final BooleanListExpressionElements pBooleanListExpression;
 	private final BooleanListOperatorElements pBooleanListOperator;
 	private final BooleanExpressionElements pBooleanExpression;
+	private final BooleanValueElements pBooleanValue;
+	private final TerminalRule tBOOLEAN;
 	private final VerifyActionElements pVerifyAction;
 	private final ExistActionElements pExistAction;
 	private final BinaryBooleanExpressionElements pBinaryBooleanExpression;
@@ -1336,6 +1363,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBooleanListExpression = new BooleanListExpressionElements();
 		this.pBooleanListOperator = new BooleanListOperatorElements();
 		this.pBooleanExpression = new BooleanExpressionElements();
+		this.pBooleanValue = new BooleanValueElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
 		this.pVerifyAction = new VerifyActionElements();
 		this.pExistAction = new ExistActionElements();
 		this.pBinaryBooleanExpression = new BinaryBooleanExpressionElements();
@@ -1534,8 +1563,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BooleanExpression:
-	//	exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction |
-	//	exp=BooleanListExpression;
+	//	exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression
+	//	| exp=BooleanValue;
 	public BooleanExpressionElements getBooleanExpressionAccess() {
 		return pBooleanExpression;
 	}
@@ -1543,6 +1572,22 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getBooleanExpressionRule() {
 		return getBooleanExpressionAccess().getRule();
 	}
+
+	//BooleanValue:
+	//	value=BOOLEAN;
+	public BooleanValueElements getBooleanValueAccess() {
+		return pBooleanValue;
+	}
+	
+	public ParserRule getBooleanValueRule() {
+		return getBooleanValueAccess().getRule();
+	}
+
+	//terminal BOOLEAN:
+	//	"true" | "false";
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	} 
 
 	//VerifyAction:
 	//	"verify" "(" nameElement=NumberLiteral "," value=Expression ")";
@@ -1627,7 +1672,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Conditional:
-	//	"if" exp=Expression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif";
+	//	"if" exp=BooleanExpression "then" trueIns+=Instruction+ ("else" falseIns+=Instruction+)? "endif";
 	public ConditionalElements getConditionalAccess() {
 		return pConditional;
 	}
@@ -1649,7 +1694,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//While:
-	//	"while" "(" cond=Expression ")" "do" ins+=Instruction+ "endwhile";
+	//	"while" "(" cond=BooleanExpression ")" "do" ins+=Instruction+ "endwhile";
 	public WhileElements getWhileAccess() {
 		return pWhile;
 	}

@@ -12,6 +12,7 @@ import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
+import com.selenium.gram.xtext.slnDsl.BooleanValue;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
 import com.selenium.gram.xtext.slnDsl.ExistAction;
@@ -140,6 +141,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * @generated
    */
   private EClass booleanExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -658,6 +666,26 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getBooleanValue()
+  {
+    return booleanValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanValue_Value()
+  {
+    return (EAttribute)booleanValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVerifyAction()
   {
     return verifyActionEClass;
@@ -1169,6 +1197,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
     createEReference(booleanExpressionEClass, BOOLEAN_EXPRESSION__EXP);
 
+    booleanValueEClass = createEClass(BOOLEAN_VALUE);
+    createEAttribute(booleanValueEClass, BOOLEAN_VALUE__VALUE);
+
     verifyActionEClass = createEClass(VERIFY_ACTION);
     createEAttribute(verifyActionEClass, VERIFY_ACTION__NAME_ELEMENT);
     createEReference(verifyActionEClass, VERIFY_ACTION__VALUE);
@@ -1320,6 +1351,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBooleanExpression_Exp(), ecorePackage.getEObject(), null, "exp", null, 0, 1, BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(booleanValueEClass, BooleanValue.class, "BooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(verifyActionEClass, VerifyAction.class, "VerifyAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVerifyAction_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerifyAction_Value(), this.getExpression(), null, "value", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1346,7 +1380,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getAssignation_Exp(), this.getExpression(), null, "exp", null, 0, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConditional_Exp(), this.getExpression(), null, "exp", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditional_Exp(), this.getBooleanExpression(), null, "exp", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditional_TrueIns(), this.getInstruction(), null, "trueIns", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConditional_FalseIns(), this.getInstruction(), null, "falseIns", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1354,7 +1388,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getLoop_Ins(), this.getInstruction(), null, "ins", null, 0, -1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhile_Cond(), this.getExpression(), null, "cond", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhile_Cond(), this.getBooleanExpression(), null, "cond", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(foreachEClass, Foreach.class, "Foreach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getForeach_Var(), this.getVariableName(), null, "var", null, 0, 1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -168,6 +168,13 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.BOOLEAN_VALUE:
+      {
+        BooleanValue booleanValue = (BooleanValue)theEObject;
+        T result = caseBooleanValue(booleanValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.VERIFY_ACTION:
       {
         VerifyAction verifyAction = (VerifyAction)theEObject;
@@ -504,6 +511,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBooleanExpression(BooleanExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanValue(BooleanValue object)
   {
     return null;
   }

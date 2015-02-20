@@ -140,6 +140,15 @@ public interface SlnDslFactory extends EFactory
   BooleanExpression createBooleanExpression();
 
   /**
+   * Returns a new object of class '<em>Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Value</em>'.
+   * @generated
+   */
+  BooleanValue createBooleanValue();
+
+  /**
    * Returns a new object of class '<em>Verify Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

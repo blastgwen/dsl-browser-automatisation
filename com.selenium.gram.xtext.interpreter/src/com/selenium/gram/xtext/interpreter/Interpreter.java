@@ -133,7 +133,7 @@ public class Interpreter {
 	private Object computeExpression(Expression exp, Map<String, Expression> variables) 
 			throws InterpretationException{
 		
-		if(exp.eClass().getName().equals(VariableReference.class.getSimpleName())){
+		if(exp instanceof VariableReference){
 			VariableReference ref = (VariableReference) exp;
 			if(variables.containsKey(ref.getVarID().getName())){
 				return computeExpression(variables.get(ref.getVarID().getName()), variables);
@@ -143,7 +143,7 @@ public class Interpreter {
 			}
 		}
 		
-		if(exp.eClass().getName().equals(NumLiteralExpression.class.getSimpleName())){
+		if(exp instanceof NumLiteralExpression){
 			NumLiteralExpression val = ((NumLiteralExpression)exp);
 			Double result = null;
 			try{
@@ -157,7 +157,7 @@ public class Interpreter {
 			}
 		}
 		
-		if(exp.eClass().getName().equals(ListExpression.class.getSimpleName())){
+		if(exp instanceof ListExpression){
 			
 		}
 		
