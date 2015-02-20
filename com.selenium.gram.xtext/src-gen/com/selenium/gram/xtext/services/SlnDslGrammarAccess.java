@@ -845,29 +845,45 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ActionInstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionInstruction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cActionOpenParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cActionClickParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cActionCheckParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cActionTypeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Assignment cActionAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cActionActionOpenParserRuleCall_0_0 = (RuleCall)cActionAssignment_0.eContents().get(0);
+		private final Assignment cActionAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cActionActionClickParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
+		private final Assignment cActionAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cActionActionCheckParserRuleCall_2_0 = (RuleCall)cActionAssignment_2.eContents().get(0);
+		private final Assignment cActionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cActionActionTypeParserRuleCall_3_0 = (RuleCall)cActionAssignment_3.eContents().get(0);
 		
 		//ActionInstruction:
-		//	ActionOpen | ActionClick | ActionCheck | ActionType;
+		//	action=ActionOpen | action=ActionClick | action=ActionCheck | action=ActionType;
 		public ParserRule getRule() { return rule; }
 
-		//ActionOpen | ActionClick | ActionCheck | ActionType
+		//action=ActionOpen | action=ActionClick | action=ActionCheck | action=ActionType
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//action=ActionOpen
+		public Assignment getActionAssignment_0() { return cActionAssignment_0; }
+
 		//ActionOpen
-		public RuleCall getActionOpenParserRuleCall_0() { return cActionOpenParserRuleCall_0; }
+		public RuleCall getActionActionOpenParserRuleCall_0_0() { return cActionActionOpenParserRuleCall_0_0; }
+
+		//action=ActionClick
+		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
 
 		//ActionClick
-		public RuleCall getActionClickParserRuleCall_1() { return cActionClickParserRuleCall_1; }
+		public RuleCall getActionActionClickParserRuleCall_1_0() { return cActionActionClickParserRuleCall_1_0; }
+
+		//action=ActionCheck
+		public Assignment getActionAssignment_2() { return cActionAssignment_2; }
 
 		//ActionCheck
-		public RuleCall getActionCheckParserRuleCall_2() { return cActionCheckParserRuleCall_2; }
+		public RuleCall getActionActionCheckParserRuleCall_2_0() { return cActionActionCheckParserRuleCall_2_0; }
+
+		//action=ActionType
+		public Assignment getActionAssignment_3() { return cActionAssignment_3; }
 
 		//ActionType
-		public RuleCall getActionTypeParserRuleCall_3() { return cActionTypeParserRuleCall_3; }
+		public RuleCall getActionActionTypeParserRuleCall_3_0() { return cActionActionTypeParserRuleCall_3_0; }
 	}
 
 	public class ActionClickElements extends AbstractParserRuleElementFinder {
@@ -1395,7 +1411,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionInstruction:
-	//	ActionOpen | ActionClick | ActionCheck | ActionType;
+	//	action=ActionOpen | action=ActionClick | action=ActionCheck | action=ActionType;
 	public ActionInstructionElements getActionInstructionAccess() {
 		return pActionInstruction;
 	}

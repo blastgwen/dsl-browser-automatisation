@@ -6,6 +6,7 @@ import com.selenium.gram.xtext.services.SlnDslGrammarAccess;
 import com.selenium.gram.xtext.slnDsl.ActionCheck;
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionExpression;
+import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
 import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
@@ -46,17 +47,13 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SlnDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case SlnDslPackage.ACTION_CHECK:
-				if(context == grammarAccess.getActionCheckRule() ||
-				   context == grammarAccess.getActionInstructionRule() ||
-				   context == grammarAccess.getInstructionRule()) {
+				if(context == grammarAccess.getActionCheckRule()) {
 					sequence_ActionCheck(context, (ActionCheck) semanticObject); 
 					return; 
 				}
 				else break;
 			case SlnDslPackage.ACTION_CLICK:
-				if(context == grammarAccess.getActionClickRule() ||
-				   context == grammarAccess.getActionInstructionRule() ||
-				   context == grammarAccess.getInstructionRule()) {
+				if(context == grammarAccess.getActionClickRule()) {
 					sequence_ActionClick(context, (ActionClick) semanticObject); 
 					return; 
 				}
@@ -68,18 +65,21 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case SlnDslPackage.ACTION_OPEN:
+			case SlnDslPackage.ACTION_INSTRUCTION:
 				if(context == grammarAccess.getActionInstructionRule() ||
-				   context == grammarAccess.getActionOpenRule() ||
 				   context == grammarAccess.getInstructionRule()) {
+					sequence_ActionInstruction(context, (ActionInstruction) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.ACTION_OPEN:
+				if(context == grammarAccess.getActionOpenRule()) {
 					sequence_ActionOpen(context, (ActionOpen) semanticObject); 
 					return; 
 				}
 				else break;
 			case SlnDslPackage.ACTION_TYPE:
-				if(context == grammarAccess.getActionInstructionRule() ||
-				   context == grammarAccess.getActionTypeRule() ||
-				   context == grammarAccess.getInstructionRule()) {
+				if(context == grammarAccess.getActionTypeRule()) {
 					sequence_ActionType(context, (ActionType) semanticObject); 
 					return; 
 				}
@@ -245,6 +245,15 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getActionExpressionAccess().getElementExpressionParserRuleCall_2_0(), semanticObject.getElement());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (action=ActionOpen | action=ActionClick | action=ActionCheck | action=ActionType)
+	 */
+	protected void sequence_ActionInstruction(EObject context, ActionInstruction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

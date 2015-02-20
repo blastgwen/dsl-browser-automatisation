@@ -1481,46 +1481,82 @@ ruleActionInstruction returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
-    { 
-        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionOpenParserRuleCall_0()); 
-    }
-    this_ActionOpen_0=ruleActionOpen
-    { 
-        $current = $this_ActionOpen_0.current; 
-        afterParserOrEnumRuleCall();
-    }
+		{ 
+	        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionActionOpenParserRuleCall_0_0()); 
+	    }
+		lv_action_0_0=ruleActionOpen		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getActionInstructionRule());
+	        }
+       		set(
+       			$current, 
+       			"action",
+        		lv_action_0_0, 
+        		"ActionOpen");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    |
-    { 
-        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionClickParserRuleCall_1()); 
-    }
-    this_ActionClick_1=ruleActionClick
-    { 
-        $current = $this_ActionClick_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionCheckParserRuleCall_2()); 
-    }
-    this_ActionCheck_2=ruleActionCheck
-    { 
-        $current = $this_ActionCheck_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionTypeParserRuleCall_3()); 
-    }
-    this_ActionType_3=ruleActionType
-    { 
-        $current = $this_ActionType_3.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionActionClickParserRuleCall_1_0()); 
+	    }
+		lv_action_1_0=ruleActionClick		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getActionInstructionRule());
+	        }
+       		set(
+       			$current, 
+       			"action",
+        		lv_action_1_0, 
+        		"ActionClick");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionActionCheckParserRuleCall_2_0()); 
+	    }
+		lv_action_2_0=ruleActionCheck		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getActionInstructionRule());
+	        }
+       		set(
+       			$current, 
+       			"action",
+        		lv_action_2_0, 
+        		"ActionCheck");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getActionInstructionAccess().getActionActionTypeParserRuleCall_3_0()); 
+	    }
+		lv_action_3_0=ruleActionType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getActionInstructionRule());
+	        }
+       		set(
+       			$current, 
+       			"action",
+        		lv_action_3_0, 
+        		"ActionType");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 

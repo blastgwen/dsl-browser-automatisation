@@ -798,6 +798,16 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getActionInstruction_Action()
+  {
+    return (EReference)actionInstructionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getActionClick()
   {
     return actionClickEClass;
@@ -1023,6 +1033,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEReference(foreachEClass, FOREACH__INS);
 
     actionInstructionEClass = createEClass(ACTION_INSTRUCTION);
+    createEReference(actionInstructionEClass, ACTION_INSTRUCTION__ACTION);
 
     actionClickEClass = createEClass(ACTION_CLICK);
     createEAttribute(actionClickEClass, ACTION_CLICK__TYPE);
@@ -1083,10 +1094,6 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     conditionalEClass.getESuperTypes().add(this.getInstruction());
     loopEClass.getESuperTypes().add(this.getInstruction());
     actionInstructionEClass.getESuperTypes().add(this.getInstruction());
-    actionClickEClass.getESuperTypes().add(this.getActionInstruction());
-    actionOpenEClass.getESuperTypes().add(this.getActionInstruction());
-    actionCheckEClass.getESuperTypes().add(this.getActionInstruction());
-    actionTypeEClass.getESuperTypes().add(this.getActionInstruction());
     actionExpressionEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
@@ -1160,6 +1167,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getForeach_Ins(), this.getInstruction(), null, "ins", null, 0, -1, Foreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionInstructionEClass, ActionInstruction.class, "ActionInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActionInstruction_Action(), ecorePackage.getEObject(), null, "action", null, 0, 1, ActionInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionClickEClass, ActionClick.class, "ActionClick", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActionClick_Type(), ecorePackage.getEString(), "type", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -228,8 +228,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionClick actionClick = (ActionClick)theEObject;
         T result = caseActionClick(actionClick);
-        if (result == null) result = caseActionInstruction(actionClick);
-        if (result == null) result = caseInstruction(actionClick);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -237,8 +235,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionOpen actionOpen = (ActionOpen)theEObject;
         T result = caseActionOpen(actionOpen);
-        if (result == null) result = caseActionInstruction(actionOpen);
-        if (result == null) result = caseInstruction(actionOpen);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -246,8 +242,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionCheck actionCheck = (ActionCheck)theEObject;
         T result = caseActionCheck(actionCheck);
-        if (result == null) result = caseActionInstruction(actionCheck);
-        if (result == null) result = caseInstruction(actionCheck);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -255,8 +249,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionType actionType = (ActionType)theEObject;
         T result = caseActionType(actionType);
-        if (result == null) result = caseActionInstruction(actionType);
-        if (result == null) result = caseInstruction(actionType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

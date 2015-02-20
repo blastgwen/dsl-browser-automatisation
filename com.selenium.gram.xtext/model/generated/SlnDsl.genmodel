@@ -73,7 +73,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Foreach/exp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Foreach/ins"/>
     </genClasses>
-    <genClasses ecoreClass="SlnDsl.ecore#//ActionInstruction"/>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionInstruction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionInstruction/action"/>
+    </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionClick">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/element"/>
