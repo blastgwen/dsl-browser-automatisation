@@ -227,20 +227,20 @@ public class ActionInstructionInterpreter {
 						try {
 							WebElement elem = elements.get(i);
 							
-							String name = elements.get(i).getAttribute("name").trim().toLowerCase();
-							String id = elements.get(i).getAttribute("id").trim().toLowerCase();
-							String place = elements.get(i).getAttribute("placeholder").trim().toLowerCase();
+							String name = elem.getAttribute("name").trim().toLowerCase();
+							String id = elem.getAttribute("id").trim().toLowerCase();
+							String place = elem.getAttribute("placeholder").trim().toLowerCase();
 							
 							String value = act.getNameElement().replaceAll("'", "");
 							value = value.replaceAll("\"", "");
 							value = value.trim().toLowerCase();
 							
 							if (name.contains(value) || id.contains(value) || place.contains(value)){	
-								elements.get(i).clear();
+								elem.clear();
 								
 								if (act.getValue() instanceof NumLiteralExpression){
 									NumLiteralExpression numLit = (NumLiteralExpression)act.getValue();
-									elements.get(i).sendKeys(numLit.getValue().substring(1, numLit.getValue().length()-1));
+									elem.sendKeys(numLit.getValue().substring(1, numLit.getValue().length()-1));
 								} 
 								else if (act.getValue() instanceof VariableReference){
 									VariableReference varRef = (VariableReference)act.getValue();
@@ -250,7 +250,7 @@ public class ActionInstructionInterpreter {
 										Expression exp = variables.get(varRef.getVarID().getName());
 										
 										// TODO : Evaluate the expression
-										elements.get(i).sendKeys(varRef.getVarID().getName());										
+										elem.sendKeys(varRef.getVarID().getName());										
 									}
 									else 
 										throw new ActionInstructionException("Undefined variable " + varRef.getVarID().getName());
@@ -259,7 +259,7 @@ public class ActionInstructionInterpreter {
 									BooleanExpression bool = (BooleanExpression)act.getValue();
 									
 									// TODO evaluate Expression
-									elements.get(i).sendKeys("true");
+									elem.sendKeys("true");
 									
 								} else {
 									throw new ActionInstructionException("Impossible to type this var in a textbox");
