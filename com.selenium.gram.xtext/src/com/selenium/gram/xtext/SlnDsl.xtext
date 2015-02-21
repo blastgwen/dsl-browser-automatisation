@@ -8,17 +8,20 @@ generate slnDsl "http://www.selenium.com/gram/xtext/SlnDsl"
 Model:
 	subs+=Subprocedure*
 	'main' 
-	defs+=Definition*
-	main+=Instruction+ 
+	body=Body 
 	'endmain'
 ;
 	
 Subprocedure:
 	'sub' head=Head 
-	defs+=Definition*
-	body+=Instruction+	
+	body=Body	
 	'endsub'
 	;
+
+Body:
+	defs+=Definition*
+	instructions+=Instruction+
+;
 
 Head:
 	name=FunctionName '()' 

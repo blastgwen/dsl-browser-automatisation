@@ -2,8 +2,6 @@
  */
 package com.selenium.gram.xtext.slnDsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getHead <em>Head</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getDefs <em>Defs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -53,35 +50,29 @@ public interface Subprocedure extends EObject
   void setHead(Head value);
 
   /**
-   * Returns the value of the '<em><b>Defs</b></em>' containment reference list.
-   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Definition}.
+   * Returns the value of the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Defs</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Body</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Defs</em>' containment reference list.
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getSubprocedure_Defs()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Definition> getDefs();
-
-  /**
-   * Returns the value of the '<em><b>Body</b></em>' containment reference list.
-   * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Instruction}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Body</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Body</em>' containment reference list.
+   * @return the value of the '<em>Body</em>' containment reference.
+   * @see #setBody(Body)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getSubprocedure_Body()
    * @model containment="true"
    * @generated
    */
-  EList<Instruction> getBody();
+  Body getBody();
+
+  /**
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Subprocedure#getBody <em>Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Body</em>' containment reference.
+   * @see #getBody()
+   * @generated
+   */
+  void setBody(Body value);
 
 } // Subprocedure

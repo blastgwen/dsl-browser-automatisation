@@ -51,6 +51,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getClickableElementAccess().getAlternatives(), "rule__ClickableElement__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getSubprocedureAccess().getGroup(), "rule__Subprocedure__Group__0");
+					put(grammarAccess.getBodyAccess().getGroup(), "rule__Body__Group__0");
 					put(grammarAccess.getHeadAccess().getGroup_0(), "rule__Head__Group_0__0");
 					put(grammarAccess.getHeadAccess().getGroup_1(), "rule__Head__Group_1__0");
 					put(grammarAccess.getHeadAccess().getGroup_1_4(), "rule__Head__Group_1_4__0");
@@ -76,11 +77,11 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionTypeAccess().getGroup(), "rule__ActionType__Group__0");
 					put(grammarAccess.getActionSelectExpressionAccess().getGroup(), "rule__ActionSelectExpression__Group__0");
 					put(grammarAccess.getModelAccess().getSubsAssignment_0(), "rule__Model__SubsAssignment_0");
-					put(grammarAccess.getModelAccess().getDefsAssignment_2(), "rule__Model__DefsAssignment_2");
-					put(grammarAccess.getModelAccess().getMainAssignment_3(), "rule__Model__MainAssignment_3");
+					put(grammarAccess.getModelAccess().getBodyAssignment_2(), "rule__Model__BodyAssignment_2");
 					put(grammarAccess.getSubprocedureAccess().getHeadAssignment_1(), "rule__Subprocedure__HeadAssignment_1");
-					put(grammarAccess.getSubprocedureAccess().getDefsAssignment_2(), "rule__Subprocedure__DefsAssignment_2");
-					put(grammarAccess.getSubprocedureAccess().getBodyAssignment_3(), "rule__Subprocedure__BodyAssignment_3");
+					put(grammarAccess.getSubprocedureAccess().getBodyAssignment_2(), "rule__Subprocedure__BodyAssignment_2");
+					put(grammarAccess.getBodyAccess().getDefsAssignment_0(), "rule__Body__DefsAssignment_0");
+					put(grammarAccess.getBodyAccess().getInstructionsAssignment_1(), "rule__Body__InstructionsAssignment_1");
 					put(grammarAccess.getHeadAccess().getNameAssignment_0_0(), "rule__Head__NameAssignment_0_0");
 					put(grammarAccess.getHeadAccess().getNameAssignment_1_0(), "rule__Head__NameAssignment_1_0");
 					put(grammarAccess.getHeadAccess().getArgsIDAssignment_1_3(), "rule__Head__ArgsIDAssignment_1_3");

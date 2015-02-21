@@ -12,6 +12,7 @@ import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression;
+import com.selenium.gram.xtext.slnDsl.Body;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanValue;
@@ -107,6 +108,12 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case SlnDslPackage.BINARY_LOGICAL_EXPRESSION:
 				if(context == grammarAccess.getBinaryLogicalExpressionRule()) {
 					sequence_BinaryLogicalExpression(context, (BinaryLogicalExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.BODY:
+				if(context == grammarAccess.getBodyRule()) {
+					sequence_Body(context, (Body) semanticObject); 
 					return; 
 				}
 				else break;
@@ -407,6 +414,15 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (defs+=Definition* instructions+=Instruction+)
+	 */
+	protected void sequence_Body(EObject context, Body semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         exp=BinaryBooleanExpression | 
 	 *         exp=NegationExpression | 
@@ -582,7 +598,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (subs+=Subprocedure* defs+=Definition* main+=Instruction+)
+	 *     (subs+=Subprocedure* body=Body)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -623,10 +639,20 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (head=Head defs+=Definition* body+=Instruction+)
+	 *     (head=Head body=Body)
 	 */
 	protected void sequence_Subprocedure(EObject context, Subprocedure semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__HEAD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__HEAD));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SUBPROCEDURE__BODY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSubprocedureAccess().getHeadHeadParserRuleCall_1_0(), semanticObject.getHead());
+		feeder.accept(grammarAccess.getSubprocedureAccess().getBodyBodyParserRuleCall_2_0(), semanticObject.getBody());
+		feeder.finish();
 	}
 	
 	

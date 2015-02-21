@@ -41,6 +41,15 @@ public interface SlnDslFactory extends EFactory
   Subprocedure createSubprocedure();
 
   /**
+   * Returns a new object of class '<em>Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Body</em>'.
+   * @generated
+   */
+  Body createBody();
+
+  /**
    * Returns a new object of class '<em>Head</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -24,19 +24,17 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSubsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cSubsSubprocedureParserRuleCall_0_0 = (RuleCall)cSubsAssignment_0.eContents().get(0);
 		private final Keyword cMainKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cDefsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDefsDefinitionParserRuleCall_2_0 = (RuleCall)cDefsAssignment_2.eContents().get(0);
-		private final Assignment cMainAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cMainInstructionParserRuleCall_3_0 = (RuleCall)cMainAssignment_3.eContents().get(0);
-		private final Keyword cEndmainKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBodyAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBodyBodyParserRuleCall_2_0 = (RuleCall)cBodyAssignment_2.eContents().get(0);
+		private final Keyword cEndmainKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		/// *
 		// * Le modele
 		// * / Model:
-		//	subs+=Subprocedure* "main" defs+=Definition* main+=Instruction+ "endmain";
+		//	subs+=Subprocedure* "main" body=Body "endmain";
 		public ParserRule getRule() { return rule; }
 
-		//subs+=Subprocedure* "main" defs+=Definition* main+=Instruction+ "endmain"
+		//subs+=Subprocedure* "main" body=Body "endmain"
 		public Group getGroup() { return cGroup; }
 
 		//subs+=Subprocedure*
@@ -48,20 +46,14 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"main"
 		public Keyword getMainKeyword_1() { return cMainKeyword_1; }
 
-		//defs+=Definition*
-		public Assignment getDefsAssignment_2() { return cDefsAssignment_2; }
+		//body=Body
+		public Assignment getBodyAssignment_2() { return cBodyAssignment_2; }
 
-		//Definition
-		public RuleCall getDefsDefinitionParserRuleCall_2_0() { return cDefsDefinitionParserRuleCall_2_0; }
-
-		//main+=Instruction+
-		public Assignment getMainAssignment_3() { return cMainAssignment_3; }
-
-		//Instruction
-		public RuleCall getMainInstructionParserRuleCall_3_0() { return cMainInstructionParserRuleCall_3_0; }
+		//Body
+		public RuleCall getBodyBodyParserRuleCall_2_0() { return cBodyBodyParserRuleCall_2_0; }
 
 		//"endmain"
-		public Keyword getEndmainKeyword_4() { return cEndmainKeyword_4; }
+		public Keyword getEndmainKeyword_3() { return cEndmainKeyword_3; }
 	}
 
 	public class SubprocedureElements extends AbstractParserRuleElementFinder {
@@ -70,17 +62,15 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSubKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cHeadAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cHeadHeadParserRuleCall_1_0 = (RuleCall)cHeadAssignment_1.eContents().get(0);
-		private final Assignment cDefsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDefsDefinitionParserRuleCall_2_0 = (RuleCall)cDefsAssignment_2.eContents().get(0);
-		private final Assignment cBodyAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cBodyInstructionParserRuleCall_3_0 = (RuleCall)cBodyAssignment_3.eContents().get(0);
-		private final Keyword cEndsubKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBodyAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBodyBodyParserRuleCall_2_0 = (RuleCall)cBodyAssignment_2.eContents().get(0);
+		private final Keyword cEndsubKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Subprocedure:
-		//	"sub" head=Head defs+=Definition* body+=Instruction+ "endsub";
+		//	"sub" head=Head body=Body "endsub";
 		public ParserRule getRule() { return rule; }
 
-		//"sub" head=Head defs+=Definition* body+=Instruction+ "endsub"
+		//"sub" head=Head body=Body "endsub"
 		public Group getGroup() { return cGroup; }
 
 		//"sub"
@@ -92,20 +82,42 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Head
 		public RuleCall getHeadHeadParserRuleCall_1_0() { return cHeadHeadParserRuleCall_1_0; }
 
-		//defs+=Definition*
-		public Assignment getDefsAssignment_2() { return cDefsAssignment_2; }
+		//body=Body
+		public Assignment getBodyAssignment_2() { return cBodyAssignment_2; }
 
-		//Definition
-		public RuleCall getDefsDefinitionParserRuleCall_2_0() { return cDefsDefinitionParserRuleCall_2_0; }
-
-		//body+=Instruction+
-		public Assignment getBodyAssignment_3() { return cBodyAssignment_3; }
-
-		//Instruction
-		public RuleCall getBodyInstructionParserRuleCall_3_0() { return cBodyInstructionParserRuleCall_3_0; }
+		//Body
+		public RuleCall getBodyBodyParserRuleCall_2_0() { return cBodyBodyParserRuleCall_2_0; }
 
 		//"endsub"
-		public Keyword getEndsubKeyword_4() { return cEndsubKeyword_4; }
+		public Keyword getEndsubKeyword_3() { return cEndsubKeyword_3; }
+	}
+
+	public class BodyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Body");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDefsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDefsDefinitionParserRuleCall_0_0 = (RuleCall)cDefsAssignment_0.eContents().get(0);
+		private final Assignment cInstructionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInstructionsInstructionParserRuleCall_1_0 = (RuleCall)cInstructionsAssignment_1.eContents().get(0);
+		
+		//Body:
+		//	defs+=Definition* instructions+=Instruction+;
+		public ParserRule getRule() { return rule; }
+
+		//defs+=Definition* instructions+=Instruction+
+		public Group getGroup() { return cGroup; }
+
+		//defs+=Definition*
+		public Assignment getDefsAssignment_0() { return cDefsAssignment_0; }
+
+		//Definition
+		public RuleCall getDefsDefinitionParserRuleCall_0_0() { return cDefsDefinitionParserRuleCall_0_0; }
+
+		//instructions+=Instruction+
+		public Assignment getInstructionsAssignment_1() { return cInstructionsAssignment_1; }
+
+		//Instruction
+		public RuleCall getInstructionsInstructionParserRuleCall_1_0() { return cInstructionsInstructionParserRuleCall_1_0; }
 	}
 
 	public class HeadElements extends AbstractParserRuleElementFinder {
@@ -1375,6 +1387,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ModelElements pModel;
 	private final SubprocedureElements pSubprocedure;
+	private final BodyElements pBody;
 	private final HeadElements pHead;
 	private final FunctionReferenceElements pFunctionReference;
 	private final FunctionNameElements pFunctionName;
@@ -1424,6 +1437,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pSubprocedure = new SubprocedureElements();
+		this.pBody = new BodyElements();
 		this.pHead = new HeadElements();
 		this.pFunctionReference = new FunctionReferenceElements();
 		this.pFunctionName = new FunctionNameElements();
@@ -1493,7 +1507,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Le modele
 	// * / Model:
-	//	subs+=Subprocedure* "main" defs+=Definition* main+=Instruction+ "endmain";
+	//	subs+=Subprocedure* "main" body=Body "endmain";
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1503,13 +1517,23 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Subprocedure:
-	//	"sub" head=Head defs+=Definition* body+=Instruction+ "endsub";
+	//	"sub" head=Head body=Body "endsub";
 	public SubprocedureElements getSubprocedureAccess() {
 		return pSubprocedure;
 	}
 	
 	public ParserRule getSubprocedureRule() {
 		return getSubprocedureAccess().getRule();
+	}
+
+	//Body:
+	//	defs+=Definition* instructions+=Instruction+;
+	public BodyElements getBodyAccess() {
+		return pBody;
+	}
+	
+	public ParserRule getBodyRule() {
+		return getBodyAccess().getRule();
 	}
 
 	//Head:

@@ -11,6 +11,7 @@ import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression;
+import com.selenium.gram.xtext.slnDsl.Body;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanValue;
@@ -65,6 +66,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * @generated
    */
   private EClass subprocedureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bodyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -364,19 +372,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Defs()
+  public EReference getModel_Body()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getModel_Main()
-  {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -404,7 +402,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubprocedure_Defs()
+  public EReference getSubprocedure_Body()
   {
     return (EReference)subprocedureEClass.getEStructuralFeatures().get(1);
   }
@@ -414,9 +412,29 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubprocedure_Body()
+  public EClass getBody()
   {
-    return (EReference)subprocedureEClass.getEStructuralFeatures().get(2);
+    return bodyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBody_Defs()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBody_Instructions()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1201,13 +1219,15 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__SUBS);
-    createEReference(modelEClass, MODEL__DEFS);
-    createEReference(modelEClass, MODEL__MAIN);
+    createEReference(modelEClass, MODEL__BODY);
 
     subprocedureEClass = createEClass(SUBPROCEDURE);
     createEReference(subprocedureEClass, SUBPROCEDURE__HEAD);
-    createEReference(subprocedureEClass, SUBPROCEDURE__DEFS);
     createEReference(subprocedureEClass, SUBPROCEDURE__BODY);
+
+    bodyEClass = createEClass(BODY);
+    createEReference(bodyEClass, BODY__DEFS);
+    createEReference(bodyEClass, BODY__INSTRUCTIONS);
 
     headEClass = createEClass(HEAD);
     createEReference(headEClass, HEAD__NAME);
@@ -1360,13 +1380,15 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Subs(), this.getSubprocedure(), null, "subs", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Main(), this.getInstruction(), null, "main", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Body(), this.getBody(), null, "body", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subprocedureEClass, Subprocedure.class, "Subprocedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubprocedure_Head(), this.getHead(), null, "head", null, 0, 1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubprocedure_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubprocedure_Body(), this.getInstruction(), null, "body", null, 0, -1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubprocedure_Body(), this.getBody(), null, "body", null, 0, 1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBody_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBody_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getHead_Name(), this.getFunctionName(), null, "name", null, 0, 1, Head.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -85,6 +85,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createSubprocedureAdapter();
       }
       @Override
+      public Adapter caseBody(Body object)
+      {
+        return createBodyAdapter();
+      }
+      @Override
       public Adapter caseHead(Head object)
       {
         return createHeadAdapter();
@@ -282,6 +287,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSubprocedureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Body <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.Body
+   * @generated
+   */
+  public Adapter createBodyAdapter()
   {
     return null;
   }

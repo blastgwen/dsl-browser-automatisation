@@ -2,27 +2,19 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Definition;
+import com.selenium.gram.xtext.slnDsl.Body;
 import com.selenium.gram.xtext.slnDsl.Head;
-import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +24,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.SubprocedureImpl#getHead <em>Head</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.SubprocedureImpl#getDefs <em>Defs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.SubprocedureImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -52,24 +43,14 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
   protected Head head;
 
   /**
-   * The cached value of the '{@link #getDefs() <em>Defs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefs()
-   * @generated
-   * @ordered
-   */
-  protected EList<Definition> defs;
-
-  /**
-   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference list.
+   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getBody()
    * @generated
    * @ordered
    */
-  protected EList<Instruction> body;
+  protected Body body;
 
   /**
    * <!-- begin-user-doc -->
@@ -145,13 +126,9 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Definition> getDefs()
+  public Body getBody()
   {
-    if (defs == null)
-    {
-      defs = new EObjectContainmentEList<Definition>(Definition.class, this, SlnDslPackage.SUBPROCEDURE__DEFS);
-    }
-    return defs;
+    return body;
   }
 
   /**
@@ -159,13 +136,37 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Instruction> getBody()
+  public NotificationChain basicSetBody(Body newBody, NotificationChain msgs)
   {
-    if (body == null)
+    Body oldBody = body;
+    body = newBody;
+    if (eNotificationRequired())
     {
-      body = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.SUBPROCEDURE__BODY);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.SUBPROCEDURE__BODY, oldBody, newBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return body;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBody(Body newBody)
+  {
+    if (newBody != body)
+    {
+      NotificationChain msgs = null;
+      if (body != null)
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.SUBPROCEDURE__BODY, null, msgs);
+      if (newBody != null)
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.SUBPROCEDURE__BODY, null, msgs);
+      msgs = basicSetBody(newBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.SUBPROCEDURE__BODY, newBody, newBody));
   }
 
   /**
@@ -180,10 +181,8 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
     {
       case SlnDslPackage.SUBPROCEDURE__HEAD:
         return basicSetHead(null, msgs);
-      case SlnDslPackage.SUBPROCEDURE__DEFS:
-        return ((InternalEList<?>)getDefs()).basicRemove(otherEnd, msgs);
       case SlnDslPackage.SUBPROCEDURE__BODY:
-        return ((InternalEList<?>)getBody()).basicRemove(otherEnd, msgs);
+        return basicSetBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -200,8 +199,6 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
     {
       case SlnDslPackage.SUBPROCEDURE__HEAD:
         return getHead();
-      case SlnDslPackage.SUBPROCEDURE__DEFS:
-        return getDefs();
       case SlnDslPackage.SUBPROCEDURE__BODY:
         return getBody();
     }
@@ -213,7 +210,6 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -222,13 +218,8 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
       case SlnDslPackage.SUBPROCEDURE__HEAD:
         setHead((Head)newValue);
         return;
-      case SlnDslPackage.SUBPROCEDURE__DEFS:
-        getDefs().clear();
-        getDefs().addAll((Collection<? extends Definition>)newValue);
-        return;
       case SlnDslPackage.SUBPROCEDURE__BODY:
-        getBody().clear();
-        getBody().addAll((Collection<? extends Instruction>)newValue);
+        setBody((Body)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -247,11 +238,8 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
       case SlnDslPackage.SUBPROCEDURE__HEAD:
         setHead((Head)null);
         return;
-      case SlnDslPackage.SUBPROCEDURE__DEFS:
-        getDefs().clear();
-        return;
       case SlnDslPackage.SUBPROCEDURE__BODY:
-        getBody().clear();
+        setBody((Body)null);
         return;
     }
     super.eUnset(featureID);
@@ -269,10 +257,8 @@ public class SubprocedureImpl extends MinimalEObjectImpl.Container implements Su
     {
       case SlnDslPackage.SUBPROCEDURE__HEAD:
         return head != null;
-      case SlnDslPackage.SUBPROCEDURE__DEFS:
-        return defs != null && !defs.isEmpty();
       case SlnDslPackage.SUBPROCEDURE__BODY:
-        return body != null && !body.isEmpty();
+        return body != null;
     }
     return super.eIsSet(featureID);
   }

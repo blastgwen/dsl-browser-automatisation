@@ -9,13 +9,15 @@
       fileExtensions="slndsl" ecorePackage="SlnDsl.ecore#/">
     <genClasses ecoreClass="SlnDsl.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/subs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/defs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/main"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/body"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Subprocedure">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Subprocedure/head"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Subprocedure/defs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Subprocedure/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Body/defs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Body/instructions"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Head">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Head/name"/>

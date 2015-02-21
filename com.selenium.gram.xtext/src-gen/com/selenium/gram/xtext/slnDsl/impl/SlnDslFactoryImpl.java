@@ -66,6 +66,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
     {
       case SlnDslPackage.MODEL: return createModel();
       case SlnDslPackage.SUBPROCEDURE: return createSubprocedure();
+      case SlnDslPackage.BODY: return createBody();
       case SlnDslPackage.HEAD: return createHead();
       case SlnDslPackage.FUNCTION_REFERENCE: return createFunctionReference();
       case SlnDslPackage.FUNCTION_NAME: return createFunctionName();
@@ -121,6 +122,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     SubprocedureImpl subprocedure = new SubprocedureImpl();
     return subprocedure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Body createBody()
+  {
+    BodyImpl body = new BodyImpl();
+    return body;
   }
 
   /**

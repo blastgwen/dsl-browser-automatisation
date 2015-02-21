@@ -2,14 +2,14 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Definition;
-import com.selenium.gram.xtext.slnDsl.Instruction;
+import com.selenium.gram.xtext.slnDsl.Body;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -30,8 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getSubs <em>Subs</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getDefs <em>Defs</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getMain <em>Main</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,24 +50,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EList<Subprocedure> subs;
 
   /**
-   * The cached value of the '{@link #getDefs() <em>Defs</em>}' containment reference list.
+   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefs()
+   * @see #getBody()
    * @generated
    * @ordered
    */
-  protected EList<Definition> defs;
-
-  /**
-   * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMain()
-   * @generated
-   * @ordered
-   */
-  protected EList<Instruction> main;
+  protected Body body;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,13 +99,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Definition> getDefs()
+  public Body getBody()
   {
-    if (defs == null)
-    {
-      defs = new EObjectContainmentEList<Definition>(Definition.class, this, SlnDslPackage.MODEL__DEFS);
-    }
-    return defs;
+    return body;
   }
 
   /**
@@ -123,13 +109,37 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Instruction> getMain()
+  public NotificationChain basicSetBody(Body newBody, NotificationChain msgs)
   {
-    if (main == null)
+    Body oldBody = body;
+    body = newBody;
+    if (eNotificationRequired())
     {
-      main = new EObjectContainmentEList<Instruction>(Instruction.class, this, SlnDslPackage.MODEL__MAIN);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.MODEL__BODY, oldBody, newBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return main;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBody(Body newBody)
+  {
+    if (newBody != body)
+    {
+      NotificationChain msgs = null;
+      if (body != null)
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.MODEL__BODY, null, msgs);
+      if (newBody != null)
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.MODEL__BODY, null, msgs);
+      msgs = basicSetBody(newBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.MODEL__BODY, newBody, newBody));
   }
 
   /**
@@ -144,10 +154,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SlnDslPackage.MODEL__SUBS:
         return ((InternalEList<?>)getSubs()).basicRemove(otherEnd, msgs);
-      case SlnDslPackage.MODEL__DEFS:
-        return ((InternalEList<?>)getDefs()).basicRemove(otherEnd, msgs);
-      case SlnDslPackage.MODEL__MAIN:
-        return ((InternalEList<?>)getMain()).basicRemove(otherEnd, msgs);
+      case SlnDslPackage.MODEL__BODY:
+        return basicSetBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -164,10 +172,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SlnDslPackage.MODEL__SUBS:
         return getSubs();
-      case SlnDslPackage.MODEL__DEFS:
-        return getDefs();
-      case SlnDslPackage.MODEL__MAIN:
-        return getMain();
+      case SlnDslPackage.MODEL__BODY:
+        return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -187,13 +193,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getSubs().clear();
         getSubs().addAll((Collection<? extends Subprocedure>)newValue);
         return;
-      case SlnDslPackage.MODEL__DEFS:
-        getDefs().clear();
-        getDefs().addAll((Collection<? extends Definition>)newValue);
-        return;
-      case SlnDslPackage.MODEL__MAIN:
-        getMain().clear();
-        getMain().addAll((Collection<? extends Instruction>)newValue);
+      case SlnDslPackage.MODEL__BODY:
+        setBody((Body)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,11 +213,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case SlnDslPackage.MODEL__SUBS:
         getSubs().clear();
         return;
-      case SlnDslPackage.MODEL__DEFS:
-        getDefs().clear();
-        return;
-      case SlnDslPackage.MODEL__MAIN:
-        getMain().clear();
+      case SlnDslPackage.MODEL__BODY:
+        setBody((Body)null);
         return;
     }
     super.eUnset(featureID);
@@ -234,10 +232,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SlnDslPackage.MODEL__SUBS:
         return subs != null && !subs.isEmpty();
-      case SlnDslPackage.MODEL__DEFS:
-        return defs != null && !defs.isEmpty();
-      case SlnDslPackage.MODEL__MAIN:
-        return main != null && !main.isEmpty();
+      case SlnDslPackage.MODEL__BODY:
+        return body != null;
     }
     return super.eIsSet(featureID);
   }

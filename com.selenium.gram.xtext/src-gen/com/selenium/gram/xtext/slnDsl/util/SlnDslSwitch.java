@@ -86,6 +86,13 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.BODY:
+      {
+        Body body = (Body)theEObject;
+        T result = caseBody(body);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.HEAD:
       {
         Head head = (Head)theEObject;
@@ -342,6 +349,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSubprocedure(Subprocedure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Body</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Body</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBody(Body object)
   {
     return null;
   }
