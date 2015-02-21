@@ -1,7 +1,9 @@
 package com.selenium.gram.xtext.interpreter;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.ui.internal.commands.ElementReference;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByTagName;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +35,76 @@ public class ActionInstructionInterpreter {
 				// ---------- BUTTON -----------
 				// *****************************
 				if (act.getType().equals("button")) {
-
+					List<WebElement> elements = new ArrayList<WebElement>();
+					
+					elements.addAll(driver.findElements(By.cssSelector("input[type='submit']")));					
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						
+						if (i != elements.size()){
+							try {
+								WebElement elem = elements.get(i);
+								String str = elements.get(i).getText().trim().toLowerCase();
+								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+								if (str.contains(value) || val.contains(value)){	
+									WebDriverWait wait = new WebDriverWait(driver, 5);
+								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+								    elements.get(i).click();
+								    click = true;								
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						} else {
+							elements = driver.findElements(By.tagName("button"));
+					
+							i = 0;								
+							if (i != elements.size()){
+								try {
+									WebElement elem = elements.get(i);
+									String str = elements.get(i).getText().trim().toLowerCase();
+									if (str.contains(value)){	
+										WebDriverWait wait = new WebDriverWait(driver, 5);
+									    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+									    elements.get(i).click();
+									    click = true;								
+									} 
+								} catch (Exception e){
+									click = false;
+								} finally {
+									i ++;
+								}
+								
+							} else {
+								elements = driver.findElements(By.cssSelector("input[type='button']"));
+								
+								i = 0;								
+								if (i != elements.size()){
+									try {
+										WebElement elem = elements.get(i);
+										String str = elements.get(i).getText().trim().toLowerCase();
+										String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+										if (str.contains(value) || val.contains(value)){	
+											WebDriverWait wait = new WebDriverWait(driver, 5);
+										    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+										    elements.get(i).click();
+										    click = true;								
+										} 
+									} catch (Exception e){
+										click = false;
+									} finally {
+										i ++;
+									}
+								}
+								else {
+									throw new ActionInstructionException("ActionClick - No button " + value + " in this page");
+								}
+							}
+						}
+					}
 				}
 
 				// *****************************
