@@ -2,6 +2,9 @@ package com.selenium.gram.xtext.interpreter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import net.sourceforge.htmlunit.corejs.javascript.ast.NumberLiteral;
 
 import org.eclipse.ui.internal.commands.ElementReference;
 import org.openqa.selenium.By;
@@ -16,13 +19,20 @@ import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
 import com.selenium.gram.xtext.slnDsl.ActionType;
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
+import com.selenium.gram.xtext.slnDsl.Expression;
+import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.VariableReference;
 
 public class ActionInstructionInterpreter {
 
-	public void execute(ActionInstruction action) {
+	public void execute(ActionInstruction action, Map<String, Expression> variables) {
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 
 		try {
+			/*
+			 * Action CLICK
+			 */
 			if (action.getAction() instanceof ActionClick) {
 				ActionClick act = (ActionClick) action.getAction();
 				String value = act.getElement().replaceAll("'", "");
@@ -179,6 +189,9 @@ public class ActionInstructionInterpreter {
 				System.out.println("click finsihed");
 			}
 
+			/*
+			 * Action OPEN
+			 */
 			else if (action.getAction() instanceof ActionOpen) {
 				System.out.println("Open - ActionInstruction");
 
@@ -188,17 +201,86 @@ public class ActionInstructionInterpreter {
 				System.out.println("J'ai fini l'action open");
 			}
 
+			/*
+			 * Action CHECK
+			 */
 			else if (action.getAction() instanceof ActionCheck) {
 				System.out.println("Check - ActionInstruction");
 			}
 
+			/*
+			 * Action TYPE
+			 */
 			else if (action.getAction() instanceof ActionType) {
 				System.out.println("Type - ActionInstruction");
+				ActionType act = (ActionType)action.getAction();
+				
+				List<WebElement> elements = new ArrayList<WebElement>();				
+				elements.addAll(driver.findElements(By.cssSelector("input[type='text']")));	
+				elements.addAll(driver.findElements(By.cssSelector("input[type='password']")));	
+				
+				boolean type = false;
+				int i = 0;
+				while (!type){
+					
+					if (i != elements.size()){
+						try {
+							WebElement elem = elements.get(i);
+							
+							String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+							String id = elements.get(i).getAttribute("id").trim().toLowerCase();
+							String place = elements.get(i).getAttribute("placeholder").trim().toLowerCase();
+							
+							String value = act.getNameElement().replaceAll("'", "");
+							value = value.replaceAll("\"", "");
+							value = value.trim().toLowerCase();
+							
+							if (name.contains(value) || id.contains(value) || place.contains(value)){	
+								elements.get(i).clear();
+								
+								if (act.getValue() instanceof NumLiteralExpression){
+									NumLiteralExpression numLit = (NumLiteralExpression)act.getValue();
+									elements.get(i).sendKeys(numLit.getValue().substring(1, numLit.getValue().length()-1));
+								} 
+								else if (act.getValue() instanceof VariableReference){
+									VariableReference varRef = (VariableReference)act.getValue();
+									
+									if (variables.containsKey(varRef.getVarID().getName())){
+										
+										Expression exp = variables.get(varRef.getVarID().getName());
+										
+										// TODO : Evaluate the expression
+										elements.get(i).sendKeys(varRef.getVarID().getName());										
+									}
+									else 
+										throw new ActionInstructionException("Undefined variable " + varRef.getVarID().getName());
+								} 
+								else if (act.getValue() instanceof BooleanExpression){
+									BooleanExpression bool = (BooleanExpression)act.getValue();
+									
+									// TODO evaluate Expression
+									elements.get(i).sendKeys("true");
+									
+								} else {
+									throw new ActionInstructionException("Impossible to type this var in a textbox");
+								}
+								
+							    type = true;								
+							} 
+						} catch (ActionInstructionException e){
+							throw e;
+						}
+						catch (Exception e){
+							type = false;
+						} finally {
+							i ++;
+						}
+					}
+				}
 			}
 
 			else {
-				throw new ActionInstructionException(
-						"Undefined ActionInstruction");
+				throw new ActionInstructionException("Undefined ActionInstruction");
 			}
 		} catch (Exception e) {
 			throw e;

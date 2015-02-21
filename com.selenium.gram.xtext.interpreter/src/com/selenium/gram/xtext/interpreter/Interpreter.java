@@ -108,7 +108,7 @@ public class Interpreter {
 		// Execute une action Selenium
 		if(instruction instanceof ActionInstruction){
 			System.out.println("execute ActionInstruction : " + instruction.getClass().getName());
-			new ActionInstructionInterpreter().execute((ActionInstruction) instruction);
+			new ActionInstructionInterpreter().execute((ActionInstruction) instruction, variables);
 		}		
 		
 		// Execute une assignatio de variable
