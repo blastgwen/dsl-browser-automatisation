@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
+import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
+import com.selenium.gram.xtext.slnDsl.BooleanValue;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
 import com.selenium.gram.xtext.slnDsl.Expression;
@@ -20,6 +23,7 @@ import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
@@ -42,6 +46,18 @@ public class Interpreter {
 		
 		Map<String, Expression> variables = new HashMap<String, Expression>();
 		
+		for(Definition def : model.getDefs()){
+			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
+			
+			if(variables.containsKey(def.getVarID().getName())){				
+				throw new InterpretationException(Definition.class.getName());
+			}
+			else {
+				System.out.println("exec def : "+def.getVarID() + ", exp : "+def.getExp());
+				variables.put(def.getVarID().getName(), def.getExp());
+			}	
+		}
+		
 		for(Instruction ins : model.getMain()){
 			this.executeInstruction(ins, variables);
 		}
@@ -51,21 +67,6 @@ public class Interpreter {
 		// Déclaration d'une variable
 		System.out.println("execute instruction : " +instruction.eClass().getName());
 
-		
-		if(instruction instanceof Definition){
-			DefinitionImpl def = ((DefinitionImpl) instruction);
-
-			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
-			
-			if(variables.containsKey(((Definition) instruction).getVarID().getName())){
-				
-				throw new InterpretationException(Definition.class.getName());
-			}
-			else {
-				System.out.println("exec def : "+def.getVarID() + ", exp : "+def.getExp());
-				variables.put(def.getVarID().getName(), def.getExp());
-			}	
-		}
 		// Execute un appel de fonction
 		if(instruction instanceof FunctionReference){
 			System.out.println("execute func call : " +instruction.eClass().getName());
@@ -83,11 +84,13 @@ public class Interpreter {
 			Conditional cond = (Conditional) instruction;
 			
 			if(this.getBooleanValue(cond.getExp())){
+				System.out.println("cond true");
 				for(Instruction condIns : cond.getTrueIns()){
 					this.executeInstruction(condIns, variables);
 				}
 			}
 			else{
+				System.out.println("cond false");
 				for(Instruction condIns : cond.getFalseIns()){
 					this.executeInstruction(condIns, variables);
 				}				
@@ -161,9 +164,10 @@ public class Interpreter {
 			
 		}
 		
-		if(exp.eClass().getName().equals(BooleanExpression.class.getSimpleName())){
-			BooleanExpression bo = (BooleanExpression) exp;
-			
+		if(exp instanceof BooleanExpression){
+			System.out.println("exec expression bool");
+			return new ExpressionValue(getBooleanValue((BooleanExpression) ((BooleanExpression) exp).getExp()), 
+					ExpressionValueType.bool);
 		}
 		
 		
@@ -171,9 +175,26 @@ public class Interpreter {
 	}
 	
 	
-	private Boolean getBooleanValue(Expression exp){
+	private Boolean getBooleanValue(BooleanExpression exp) throws InterpretationException{
+		EObject val = exp.getExp();
+		System.out.println("get bool val");
+		if(val instanceof BinaryBooleanExpression){
+			System.out.println("exec binary exp");
+			
+			return false;
+			
+		}
 		
-		return false;
+		if(val instanceof NegationExpression){
+			System.out.println("exec negation");
+			return !this.getBooleanValue(((NegationExpression) val).getNegation());
+		}
+		
+		if(val instanceof BooleanValue){
+			return ((BooleanValue) val).getValue().equals("true");
+		}
+		
+		throw new InterpretationException("Unknown BooleanExpression : "+exp.getExp());
 	}
 	
 	private void executeWhile(While whileInstruction, Map<String, Expression> variables) throws InterpretationException{
