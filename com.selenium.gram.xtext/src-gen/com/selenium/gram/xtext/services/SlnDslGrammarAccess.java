@@ -525,14 +525,18 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpBooleanListExpressionParserRuleCall_4_0 = (RuleCall)cExpAssignment_4.eContents().get(0);
 		private final Assignment cExpAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
 		private final RuleCall cExpBooleanValueParserRuleCall_5_0 = (RuleCall)cExpAssignment_5.eContents().get(0);
+		private final Assignment cExpAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cExpBinaryLogicalExpressionParserRuleCall_6_0 = (RuleCall)cExpAssignment_6.eContents().get(0);
+		private final Assignment cExpAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cExpVariableReferenceParserRuleCall_7_0 = (RuleCall)cExpAssignment_7.eContents().get(0);
 		
 		//BooleanExpression:
 		//	exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression
-		//	| exp=BooleanValue;
+		//	| exp=BooleanValue | exp=BinaryLogicalExpression | exp=VariableReference;
 		public ParserRule getRule() { return rule; }
 
 		//exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression |
-		//exp=BooleanValue
+		//exp=BooleanValue | exp=BinaryLogicalExpression | exp=VariableReference
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//exp=BinaryBooleanExpression
@@ -570,6 +574,18 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//BooleanValue
 		public RuleCall getExpBooleanValueParserRuleCall_5_0() { return cExpBooleanValueParserRuleCall_5_0; }
+
+		//exp=BinaryLogicalExpression
+		public Assignment getExpAssignment_6() { return cExpAssignment_6; }
+
+		//BinaryLogicalExpression
+		public RuleCall getExpBinaryLogicalExpressionParserRuleCall_6_0() { return cExpBinaryLogicalExpressionParserRuleCall_6_0; }
+
+		//exp=VariableReference
+		public Assignment getExpAssignment_7() { return cExpAssignment_7; }
+
+		//VariableReference
+		public RuleCall getExpVariableReferenceParserRuleCall_7_0() { return cExpVariableReferenceParserRuleCall_7_0; }
 	}
 
 	public class BooleanValueElements extends AbstractParserRuleElementFinder {
@@ -700,28 +716,84 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getRightExpressionParserRuleCall_2_0() { return cRightExpressionParserRuleCall_2_0; }
 	}
 
+	public class BinaryLogicalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BinaryLogicalExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOpLogicalOperatorParserRuleCall_0_0 = (RuleCall)cOpAssignment_0.eContents().get(0);
+		private final Assignment cLeftAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLeftBooleanExpressionParserRuleCall_1_0 = (RuleCall)cLeftAssignment_1.eContents().get(0);
+		private final Assignment cRightAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRightBooleanExpressionParserRuleCall_2_0 = (RuleCall)cRightAssignment_2.eContents().get(0);
+		
+		//BinaryLogicalExpression:
+		//	op=LogicalOperator left=BooleanExpression right=BooleanExpression;
+		public ParserRule getRule() { return rule; }
+
+		//op=LogicalOperator left=BooleanExpression right=BooleanExpression
+		public Group getGroup() { return cGroup; }
+
+		//op=LogicalOperator
+		public Assignment getOpAssignment_0() { return cOpAssignment_0; }
+
+		//LogicalOperator
+		public RuleCall getOpLogicalOperatorParserRuleCall_0_0() { return cOpLogicalOperatorParserRuleCall_0_0; }
+
+		//left=BooleanExpression
+		public Assignment getLeftAssignment_1() { return cLeftAssignment_1; }
+
+		//BooleanExpression
+		public RuleCall getLeftBooleanExpressionParserRuleCall_1_0() { return cLeftBooleanExpressionParserRuleCall_1_0; }
+
+		//right=BooleanExpression
+		public Assignment getRightAssignment_2() { return cRightAssignment_2; }
+
+		//BooleanExpression
+		public RuleCall getRightBooleanExpressionParserRuleCall_2_0() { return cRightBooleanExpressionParserRuleCall_2_0; }
+	}
+
 	public class NegationExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NegationExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cExclamationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cExpAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExpExpressionParserRuleCall_1_0 = (RuleCall)cExpAssignment_1.eContents().get(0);
+		private final Assignment cNegationAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNegationBooleanExpressionParserRuleCall_1_0 = (RuleCall)cNegationAssignment_1.eContents().get(0);
 		
 		//NegationExpression:
-		//	"!" exp=Expression;
+		//	"!" negation=BooleanExpression;
 		public ParserRule getRule() { return rule; }
 
-		//"!" exp=Expression
+		//"!" negation=BooleanExpression
 		public Group getGroup() { return cGroup; }
 
 		//"!"
 		public Keyword getExclamationMarkKeyword_0() { return cExclamationMarkKeyword_0; }
 
-		//exp=Expression
-		public Assignment getExpAssignment_1() { return cExpAssignment_1; }
+		//negation=BooleanExpression
+		public Assignment getNegationAssignment_1() { return cNegationAssignment_1; }
 
-		//Expression
-		public RuleCall getExpExpressionParserRuleCall_1_0() { return cExpExpressionParserRuleCall_1_0; }
+		//BooleanExpression
+		public RuleCall getNegationBooleanExpressionParserRuleCall_1_0() { return cNegationBooleanExpressionParserRuleCall_1_0; }
+	}
+
+	public class LogicalOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cAmpersandAmpersandKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cVerticalLineVerticalLineKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//LogicalOperator:
+		//	"&&" | "||";
+		public ParserRule getRule() { return rule; }
+
+		//"&&" | "||"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"&&"
+		public Keyword getAmpersandAmpersandKeyword_0() { return cAmpersandAmpersandKeyword_0; }
+
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_1() { return cVerticalLineVerticalLineKeyword_1; }
 	}
 
 	public class BooleanOperatorElements extends AbstractParserRuleElementFinder {
@@ -1321,7 +1393,9 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final VerifyActionElements pVerifyAction;
 	private final ExistActionElements pExistAction;
 	private final BinaryBooleanExpressionElements pBinaryBooleanExpression;
+	private final BinaryLogicalExpressionElements pBinaryLogicalExpression;
 	private final NegationExpressionElements pNegationExpression;
+	private final LogicalOperatorElements pLogicalOperator;
 	private final BooleanOperatorElements pBooleanOperator;
 	private final InstructionElements pInstruction;
 	private final DefinitionElements pDefinition;
@@ -1368,7 +1442,9 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVerifyAction = new VerifyActionElements();
 		this.pExistAction = new ExistActionElements();
 		this.pBinaryBooleanExpression = new BinaryBooleanExpressionElements();
+		this.pBinaryLogicalExpression = new BinaryLogicalExpressionElements();
 		this.pNegationExpression = new NegationExpressionElements();
+		this.pLogicalOperator = new LogicalOperatorElements();
 		this.pBooleanOperator = new BooleanOperatorElements();
 		this.pInstruction = new InstructionElements();
 		this.pDefinition = new DefinitionElements();
@@ -1564,7 +1640,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//BooleanExpression:
 	//	exp=BinaryBooleanExpression | exp=NegationExpression | exp=VerifyAction | exp=ExistAction | exp=BooleanListExpression
-	//	| exp=BooleanValue;
+	//	| exp=BooleanValue | exp=BinaryLogicalExpression | exp=VariableReference;
 	public BooleanExpressionElements getBooleanExpressionAccess() {
 		return pBooleanExpression;
 	}
@@ -1619,14 +1695,34 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getBinaryBooleanExpressionAccess().getRule();
 	}
 
+	//BinaryLogicalExpression:
+	//	op=LogicalOperator left=BooleanExpression right=BooleanExpression;
+	public BinaryLogicalExpressionElements getBinaryLogicalExpressionAccess() {
+		return pBinaryLogicalExpression;
+	}
+	
+	public ParserRule getBinaryLogicalExpressionRule() {
+		return getBinaryLogicalExpressionAccess().getRule();
+	}
+
 	//NegationExpression:
-	//	"!" exp=Expression;
+	//	"!" negation=BooleanExpression;
 	public NegationExpressionElements getNegationExpressionAccess() {
 		return pNegationExpression;
 	}
 	
 	public ParserRule getNegationExpressionRule() {
 		return getNegationExpressionAccess().getRule();
+	}
+
+	//LogicalOperator:
+	//	"&&" | "||";
+	public LogicalOperatorElements getLogicalOperatorAccess() {
+		return pLogicalOperator;
+	}
+	
+	public ParserRule getLogicalOperatorRule() {
+		return getLogicalOperatorAccess().getRule();
 	}
 
 	//BooleanOperator:

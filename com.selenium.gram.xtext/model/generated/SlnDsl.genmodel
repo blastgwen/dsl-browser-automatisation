@@ -67,8 +67,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//BinaryBooleanExpression/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//BinaryBooleanExpression/right"/>
     </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//BinaryLogicalExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//BinaryLogicalExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//BinaryLogicalExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//BinaryLogicalExpression/right"/>
+    </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//NegationExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//NegationExpression/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//NegationExpression/negation"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Instruction"/>
     <genClasses ecoreClass="SlnDsl.ecore#//Definition">

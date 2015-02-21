@@ -2,7 +2,7 @@
  */
 package com.selenium.gram.xtext.slnDsl.impl;
 
-import com.selenium.gram.xtext.slnDsl.Expression;
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.NegationExpressionImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.NegationExpressionImpl#getNegation <em>Negation</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class NegationExpressionImpl extends MinimalEObjectImpl.Container implements NegationExpression
 {
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getNegation() <em>Negation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getNegation()
    * @generated
    * @ordered
    */
-  protected Expression exp;
+  protected BooleanExpression negation;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExp()
+  public BooleanExpression getNegation()
   {
-    return exp;
+    return negation;
   }
 
   /**
@@ -76,13 +76,13 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
+  public NotificationChain basicSetNegation(BooleanExpression newNegation, NotificationChain msgs)
   {
-    Expression oldExp = exp;
-    exp = newExp;
+    BooleanExpression oldNegation = negation;
+    negation = newNegation;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.NEGATION_EXPRESSION__EXP, oldExp, newExp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.NEGATION_EXPRESSION__NEGATION, oldNegation, newNegation);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +93,20 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExp(Expression newExp)
+  public void setNegation(BooleanExpression newNegation)
   {
-    if (newExp != exp)
+    if (newNegation != negation)
     {
       NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.NEGATION_EXPRESSION__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.NEGATION_EXPRESSION__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
+      if (negation != null)
+        msgs = ((InternalEObject)negation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.NEGATION_EXPRESSION__NEGATION, null, msgs);
+      if (newNegation != null)
+        msgs = ((InternalEObject)newNegation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.NEGATION_EXPRESSION__NEGATION, null, msgs);
+      msgs = basicSetNegation(newNegation, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.NEGATION_EXPRESSION__EXP, newExp, newExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.NEGATION_EXPRESSION__NEGATION, newNegation, newNegation));
   }
 
   /**
@@ -119,8 +119,8 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
-        return basicSetExp(null, msgs);
+      case SlnDslPackage.NEGATION_EXPRESSION__NEGATION:
+        return basicSetNegation(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +135,8 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
-        return getExp();
+      case SlnDslPackage.NEGATION_EXPRESSION__NEGATION:
+        return getNegation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +151,8 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
-        setExp((Expression)newValue);
+      case SlnDslPackage.NEGATION_EXPRESSION__NEGATION:
+        setNegation((BooleanExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +168,8 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
-        setExp((Expression)null);
+      case SlnDslPackage.NEGATION_EXPRESSION__NEGATION:
+        setNegation((BooleanExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +185,8 @@ public class NegationExpressionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlnDslPackage.NEGATION_EXPRESSION__EXP:
-        return exp != null;
+      case SlnDslPackage.NEGATION_EXPRESSION__NEGATION:
+        return negation != null;
     }
     return super.eIsSet(featureID);
   }

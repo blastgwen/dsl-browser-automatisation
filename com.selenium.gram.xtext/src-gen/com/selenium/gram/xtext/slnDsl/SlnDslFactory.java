@@ -176,6 +176,15 @@ public interface SlnDslFactory extends EFactory
   BinaryBooleanExpression createBinaryBooleanExpression();
 
   /**
+   * Returns a new object of class '<em>Binary Logical Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binary Logical Expression</em>'.
+   * @generated
+   */
+  BinaryLogicalExpression createBinaryLogicalExpression();
+
+  /**
    * Returns a new object of class '<em>Negation Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

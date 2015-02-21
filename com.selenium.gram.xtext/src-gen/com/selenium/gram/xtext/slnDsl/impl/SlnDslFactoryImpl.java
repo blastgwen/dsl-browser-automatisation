@@ -81,6 +81,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.VERIFY_ACTION: return createVerifyAction();
       case SlnDslPackage.EXIST_ACTION: return createExistAction();
       case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION: return createBinaryBooleanExpression();
+      case SlnDslPackage.BINARY_LOGICAL_EXPRESSION: return createBinaryLogicalExpression();
       case SlnDslPackage.NEGATION_EXPRESSION: return createNegationExpression();
       case SlnDslPackage.INSTRUCTION: return createInstruction();
       case SlnDslPackage.DEFINITION: return createDefinition();
@@ -285,6 +286,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     BinaryBooleanExpressionImpl binaryBooleanExpression = new BinaryBooleanExpressionImpl();
     return binaryBooleanExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BinaryLogicalExpression createBinaryLogicalExpression()
+  {
+    BinaryLogicalExpressionImpl binaryLogicalExpression = new BinaryLogicalExpressionImpl();
+    return binaryLogicalExpression;
   }
 
   /**
