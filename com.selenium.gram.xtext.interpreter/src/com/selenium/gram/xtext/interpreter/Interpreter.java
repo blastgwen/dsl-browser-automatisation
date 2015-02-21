@@ -11,10 +11,13 @@ import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
+import com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
+import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanValue;
 import com.selenium.gram.xtext.slnDsl.Conditional;
 import com.selenium.gram.xtext.slnDsl.Definition;
+import com.selenium.gram.xtext.slnDsl.ExistAction;
 import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
@@ -27,6 +30,7 @@ import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
+import com.selenium.gram.xtext.slnDsl.VerifyAction;
 import com.selenium.gram.xtext.slnDsl.While;
 import com.selenium.gram.xtext.slnDsl.impl.DefinitionImpl;
 
@@ -83,7 +87,7 @@ public class Interpreter {
 			System.out.println("execute cond");
 			Conditional cond = (Conditional) instruction;
 			
-			if(this.getBooleanValue(cond.getExp())){
+			if(this.getBooleanValue(cond.getExp(), variables)){
 				System.out.println("cond true");
 				for(Instruction condIns : cond.getTrueIns()){
 					this.executeInstruction(condIns, variables);
@@ -133,7 +137,7 @@ public class Interpreter {
 		
 	}
 	
-	private Object computeExpression(Expression exp, Map<String, Expression> variables) 
+	private ExpressionValue computeExpression(Expression exp, Map<String, Expression> variables) 
 			throws InterpretationException{
 		
 		if(exp instanceof VariableReference){
@@ -166,7 +170,7 @@ public class Interpreter {
 		
 		if(exp instanceof BooleanExpression){
 			System.out.println("exec expression bool");
-			return new ExpressionValue(getBooleanValue((BooleanExpression) ((BooleanExpression) exp).getExp()), 
+			return new ExpressionValue(getBooleanValue((BooleanExpression) ((BooleanExpression) exp).getExp(), variables), 
 					ExpressionValueType.bool);
 		}
 		
@@ -175,30 +179,88 @@ public class Interpreter {
 	}
 	
 	
-	private Boolean getBooleanValue(BooleanExpression exp) throws InterpretationException{
+	private Boolean getBooleanValue(BooleanExpression exp, Map<String, Expression> variables ) throws InterpretationException{
 		EObject val = exp.getExp();
 		System.out.println("get bool val");
+		
 		if(val instanceof BinaryBooleanExpression){
 			System.out.println("exec binary exp");
 			
-			return false;
+			BinaryBooleanExpression bin = (BinaryBooleanExpression)val;
+			ExpressionValue right = computeExpression(bin.getRight(), variables);
+			ExpressionValue left = computeExpression(bin.getLeft(), variables);
 			
+			if(bin.getOp().equals("=="))
+				return left.getValue().equals(right.getValue());
+			else
+				return compareValues(left, right, bin.getOp());			
 		}
 		
 		if(val instanceof NegationExpression){
 			System.out.println("exec negation");
-			return !this.getBooleanValue(((NegationExpression) val).getNegation());
+			return !this.getBooleanValue(((NegationExpression) val).getNegation(), variables);
 		}
 		
 		if(val instanceof BooleanValue){
 			return ((BooleanValue) val).getValue().equals("true");
 		}
 		
+		if(val instanceof VerifyAction){
+			
+		}
+		
+		if(val instanceof ExistAction){
+			
+		}
+		
+		if(val instanceof BooleanListExpression){
+			
+		}
+		
+		if(val instanceof BinaryLogicalExpression){
+			BinaryLogicalExpression bin = (BinaryLogicalExpression) val;
+			if(bin.getOp().equals("&&")){
+				return getBooleanValue(bin.getLeft(), variables) && getBooleanValue(bin.getRight(), variables);
+			}
+			if(bin.getOp().equals("||")){
+				return getBooleanValue(bin.getLeft(), variables) || getBooleanValue(bin.getRight(), variables);
+			}
+		}
+		
+		if(val instanceof VariableReference){
+			VariableReference ref = (VariableReference)val;
+			if(variables.containsKey(ref.getVarID().getName())){
+				System.out.println("exec get bool variable : "+ref.getVarID());
+				Expression expVar = variables.get(ref.getVarID().getName());
+				
+				if(expVar instanceof BooleanExpression)
+					return getBooleanValue((BooleanExpression) expVar, variables);
+				else 
+					throw new InterpretationException("Variable "+ref.getVarID().getName()+" is not a boolean");
+			}			
+			throw new UnknownVariableException(ref.getVarID().getName());
+		}
+		
 		throw new InterpretationException("Unknown BooleanExpression : "+exp.getExp());
+	}
+
+	private Boolean compareValues(ExpressionValue left, ExpressionValue right, String op)
+			throws InterpretationException {
+		if(right.getType() == ExpressionValueType.numeric
+		&& left.getType() == ExpressionValueType.numeric)
+		{
+			if(op.equals("<"))
+				return ((Integer) left.getValue()) < ((Integer)right.getValue());
+			else
+				return ((Integer) left.getValue()) > ((Integer)right.getValue());
+		}
+		else {
+			throw new InterpretationException("Valeurs non comparables");
+		}
 	}
 	
 	private void executeWhile(While whileInstruction, Map<String, Expression> variables) throws InterpretationException{
-		while(this.getBooleanValue(whileInstruction.getCond())){
+		while(this.getBooleanValue(whileInstruction.getCond(), variables)){
 			for(Instruction ins : whileInstruction.getIns()){
 				this.executeInstruction(ins, variables);
 			}
@@ -208,4 +270,6 @@ public class Interpreter {
 	private void executeFor(Foreach forInstruction, Map<String, Expression> variables){
 	
 	}
+	
+	
 }

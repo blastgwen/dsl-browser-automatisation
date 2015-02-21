@@ -105,6 +105,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_4(), "rule__BooleanExpression__ExpAssignment_4");
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_5(), "rule__BooleanExpression__ExpAssignment_5");
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_6(), "rule__BooleanExpression__ExpAssignment_6");
+					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_7(), "rule__BooleanExpression__ExpAssignment_7");
 					put(grammarAccess.getBooleanValueAccess().getValueAssignment(), "rule__BooleanValue__ValueAssignment");
 					put(grammarAccess.getVerifyActionAccess().getNameElementAssignment_2(), "rule__VerifyAction__NameElementAssignment_2");
 					put(grammarAccess.getVerifyActionAccess().getValueAssignment_4(), "rule__VerifyAction__ValueAssignment_4");
@@ -113,8 +114,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getLeftAssignment_1(), "rule__BinaryBooleanExpression__LeftAssignment_1");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getRightAssignment_2(), "rule__BinaryBooleanExpression__RightAssignment_2");
 					put(grammarAccess.getBinaryLogicalExpressionAccess().getOpAssignment_0(), "rule__BinaryLogicalExpression__OpAssignment_0");
-					put(grammarAccess.getBinaryLogicalExpressionAccess().getRightAssignment_1(), "rule__BinaryLogicalExpression__RightAssignment_1");
-					put(grammarAccess.getBinaryLogicalExpressionAccess().getLeftAssignment_2(), "rule__BinaryLogicalExpression__LeftAssignment_2");
+					put(grammarAccess.getBinaryLogicalExpressionAccess().getLeftAssignment_1(), "rule__BinaryLogicalExpression__LeftAssignment_1");
+					put(grammarAccess.getBinaryLogicalExpressionAccess().getRightAssignment_2(), "rule__BinaryLogicalExpression__RightAssignment_2");
 					put(grammarAccess.getNegationExpressionAccess().getNegationAssignment_1(), "rule__NegationExpression__NegationAssignment_1");
 					put(grammarAccess.getDefinitionAccess().getVarIDAssignment_1(), "rule__Definition__VarIDAssignment_1");
 					put(grammarAccess.getDefinitionAccess().getExpAssignment_3(), "rule__Definition__ExpAssignment_3");

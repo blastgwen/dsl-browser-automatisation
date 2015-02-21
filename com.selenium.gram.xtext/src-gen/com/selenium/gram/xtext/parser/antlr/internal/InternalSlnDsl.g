@@ -1070,6 +1070,25 @@ ruleBooleanExpression returns [EObject current=null]
 	    }
 
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBooleanExpressionAccess().getExpVariableReferenceParserRuleCall_7_0()); 
+	    }
+		lv_exp_7_0=ruleVariableReference		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBooleanExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"exp",
+        		lv_exp_7_0, 
+        		"VariableReference");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
 
@@ -1350,16 +1369,16 @@ ruleBinaryLogicalExpression returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getRightBooleanExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getLeftBooleanExpressionParserRuleCall_1_0()); 
 	    }
-		lv_right_1_0=ruleBooleanExpression		{
+		lv_left_1_0=ruleBooleanExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBinaryLogicalExpressionRule());
 	        }
        		set(
        			$current, 
-       			"right",
-        		lv_right_1_0, 
+       			"left",
+        		lv_left_1_0, 
         		"BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1368,16 +1387,16 @@ ruleBinaryLogicalExpression returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getLeftBooleanExpressionParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getRightBooleanExpressionParserRuleCall_2_0()); 
 	    }
-		lv_left_2_0=ruleBooleanExpression		{
+		lv_right_2_0=ruleBooleanExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBinaryLogicalExpressionRule());
 	        }
        		set(
        			$current, 
-       			"left",
-        		lv_left_2_0, 
+       			"right",
+        		lv_right_2_0, 
         		"BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }

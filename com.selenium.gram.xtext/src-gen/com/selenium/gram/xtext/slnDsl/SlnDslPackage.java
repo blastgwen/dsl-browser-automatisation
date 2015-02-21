@@ -661,22 +661,22 @@ public interface SlnDslPackage extends EPackage
   int BINARY_LOGICAL_EXPRESSION__OP = 0;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_LOGICAL_EXPRESSION__RIGHT = 1;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_LOGICAL_EXPRESSION__LEFT = 2;
+  int BINARY_LOGICAL_EXPRESSION__LEFT = 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_LOGICAL_EXPRESSION__RIGHT = 2;
 
   /**
    * The number of structural features of the '<em>Binary Logical Expression</em>' class.
@@ -1631,17 +1631,6 @@ public interface SlnDslPackage extends EPackage
   EAttribute getBinaryLogicalExpression_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getRight()
-   * @see #getBinaryLogicalExpression()
-   * @generated
-   */
-  EReference getBinaryLogicalExpression_Right();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1651,6 +1640,17 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EReference getBinaryLogicalExpression_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getRight()
+   * @see #getBinaryLogicalExpression()
+   * @generated
+   */
+  EReference getBinaryLogicalExpression_Right();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.NegationExpression <em>Negation Expression</em>}'.
@@ -2451,20 +2451,20 @@ public interface SlnDslPackage extends EPackage
     EAttribute BINARY_LOGICAL_EXPRESSION__OP = eINSTANCE.getBinaryLogicalExpression_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINARY_LOGICAL_EXPRESSION__RIGHT = eINSTANCE.getBinaryLogicalExpression_Right();
-
-    /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference BINARY_LOGICAL_EXPRESSION__LEFT = eINSTANCE.getBinaryLogicalExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_LOGICAL_EXPRESSION__RIGHT = eINSTANCE.getBinaryLogicalExpression_Right();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.NegationExpressionImpl <em>Negation Expression</em>}' class.

@@ -804,7 +804,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBinaryLogicalExpression_Right()
+  public EReference getBinaryLogicalExpression_Left()
   {
     return (EReference)binaryLogicalExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -814,7 +814,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBinaryLogicalExpression_Left()
+  public EReference getBinaryLogicalExpression_Right()
   {
     return (EReference)binaryLogicalExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -1262,8 +1262,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     binaryLogicalExpressionEClass = createEClass(BINARY_LOGICAL_EXPRESSION);
     createEAttribute(binaryLogicalExpressionEClass, BINARY_LOGICAL_EXPRESSION__OP);
-    createEReference(binaryLogicalExpressionEClass, BINARY_LOGICAL_EXPRESSION__RIGHT);
     createEReference(binaryLogicalExpressionEClass, BINARY_LOGICAL_EXPRESSION__LEFT);
+    createEReference(binaryLogicalExpressionEClass, BINARY_LOGICAL_EXPRESSION__RIGHT);
 
     negationExpressionEClass = createEClass(NEGATION_EXPRESSION);
     createEReference(negationExpressionEClass, NEGATION_EXPRESSION__NEGATION);
@@ -1421,8 +1421,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     initEClass(binaryLogicalExpressionEClass, BinaryLogicalExpression.class, "BinaryLogicalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBinaryLogicalExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, BinaryLogicalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBinaryLogicalExpression_Right(), this.getBooleanExpression(), null, "right", null, 0, 1, BinaryLogicalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBinaryLogicalExpression_Left(), this.getBooleanExpression(), null, "left", null, 0, 1, BinaryLogicalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinaryLogicalExpression_Right(), this.getBooleanExpression(), null, "right", null, 0, 1, BinaryLogicalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(negationExpressionEClass, NegationExpression.class, "NegationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNegationExpression_Negation(), this.getBooleanExpression(), null, "negation", null, 0, 1, NegationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

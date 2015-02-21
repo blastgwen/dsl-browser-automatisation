@@ -92,6 +92,7 @@ BooleanExpression :
 	| exp=BooleanListExpression
 	| exp=BooleanValue
 	| exp=BinaryLogicalExpression
+	| exp=VariableReference
 ;
 
 BooleanValue:
@@ -115,7 +116,7 @@ BinaryBooleanExpression:
 ;
 
 BinaryLogicalExpression:
- 	op=LogicalOperator right=BooleanExpression left=BooleanExpression 
+ 	op=LogicalOperator left=BooleanExpression right=BooleanExpression 
 ;
 
 NegationExpression :

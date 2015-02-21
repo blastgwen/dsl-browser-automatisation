@@ -385,22 +385,22 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (op=LogicalOperator right=BooleanExpression left=BooleanExpression)
+	 *     (op=LogicalOperator left=BooleanExpression right=BooleanExpression)
 	 */
 	protected void sequence_BinaryLogicalExpression(EObject context, BinaryLogicalExpression semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__OP) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__OP));
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__RIGHT));
 			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__RIGHT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getOpLogicalOperatorParserRuleCall_0_0(), semanticObject.getOp());
-		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getRightBooleanExpressionParserRuleCall_1_0(), semanticObject.getRight());
-		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getLeftBooleanExpressionParserRuleCall_2_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getLeftBooleanExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getRightBooleanExpressionParserRuleCall_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -414,7 +414,8 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         exp=ExistAction | 
 	 *         exp=BooleanListExpression | 
 	 *         exp=BooleanValue | 
-	 *         exp=BinaryLogicalExpression
+	 *         exp=BinaryLogicalExpression | 
+	 *         exp=VariableReference
 	 *     )
 	 */
 	protected void sequence_BooleanExpression(EObject context, BooleanExpression semanticObject) {
