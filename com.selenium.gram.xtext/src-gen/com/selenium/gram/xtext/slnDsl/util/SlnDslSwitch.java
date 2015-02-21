@@ -196,6 +196,13 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.BINARY_LOGICAL_EXPRESSION:
+      {
+        BinaryLogicalExpression binaryLogicalExpression = (BinaryLogicalExpression)theEObject;
+        T result = caseBinaryLogicalExpression(binaryLogicalExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.NEGATION_EXPRESSION:
       {
         NegationExpression negationExpression = (NegationExpression)theEObject;
@@ -575,6 +582,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBinaryBooleanExpression(BinaryBooleanExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binary Logical Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binary Logical Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinaryLogicalExpression(BinaryLogicalExpression object)
   {
     return null;
   }

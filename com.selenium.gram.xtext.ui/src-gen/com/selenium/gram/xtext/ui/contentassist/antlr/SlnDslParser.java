@@ -43,6 +43,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getBooleanListOperatorAccess().getAlternatives(), "rule__BooleanListOperator__Alternatives");
 					put(grammarAccess.getBooleanExpressionAccess().getAlternatives(), "rule__BooleanExpression__Alternatives");
+					put(grammarAccess.getLogicalOperatorAccess().getAlternatives(), "rule__LogicalOperator__Alternatives");
 					put(grammarAccess.getBooleanOperatorAccess().getAlternatives(), "rule__BooleanOperator__Alternatives");
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
@@ -61,6 +62,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVerifyActionAccess().getGroup(), "rule__VerifyAction__Group__0");
 					put(grammarAccess.getExistActionAccess().getGroup(), "rule__ExistAction__Group__0");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getGroup(), "rule__BinaryBooleanExpression__Group__0");
+					put(grammarAccess.getBinaryLogicalExpressionAccess().getGroup(), "rule__BinaryLogicalExpression__Group__0");
 					put(grammarAccess.getNegationExpressionAccess().getGroup(), "rule__NegationExpression__Group__0");
 					put(grammarAccess.getDefinitionAccess().getGroup(), "rule__Definition__Group__0");
 					put(grammarAccess.getAssignationAccess().getGroup(), "rule__Assignation__Group__0");
@@ -102,6 +104,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_3(), "rule__BooleanExpression__ExpAssignment_3");
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_4(), "rule__BooleanExpression__ExpAssignment_4");
 					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_5(), "rule__BooleanExpression__ExpAssignment_5");
+					put(grammarAccess.getBooleanExpressionAccess().getExpAssignment_6(), "rule__BooleanExpression__ExpAssignment_6");
 					put(grammarAccess.getBooleanValueAccess().getValueAssignment(), "rule__BooleanValue__ValueAssignment");
 					put(grammarAccess.getVerifyActionAccess().getNameElementAssignment_2(), "rule__VerifyAction__NameElementAssignment_2");
 					put(grammarAccess.getVerifyActionAccess().getValueAssignment_4(), "rule__VerifyAction__ValueAssignment_4");
@@ -109,7 +112,10 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getOpAssignment_0(), "rule__BinaryBooleanExpression__OpAssignment_0");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getLeftAssignment_1(), "rule__BinaryBooleanExpression__LeftAssignment_1");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getRightAssignment_2(), "rule__BinaryBooleanExpression__RightAssignment_2");
-					put(grammarAccess.getNegationExpressionAccess().getExpAssignment_1(), "rule__NegationExpression__ExpAssignment_1");
+					put(grammarAccess.getBinaryLogicalExpressionAccess().getOpAssignment_0(), "rule__BinaryLogicalExpression__OpAssignment_0");
+					put(grammarAccess.getBinaryLogicalExpressionAccess().getRightAssignment_1(), "rule__BinaryLogicalExpression__RightAssignment_1");
+					put(grammarAccess.getBinaryLogicalExpressionAccess().getLeftAssignment_2(), "rule__BinaryLogicalExpression__LeftAssignment_2");
+					put(grammarAccess.getNegationExpressionAccess().getNegationAssignment_1(), "rule__NegationExpression__NegationAssignment_1");
 					put(grammarAccess.getDefinitionAccess().getVarIDAssignment_1(), "rule__Definition__VarIDAssignment_1");
 					put(grammarAccess.getDefinitionAccess().getExpAssignment_3(), "rule__Definition__ExpAssignment_3");
 					put(grammarAccess.getAssignationAccess().getVarAssignment_0(), "rule__Assignation__VarAssignment_0");

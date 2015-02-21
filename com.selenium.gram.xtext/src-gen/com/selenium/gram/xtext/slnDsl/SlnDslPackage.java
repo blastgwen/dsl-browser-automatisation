@@ -249,7 +249,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 18;
+  int INSTRUCTION = 19;
 
   /**
    * The number of structural features of the '<em>Instruction</em>' class.
@@ -642,6 +642,52 @@ public interface SlnDslPackage extends EPackage
   int BINARY_BOOLEAN_EXPRESSION_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.BinaryLogicalExpressionImpl <em>Binary Logical Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.BinaryLogicalExpressionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBinaryLogicalExpression()
+   * @generated
+   */
+  int BINARY_LOGICAL_EXPRESSION = 17;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_LOGICAL_EXPRESSION__OP = 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_LOGICAL_EXPRESSION__RIGHT = 1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_LOGICAL_EXPRESSION__LEFT = 2;
+
+  /**
+   * The number of structural features of the '<em>Binary Logical Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_LOGICAL_EXPRESSION_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.NegationExpressionImpl <em>Negation Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -649,16 +695,16 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNegationExpression()
    * @generated
    */
-  int NEGATION_EXPRESSION = 17;
+  int NEGATION_EXPRESSION = 18;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Negation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NEGATION_EXPRESSION__EXP = 0;
+  int NEGATION_EXPRESSION__NEGATION = 0;
 
   /**
    * The number of structural features of the '<em>Negation Expression</em>' class.
@@ -677,7 +723,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getDefinition()
    * @generated
    */
-  int DEFINITION = 19;
+  int DEFINITION = 20;
 
   /**
    * The feature id for the '<em><b>Var ID</b></em>' containment reference.
@@ -714,7 +760,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getAssignation()
    * @generated
    */
-  int ASSIGNATION = 20;
+  int ASSIGNATION = 21;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -751,7 +797,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getConditional()
    * @generated
    */
-  int CONDITIONAL = 21;
+  int CONDITIONAL = 22;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -797,7 +843,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getLoop()
    * @generated
    */
-  int LOOP = 22;
+  int LOOP = 23;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -825,7 +871,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 23;
+  int WHILE = 24;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -862,7 +908,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getForeach()
    * @generated
    */
-  int FOREACH = 24;
+  int FOREACH = 25;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -908,7 +954,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionInstruction()
    * @generated
    */
-  int ACTION_INSTRUCTION = 25;
+  int ACTION_INSTRUCTION = 26;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -936,7 +982,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionClick()
    * @generated
    */
-  int ACTION_CLICK = 26;
+  int ACTION_CLICK = 27;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -973,7 +1019,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionOpen()
    * @generated
    */
-  int ACTION_OPEN = 27;
+  int ACTION_OPEN = 28;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -1001,7 +1047,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionCheck()
    * @generated
    */
-  int ACTION_CHECK = 28;
+  int ACTION_CHECK = 29;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1038,7 +1084,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionType()
    * @generated
    */
-  int ACTION_TYPE = 29;
+  int ACTION_TYPE = 30;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' attribute.
@@ -1075,7 +1121,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionSelectExpression()
    * @generated
    */
-  int ACTION_SELECT_EXPRESSION = 30;
+  int ACTION_SELECT_EXPRESSION = 31;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -1564,6 +1610,49 @@ public interface SlnDslPackage extends EPackage
   EReference getBinaryBooleanExpression_Right();
 
   /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression <em>Binary Logical Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Binary Logical Expression</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression
+   * @generated
+   */
+  EClass getBinaryLogicalExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getOp()
+   * @see #getBinaryLogicalExpression()
+   * @generated
+   */
+  EAttribute getBinaryLogicalExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getRight()
+   * @see #getBinaryLogicalExpression()
+   * @generated
+   */
+  EReference getBinaryLogicalExpression_Right();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression#getLeft()
+   * @see #getBinaryLogicalExpression()
+   * @generated
+   */
+  EReference getBinaryLogicalExpression_Left();
+
+  /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.NegationExpression <em>Negation Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1574,15 +1663,15 @@ public interface SlnDslPackage extends EPackage
   EClass getNegationExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.NegationExpression#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.NegationExpression#getNegation <em>Negation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.NegationExpression#getExp()
+   * @return the meta object for the containment reference '<em>Negation</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NegationExpression#getNegation()
    * @see #getNegationExpression()
    * @generated
    */
-  EReference getNegationExpression_Exp();
+  EReference getNegationExpression_Negation();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Instruction <em>Instruction</em>}'.
@@ -2344,6 +2433,40 @@ public interface SlnDslPackage extends EPackage
     EReference BINARY_BOOLEAN_EXPRESSION__RIGHT = eINSTANCE.getBinaryBooleanExpression_Right();
 
     /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.BinaryLogicalExpressionImpl <em>Binary Logical Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.BinaryLogicalExpressionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBinaryLogicalExpression()
+     * @generated
+     */
+    EClass BINARY_LOGICAL_EXPRESSION = eINSTANCE.getBinaryLogicalExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINARY_LOGICAL_EXPRESSION__OP = eINSTANCE.getBinaryLogicalExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_LOGICAL_EXPRESSION__RIGHT = eINSTANCE.getBinaryLogicalExpression_Right();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_LOGICAL_EXPRESSION__LEFT = eINSTANCE.getBinaryLogicalExpression_Left();
+
+    /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.NegationExpressionImpl <em>Negation Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2354,12 +2477,12 @@ public interface SlnDslPackage extends EPackage
     EClass NEGATION_EXPRESSION = eINSTANCE.getNegationExpression();
 
     /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Negation</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NEGATION_EXPRESSION__EXP = eINSTANCE.getNegationExpression_Exp();
+    EReference NEGATION_EXPRESSION__NEGATION = eINSTANCE.getNegationExpression_Negation();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.InstructionImpl <em>Instruction</em>}' class.

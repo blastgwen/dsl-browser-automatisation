@@ -91,6 +91,7 @@ BooleanExpression :
 	| exp=ExistAction
 	| exp=BooleanListExpression
 	| exp=BooleanValue
+	| exp=BinaryLogicalExpression
 ;
 
 BooleanValue:
@@ -113,8 +114,16 @@ BinaryBooleanExpression:
 	op=BooleanOperator left=Expression right=Expression
 ;
 
+BinaryLogicalExpression:
+ 	op=LogicalOperator right=BooleanExpression left=BooleanExpression 
+;
+
 NegationExpression :
-	'!' exp = Expression
+	'!' negation = BooleanExpression
+;
+
+LogicalOperator:
+	'&&' | '||'
 ;
 
 BooleanOperator :

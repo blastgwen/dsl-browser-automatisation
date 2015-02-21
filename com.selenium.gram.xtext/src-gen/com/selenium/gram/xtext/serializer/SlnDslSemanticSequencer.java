@@ -11,6 +11,7 @@ import com.selenium.gram.xtext.slnDsl.ActionSelectExpression;
 import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
+import com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanValue;
@@ -100,6 +101,12 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION:
 				if(context == grammarAccess.getBinaryBooleanExpressionRule()) {
 					sequence_BinaryBooleanExpression(context, (BinaryBooleanExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.BINARY_LOGICAL_EXPRESSION:
+				if(context == grammarAccess.getBinaryLogicalExpressionRule()) {
+					sequence_BinaryLogicalExpression(context, (BinaryLogicalExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -378,13 +385,36 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (op=LogicalOperator right=BooleanExpression left=BooleanExpression)
+	 */
+	protected void sequence_BinaryLogicalExpression(EObject context, BinaryLogicalExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__OP));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__RIGHT));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.BINARY_LOGICAL_EXPRESSION__LEFT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getOpLogicalOperatorParserRuleCall_0_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getRightBooleanExpressionParserRuleCall_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getBinaryLogicalExpressionAccess().getLeftBooleanExpressionParserRuleCall_2_0(), semanticObject.getLeft());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         exp=BinaryBooleanExpression | 
 	 *         exp=NegationExpression | 
 	 *         exp=VerifyAction | 
 	 *         exp=ExistAction | 
 	 *         exp=BooleanListExpression | 
-	 *         exp=BooleanValue
+	 *         exp=BooleanValue | 
+	 *         exp=BinaryLogicalExpression
 	 *     )
 	 */
 	protected void sequence_BooleanExpression(EObject context, BooleanExpression semanticObject) {
@@ -560,16 +590,16 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     exp=Expression
+	 *     negation=BooleanExpression
 	 */
 	protected void sequence_NegationExpression(EObject context, NegationExpression semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.NEGATION_EXPRESSION__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.NEGATION_EXPRESSION__EXP));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.NEGATION_EXPRESSION__NEGATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.NEGATION_EXPRESSION__NEGATION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNegationExpressionAccess().getExpExpressionParserRuleCall_1_0(), semanticObject.getExp());
+		feeder.accept(grammarAccess.getNegationExpressionAccess().getNegationBooleanExpressionParserRuleCall_1_0(), semanticObject.getNegation());
 		feeder.finish();
 	}
 	

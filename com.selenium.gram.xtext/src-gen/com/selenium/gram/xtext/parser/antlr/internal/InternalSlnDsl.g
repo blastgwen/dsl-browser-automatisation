@@ -1051,6 +1051,25 @@ ruleBooleanExpression returns [EObject current=null]
 	    }
 
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBooleanExpressionAccess().getExpBinaryLogicalExpressionParserRuleCall_6_0()); 
+	    }
+		lv_exp_6_0=ruleBinaryLogicalExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBooleanExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"exp",
+        		lv_exp_6_0, 
+        		"BinaryLogicalExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
 
@@ -1296,6 +1315,81 @@ ruleBinaryBooleanExpression returns [EObject current=null]
 
 
 
+// Entry rule entryRuleBinaryLogicalExpression
+entryRuleBinaryLogicalExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBinaryLogicalExpressionRule()); }
+	 iv_ruleBinaryLogicalExpression=ruleBinaryLogicalExpression 
+	 { $current=$iv_ruleBinaryLogicalExpression.current; } 
+	 EOF 
+;
+
+// Rule BinaryLogicalExpression
+ruleBinaryLogicalExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getOpLogicalOperatorParserRuleCall_0_0()); 
+	    }
+		lv_op_0_0=ruleLogicalOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBinaryLogicalExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"op",
+        		lv_op_0_0, 
+        		"LogicalOperator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getRightBooleanExpressionParserRuleCall_1_0()); 
+	    }
+		lv_right_1_0=ruleBooleanExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBinaryLogicalExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"right",
+        		lv_right_1_0, 
+        		"BooleanExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBinaryLogicalExpressionAccess().getLeftBooleanExpressionParserRuleCall_2_0()); 
+	    }
+		lv_left_2_0=ruleBooleanExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBinaryLogicalExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"left",
+        		lv_left_2_0, 
+        		"BooleanExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleNegationExpression
 entryRuleNegationExpression returns [EObject current=null] 
 	:
@@ -1317,23 +1411,57 @@ ruleNegationExpression returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNegationExpressionAccess().getExpExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getNegationExpressionAccess().getNegationBooleanExpressionParserRuleCall_1_0()); 
 	    }
-		lv_exp_1_0=ruleExpression		{
+		lv_negation_1_0=ruleBooleanExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNegationExpressionRule());
 	        }
        		set(
        			$current, 
-       			"exp",
-        		lv_exp_1_0, 
-        		"Expression");
+       			"negation",
+        		lv_negation_1_0, 
+        		"BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 ))
 ;
+
+
+
+
+
+// Entry rule entryRuleLogicalOperator
+entryRuleLogicalOperator returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLogicalOperatorRule()); } 
+	 iv_ruleLogicalOperator=ruleLogicalOperator 
+	 { $current=$iv_ruleLogicalOperator.current.getText(); }  
+	 EOF 
+;
+
+// Rule LogicalOperator
+ruleLogicalOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='&&' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getLogicalOperatorAccess().getAmpersandAmpersandKeyword_0()); 
+    }
+
+    |
+	kw='||' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getLogicalOperatorAccess().getVerticalLineVerticalLineKeyword_1()); 
+    }
+)
+    ;
 
 
 
