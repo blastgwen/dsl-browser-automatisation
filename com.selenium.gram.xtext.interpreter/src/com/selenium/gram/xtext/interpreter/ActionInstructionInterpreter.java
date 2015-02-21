@@ -26,7 +26,7 @@ import com.selenium.gram.xtext.slnDsl.VariableReference;
 
 public class ActionInstructionInterpreter {
 
-	public void execute(ActionInstruction action, Map<String, Expression> variables) {
+	public void execute(ActionInstruction action, Map<String, ExpressionValue> variables) {
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 
 		try {
@@ -247,9 +247,9 @@ public class ActionInstructionInterpreter {
 									
 									if (variables.containsKey(varRef.getVarID().getName())){
 										
-										Expression exp = variables.get(varRef.getVarID().getName());
+										// TODO -> DONE : Evaluate the expression
+										ExpressionValue exp = variables.get(varRef.getVarID().getName());
 										
-										// TODO : Evaluate the expression
 										elem.sendKeys(varRef.getVarID().getName());										
 									}
 									else 

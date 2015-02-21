@@ -12,6 +12,7 @@ import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BinaryLogicalExpression;
+import com.selenium.gram.xtext.slnDsl.Body;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanListExpression;
 import com.selenium.gram.xtext.slnDsl.BooleanValue;
@@ -29,6 +30,7 @@ import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
+import com.selenium.gram.xtext.slnDsl.VariableName;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 import com.selenium.gram.xtext.slnDsl.VerifyAction;
 import com.selenium.gram.xtext.slnDsl.While;
@@ -48,9 +50,14 @@ public class Interpreter {
 			subprocedures.put(sub.getHead().getName().getName(), sub);
 		}
 		
-		Map<String, Expression> variables = new HashMap<String, Expression>();
+		Map<String, ExpressionValue> variables = new HashMap<String, ExpressionValue>();
 		
-		for(Definition def : model.getDefs()){
+		executeBody(model.getBody(), variables);
+	}
+
+	private void executeBody(Body body, Map<String, ExpressionValue> variables)
+			throws InterpretationException {
+		for(Definition def : body.getDefs()){
 			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
 			
 			if(variables.containsKey(def.getVarID().getName())){				
@@ -58,25 +65,37 @@ public class Interpreter {
 			}
 			else {
 				System.out.println("exec def : "+def.getVarID() + ", exp : "+def.getExp());
-				variables.put(def.getVarID().getName(), def.getExp());
+				variables.put(def.getVarID().getName(), computeExpression(def.getExp(), variables));
 			}	
 		}
 		
-		for(Instruction ins : model.getMain()){
+		for(Instruction ins : body.getInstructions()){
 			this.executeInstruction(ins, variables);
 		}
 	}
 	
-	private void executeInstruction(Instruction instruction, Map<String, Expression> variables) throws InterpretationException{
+	private void executeInstruction(Instruction instruction, Map<String, ExpressionValue> variables) throws InterpretationException{
 		// Déclaration d'une variable
 		System.out.println("execute instruction : " +instruction.eClass().getName());
 
 		// Execute un appel de fonction
-		if(instruction instanceof FunctionReference){
+		if(instruction instanceof FunctionCall){
 			System.out.println("execute func call : " +instruction.eClass().getName());
-			FunctionReference func = (FunctionReference) instruction;
-			if(subprocedures.containsKey(func.getFunctionName().getName())){
-				this.executeFunction(func);
+			FunctionCall func = (FunctionCall) instruction;
+			if(subprocedures.containsKey(func.getRef().getFunctionName().getName())){
+				Subprocedure sub =subprocedures.get(func.getRef().getFunctionName().getName());
+				
+				Map<String, ExpressionValue> localVariables = new HashMap<String, ExpressionValue>();
+				
+				if(sub.getHead().getArgsID().size() != func.getArgs().size())
+					throw new InterpretationException("Nombre d'argument(s) incorrect");	
+				
+				for(int i =0; i < sub.getHead().getArgsID().size(); i++){			
+					localVariables.put(
+							sub.getHead().getArgsID().get(i).getName(), 
+							computeExpression(func.getArgs().get(i), variables));
+				}
+				this.executeBody(sub.getBody(), localVariables);
 			}
 			else{
 				throw new InterpretationException(FunctionCall.class.getName());
@@ -124,7 +143,7 @@ public class Interpreter {
 			
 			if(variables.containsKey(assign.getVar().getVarID().getName())){
 				System.out.println("exec assignation : "+assign.getVar() + ", exp : "+assign.getExp());
-				variables.replace(assign.getVar().getVarID().getName(), assign.getExp());
+				variables.replace(assign.getVar().getVarID().getName(), computeExpression(assign.getExp(), variables));
 			}
 			else {
 				throw new InterpretationException(Assignation.class.getName());
@@ -133,17 +152,13 @@ public class Interpreter {
 	}
 	
 	
-	private void executeFunction(FunctionReference ref){
-		
-	}
-	
-	private ExpressionValue computeExpression(Expression exp, Map<String, Expression> variables) 
+	private ExpressionValue computeExpression(Expression exp, Map<String, ExpressionValue> variables) 
 			throws InterpretationException{
 		
 		if(exp instanceof VariableReference){
 			VariableReference ref = (VariableReference) exp;
 			if(variables.containsKey(ref.getVarID().getName())){
-				return computeExpression(variables.get(ref.getVarID().getName()), variables);
+				return variables.get(ref.getVarID().getName());
 			}
 			else {
 				throw new UnknownVariableException(ref.getVarID().getName());
@@ -151,16 +166,20 @@ public class Interpreter {
 		}
 		
 		if(exp instanceof NumLiteralExpression){
+			System.out.println("exec numLitExp");
 			NumLiteralExpression val = ((NumLiteralExpression)exp);
-			Double result = null;
+			Integer result = null;
 			try{
-				Double.parseDouble(val.getValue());
+				result = Integer.parseInt(val.getValue());
 			}
 			catch(NumberFormatException e){}
 			
 			ExpressionValueType type = ExpressionValueType.literal;
 			if(result != null){
-				type = ExpressionValueType.numeric;
+				return new ExpressionValue(result, type = ExpressionValueType.numeric);
+			}
+			else{
+				return new ExpressionValue(val.getValue(), ExpressionValueType.literal);
 			}
 		}
 		
@@ -179,7 +198,7 @@ public class Interpreter {
 	}
 	
 	
-	private Boolean getBooleanValue(BooleanExpression exp, Map<String, Expression> variables ) throws InterpretationException{
+	private Boolean getBooleanValue(BooleanExpression exp, Map<String, ExpressionValue> variables ) throws InterpretationException{
 		EObject val = exp.getExp();
 		System.out.println("get bool val");
 		
@@ -231,9 +250,9 @@ public class Interpreter {
 			VariableReference ref = (VariableReference)val;
 			if(variables.containsKey(ref.getVarID().getName())){
 				System.out.println("exec get bool variable : "+ref.getVarID());
-				Expression expVar = variables.get(ref.getVarID().getName());
+				ExpressionValue expVar = variables.get(ref.getVarID().getName());
 				
-				if(expVar instanceof BooleanExpression)
+				if(expVar.getType().equals(ExpressionValueType.bool))
 					return getBooleanValue((BooleanExpression) expVar, variables);
 				else 
 					throw new InterpretationException("Variable "+ref.getVarID().getName()+" is not a boolean");
@@ -259,7 +278,7 @@ public class Interpreter {
 		}
 	}
 	
-	private void executeWhile(While whileInstruction, Map<String, Expression> variables) throws InterpretationException{
+	private void executeWhile(While whileInstruction, Map<String, ExpressionValue> variables) throws InterpretationException{
 		while(this.getBooleanValue(whileInstruction.getCond(), variables)){
 			for(Instruction ins : whileInstruction.getIns()){
 				this.executeInstruction(ins, variables);
@@ -267,7 +286,7 @@ public class Interpreter {
 		}
 	}
 	
-	private void executeFor(Foreach forInstruction, Map<String, Expression> variables){
+	private void executeFor(Foreach forInstruction, Map<String, ExpressionValue> variables){
 	
 	}
 	
