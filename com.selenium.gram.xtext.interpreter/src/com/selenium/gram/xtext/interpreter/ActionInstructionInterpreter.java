@@ -1,8 +1,11 @@
 package com.selenium.gram.xtext.interpreter;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.ui.internal.commands.ElementReference;
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByTagName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +23,7 @@ public class ActionInstructionInterpreter {
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 
 		try {
-			if (action.getAction().eClass().getName().equals(ActionClick.class.getSimpleName())) {
+			if (action.getAction() instanceof ActionClick) {
 				ActionClick act = (ActionClick) action.getAction();
 				String value = act.getElement().replaceAll("'", "");
 				value = value.replaceAll("\"", "");
@@ -28,31 +31,144 @@ public class ActionInstructionInterpreter {
 				
 				System.out.println("ActionClick - " + act.getType() + " - "	+ act.getElement());
 
+				// *****************************
+				// ---------- BUTTON -----------
+				// *****************************
 				if (act.getType().equals("button")) {
-
+					List<WebElement> elements = new ArrayList<WebElement>();
+					
+					elements.addAll(driver.findElements(By.cssSelector("input[type='submit']")));					
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						
+						if (i != elements.size()){
+							try {
+								WebElement elem = elements.get(i);
+								String str = elements.get(i).getText().trim().toLowerCase();
+								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+								if (str.contains(value) || val.contains(value)){	
+									WebDriverWait wait = new WebDriverWait(driver, 5);
+								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+								    elements.get(i).click();
+								    click = true;								
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						} else {
+							elements = driver.findElements(By.tagName("button"));
+					
+							i = 0;								
+							if (i != elements.size()){
+								try {
+									WebElement elem = elements.get(i);
+									String str = elements.get(i).getText().trim().toLowerCase();
+									if (str.contains(value)){	
+										WebDriverWait wait = new WebDriverWait(driver, 5);
+									    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+									    elements.get(i).click();
+									    click = true;								
+									} 
+								} catch (Exception e){
+									click = false;
+								} finally {
+									i ++;
+								}
+								
+							} else {
+								elements = driver.findElements(By.cssSelector("input[type='button']"));
+								
+								i = 0;								
+								if (i != elements.size()){
+									try {
+										WebElement elem = elements.get(i);
+										String str = elements.get(i).getText().trim().toLowerCase();
+										String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+										if (str.contains(value) || val.contains(value)){	
+											WebDriverWait wait = new WebDriverWait(driver, 5);
+										    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+										    elements.get(i).click();
+										    click = true;								
+										} 
+									} catch (Exception e){
+										click = false;
+									} finally {
+										i ++;
+									}
+								}
+								else {
+									throw new ActionInstructionException("ActionClick - No button " + value + " in this page");
+								}
+							}
+						}
+					}
 				}
 
+				// *****************************
+				// ----------- LINK ------------
+				// *****************************
 				else if (act.getType().equals("link")) {
 					
 					List<WebElement> elements = driver.findElements(By.cssSelector(("a")));
-					for (WebElement elem : elements){
-						String str = elem.getText();
-						if (str.toLowerCase().trim().contains(value)){
-							WebDriverWait wait = new WebDriverWait(driver, 5);
-						    wait.until(ExpectedConditions.elementToBeClickable(elem));
-						    elem.click();
-						    break;
-						}
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						if (i == elements.size()){
+							throw new ActionInstructionException("ActionClick - No Link " + value + " in this page");
+						} else {
+							try {
+								String str = elements.get(i).getText();
+								if (str.toLowerCase().trim().contains(value)){	
+									WebDriverWait wait = new WebDriverWait(driver, 5);
+								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+								    elements.get(i).click();
+								    click = true;								
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						}						
 					}
-					
-					//WebElement element = driver.findElement(By.xpath("//a[contains(lower-case(text()), " + act.getElement().toLowerCase() + ")]"));
-					//WebDriverWait wait = new WebDriverWait(driver, 5);
-				    //wait.until(ExpectedConditions.elementToBeClickable(element));
-				    //element.click();
 				}
 
+				// *****************************
+				// ----------- IMAGE -----------
+				// *****************************
 				else if (act.getType().equals("image")) {
-
+					List<WebElement> elements = driver.findElements(By.tagName("img"));
+					
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						if (i == elements.size()){
+							throw new ActionInstructionException("ActionClick - No image " + value + " in this page");
+						} else {
+							try {
+								// Get attribute to test
+								String src = elements.get(i).getAttribute("src").trim().toLowerCase();
+								String alt = elements.get(i).getAttribute("alt").trim().toLowerCase();
+								String str = elements.get(i).getText().trim().toLowerCase();
+								
+								
+								if (src.contains(value) || alt.contains(value) || str.contains(value)){	
+									WebDriverWait wait = new WebDriverWait(driver, 5);
+								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+								    elements.get(i).click();
+								    click = true;								
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						}						
+					}
+					
 				}
 
 				else {
@@ -63,8 +179,7 @@ public class ActionInstructionInterpreter {
 				System.out.println("click finsihed");
 			}
 
-			else if (action.getAction().eClass().getName()
-					.equals(ActionOpen.class.getSimpleName())) {
+			else if (action.getAction() instanceof ActionOpen) {
 				System.out.println("Open - ActionInstruction");
 
 				ActionOpen act = (ActionOpen) action.getAction();
@@ -73,13 +188,11 @@ public class ActionInstructionInterpreter {
 				System.out.println("J'ai fini l'action open");
 			}
 
-			else if (action.getAction().eClass().getName()
-					.equals(ActionCheck.class.getSimpleName())) {
+			else if (action.getAction() instanceof ActionCheck) {
 				System.out.println("Check - ActionInstruction");
 			}
 
-			else if (action.getAction().eClass().getName()
-					.equals(ActionType.class.getSimpleName())) {
+			else if (action.getAction() instanceof ActionType) {
 				System.out.println("Type - ActionInstruction");
 			}
 
