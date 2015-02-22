@@ -179,7 +179,7 @@ public class Interpreter {
 				return new ExpressionValue(result, type = ExpressionValueType.numeric);
 			}
 			else{
-				return new ExpressionValue(val.getValue(), ExpressionValueType.literal);
+				return new ExpressionValue(val.getValue().substring(1, val.getValue().length()-1), ExpressionValueType.literal);
 			}
 		}
 		
