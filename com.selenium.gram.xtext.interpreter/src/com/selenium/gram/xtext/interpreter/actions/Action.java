@@ -13,8 +13,8 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.jface.dialogs.MessageDialog;
 
-import com.selenium.gram.xtext.interpreter.InterpretationException;
 import com.selenium.gram.xtext.interpreter.Interpreter;
+import com.selenium.gram.xtext.interpreter.exceptions.InterpretationException;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.impl.ModelImpl;
 

@@ -1,4 +1,4 @@
-package com.selenium.gram.xtext.interpreter;
+package com.selenium.gram.xtext.interpreter.exceptions;
 
 public class InterpretationException extends Exception {
 

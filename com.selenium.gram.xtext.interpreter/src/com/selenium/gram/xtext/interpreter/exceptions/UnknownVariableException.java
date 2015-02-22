@@ -1,9 +1,9 @@
-package com.selenium.gram.xtext.interpreter;
+package com.selenium.gram.xtext.interpreter.exceptions;
 
 public class UnknownVariableException extends InterpretationException {
 
 	public UnknownVariableException(String message) {
-		super(message);
+		super("Variable inconnue : "+message);
 		// TODO Auto-generated constructor stub
 	}
 
