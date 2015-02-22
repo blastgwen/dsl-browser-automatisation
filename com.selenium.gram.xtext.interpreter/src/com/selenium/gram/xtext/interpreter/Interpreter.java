@@ -189,7 +189,7 @@ public class Interpreter {
 		
 		if(exp instanceof BooleanExpression){
 			System.out.println("exec expression bool");
-			return new ExpressionValue(getBooleanValue((BooleanExpression) ((BooleanExpression) exp).getExp(), variables), 
+			return new ExpressionValue(getBooleanValue((BooleanExpression) exp, variables), 
 					ExpressionValueType.bool);
 		}
 		
@@ -253,7 +253,7 @@ public class Interpreter {
 				ExpressionValue expVar = variables.get(ref.getVarID().getName());
 				
 				if(expVar.getType().equals(ExpressionValueType.bool))
-					return getBooleanValue((BooleanExpression) expVar, variables);
+					return (Boolean) expVar.getValue();
 				else 
 					throw new InterpretationException("Variable "+ref.getVarID().getName()+" is not a boolean");
 			}			
