@@ -4802,9 +4802,9 @@ rule__ActionCheck__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getActionCheckAccess().getTypeAssignment_2()); }
-(rule__ActionCheck__TypeAssignment_2)
-{ after(grammarAccess.getActionCheckAccess().getTypeAssignment_2()); }
+{ before(grammarAccess.getActionCheckAccess().getElementAssignment_2()); }
+(rule__ActionCheck__ElementAssignment_2)
+{ after(grammarAccess.getActionCheckAccess().getElementAssignment_2()); }
 )
 
 ;
@@ -4862,9 +4862,9 @@ rule__ActionCheck__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getActionCheckAccess().getElementAssignment_4()); }
-(rule__ActionCheck__ElementAssignment_4)
-{ after(grammarAccess.getActionCheckAccess().getElementAssignment_4()); }
+{ before(grammarAccess.getActionCheckAccess().getValueAssignment_4()); }
+(rule__ActionCheck__ValueAssignment_4)
+{ after(grammarAccess.getActionCheckAccess().getValueAssignment_4()); }
 )
 
 ;
@@ -6161,14 +6161,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ActionCheck__TypeAssignment_2
+rule__ActionCheck__ElementAssignment_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); }
-	ruleClickableElement{ after(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); }
+{ before(grammarAccess.getActionCheckAccess().getElementExpressionParserRuleCall_2_0()); }
+	ruleExpression{ after(grammarAccess.getActionCheckAccess().getElementExpressionParserRuleCall_2_0()); }
 )
 
 ;
@@ -6176,14 +6176,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ActionCheck__ElementAssignment_4
+rule__ActionCheck__ValueAssignment_4
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0()); }
-	ruleNumberLiteral{ after(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0()); }
+{ before(grammarAccess.getActionCheckAccess().getValueBooleanExpressionParserRuleCall_4_0()); }
+	ruleBooleanExpression{ after(grammarAccess.getActionCheckAccess().getValueBooleanExpressionParserRuleCall_4_0()); }
 )
 
 ;

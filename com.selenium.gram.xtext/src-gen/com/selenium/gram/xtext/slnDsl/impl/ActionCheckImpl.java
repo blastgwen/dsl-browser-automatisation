@@ -3,11 +3,15 @@
 package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.ActionCheck;
+import com.selenium.gram.xtext.slnDsl.BooleanExpression;
+import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -19,8 +23,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,44 +33,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ActionCheckImpl extends MinimalEObjectImpl.Container implements ActionCheck
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getElement() <em>Element</em>}' attribute.
+   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getElement()
    * @generated
    * @ordered
    */
-  protected static final String ELEMENT_EDEFAULT = null;
+  protected Expression element;
 
   /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElement()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected String element = ELEMENT_EDEFAULT;
+  protected BooleanExpression value;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,30 +78,7 @@ public class ActionCheckImpl extends MinimalEObjectImpl.Container implements Act
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(String newType)
-  {
-    String oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CHECK__TYPE, oldType, type));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getElement()
+  public Expression getElement()
   {
     return element;
   }
@@ -127,12 +88,103 @@ public class ActionCheckImpl extends MinimalEObjectImpl.Container implements Act
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElement(String newElement)
+  public NotificationChain basicSetElement(Expression newElement, NotificationChain msgs)
   {
-    String oldElement = element;
+    Expression oldElement = element;
     element = newElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CHECK__ELEMENT, oldElement, element));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CHECK__ELEMENT, oldElement, newElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setElement(Expression newElement)
+  {
+    if (newElement != element)
+    {
+      NotificationChain msgs = null;
+      if (element != null)
+        msgs = ((InternalEObject)element).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_CHECK__ELEMENT, null, msgs);
+      if (newElement != null)
+        msgs = ((InternalEObject)newElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_CHECK__ELEMENT, null, msgs);
+      msgs = basicSetElement(newElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CHECK__ELEMENT, newElement, newElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanExpression getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValue(BooleanExpression newValue, NotificationChain msgs)
+  {
+    BooleanExpression oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CHECK__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(BooleanExpression newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_CHECK__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_CHECK__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CHECK__VALUE, newValue, newValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SlnDslPackage.ACTION_CHECK__ELEMENT:
+        return basicSetElement(null, msgs);
+      case SlnDslPackage.ACTION_CHECK__VALUE:
+        return basicSetValue(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -145,10 +197,10 @@ public class ActionCheckImpl extends MinimalEObjectImpl.Container implements Act
   {
     switch (featureID)
     {
-      case SlnDslPackage.ACTION_CHECK__TYPE:
-        return getType();
       case SlnDslPackage.ACTION_CHECK__ELEMENT:
         return getElement();
+      case SlnDslPackage.ACTION_CHECK__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +215,11 @@ public class ActionCheckImpl extends MinimalEObjectImpl.Container implements Act
   {
     switch (featureID)
     {
-      case SlnDslPackage.ACTION_CHECK__TYPE:
-        setType((String)newValue);
-        return;
       case SlnDslPackage.ACTION_CHECK__ELEMENT:
-        setElement((String)newValue);
+        setElement((Expression)newValue);
+        return;
+      case SlnDslPackage.ACTION_CHECK__VALUE:
+        setValue((BooleanExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +235,11 @@ public class ActionCheckImpl extends MinimalEObjectImpl.Container implements Act
   {
     switch (featureID)
     {
-      case SlnDslPackage.ACTION_CHECK__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
       case SlnDslPackage.ACTION_CHECK__ELEMENT:
-        setElement(ELEMENT_EDEFAULT);
+        setElement((Expression)null);
+        return;
+      case SlnDslPackage.ACTION_CHECK__VALUE:
+        setValue((BooleanExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -203,31 +255,12 @@ public class ActionCheckImpl extends MinimalEObjectImpl.Container implements Act
   {
     switch (featureID)
     {
-      case SlnDslPackage.ACTION_CHECK__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case SlnDslPackage.ACTION_CHECK__ELEMENT:
-        return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
+        return element != null;
+      case SlnDslPackage.ACTION_CHECK__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(", element: ");
-    result.append(element);
-    result.append(')');
-    return result.toString();
   }
 
 } //ActionCheckImpl

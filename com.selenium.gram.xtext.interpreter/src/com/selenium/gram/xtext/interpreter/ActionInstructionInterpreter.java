@@ -4,11 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.sourceforge.htmlunit.corejs.javascript.ast.NumberLiteral;
-
-import org.eclipse.ui.internal.commands.ElementReference;
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByTagName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,15 +14,15 @@ import com.selenium.gram.xtext.slnDsl.ActionCheck;
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
+import com.selenium.gram.xtext.slnDsl.ActionSelectExpression;
 import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
-import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 
 public class ActionInstructionInterpreter {
 
-	public void execute(ActionInstruction action, Map<String, ExpressionValue> variables) {
+	public void execute(ActionInstruction action, Map<String, ExpressionValue> variables, Interpreter interpreter) throws Exception {
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 
 		try {
@@ -55,12 +51,12 @@ public class ActionInstructionInterpreter {
 						if (i != elements.size()){
 							try {
 								WebElement elem = elements.get(i);
-								String str = elements.get(i).getText().trim().toLowerCase();
-								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+								String str = elem.getText().trim().toLowerCase();
+								String val = elem.getAttribute("value").trim().toLowerCase();
 								if (str.contains(value) || val.contains(value)){	
 									WebDriverWait wait = new WebDriverWait(driver, 5);
-								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
-								    elements.get(i).click();
+								    wait.until(ExpectedConditions.elementToBeClickable(elem));
+								    elem.click();
 								    click = true;								
 								} 
 							} catch (Exception e){
@@ -75,11 +71,11 @@ public class ActionInstructionInterpreter {
 							if (i != elements.size()){
 								try {
 									WebElement elem = elements.get(i);
-									String str = elements.get(i).getText().trim().toLowerCase();
+									String str = elem.getText().trim().toLowerCase();
 									if (str.contains(value)){	
 										WebDriverWait wait = new WebDriverWait(driver, 5);
-									    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
-									    elements.get(i).click();
+									    wait.until(ExpectedConditions.elementToBeClickable(elem));
+									    elem.click();
 									    click = true;								
 									} 
 								} catch (Exception e){
@@ -95,12 +91,12 @@ public class ActionInstructionInterpreter {
 								if (i != elements.size()){
 									try {
 										WebElement elem = elements.get(i);
-										String str = elements.get(i).getText().trim().toLowerCase();
-										String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+										String str = elem.getText().trim().toLowerCase();
+										String val = elem.getAttribute("value").trim().toLowerCase();
 										if (str.contains(value) || val.contains(value)){	
 											WebDriverWait wait = new WebDriverWait(driver, 5);
-										    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
-										    elements.get(i).click();
+										    wait.until(ExpectedConditions.elementToBeClickable(elem));
+										    elem.click();
 										    click = true;								
 										} 
 									} catch (Exception e){
@@ -177,8 +173,7 @@ public class ActionInstructionInterpreter {
 								i ++;
 							}
 						}						
-					}
-					
+					}					
 				}
 
 				else {
@@ -206,6 +201,105 @@ public class ActionInstructionInterpreter {
 			 */
 			else if (action.getAction() instanceof ActionCheck) {
 				System.out.println("Check - ActionInstruction");
+				
+				ActionCheck act = (ActionCheck) action.getAction();
+				
+				boolean value = interpreter.getBooleanValue(act.getValue(), variables);
+				
+				if (act.getElement() instanceof VariableReference){
+					
+					// TODO : verify this line to get the value of the variables
+					ExpressionValue exp = variables.get(((VariableReference)act.getElement()).getVarID().getName());
+					
+					List<WebElement> elements = driver.findElements(By.cssSelector("input[type='checkbox']"));
+					
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						if (i == elements.size()){
+							throw new ActionInstructionException("ActionCheck - No checkbox " + value + " in this page");
+						} else {
+							try {
+								// Get attribute to test
+								String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+								String str = elements.get(i).getText().trim().toLowerCase();
+								
+								if (name.contains(String.valueOf(exp.getValue())) || 
+										val.contains(String.valueOf(exp.getValue())) || 
+										str.contains(String.valueOf(exp.getValue()))){
+									
+									WebDriverWait wait = new WebDriverWait(driver, 5);
+								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+								    
+								    // si selectionné et value false
+								    // si deselectionne et value true
+								    if ( (elements.get(i).isSelected() && !value) || !elements.get(i).isSelected() && value)
+								    	elements.get(i).click();
+								    click = true;
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						}						
+					}
+				}
+				
+				
+				else if (act.getElement() instanceof NumLiteralExpression){
+
+					NumLiteralExpression exp = (NumLiteralExpression)act.getElement();
+					
+					List<WebElement> elements = driver.findElements(By.cssSelector("input[type='checkbox']"));
+					elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
+					
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						if (i == elements.size()){
+							throw new ActionInstructionException("ActionCheck - No checkbox " + exp.getValue() + " in this page");
+						} else {
+							try {
+								// Get attribute to test
+								String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+								String str = elements.get(i).getText().trim().toLowerCase();
+								
+								String valueToTest = exp.getValue().replaceAll("'", "");
+								valueToTest = valueToTest.replaceAll("\"", "");
+								valueToTest = valueToTest.trim().toLowerCase();
+								
+								if (name.contains(valueToTest) || val.contains(valueToTest) || str.contains(valueToTest)){
+									
+									WebDriverWait wait = new WebDriverWait(driver, 5);
+								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+								    
+								    // si selectionné et value false
+								    // si deselectionne et value true
+								    if ( (elements.get(i).isSelected() && !value) || !elements.get(i).isSelected() && value)
+								    	elements.get(i).click();
+								    click = true;
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						}						
+					}
+				}
+
+				else if (act.getElement() instanceof ActionSelectExpression){
+					
+					// TODO: excecute the actionSelectExpression then for each elements click or not click
+				}
+					
+				else {
+					throw new ActionInstructionException("Impossible to check this object : " + act.getElement());
+				}
+				
 			}
 
 			/*
@@ -250,16 +344,15 @@ public class ActionInstructionInterpreter {
 										// TODO -> DONE : Evaluate the expression
 										ExpressionValue exp = variables.get(varRef.getVarID().getName());
 										
-										elem.sendKeys(varRef.getVarID().getName());										
+										elem.sendKeys(exp.getValue().toString());										
 									}
 									else 
 										throw new ActionInstructionException("Undefined variable " + varRef.getVarID().getName());
 								} 
 								else if (act.getValue() instanceof BooleanExpression){
-									BooleanExpression bool = (BooleanExpression)act.getValue();
-									
-									// TODO evaluate Expression
-									elem.sendKeys("true");
+									BooleanExpression boolexp = (BooleanExpression)act.getValue();
+									Boolean bool = interpreter.getBooleanValue(boolexp, variables);
+									elem.sendKeys(bool.toString());
 									
 								} else {
 									throw new ActionInstructionException("Impossible to type this var in a textbox");

@@ -189,7 +189,7 @@ ActionOpen:
 ;
 
 ActionCheck:
-	'check' '('type=ClickableElement ',' element=NumberLiteral')'
+	'check' '('element=Expression ',' value=BooleanExpression')'
 ;
 
 ActionType:

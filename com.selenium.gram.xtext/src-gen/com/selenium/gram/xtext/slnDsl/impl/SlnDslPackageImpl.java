@@ -1122,9 +1122,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionCheck_Type()
+  public EReference getActionCheck_Element()
   {
-    return (EAttribute)actionCheckEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionCheckEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1132,9 +1132,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionCheck_Element()
+  public EReference getActionCheck_Value()
   {
-    return (EAttribute)actionCheckEClass.getEStructuralFeatures().get(1);
+    return (EReference)actionCheckEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1324,8 +1324,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEAttribute(actionOpenEClass, ACTION_OPEN__URL);
 
     actionCheckEClass = createEClass(ACTION_CHECK);
-    createEAttribute(actionCheckEClass, ACTION_CHECK__TYPE);
-    createEAttribute(actionCheckEClass, ACTION_CHECK__ELEMENT);
+    createEReference(actionCheckEClass, ACTION_CHECK__ELEMENT);
+    createEReference(actionCheckEClass, ACTION_CHECK__VALUE);
 
     actionTypeEClass = createEClass(ACTION_TYPE);
     createEAttribute(actionTypeEClass, ACTION_TYPE__NAME_ELEMENT);
@@ -1485,8 +1485,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getActionOpen_Url(), ecorePackage.getEString(), "url", null, 0, 1, ActionOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionCheckEClass, ActionCheck.class, "ActionCheck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionCheck_Type(), ecorePackage.getEString(), "type", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActionCheck_Element(), ecorePackage.getEString(), "element", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionCheck_Element(), this.getExpression(), null, "element", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionCheck_Value(), this.getBooleanExpression(), null, "value", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionTypeEClass, ActionType.class, "ActionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActionType_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

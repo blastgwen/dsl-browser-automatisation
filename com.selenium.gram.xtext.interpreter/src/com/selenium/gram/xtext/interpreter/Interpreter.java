@@ -41,7 +41,7 @@ public class Interpreter {
 	private Map<String, Subprocedure> subprocedures;
 	
 	
-	public void execute(Model model) throws InterpretationException {
+	public void execute(Model model) throws Exception {
 				
 		System.out.println("---------- DEBUT INTERPRETER -------- ");
 		
@@ -56,7 +56,7 @@ public class Interpreter {
 	}
 
 	private void executeBody(Body body, Map<String, ExpressionValue> variables)
-			throws InterpretationException {
+			throws Exception {
 		for(Definition def : body.getDefs()){
 			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
 			
@@ -74,7 +74,7 @@ public class Interpreter {
 		}
 	}
 	
-	private void executeInstruction(Instruction instruction, Map<String, ExpressionValue> variables) throws InterpretationException{
+	private void executeInstruction(Instruction instruction, Map<String, ExpressionValue> variables) throws Exception{
 		// Déclaration d'une variable
 		System.out.println("execute instruction : " +instruction.eClass().getName());
 
@@ -134,7 +134,7 @@ public class Interpreter {
 		// Execute une action Selenium
 		if(instruction instanceof ActionInstruction){
 			System.out.println("execute ActionInstruction : " + instruction.getClass().getName());
-			new ActionInstructionInterpreter().execute((ActionInstruction) instruction, variables);
+			new ActionInstructionInterpreter().execute((ActionInstruction) instruction, variables, this);
 		}		
 		
 		// Execute une assignatio de variable
@@ -198,7 +198,7 @@ public class Interpreter {
 	}
 	
 	
-	private Boolean getBooleanValue(BooleanExpression exp, Map<String, ExpressionValue> variables ) throws InterpretationException{
+	public Boolean getBooleanValue(BooleanExpression exp, Map<String, ExpressionValue> variables ) throws InterpretationException{
 		EObject val = exp.getExp();
 		System.out.println("get bool val");
 		
@@ -278,7 +278,7 @@ public class Interpreter {
 		}
 	}
 	
-	private void executeWhile(While whileInstruction, Map<String, ExpressionValue> variables) throws InterpretationException{
+	private void executeWhile(While whileInstruction, Map<String, ExpressionValue> variables) throws Exception{
 		while(this.getBooleanValue(whileInstruction.getCond(), variables)){
 			for(Instruction ins : whileInstruction.getIns()){
 				this.executeInstruction(ins, variables);

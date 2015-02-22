@@ -2296,17 +2296,17 @@ ruleActionCheck returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getActionCheckAccess().getElementExpressionParserRuleCall_2_0()); 
 	    }
-		lv_type_2_0=ruleClickableElement		{
+		lv_element_2_0=ruleExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getActionCheckRule());
 	        }
        		set(
        			$current, 
-       			"type",
-        		lv_type_2_0, 
-        		"ClickableElement");
+       			"element",
+        		lv_element_2_0, 
+        		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2318,17 +2318,17 @@ ruleActionCheck returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getActionCheckAccess().getValueBooleanExpressionParserRuleCall_4_0()); 
 	    }
-		lv_element_4_0=ruleNumberLiteral		{
+		lv_value_4_0=ruleBooleanExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getActionCheckRule());
 	        }
        		set(
        			$current, 
-       			"element",
-        		lv_element_4_0, 
-        		"NumberLiteral");
+       			"value",
+        		lv_value_4_0, 
+        		"BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 

@@ -1245,18 +1245,18 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCheckKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeClickableElementParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cElementExpressionParserRuleCall_2_0 = (RuleCall)cElementAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementNumberLiteralParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValueBooleanExpressionParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ActionCheck:
-		//	"check" "(" type=ClickableElement "," element=NumberLiteral ")";
+		//	"check" "(" element=Expression "," value=BooleanExpression ")";
 		public ParserRule getRule() { return rule; }
 
-		//"check" "(" type=ClickableElement "," element=NumberLiteral ")"
+		//"check" "(" element=Expression "," value=BooleanExpression ")"
 		public Group getGroup() { return cGroup; }
 
 		//"check"
@@ -1265,20 +1265,20 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//type=ClickableElement
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		//element=Expression
+		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 
-		//ClickableElement
-		public RuleCall getTypeClickableElementParserRuleCall_2_0() { return cTypeClickableElementParserRuleCall_2_0; }
+		//Expression
+		public RuleCall getElementExpressionParserRuleCall_2_0() { return cElementExpressionParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//element=NumberLiteral
-		public Assignment getElementAssignment_4() { return cElementAssignment_4; }
+		//value=BooleanExpression
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
 
-		//NumberLiteral
-		public RuleCall getElementNumberLiteralParserRuleCall_4_0() { return cElementNumberLiteralParserRuleCall_4_0; }
+		//BooleanExpression
+		public RuleCall getValueBooleanExpressionParserRuleCall_4_0() { return cValueBooleanExpressionParserRuleCall_4_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -1864,7 +1864,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionCheck:
-	//	"check" "(" type=ClickableElement "," element=NumberLiteral ")";
+	//	"check" "(" element=Expression "," value=BooleanExpression ")";
 	public ActionCheckElements getActionCheckAccess() {
 		return pActionCheck;
 	}

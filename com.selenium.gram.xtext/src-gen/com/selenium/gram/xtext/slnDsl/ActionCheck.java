@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getType <em>Type</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getElement <em>Element</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,55 +24,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface ActionCheck extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Element</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionCheck_Type()
-   * @model
-   * @generated
-   */
-  String getType();
-
-  /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getType <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
-   * @see #getType()
-   * @generated
-   */
-  void setType(String value);
-
-  /**
-   * Returns the value of the '<em><b>Element</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Element</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Element</em>' attribute.
-   * @see #setElement(String)
+   * @return the value of the '<em>Element</em>' containment reference.
+   * @see #setElement(Expression)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionCheck_Element()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getElement();
+  Expression getElement();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getElement <em>Element</em>}' attribute.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getElement <em>Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element</em>' attribute.
+   * @param value the new value of the '<em>Element</em>' containment reference.
    * @see #getElement()
    * @generated
    */
-  void setElement(String value);
+  void setElement(Expression value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(BooleanExpression)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionCheck_Value()
+   * @model containment="true"
+   * @generated
+   */
+  BooleanExpression getValue();
+
+  /**
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getValue <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(BooleanExpression value);
 
 } // ActionCheck

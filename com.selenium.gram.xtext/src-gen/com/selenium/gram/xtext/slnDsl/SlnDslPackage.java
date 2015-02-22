@@ -1069,22 +1069,22 @@ public interface SlnDslPackage extends EPackage
   int ACTION_CHECK = 30;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_CHECK__TYPE = 0;
+  int ACTION_CHECK__ELEMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Element</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_CHECK__ELEMENT = 1;
+  int ACTION_CHECK__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Action Check</em>' class.
@@ -1978,26 +1978,26 @@ public interface SlnDslPackage extends EPackage
   EClass getActionCheck();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionCheck#getType()
-   * @see #getActionCheck()
-   * @generated
-   */
-  EAttribute getActionCheck_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getElement <em>Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Element</em>'.
+   * @return the meta object for the containment reference '<em>Element</em>'.
    * @see com.selenium.gram.xtext.slnDsl.ActionCheck#getElement()
    * @see #getActionCheck()
    * @generated
    */
-  EAttribute getActionCheck_Element();
+  EReference getActionCheck_Element();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionCheck#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionCheck#getValue()
+   * @see #getActionCheck()
+   * @generated
+   */
+  EReference getActionCheck_Value();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionType <em>Action Type</em>}'.
@@ -2754,20 +2754,20 @@ public interface SlnDslPackage extends EPackage
     EClass ACTION_CHECK = eINSTANCE.getActionCheck();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_CHECK__TYPE = eINSTANCE.getActionCheck_Type();
+    EReference ACTION_CHECK__ELEMENT = eINSTANCE.getActionCheck_Element();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_CHECK__ELEMENT = eINSTANCE.getActionCheck_Element();
+    EReference ACTION_CHECK__VALUE = eINSTANCE.getActionCheck_Value();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl <em>Action Type</em>}' class.

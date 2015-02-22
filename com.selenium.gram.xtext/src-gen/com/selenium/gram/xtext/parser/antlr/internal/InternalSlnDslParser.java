@@ -5744,7 +5744,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionCheck"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2284:1: ruleActionCheck returns [EObject current=null] : (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2284:1: ruleActionCheck returns [EObject current=null] : (otherlv_0= 'check' otherlv_1= '(' ( (lv_element_2_0= ruleExpression ) ) otherlv_3= ',' ( (lv_value_4_0= ruleBooleanExpression ) ) otherlv_5= ')' ) ;
     public final EObject ruleActionCheck() throws RecognitionException {
         EObject current = null;
 
@@ -5752,19 +5752,19 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        AntlrDatatypeRuleToken lv_type_2_0 = null;
+        EObject lv_element_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_element_4_0 = null;
+        EObject lv_value_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2287:28: ( (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2288:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2287:28: ( (otherlv_0= 'check' otherlv_1= '(' ( (lv_element_2_0= ruleExpression ) ) otherlv_3= ',' ( (lv_value_4_0= ruleBooleanExpression ) ) otherlv_5= ')' ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2288:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_element_2_0= ruleExpression ) ) otherlv_3= ',' ( (lv_value_4_0= ruleBooleanExpression ) ) otherlv_5= ')' )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2288:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')' )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2288:3: otherlv_0= 'check' otherlv_1= '(' ( (lv_type_2_0= ruleClickableElement ) ) otherlv_3= ',' ( (lv_element_4_0= ruleNumberLiteral ) ) otherlv_5= ')'
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2288:1: (otherlv_0= 'check' otherlv_1= '(' ( (lv_element_2_0= ruleExpression ) ) otherlv_3= ',' ( (lv_value_4_0= ruleBooleanExpression ) ) otherlv_5= ')' )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2288:3: otherlv_0= 'check' otherlv_1= '(' ( (lv_element_2_0= ruleExpression ) ) otherlv_3= ',' ( (lv_value_4_0= ruleBooleanExpression ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,47,FOLLOW_47_in_ruleActionCheck5042); 
 
@@ -5774,17 +5774,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getActionCheckAccess().getLeftParenthesisKeyword_1());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2296:1: ( (lv_type_2_0= ruleClickableElement ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2297:1: (lv_type_2_0= ruleClickableElement )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2296:1: ( (lv_element_2_0= ruleExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2297:1: (lv_element_2_0= ruleExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2297:1: (lv_type_2_0= ruleClickableElement )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2298:3: lv_type_2_0= ruleClickableElement
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2297:1: (lv_element_2_0= ruleExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2298:3: lv_element_2_0= ruleExpression
             {
              
-            	        newCompositeNode(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getActionCheckAccess().getElementExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleClickableElement_in_ruleActionCheck5075);
-            lv_type_2_0=ruleClickableElement();
+            pushFollow(FOLLOW_ruleExpression_in_ruleActionCheck5075);
+            lv_element_2_0=ruleExpression();
 
             state._fsp--;
 
@@ -5794,9 +5794,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"type",
-                    		lv_type_2_0, 
-                    		"ClickableElement");
+                   			"element",
+                    		lv_element_2_0, 
+                    		"Expression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -5809,17 +5809,17 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_3, grammarAccess.getActionCheckAccess().getCommaKeyword_3());
                 
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2318:1: ( (lv_element_4_0= ruleNumberLiteral ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2319:1: (lv_element_4_0= ruleNumberLiteral )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2318:1: ( (lv_value_4_0= ruleBooleanExpression ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2319:1: (lv_value_4_0= ruleBooleanExpression )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2319:1: (lv_element_4_0= ruleNumberLiteral )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2320:3: lv_element_4_0= ruleNumberLiteral
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2319:1: (lv_value_4_0= ruleBooleanExpression )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:2320:3: lv_value_4_0= ruleBooleanExpression
             {
              
-            	        newCompositeNode(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0()); 
+            	        newCompositeNode(grammarAccess.getActionCheckAccess().getValueBooleanExpressionParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumberLiteral_in_ruleActionCheck5108);
-            lv_element_4_0=ruleNumberLiteral();
+            pushFollow(FOLLOW_ruleBooleanExpression_in_ruleActionCheck5108);
+            lv_value_4_0=ruleBooleanExpression();
 
             state._fsp--;
 
@@ -5829,9 +5829,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"element",
-                    		lv_element_4_0, 
-                    		"NumberLiteral");
+                   			"value",
+                    		lv_value_4_0, 
+                    		"BooleanExpression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -6479,10 +6479,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleActionCheck_in_entryRuleActionCheck4995 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionCheck5005 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_47_in_ruleActionCheck5042 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleActionCheck5054 = new BitSet(new long[]{0x001C000000000000L});
-    public static final BitSet FOLLOW_ruleClickableElement_in_ruleActionCheck5075 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleActionCheck5087 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleActionCheck5108 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_18_in_ruleActionCheck5054 = new BitSet(new long[]{0x0003E48BFF4800F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleActionCheck5075 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleActionCheck5087 = new BitSet(new long[]{0x0001E48BFF080090L});
+    public static final BitSet FOLLOW_ruleBooleanExpression_in_ruleActionCheck5108 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_21_in_ruleActionCheck5120 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionType_in_entryRuleActionType5156 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionType5166 = new BitSet(new long[]{0x0000000000000002L});

@@ -112,8 +112,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionOpen/url"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionCheck">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionCheck/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionCheck/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionCheck/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionCheck/value"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionType/nameElement"/>

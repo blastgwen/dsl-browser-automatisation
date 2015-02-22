@@ -253,19 +253,19 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (type=ClickableElement element=NumberLiteral)
+	 *     (element=Expression value=BooleanExpression)
 	 */
 	protected void sequence_ActionCheck(EObject context, ActionCheck semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__TYPE));
 			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__ELEMENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__ELEMENT));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_CHECK__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionCheckAccess().getTypeClickableElementParserRuleCall_2_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getActionCheckAccess().getElementNumberLiteralParserRuleCall_4_0(), semanticObject.getElement());
+		feeder.accept(grammarAccess.getActionCheckAccess().getElementExpressionParserRuleCall_2_0(), semanticObject.getElement());
+		feeder.accept(grammarAccess.getActionCheckAccess().getValueBooleanExpressionParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
