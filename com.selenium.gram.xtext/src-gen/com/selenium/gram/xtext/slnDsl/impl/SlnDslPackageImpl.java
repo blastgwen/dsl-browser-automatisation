@@ -468,9 +468,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBody_Instructions()
+  public EReference getBody_Defs()
   {
     return (EReference)bodyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBody_Instructions()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1306,6 +1316,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEReference(subprocedureEClass, SUBPROCEDURE__BODY);
 
     bodyEClass = createEClass(BODY);
+    createEReference(bodyEClass, BODY__DEFS);
     createEReference(bodyEClass, BODY__INSTRUCTIONS);
 
     headEClass = createEClass(HEAD);
@@ -1454,7 +1465,6 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     numLiteralExpressionEClass.getESuperTypes().add(this.getExpression());
     listExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
-    definitionEClass.getESuperTypes().add(this.getInstruction());
     assignationEClass.getESuperTypes().add(this.getInstruction());
     conditionalEClass.getESuperTypes().add(this.getInstruction());
     loopEClass.getESuperTypes().add(this.getInstruction());
@@ -1477,6 +1487,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getSubprocedure_Body(), this.getBody(), null, "body", null, 0, 1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBody_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBody_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

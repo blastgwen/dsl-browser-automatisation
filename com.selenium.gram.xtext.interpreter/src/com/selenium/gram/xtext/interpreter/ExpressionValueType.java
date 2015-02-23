@@ -4,6 +4,7 @@ public enum ExpressionValueType {
 	numeric,
 	literal,
 	bool,
-	list
+	list,
+	url
 
 }

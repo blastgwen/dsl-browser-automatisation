@@ -20,6 +20,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Subprocedure/body"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Body/defs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Body/instructions"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Head">

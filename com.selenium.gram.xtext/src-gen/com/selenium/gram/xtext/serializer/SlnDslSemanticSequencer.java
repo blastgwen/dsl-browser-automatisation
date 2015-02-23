@@ -146,8 +146,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case SlnDslPackage.DEFINITION:
-				if(context == grammarAccess.getDefinitionRule() ||
-				   context == grammarAccess.getInstructionRule()) {
+				if(context == grammarAccess.getDefinitionRule()) {
 					sequence_Definition(context, (Definition) semanticObject); 
 					return; 
 				}
@@ -433,7 +432,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     instructions+=Instruction+
+	 *     (defs+=Definition* instructions+=Instruction+)
 	 */
 	protected void sequence_Body(EObject context, Body semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

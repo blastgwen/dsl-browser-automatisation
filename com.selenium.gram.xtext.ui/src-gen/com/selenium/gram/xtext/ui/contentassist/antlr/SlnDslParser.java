@@ -55,6 +55,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getSelectBrowserAccess().getGroup(), "rule__SelectBrowser__Group__0");
 					put(grammarAccess.getSubprocedureAccess().getGroup(), "rule__Subprocedure__Group__0");
+					put(grammarAccess.getBodyAccess().getGroup(), "rule__Body__Group__0");
 					put(grammarAccess.getHeadAccess().getGroup_0(), "rule__Head__Group_0__0");
 					put(grammarAccess.getHeadAccess().getGroup_1(), "rule__Head__Group_1__0");
 					put(grammarAccess.getHeadAccess().getGroup_1_4(), "rule__Head__Group_1_4__0");
@@ -85,7 +86,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectBrowserAccess().getBrowserAssignment_1(), "rule__SelectBrowser__BrowserAssignment_1");
 					put(grammarAccess.getSubprocedureAccess().getHeadAssignment_1(), "rule__Subprocedure__HeadAssignment_1");
 					put(grammarAccess.getSubprocedureAccess().getBodyAssignment_2(), "rule__Subprocedure__BodyAssignment_2");
-					put(grammarAccess.getBodyAccess().getInstructionsAssignment(), "rule__Body__InstructionsAssignment");
+					put(grammarAccess.getBodyAccess().getDefsAssignment_0(), "rule__Body__DefsAssignment_0");
+					put(grammarAccess.getBodyAccess().getInstructionsAssignment_1(), "rule__Body__InstructionsAssignment_1");
 					put(grammarAccess.getHeadAccess().getNameAssignment_0_0(), "rule__Head__NameAssignment_0_0");
 					put(grammarAccess.getHeadAccess().getNameAssignment_1_0(), "rule__Head__NameAssignment_1_0");
 					put(grammarAccess.getHeadAccess().getArgsIDAssignment_1_3(), "rule__Head__ArgsIDAssignment_1_3");

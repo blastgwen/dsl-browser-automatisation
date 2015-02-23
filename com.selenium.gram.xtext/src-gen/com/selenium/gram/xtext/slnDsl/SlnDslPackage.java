@@ -178,13 +178,22 @@ public interface SlnDslPackage extends EPackage
   int BODY = 3;
 
   /**
+   * The feature id for the '<em><b>Defs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__DEFS = 0;
+
+  /**
    * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BODY__INSTRUCTIONS = 0;
+  int BODY__INSTRUCTIONS = 1;
 
   /**
    * The number of structural features of the '<em>Body</em>' class.
@@ -193,7 +202,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BODY_FEATURE_COUNT = 1;
+  int BODY_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.HeadImpl <em>Head</em>}' class.
@@ -816,7 +825,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION__VAR_ID = INSTRUCTION_FEATURE_COUNT + 0;
+  int DEFINITION__VAR_ID = 0;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -825,7 +834,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION__EXP = INSTRUCTION_FEATURE_COUNT + 1;
+  int DEFINITION__EXP = 1;
 
   /**
    * The number of structural features of the '<em>Definition</em>' class.
@@ -834,7 +843,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+  int DEFINITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.AssignationImpl <em>Assignation</em>}' class.
@@ -1340,6 +1349,17 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getBody();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Body#getDefs <em>Defs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Defs</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Body#getDefs()
+   * @see #getBody()
+   * @generated
+   */
+  EReference getBody_Defs();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Body#getInstructions <em>Instructions</em>}'.
@@ -2300,6 +2320,14 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass BODY = eINSTANCE.getBody();
+
+    /**
+     * The meta object literal for the '<em><b>Defs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BODY__DEFS = eINSTANCE.getBody_Defs();
 
     /**
      * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.

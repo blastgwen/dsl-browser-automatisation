@@ -309,25 +309,43 @@ ruleBody returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBodyAccess().getInstructionsInstructionParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getBodyAccess().getDefsDefinitionParserRuleCall_0_0()); 
 	    }
-		lv_instructions_0_0=ruleInstruction		{
+		lv_defs_0_0=ruleDefinition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBodyRule());
+	        }
+       		add(
+       			$current, 
+       			"defs",
+        		lv_defs_0_0, 
+        		"Definition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBodyAccess().getInstructionsInstructionParserRuleCall_1_0()); 
+	    }
+		lv_instructions_1_0=ruleInstruction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBodyRule());
 	        }
        		add(
        			$current, 
        			"instructions",
-        		lv_instructions_0_0, 
+        		lv_instructions_1_0, 
         		"Instruction");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)+
+)+)
 ;
 
 
@@ -1729,51 +1747,41 @@ ruleInstruction returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getDefinitionParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getConditionalParserRuleCall_1()); 
     }
-    this_Definition_1=ruleDefinition
+    this_Conditional_1=ruleConditional
     { 
-        $current = $this_Definition_1.current; 
+        $current = $this_Conditional_1.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getConditionalParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getLoopParserRuleCall_2()); 
     }
-    this_Conditional_2=ruleConditional
+    this_Loop_2=ruleLoop
     { 
-        $current = $this_Conditional_2.current; 
+        $current = $this_Loop_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getLoopParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getActionInstructionParserRuleCall_3()); 
     }
-    this_Loop_3=ruleLoop
+    this_ActionInstruction_3=ruleActionInstruction
     { 
-        $current = $this_Loop_3.current; 
+        $current = $this_ActionInstruction_3.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getActionInstructionParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getInstructionAccess().getAssignationParserRuleCall_4()); 
     }
-    this_ActionInstruction_4=ruleActionInstruction
+    this_Assignation_4=ruleAssignation
     { 
-        $current = $this_ActionInstruction_4.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getInstructionAccess().getAssignationParserRuleCall_5()); 
-    }
-    this_Assignation_5=ruleAssignation
-    { 
-        $current = $this_Assignation_5.current; 
+        $current = $this_Assignation_4.current; 
         afterParserOrEnumRuleCall();
     }
 )

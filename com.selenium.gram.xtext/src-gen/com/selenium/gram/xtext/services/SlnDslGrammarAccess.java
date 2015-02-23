@@ -150,18 +150,30 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class BodyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Body");
-		private final Assignment cInstructionsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cInstructionsInstructionParserRuleCall_0 = (RuleCall)cInstructionsAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDefsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDefsDefinitionParserRuleCall_0_0 = (RuleCall)cDefsAssignment_0.eContents().get(0);
+		private final Assignment cInstructionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInstructionsInstructionParserRuleCall_1_0 = (RuleCall)cInstructionsAssignment_1.eContents().get(0);
 		
 		//Body:
-		//	instructions+=Instruction+;
+		//	defs+=Definition* instructions+=Instruction+;
 		public ParserRule getRule() { return rule; }
 
+		//defs+=Definition* instructions+=Instruction+
+		public Group getGroup() { return cGroup; }
+
+		//defs+=Definition*
+		public Assignment getDefsAssignment_0() { return cDefsAssignment_0; }
+
+		//Definition
+		public RuleCall getDefsDefinitionParserRuleCall_0_0() { return cDefsDefinitionParserRuleCall_0_0; }
+
 		//instructions+=Instruction+
-		public Assignment getInstructionsAssignment() { return cInstructionsAssignment; }
+		public Assignment getInstructionsAssignment_1() { return cInstructionsAssignment_1; }
 
 		//Instruction
-		public RuleCall getInstructionsInstructionParserRuleCall_0() { return cInstructionsInstructionParserRuleCall_0; }
+		public RuleCall getInstructionsInstructionParserRuleCall_1_0() { return cInstructionsInstructionParserRuleCall_1_0; }
 	}
 
 	public class HeadElements extends AbstractParserRuleElementFinder {
@@ -912,38 +924,34 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Instruction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cFunctionCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cConditionalParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cLoopParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cActionInstructionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cAssignationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cConditionalParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cLoopParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cActionInstructionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cAssignationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		/// *
 		// * Type of Instruction
 		// * / Instruction:
-		//	FunctionCall | Definition | Conditional | Loop | ActionInstruction | Assignation;
+		//	FunctionCall | Conditional | Loop | ActionInstruction | Assignation;
 		public ParserRule getRule() { return rule; }
 
-		//FunctionCall | Definition | Conditional | Loop | ActionInstruction | Assignation
+		//FunctionCall | Conditional | Loop | ActionInstruction | Assignation
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//FunctionCall
 		public RuleCall getFunctionCallParserRuleCall_0() { return cFunctionCallParserRuleCall_0; }
 
-		//Definition
-		public RuleCall getDefinitionParserRuleCall_1() { return cDefinitionParserRuleCall_1; }
-
 		//Conditional
-		public RuleCall getConditionalParserRuleCall_2() { return cConditionalParserRuleCall_2; }
+		public RuleCall getConditionalParserRuleCall_1() { return cConditionalParserRuleCall_1; }
 
 		//Loop
-		public RuleCall getLoopParserRuleCall_3() { return cLoopParserRuleCall_3; }
+		public RuleCall getLoopParserRuleCall_2() { return cLoopParserRuleCall_2; }
 
 		//ActionInstruction
-		public RuleCall getActionInstructionParserRuleCall_4() { return cActionInstructionParserRuleCall_4; }
+		public RuleCall getActionInstructionParserRuleCall_3() { return cActionInstructionParserRuleCall_3; }
 
 		//Assignation
-		public RuleCall getAssignationParserRuleCall_5() { return cAssignationParserRuleCall_5; }
+		public RuleCall getAssignationParserRuleCall_4() { return cAssignationParserRuleCall_4; }
 	}
 
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
@@ -1689,7 +1697,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Body:
-	//	instructions+=Instruction+;
+	//	defs+=Definition* instructions+=Instruction+;
 	public BodyElements getBodyAccess() {
 		return pBody;
 	}
@@ -1934,7 +1942,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Type of Instruction
 	// * / Instruction:
-	//	FunctionCall | Definition | Conditional | Loop | ActionInstruction | Assignation;
+	//	FunctionCall | Conditional | Loop | ActionInstruction | Assignation;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}

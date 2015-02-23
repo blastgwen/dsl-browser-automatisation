@@ -243,7 +243,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Definition definition = (Definition)theEObject;
         T result = caseDefinition(definition);
-        if (result == null) result = caseInstruction(definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
