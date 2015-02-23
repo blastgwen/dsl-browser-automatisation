@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getVerifyType <em>Verify Type</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getNameElement <em>Name Element</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getValue <em>Value</em>}</li>
  * </ul>
@@ -24,30 +25,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface VerifyAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name Element</b></em>' attribute.
+   * Returns the value of the '<em><b>Verify Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Element</em>' attribute isn't clear,
+   * If the meaning of the '<em>Verify Type</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Element</em>' attribute.
-   * @see #setNameElement(String)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getVerifyAction_NameElement()
+   * @return the value of the '<em>Verify Type</em>' attribute.
+   * @see #setVerifyType(String)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getVerifyAction_VerifyType()
    * @model
    * @generated
    */
-  String getNameElement();
+  String getVerifyType();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getNameElement <em>Name Element</em>}' attribute.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getVerifyType <em>Verify Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Element</em>' attribute.
+   * @param value the new value of the '<em>Verify Type</em>' attribute.
+   * @see #getVerifyType()
+   * @generated
+   */
+  void setVerifyType(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name Element</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name Element</em>' containment reference.
+   * @see #setNameElement(Expression)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getVerifyAction_NameElement()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getNameElement();
+
+  /**
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getNameElement <em>Name Element</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name Element</em>' containment reference.
    * @see #getNameElement()
    * @generated
    */
-  void setNameElement(String value);
+  void setNameElement(Expression value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.

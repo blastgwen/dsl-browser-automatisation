@@ -722,7 +722,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVerifyAction_NameElement()
+  public EAttribute getVerifyAction_VerifyType()
   {
     return (EAttribute)verifyActionEClass.getEStructuralFeatures().get(0);
   }
@@ -732,9 +732,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVerifyAction_Value()
+  public EReference getVerifyAction_NameElement()
   {
     return (EReference)verifyActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVerifyAction_Value()
+  {
+    return (EReference)verifyActionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1269,7 +1279,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEAttribute(booleanValueEClass, BOOLEAN_VALUE__VALUE);
 
     verifyActionEClass = createEClass(VERIFY_ACTION);
-    createEAttribute(verifyActionEClass, VERIFY_ACTION__NAME_ELEMENT);
+    createEAttribute(verifyActionEClass, VERIFY_ACTION__VERIFY_TYPE);
+    createEReference(verifyActionEClass, VERIFY_ACTION__NAME_ELEMENT);
     createEReference(verifyActionEClass, VERIFY_ACTION__VALUE);
 
     existActionEClass = createEClass(EXIST_ACTION);
@@ -1430,7 +1441,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getBooleanValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifyActionEClass, VerifyAction.class, "VerifyAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerifyAction_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVerifyAction_VerifyType(), ecorePackage.getEString(), "verifyType", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerifyAction_NameElement(), this.getExpression(), null, "nameElement", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerifyAction_Value(), this.getExpression(), null, "value", null, 0, 1, VerifyAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(existActionEClass, ExistAction.class, "ExistAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

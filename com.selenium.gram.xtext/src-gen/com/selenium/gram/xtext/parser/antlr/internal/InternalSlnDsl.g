@@ -1181,17 +1181,17 @@ ruleVerifyAction returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVerifyActionAccess().getNameElementNumberLiteralParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getVerifyActionAccess().getVerifyTypeVerifyTypeParserRuleCall_2_0()); 
 	    }
-		lv_nameElement_2_0=ruleNumberLiteral		{
+		lv_verifyType_2_0=ruleVerifyType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVerifyActionRule());
 	        }
        		set(
        			$current, 
-       			"nameElement",
-        		lv_nameElement_2_0, 
-        		"NumberLiteral");
+       			"verifyType",
+        		lv_verifyType_2_0, 
+        		"VerifyType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1203,24 +1203,46 @@ ruleVerifyAction returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVerifyActionAccess().getValueExpressionParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getVerifyActionAccess().getNameElementExpressionParserRuleCall_4_0()); 
 	    }
-		lv_value_4_0=ruleExpression		{
+		lv_nameElement_4_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getVerifyActionRule());
+	        }
+       		set(
+       			$current, 
+       			"nameElement",
+        		lv_nameElement_4_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_5=',' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getVerifyActionAccess().getCommaKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getVerifyActionAccess().getValueExpressionParserRuleCall_6_0()); 
+	    }
+		lv_value_6_0=ruleExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVerifyActionRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_4_0, 
+        		lv_value_6_0, 
         		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5=')' 
+)	otherlv_7=')' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getVerifyActionAccess().getRightParenthesisKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getVerifyActionAccess().getRightParenthesisKeyword_7());
     }
 )
 ;
@@ -1540,6 +1562,40 @@ ruleBooleanOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRul
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getBooleanOperatorAccess().getGreaterThanSignKeyword_2()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleVerifyType
+entryRuleVerifyType returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getVerifyTypeRule()); } 
+	 iv_ruleVerifyType=ruleVerifyType 
+	 { $current=$iv_ruleVerifyType.current.getText(); }  
+	 EOF 
+;
+
+// Rule VerifyType
+ruleVerifyType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='checkbox' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVerifyTypeAccess().getCheckboxKeyword_0()); 
+    }
+
+    |
+	kw='textbox' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVerifyTypeAccess().getTextboxKeyword_1()); 
     }
 )
     ;

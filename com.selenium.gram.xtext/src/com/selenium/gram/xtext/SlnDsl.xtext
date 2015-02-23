@@ -107,7 +107,7 @@ terminal BOOLEAN:
 ;
 
 VerifyAction :
-	'verify' '(' nameElement=NumberLiteral ',' value=Expression ')'
+	'verify' '(' verifyType=VerifyType ',' nameElement=Expression ',' value=Expression ')'
 ;
 
 ExistAction :
@@ -132,6 +132,10 @@ LogicalOperator:
 
 BooleanOperator :
 	('=='|'<'|'>')
+;
+
+VerifyType:
+	('checkbox' | 'textbox')
 ;
 
 /*

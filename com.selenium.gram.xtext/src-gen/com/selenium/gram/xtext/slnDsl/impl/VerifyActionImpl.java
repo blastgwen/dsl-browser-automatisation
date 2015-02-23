@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.VerifyActionImpl#getVerifyType <em>Verify Type</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.VerifyActionImpl#getNameElement <em>Name Element</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.VerifyActionImpl#getValue <em>Value</em>}</li>
  * </ul>
@@ -32,24 +33,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class VerifyActionImpl extends MinimalEObjectImpl.Container implements VerifyAction
 {
   /**
-   * The default value of the '{@link #getNameElement() <em>Name Element</em>}' attribute.
+   * The default value of the '{@link #getVerifyType() <em>Verify Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameElement()
+   * @see #getVerifyType()
    * @generated
    * @ordered
    */
-  protected static final String NAME_ELEMENT_EDEFAULT = null;
+  protected static final String VERIFY_TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNameElement() <em>Name Element</em>}' attribute.
+   * The cached value of the '{@link #getVerifyType() <em>Verify Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVerifyType()
+   * @generated
+   * @ordered
+   */
+  protected String verifyType = VERIFY_TYPE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getNameElement() <em>Name Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNameElement()
    * @generated
    * @ordered
    */
-  protected String nameElement = NAME_ELEMENT_EDEFAULT;
+  protected Expression nameElement;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -87,7 +98,30 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNameElement()
+  public String getVerifyType()
+  {
+    return verifyType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVerifyType(String newVerifyType)
+  {
+    String oldVerifyType = verifyType;
+    verifyType = newVerifyType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.VERIFY_ACTION__VERIFY_TYPE, oldVerifyType, verifyType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getNameElement()
   {
     return nameElement;
   }
@@ -97,12 +131,37 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameElement(String newNameElement)
+  public NotificationChain basicSetNameElement(Expression newNameElement, NotificationChain msgs)
   {
-    String oldNameElement = nameElement;
+    Expression oldNameElement = nameElement;
     nameElement = newNameElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT, oldNameElement, nameElement));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT, oldNameElement, newNameElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameElement(Expression newNameElement)
+  {
+    if (newNameElement != nameElement)
+    {
+      NotificationChain msgs = null;
+      if (nameElement != null)
+        msgs = ((InternalEObject)nameElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT, null, msgs);
+      if (newNameElement != null)
+        msgs = ((InternalEObject)newNameElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT, null, msgs);
+      msgs = basicSetNameElement(newNameElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT, newNameElement, newNameElement));
   }
 
   /**
@@ -163,6 +222,8 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
   {
     switch (featureID)
     {
+      case SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT:
+        return basicSetNameElement(null, msgs);
       case SlnDslPackage.VERIFY_ACTION__VALUE:
         return basicSetValue(null, msgs);
     }
@@ -179,6 +240,8 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
   {
     switch (featureID)
     {
+      case SlnDslPackage.VERIFY_ACTION__VERIFY_TYPE:
+        return getVerifyType();
       case SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT:
         return getNameElement();
       case SlnDslPackage.VERIFY_ACTION__VALUE:
@@ -197,8 +260,11 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
   {
     switch (featureID)
     {
+      case SlnDslPackage.VERIFY_ACTION__VERIFY_TYPE:
+        setVerifyType((String)newValue);
+        return;
       case SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT:
-        setNameElement((String)newValue);
+        setNameElement((Expression)newValue);
         return;
       case SlnDslPackage.VERIFY_ACTION__VALUE:
         setValue((Expression)newValue);
@@ -217,8 +283,11 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
   {
     switch (featureID)
     {
+      case SlnDslPackage.VERIFY_ACTION__VERIFY_TYPE:
+        setVerifyType(VERIFY_TYPE_EDEFAULT);
+        return;
       case SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT:
-        setNameElement(NAME_ELEMENT_EDEFAULT);
+        setNameElement((Expression)null);
         return;
       case SlnDslPackage.VERIFY_ACTION__VALUE:
         setValue((Expression)null);
@@ -237,8 +306,10 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
   {
     switch (featureID)
     {
+      case SlnDslPackage.VERIFY_ACTION__VERIFY_TYPE:
+        return VERIFY_TYPE_EDEFAULT == null ? verifyType != null : !VERIFY_TYPE_EDEFAULT.equals(verifyType);
       case SlnDslPackage.VERIFY_ACTION__NAME_ELEMENT:
-        return NAME_ELEMENT_EDEFAULT == null ? nameElement != null : !NAME_ELEMENT_EDEFAULT.equals(nameElement);
+        return nameElement != null;
       case SlnDslPackage.VERIFY_ACTION__VALUE:
         return value != null;
     }
@@ -256,8 +327,8 @@ public class VerifyActionImpl extends MinimalEObjectImpl.Container implements Ve
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nameElement: ");
-    result.append(nameElement);
+    result.append(" (verifyType: ");
+    result.append(verifyType);
     result.append(')');
     return result.toString();
   }

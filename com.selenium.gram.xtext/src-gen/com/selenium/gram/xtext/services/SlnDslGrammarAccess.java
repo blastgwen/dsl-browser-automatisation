@@ -621,18 +621,21 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVerifyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameElementNumberLiteralParserRuleCall_2_0 = (RuleCall)cNameElementAssignment_2.eContents().get(0);
+		private final Assignment cVerifyTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVerifyTypeVerifyTypeParserRuleCall_2_0 = (RuleCall)cVerifyTypeAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueExpressionParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cNameElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameElementExpressionParserRuleCall_4_0 = (RuleCall)cNameElementAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cValueAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cValueExpressionParserRuleCall_6_0 = (RuleCall)cValueAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//VerifyAction:
-		//	"verify" "(" nameElement=NumberLiteral "," value=Expression ")";
+		//	"verify" "(" verifyType=VerifyType "," nameElement=Expression "," value=Expression ")";
 		public ParserRule getRule() { return rule; }
 
-		//"verify" "(" nameElement=NumberLiteral "," value=Expression ")"
+		//"verify" "(" verifyType=VerifyType "," nameElement=Expression "," value=Expression ")"
 		public Group getGroup() { return cGroup; }
 
 		//"verify"
@@ -641,23 +644,32 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//nameElement=NumberLiteral
-		public Assignment getNameElementAssignment_2() { return cNameElementAssignment_2; }
+		//verifyType=VerifyType
+		public Assignment getVerifyTypeAssignment_2() { return cVerifyTypeAssignment_2; }
 
-		//NumberLiteral
-		public RuleCall getNameElementNumberLiteralParserRuleCall_2_0() { return cNameElementNumberLiteralParserRuleCall_2_0; }
+		//VerifyType
+		public RuleCall getVerifyTypeVerifyTypeParserRuleCall_2_0() { return cVerifyTypeVerifyTypeParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//value=Expression
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		//nameElement=Expression
+		public Assignment getNameElementAssignment_4() { return cNameElementAssignment_4; }
 
 		//Expression
-		public RuleCall getValueExpressionParserRuleCall_4_0() { return cValueExpressionParserRuleCall_4_0; }
+		public RuleCall getNameElementExpressionParserRuleCall_4_0() { return cNameElementExpressionParserRuleCall_4_0; }
+
+		//","
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+
+		//value=Expression
+		public Assignment getValueAssignment_6() { return cValueAssignment_6; }
+
+		//Expression
+		public RuleCall getValueExpressionParserRuleCall_6_0() { return cValueExpressionParserRuleCall_6_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 
 	public class ExistActionElements extends AbstractParserRuleElementFinder {
@@ -830,6 +842,26 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//">"
 		public Keyword getGreaterThanSignKeyword_2() { return cGreaterThanSignKeyword_2; }
+	}
+
+	public class VerifyTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VerifyType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cCheckboxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cTextboxKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//VerifyType:
+		//	"checkbox" | "textbox";
+		public ParserRule getRule() { return rule; }
+
+		//"checkbox" | "textbox"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"checkbox"
+		public Keyword getCheckboxKeyword_0() { return cCheckboxKeyword_0; }
+
+		//"textbox"
+		public Keyword getTextboxKeyword_1() { return cTextboxKeyword_1; }
 	}
 
 	public class InstructionElements extends AbstractParserRuleElementFinder {
@@ -1410,6 +1442,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final NegationExpressionElements pNegationExpression;
 	private final LogicalOperatorElements pLogicalOperator;
 	private final BooleanOperatorElements pBooleanOperator;
+	private final VerifyTypeElements pVerifyType;
 	private final InstructionElements pInstruction;
 	private final DefinitionElements pDefinition;
 	private final AssignationElements pAssignation;
@@ -1460,6 +1493,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNegationExpression = new NegationExpressionElements();
 		this.pLogicalOperator = new LogicalOperatorElements();
 		this.pBooleanOperator = new BooleanOperatorElements();
+		this.pVerifyType = new VerifyTypeElements();
 		this.pInstruction = new InstructionElements();
 		this.pDefinition = new DefinitionElements();
 		this.pAssignation = new AssignationElements();
@@ -1690,7 +1724,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//VerifyAction:
-	//	"verify" "(" nameElement=NumberLiteral "," value=Expression ")";
+	//	"verify" "(" verifyType=VerifyType "," nameElement=Expression "," value=Expression ")";
 	public VerifyActionElements getVerifyActionAccess() {
 		return pVerifyAction;
 	}
@@ -1757,6 +1791,16 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBooleanOperatorRule() {
 		return getBooleanOperatorAccess().getRule();
+	}
+
+	//VerifyType:
+	//	"checkbox" | "textbox";
+	public VerifyTypeElements getVerifyTypeAccess() {
+		return pVerifyType;
+	}
+	
+	public ParserRule getVerifyTypeRule() {
+		return getVerifyTypeAccess().getRule();
 	}
 
 	/// *

@@ -1,10 +1,18 @@
 package com.selenium.gram.xtext.interpreter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.selenium.gram.xtext.interpreter.exceptions.ActionInstructionException;
 import com.selenium.gram.xtext.interpreter.exceptions.InterpretationException;
 import com.selenium.gram.xtext.interpreter.exceptions.UnknownVariableException;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
@@ -251,7 +259,61 @@ public class Interpreter {
 		}
 		
 		if(val instanceof VerifyAction){
+			System.out.println("exec VeriFyAction");
+			VerifyAction act = (VerifyAction) val;
 			
+			ExpressionValue toTest = this.computeExpression(act.getNameElement(), variables);
+			ExpressionValue value = this.computeExpression(act.getValue(), variables);
+			
+			if (act.getVerifyType().toString().equals("checkbox")){				
+				
+				if (value.getType() == ExpressionValueType.list){
+					throw new InterpretationException("Impossible to verify a list");
+				}
+				
+				if (toTest.getType() != ExpressionValueType.list){
+					return doVerifyCheckbox(toTest.getValue().toString(), value);
+				} else {
+					// TODO : gerer les listes
+					List<Boolean> res = new ArrayList<Boolean>();
+					List<Object> list =  (List<Object>) toTest.getValue();
+					for (Object obj : list) {
+						res.add(doVerifyCheckbox(obj.toString(), value));
+					}
+					
+					for (boolean bool : res) {
+				        if (!bool)
+				            return false;
+				    }
+				    return true;
+				}
+			}
+			
+			else if (act.getVerifyType().toString().equals("textbox")){
+				if (value.getType() == ExpressionValueType.list){
+					throw new InterpretationException("Impossible to verify a list");
+				}
+				
+				if (toTest.getType() != ExpressionValueType.list){
+					return doVerifyTextbox(toTest.getValue().toString(), value);
+				} else {
+					// TODO : gerer les listes
+					List<Boolean> res = new ArrayList<Boolean>();
+					List<Object> list =  (List<Object>) toTest.getValue();
+					for (Object obj : list) {
+						res.add(doVerifyTextbox(obj.toString(), value));
+					}
+					
+					for (boolean bool : res) {
+				        if (!bool)
+				            return false;
+				    }
+				    return true;
+				}
+			}
+			else {
+				throw new InterpretationException("Unknown VerifyType: " + act.getVerifyType());
+			}
 		}
 		
 		if(val instanceof ExistAction){
@@ -331,5 +393,81 @@ public class Interpreter {
 		// TODO : récupérer le type list Selenium et :
 		// 1) vérifier que c'est une liste
 		// 2) parcourir la liste
+	}
+	
+	private boolean doVerifyCheckbox(String valueToTest, ExpressionValue value) throws InterpretationException{
+		WebDriver driver = SeleniumDriver.getInstance().getDriver();
+		
+		List<WebElement> elements = new ArrayList<WebElement>();
+				
+		elements.addAll(driver.findElements(By.cssSelector("input[type='checkbox']")));
+		elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
+		
+		Boolean bool;
+		try {
+			bool = Boolean.parseBoolean(value.getValue().toString());
+		} catch (Exception e){
+			throw new InterpretationException("Impossible to test if " + valueToTest + " is selected becauseof value: " + value.getValue().toString());
+		}
+		
+		boolean verify = false;
+		int i = 0;
+		while (!verify){
+			if (i == elements.size()){
+				return false;
+			} else {
+				try {
+					// Get attribute to test
+					String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+					String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();
+					
+					if (name.contains(valueToTest) || val.contains(valueToTest) || 	str.contains(valueToTest)){
+						boolean totest = elements.get(i).isSelected();
+						System.out.println("Verify Checkbox - " + totest + " == " + bool);
+						return  totest == bool;
+					} 
+				} catch (Exception e){
+					verify = false;
+				} finally {
+					i ++;
+				}
+			}			
+		}	
+		return false;
+	}
+	
+	private boolean doVerifyTextbox(String valueToTest, ExpressionValue value) throws InterpretationException{
+		WebDriver driver = SeleniumDriver.getInstance().getDriver();
+		
+		List<WebElement> elements = new ArrayList<WebElement>();
+				
+		elements.addAll(driver.findElements(By.cssSelector("input[type='text']")));	
+		elements.addAll(driver.findElements(By.cssSelector("input[type='password']")));	
+		
+		boolean verify = false;
+		int i = 0;
+		while (!verify){
+			if (i == elements.size()){
+				return false;
+			} else {
+				try {
+					// Get attribute to test
+					String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+					String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();
+					
+					if (name.contains(valueToTest) || val.contains(valueToTest) || 	str.contains(valueToTest)){
+						System.out.println("Verify TextBox - " + elements.get(i).getText() + " == " + value.getValue().toString());
+						return elements.get(i).getAttribute("value").equals(value.getValue().toString());
+					} 
+				} catch (Exception e){
+					verify = false;
+				} finally {
+					i ++;
+				}
+			}			
+		}	
+		return false;
 	}
 }

@@ -560,13 +560,22 @@ public interface SlnDslPackage extends EPackage
   int VERIFY_ACTION = 15;
 
   /**
-   * The feature id for the '<em><b>Name Element</b></em>' attribute.
+   * The feature id for the '<em><b>Verify Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFY_ACTION__NAME_ELEMENT = 0;
+  int VERIFY_ACTION__VERIFY_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFY_ACTION__NAME_ELEMENT = 1;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -575,7 +584,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFY_ACTION__VALUE = 1;
+  int VERIFY_ACTION__VALUE = 2;
 
   /**
    * The number of structural features of the '<em>Verify Action</em>' class.
@@ -584,7 +593,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFY_ACTION_FEATURE_COUNT = 2;
+  int VERIFY_ACTION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ExistActionImpl <em>Exist Action</em>}' class.
@@ -1553,15 +1562,26 @@ public interface SlnDslPackage extends EPackage
   EClass getVerifyAction();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getNameElement <em>Name Element</em>}'.
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getVerifyType <em>Verify Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name Element</em>'.
+   * @return the meta object for the attribute '<em>Verify Type</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.VerifyAction#getVerifyType()
+   * @see #getVerifyAction()
+   * @generated
+   */
+  EAttribute getVerifyAction_VerifyType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getNameElement <em>Name Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name Element</em>'.
    * @see com.selenium.gram.xtext.slnDsl.VerifyAction#getNameElement()
    * @see #getVerifyAction()
    * @generated
    */
-  EAttribute getVerifyAction_NameElement();
+  EReference getVerifyAction_NameElement();
 
   /**
    * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.VerifyAction#getValue <em>Value</em>}'.
@@ -2404,12 +2424,20 @@ public interface SlnDslPackage extends EPackage
     EClass VERIFY_ACTION = eINSTANCE.getVerifyAction();
 
     /**
-     * The meta object literal for the '<em><b>Name Element</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Verify Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VERIFY_ACTION__NAME_ELEMENT = eINSTANCE.getVerifyAction_NameElement();
+    EAttribute VERIFY_ACTION__VERIFY_TYPE = eINSTANCE.getVerifyAction_VerifyType();
+
+    /**
+     * The meta object literal for the '<em><b>Name Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFY_ACTION__NAME_ELEMENT = eINSTANCE.getVerifyAction_NameElement();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.

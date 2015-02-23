@@ -690,10 +690,12 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (nameElement=NumberLiteral value=Expression)
+	 *     (verifyType=VerifyType nameElement=Expression value=Expression)
 	 */
 	protected void sequence_VerifyAction(EObject context, VerifyAction semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.VERIFY_ACTION__VERIFY_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.VERIFY_ACTION__VERIFY_TYPE));
 			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.VERIFY_ACTION__NAME_ELEMENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.VERIFY_ACTION__NAME_ELEMENT));
 			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.VERIFY_ACTION__VALUE) == ValueTransient.YES)
@@ -701,8 +703,9 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVerifyActionAccess().getNameElementNumberLiteralParserRuleCall_2_0(), semanticObject.getNameElement());
-		feeder.accept(grammarAccess.getVerifyActionAccess().getValueExpressionParserRuleCall_4_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getVerifyActionAccess().getVerifyTypeVerifyTypeParserRuleCall_2_0(), semanticObject.getVerifyType());
+		feeder.accept(grammarAccess.getVerifyActionAccess().getNameElementExpressionParserRuleCall_4_0(), semanticObject.getNameElement());
+		feeder.accept(grammarAccess.getVerifyActionAccess().getValueExpressionParserRuleCall_6_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

@@ -17,10 +17,8 @@ import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
 import com.selenium.gram.xtext.slnDsl.ActionSelectExpression;
 import com.selenium.gram.xtext.slnDsl.ActionType;
-import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
-import com.thoughtworks.selenium.webdriven.commands.GetValue;
 
 public class ActionInstructionInterpreter {
 
