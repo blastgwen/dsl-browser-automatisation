@@ -65,6 +65,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
     switch (eClass.getClassifierID())
     {
       case SlnDslPackage.MODEL: return createModel();
+      case SlnDslPackage.SELECT_BROWSER: return createSelectBrowser();
       case SlnDslPackage.SUBPROCEDURE: return createSubprocedure();
       case SlnDslPackage.BODY: return createBody();
       case SlnDslPackage.HEAD: return createHead();
@@ -73,6 +74,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.FUNCTION_CALL: return createFunctionCall();
       case SlnDslPackage.VARIABLE_REFERENCE: return createVariableReference();
       case SlnDslPackage.VARIABLE_NAME: return createVariableName();
+      case SlnDslPackage.URI: return createUri();
       case SlnDslPackage.EXPRESSION: return createExpression();
       case SlnDslPackage.NUM_LITERAL_EXPRESSION: return createNumLiteralExpression();
       case SlnDslPackage.LIST_EXPRESSION: return createListExpression();
@@ -111,6 +113,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelectBrowser createSelectBrowser()
+  {
+    SelectBrowserImpl selectBrowser = new SelectBrowserImpl();
+    return selectBrowser;
   }
 
   /**
@@ -199,6 +212,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     VariableNameImpl variableName = new VariableNameImpl();
     return variableName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Uri createUri()
+  {
+    UriImpl uri = new UriImpl();
+    return uri;
   }
 
   /**

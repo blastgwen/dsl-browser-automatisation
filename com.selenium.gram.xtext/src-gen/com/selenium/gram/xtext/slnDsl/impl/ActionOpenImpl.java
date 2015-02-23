@@ -3,11 +3,14 @@
 package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
+import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -28,24 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ActionOpenImpl extends MinimalEObjectImpl.Container implements ActionOpen
 {
   /**
-   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * The cached value of the '{@link #getUrl() <em>Url</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUrl()
    * @generated
    * @ordered
    */
-  protected static final String URL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUrl()
-   * @generated
-   * @ordered
-   */
-  protected String url = URL_EDEFAULT;
+  protected Expression url;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,7 +66,7 @@ public class ActionOpenImpl extends MinimalEObjectImpl.Container implements Acti
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUrl()
+  public Expression getUrl()
   {
     return url;
   }
@@ -83,12 +76,53 @@ public class ActionOpenImpl extends MinimalEObjectImpl.Container implements Acti
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUrl(String newUrl)
+  public NotificationChain basicSetUrl(Expression newUrl, NotificationChain msgs)
   {
-    String oldUrl = url;
+    Expression oldUrl = url;
     url = newUrl;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_OPEN__URL, oldUrl, url));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_OPEN__URL, oldUrl, newUrl);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUrl(Expression newUrl)
+  {
+    if (newUrl != url)
+    {
+      NotificationChain msgs = null;
+      if (url != null)
+        msgs = ((InternalEObject)url).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_OPEN__URL, null, msgs);
+      if (newUrl != null)
+        msgs = ((InternalEObject)newUrl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_OPEN__URL, null, msgs);
+      msgs = basicSetUrl(newUrl, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_OPEN__URL, newUrl, newUrl));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SlnDslPackage.ACTION_OPEN__URL:
+        return basicSetUrl(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -118,7 +152,7 @@ public class ActionOpenImpl extends MinimalEObjectImpl.Container implements Acti
     switch (featureID)
     {
       case SlnDslPackage.ACTION_OPEN__URL:
-        setUrl((String)newValue);
+        setUrl((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,7 +169,7 @@ public class ActionOpenImpl extends MinimalEObjectImpl.Container implements Acti
     switch (featureID)
     {
       case SlnDslPackage.ACTION_OPEN__URL:
-        setUrl(URL_EDEFAULT);
+        setUrl((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -152,26 +186,9 @@ public class ActionOpenImpl extends MinimalEObjectImpl.Container implements Acti
     switch (featureID)
     {
       case SlnDslPackage.ACTION_OPEN__URL:
-        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+        return url != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (url: ");
-    result.append(url);
-    result.append(')');
-    return result.toString();
   }
 
 } //ActionOpenImpl

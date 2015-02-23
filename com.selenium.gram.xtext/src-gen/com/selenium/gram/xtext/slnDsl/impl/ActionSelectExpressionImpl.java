@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl#getElement <em>Element</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +30,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ActionSelectExpressionImpl extends ExpressionImpl implements ActionSelectExpression
 {
+  /**
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +79,29 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   protected EClass eStaticClass()
   {
     return SlnDslPackage.Literals.ACTION_SELECT_EXPRESSION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(String newType)
+  {
+    String oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE, oldType, type));
   }
 
   /**
@@ -134,6 +178,8 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   {
     switch (featureID)
     {
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
+        return getType();
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
         return getElement();
     }
@@ -150,6 +196,9 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   {
     switch (featureID)
     {
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
+        setType((String)newValue);
+        return;
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
         setElement((Expression)newValue);
         return;
@@ -167,6 +216,9 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   {
     switch (featureID)
     {
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
         setElement((Expression)null);
         return;
@@ -184,10 +236,29 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   {
     switch (featureID)
     {
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
         return element != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (type: ");
+    result.append(type);
+    result.append(')');
+    return result.toString();
   }
 
 } //ActionSelectExpressionImpl

@@ -32,6 +32,15 @@ public interface SlnDslFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Select Browser</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Select Browser</em>'.
+   * @generated
+   */
+  SelectBrowser createSelectBrowser();
+
+  /**
    * Returns a new object of class '<em>Subprocedure</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,6 +111,15 @@ public interface SlnDslFactory extends EFactory
    * @generated
    */
   VariableName createVariableName();
+
+  /**
+   * Returns a new object of class '<em>Uri</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Uri</em>'.
+   * @generated
+   */
+  Uri createUri();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.

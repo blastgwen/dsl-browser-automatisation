@@ -4,6 +4,7 @@ package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.Body;
 import com.selenium.gram.xtext.slnDsl.Model;
+import com.selenium.gram.xtext.slnDsl.SelectBrowser;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getNavigator <em>Navigator</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getSubs <em>Subs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ModelImpl#getBody <em>Body</em>}</li>
  * </ul>
@@ -39,6 +41,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
+  /**
+   * The cached value of the '{@link #getNavigator() <em>Navigator</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNavigator()
+   * @generated
+   * @ordered
+   */
+  protected SelectBrowser navigator;
+
   /**
    * The cached value of the '{@link #getSubs() <em>Subs</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -78,6 +90,54 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EClass eStaticClass()
   {
     return SlnDslPackage.Literals.MODEL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelectBrowser getNavigator()
+  {
+    return navigator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNavigator(SelectBrowser newNavigator, NotificationChain msgs)
+  {
+    SelectBrowser oldNavigator = navigator;
+    navigator = newNavigator;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.MODEL__NAVIGATOR, oldNavigator, newNavigator);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNavigator(SelectBrowser newNavigator)
+  {
+    if (newNavigator != navigator)
+    {
+      NotificationChain msgs = null;
+      if (navigator != null)
+        msgs = ((InternalEObject)navigator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.MODEL__NAVIGATOR, null, msgs);
+      if (newNavigator != null)
+        msgs = ((InternalEObject)newNavigator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.MODEL__NAVIGATOR, null, msgs);
+      msgs = basicSetNavigator(newNavigator, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.MODEL__NAVIGATOR, newNavigator, newNavigator));
   }
 
   /**
@@ -152,6 +212,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case SlnDslPackage.MODEL__NAVIGATOR:
+        return basicSetNavigator(null, msgs);
       case SlnDslPackage.MODEL__SUBS:
         return ((InternalEList<?>)getSubs()).basicRemove(otherEnd, msgs);
       case SlnDslPackage.MODEL__BODY:
@@ -170,6 +232,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case SlnDslPackage.MODEL__NAVIGATOR:
+        return getNavigator();
       case SlnDslPackage.MODEL__SUBS:
         return getSubs();
       case SlnDslPackage.MODEL__BODY:
@@ -189,6 +253,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case SlnDslPackage.MODEL__NAVIGATOR:
+        setNavigator((SelectBrowser)newValue);
+        return;
       case SlnDslPackage.MODEL__SUBS:
         getSubs().clear();
         getSubs().addAll((Collection<? extends Subprocedure>)newValue);
@@ -210,6 +277,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case SlnDslPackage.MODEL__NAVIGATOR:
+        setNavigator((SelectBrowser)null);
+        return;
       case SlnDslPackage.MODEL__SUBS:
         getSubs().clear();
         return;
@@ -230,6 +300,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case SlnDslPackage.MODEL__NAVIGATOR:
+        return navigator != null;
       case SlnDslPackage.MODEL__SUBS:
         return subs != null && !subs.isEmpty();
       case SlnDslPackage.MODEL__BODY:

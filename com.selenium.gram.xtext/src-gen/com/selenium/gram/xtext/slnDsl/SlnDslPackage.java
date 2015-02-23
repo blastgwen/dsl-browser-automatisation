@@ -67,13 +67,22 @@ public interface SlnDslPackage extends EPackage
   int MODEL = 0;
 
   /**
+   * The feature id for the '<em><b>Navigator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__NAVIGATOR = 0;
+
+  /**
    * The feature id for the '<em><b>Subs</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__SUBS = 0;
+  int MODEL__SUBS = 1;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -82,7 +91,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__BODY = 1;
+  int MODEL__BODY = 2;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -91,7 +100,35 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectBrowserImpl <em>Select Browser</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.SelectBrowserImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectBrowser()
+   * @generated
+   */
+  int SELECT_BROWSER = 1;
+
+  /**
+   * The feature id for the '<em><b>Browser</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_BROWSER__BROWSER = 0;
+
+  /**
+   * The number of structural features of the '<em>Select Browser</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_BROWSER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.SubprocedureImpl <em>Subprocedure</em>}' class.
@@ -101,7 +138,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSubprocedure()
    * @generated
    */
-  int SUBPROCEDURE = 1;
+  int SUBPROCEDURE = 2;
 
   /**
    * The feature id for the '<em><b>Head</b></em>' containment reference.
@@ -138,16 +175,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBody()
    * @generated
    */
-  int BODY = 2;
-
-  /**
-   * The feature id for the '<em><b>Defs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BODY__DEFS = 0;
+  int BODY = 3;
 
   /**
    * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -156,7 +184,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BODY__INSTRUCTIONS = 1;
+  int BODY__INSTRUCTIONS = 0;
 
   /**
    * The number of structural features of the '<em>Body</em>' class.
@@ -165,7 +193,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BODY_FEATURE_COUNT = 2;
+  int BODY_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.HeadImpl <em>Head</em>}' class.
@@ -175,7 +203,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getHead()
    * @generated
    */
-  int HEAD = 3;
+  int HEAD = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -212,7 +240,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getFunctionReference()
    * @generated
    */
-  int FUNCTION_REFERENCE = 4;
+  int FUNCTION_REFERENCE = 5;
 
   /**
    * The feature id for the '<em><b>Function Name</b></em>' reference.
@@ -240,7 +268,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getFunctionName()
    * @generated
    */
-  int FUNCTION_NAME = 5;
+  int FUNCTION_NAME = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -268,7 +296,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 20;
+  int INSTRUCTION = 22;
 
   /**
    * The number of structural features of the '<em>Instruction</em>' class.
@@ -287,7 +315,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 6;
+  int FUNCTION_CALL = 7;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -324,7 +352,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 9;
+  int EXPRESSION = 11;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -343,7 +371,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getVariableReference()
    * @generated
    */
-  int VARIABLE_REFERENCE = 7;
+  int VARIABLE_REFERENCE = 8;
 
   /**
    * The feature id for the '<em><b>Var ID</b></em>' reference.
@@ -371,7 +399,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getVariableName()
    * @generated
    */
-  int VARIABLE_NAME = 8;
+  int VARIABLE_NAME = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -392,6 +420,34 @@ public interface SlnDslPackage extends EPackage
   int VARIABLE_NAME_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.UriImpl <em>Uri</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.UriImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getUri()
+   * @generated
+   */
+  int URI = 10;
+
+  /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI__URL = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Uri</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URI_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl <em>Num Literal Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -399,7 +455,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNumLiteralExpression()
    * @generated
    */
-  int NUM_LITERAL_EXPRESSION = 10;
+  int NUM_LITERAL_EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -427,7 +483,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getListExpression()
    * @generated
    */
-  int LIST_EXPRESSION = 11;
+  int LIST_EXPRESSION = 13;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -455,7 +511,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanListExpression()
    * @generated
    */
-  int BOOLEAN_LIST_EXPRESSION = 12;
+  int BOOLEAN_LIST_EXPRESSION = 14;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -501,7 +557,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanExpression()
    * @generated
    */
-  int BOOLEAN_EXPRESSION = 13;
+  int BOOLEAN_EXPRESSION = 15;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -529,7 +585,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 14;
+  int BOOLEAN_VALUE = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -557,7 +613,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getVerifyAction()
    * @generated
    */
-  int VERIFY_ACTION = 15;
+  int VERIFY_ACTION = 17;
 
   /**
    * The feature id for the '<em><b>Verify Type</b></em>' attribute.
@@ -603,7 +659,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getExistAction()
    * @generated
    */
-  int EXIST_ACTION = 16;
+  int EXIST_ACTION = 18;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' attribute.
@@ -631,7 +687,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBinaryBooleanExpression()
    * @generated
    */
-  int BINARY_BOOLEAN_EXPRESSION = 17;
+  int BINARY_BOOLEAN_EXPRESSION = 19;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -677,7 +733,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBinaryLogicalExpression()
    * @generated
    */
-  int BINARY_LOGICAL_EXPRESSION = 18;
+  int BINARY_LOGICAL_EXPRESSION = 20;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -723,7 +779,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNegationExpression()
    * @generated
    */
-  int NEGATION_EXPRESSION = 19;
+  int NEGATION_EXPRESSION = 21;
 
   /**
    * The feature id for the '<em><b>Negation</b></em>' containment reference.
@@ -751,7 +807,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getDefinition()
    * @generated
    */
-  int DEFINITION = 21;
+  int DEFINITION = 23;
 
   /**
    * The feature id for the '<em><b>Var ID</b></em>' containment reference.
@@ -760,7 +816,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION__VAR_ID = 0;
+  int DEFINITION__VAR_ID = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -769,7 +825,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION__EXP = 1;
+  int DEFINITION__EXP = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Definition</em>' class.
@@ -778,7 +834,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINITION_FEATURE_COUNT = 2;
+  int DEFINITION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.AssignationImpl <em>Assignation</em>}' class.
@@ -788,7 +844,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getAssignation()
    * @generated
    */
-  int ASSIGNATION = 22;
+  int ASSIGNATION = 24;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -825,7 +881,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getConditional()
    * @generated
    */
-  int CONDITIONAL = 23;
+  int CONDITIONAL = 25;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -871,7 +927,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getLoop()
    * @generated
    */
-  int LOOP = 24;
+  int LOOP = 26;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -899,7 +955,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 25;
+  int WHILE = 27;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -936,7 +992,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getForeach()
    * @generated
    */
-  int FOREACH = 26;
+  int FOREACH = 28;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -982,7 +1038,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionInstruction()
    * @generated
    */
-  int ACTION_INSTRUCTION = 27;
+  int ACTION_INSTRUCTION = 29;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -1010,7 +1066,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionClick()
    * @generated
    */
-  int ACTION_CLICK = 28;
+  int ACTION_CLICK = 30;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1047,10 +1103,10 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionOpen()
    * @generated
    */
-  int ACTION_OPEN = 29;
+  int ACTION_OPEN = 31;
 
   /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * The feature id for the '<em><b>Url</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1075,7 +1131,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionCheck()
    * @generated
    */
-  int ACTION_CHECK = 30;
+  int ACTION_CHECK = 32;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -1112,7 +1168,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionType()
    * @generated
    */
-  int ACTION_TYPE = 31;
+  int ACTION_TYPE = 33;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' containment reference.
@@ -1149,7 +1205,16 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionSelectExpression()
    * @generated
    */
-  int ACTION_SELECT_EXPRESSION = 32;
+  int ACTION_SELECT_EXPRESSION = 34;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_SELECT_EXPRESSION__TYPE = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -1158,7 +1223,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_SELECT_EXPRESSION__ELEMENT = EXPRESSION_FEATURE_COUNT + 0;
+  int ACTION_SELECT_EXPRESSION__ELEMENT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Action Select Expression</em>' class.
@@ -1167,7 +1232,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_SELECT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int ACTION_SELECT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 
   /**
@@ -1179,6 +1244,17 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getModel();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.Model#getNavigator <em>Navigator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Navigator</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Model#getNavigator()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Navigator();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Model#getSubs <em>Subs</em>}'.
@@ -1201,6 +1277,27 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EReference getModel_Body();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.SelectBrowser <em>Select Browser</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select Browser</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SelectBrowser
+   * @generated
+   */
+  EClass getSelectBrowser();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.SelectBrowser#getBrowser <em>Browser</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Browser</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SelectBrowser#getBrowser()
+   * @see #getSelectBrowser()
+   * @generated
+   */
+  EAttribute getSelectBrowser_Browser();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Subprocedure <em>Subprocedure</em>}'.
@@ -1243,17 +1340,6 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getBody();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Body#getDefs <em>Defs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Defs</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.Body#getDefs()
-   * @see #getBody()
-   * @generated
-   */
-  EReference getBody_Defs();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.selenium.gram.xtext.slnDsl.Body#getInstructions <em>Instructions</em>}'.
@@ -1413,6 +1499,27 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EAttribute getVariableName_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Uri <em>Uri</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Uri</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Uri
+   * @generated
+   */
+  EClass getUri();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.Uri#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.Uri#getUrl()
+   * @see #getUri()
+   * @generated
+   */
+  EAttribute getUri_Url();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.Expression <em>Expression</em>}'.
@@ -1977,15 +2084,15 @@ public interface SlnDslPackage extends EPackage
   EClass getActionOpen();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl <em>Url</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl <em>Url</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
+   * @return the meta object for the containment reference '<em>Url</em>'.
    * @see com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl()
    * @see #getActionOpen()
    * @generated
    */
-  EAttribute getActionOpen_Url();
+  EReference getActionOpen_Url();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionCheck <em>Action Check</em>}'.
@@ -2062,6 +2169,17 @@ public interface SlnDslPackage extends EPackage
   EClass getActionSelectExpression();
 
   /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getType()
+   * @see #getActionSelectExpression()
+   * @generated
+   */
+  EAttribute getActionSelectExpression_Type();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2106,6 +2224,14 @@ public interface SlnDslPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
+     * The meta object literal for the '<em><b>Navigator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__NAVIGATOR = eINSTANCE.getModel_Navigator();
+
+    /**
      * The meta object literal for the '<em><b>Subs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2120,6 +2246,24 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EReference MODEL__BODY = eINSTANCE.getModel_Body();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectBrowserImpl <em>Select Browser</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.SelectBrowserImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectBrowser()
+     * @generated
+     */
+    EClass SELECT_BROWSER = eINSTANCE.getSelectBrowser();
+
+    /**
+     * The meta object literal for the '<em><b>Browser</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECT_BROWSER__BROWSER = eINSTANCE.getSelectBrowser_Browser();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.SubprocedureImpl <em>Subprocedure</em>}' class.
@@ -2156,14 +2300,6 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass BODY = eINSTANCE.getBody();
-
-    /**
-     * The meta object literal for the '<em><b>Defs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BODY__DEFS = eINSTANCE.getBody_Defs();
 
     /**
      * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
@@ -2296,6 +2432,24 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EAttribute VARIABLE_NAME__NAME = eINSTANCE.getVariableName_Name();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.UriImpl <em>Uri</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.UriImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getUri()
+     * @generated
+     */
+    EClass URI = eINSTANCE.getUri();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URI__URL = eINSTANCE.getUri_Url();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -2764,12 +2918,12 @@ public interface SlnDslPackage extends EPackage
     EClass ACTION_OPEN = eINSTANCE.getActionOpen();
 
     /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Url</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_OPEN__URL = eINSTANCE.getActionOpen_Url();
+    EReference ACTION_OPEN__URL = eINSTANCE.getActionOpen_Url();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionCheckImpl <em>Action Check</em>}' class.
@@ -2832,6 +2986,14 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass ACTION_SELECT_EXPRESSION = eINSTANCE.getActionSelectExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_SELECT_EXPRESSION__TYPE = eINSTANCE.getActionSelectExpression_Type();
 
     /**
      * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.

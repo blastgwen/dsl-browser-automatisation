@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface ActionOpen extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Url</b></em>' attribute.
+   * Returns the value of the '<em><b>Url</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Url</em>' attribute isn't clear,
+   * If the meaning of the '<em>Url</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Url</em>' attribute.
-   * @see #setUrl(String)
+   * @return the value of the '<em>Url</em>' containment reference.
+   * @see #setUrl(Expression)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionOpen_Url()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getUrl();
+  Expression getUrl();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl <em>Url</em>}' attribute.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionOpen#getUrl <em>Url</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Url</em>' attribute.
+   * @param value the new value of the '<em>Url</em>' containment reference.
    * @see #getUrl()
    * @generated
    */
-  void setUrl(String value);
+  void setUrl(Expression value);
 
 } // ActionOpen

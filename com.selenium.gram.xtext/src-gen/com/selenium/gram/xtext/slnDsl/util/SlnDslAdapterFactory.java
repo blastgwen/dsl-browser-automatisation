@@ -80,6 +80,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseSelectBrowser(SelectBrowser object)
+      {
+        return createSelectBrowserAdapter();
+      }
+      @Override
       public Adapter caseSubprocedure(Subprocedure object)
       {
         return createSubprocedureAdapter();
@@ -118,6 +123,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseVariableName(VariableName object)
       {
         return createVariableNameAdapter();
+      }
+      @Override
+      public Adapter caseUri(Uri object)
+      {
+        return createUriAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
@@ -277,6 +287,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.SelectBrowser <em>Select Browser</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.SelectBrowser
+   * @generated
+   */
+  public Adapter createSelectBrowserAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Subprocedure <em>Subprocedure</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -392,6 +417,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.Uri <em>Uri</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.Uri
+   * @generated
+   */
+  public Adapter createUriAdapter()
   {
     return null;
   }

@@ -6,10 +6,19 @@ generate slnDsl "http://www.selenium.com/gram/xtext/SlnDsl"
  * Le modele
  */
 Model:
+	navigator=SelectBrowser
 	subs+=Subprocedure*
 	'main' 
 	body=Body 
 	'endmain'
+;
+
+SelectBrowser:
+	'browser' browser=BROWSER 
+;
+
+BROWSER:
+	'firefox' | 'chrome' | 'opera'
 ;
 	
 Subprocedure:
@@ -19,7 +28,6 @@ Subprocedure:
 	;
 
 Body:
-	defs+=Definition*
 	instructions+=Instruction+
 ;
 
@@ -59,6 +67,10 @@ NumberLiteral:
 	INT | STRING
 ;
 
+Uri:
+	url=URL
+;
+
 /*
  * Expression
  */
@@ -69,6 +81,7 @@ Expression:
 	| ListExpression
 	| BooleanExpression
 	| ActionSelectExpression
+	| Uri	
 ;	
 
 NumLiteralExpression:
@@ -107,7 +120,7 @@ terminal BOOLEAN:
 ;
 
 VerifyAction :
-	'verify' '(' verifyType=VerifyType ',' nameElement=Expression ',' value=Expression ')'
+	'verify' '(' verifyType=VerifiableElement ',' nameElement=Expression ',' value=Expression ')'
 ;
 
 ExistAction :
@@ -134,15 +147,13 @@ BooleanOperator :
 	('=='|'<'|'>')
 ;
 
-VerifyType:
-	('checkbox' | 'textbox')
-;
 
 /*
  * Type of Instruction
  */
 Instruction:
-	FunctionCall 
+	FunctionCall
+	| Definition 
 	| Conditional
 	| Loop
 	| ActionInstruction
@@ -189,7 +200,7 @@ ActionClick:
 ;
 
 ActionOpen:
-	'open' '(' url=URL ')'
+	'open' '(' url=Expression ')'
 ;
 
 ActionCheck:
@@ -200,11 +211,20 @@ ActionType:
 	'type' '(' nameElement=Expression ',' value=Expression ')'
 ;
 ActionSelectExpression :
-	'select' '(' element=Expression ')'
+	'select' '(' type=SelectableElement ',' element=Expression ')'
+;
+	
+SelectableElement:
+	ClickableElement | VerifiableElement
 ;
 
 ClickableElement:
-	('button'|'image'| 'link');
+	'button'|'image'| 'link';
+
+VerifiableElement:
+	'checkbox' | 'textbox'
+;
+
 /*
  * URL
  */

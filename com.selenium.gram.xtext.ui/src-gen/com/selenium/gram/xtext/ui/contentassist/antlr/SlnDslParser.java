@@ -37,6 +37,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getBROWSERAccess().getAlternatives(), "rule__BROWSER__Alternatives");
 					put(grammarAccess.getHeadAccess().getAlternatives(), "rule__Head__Alternatives");
 					put(grammarAccess.getFunctionCallAccess().getAlternatives(), "rule__FunctionCall__Alternatives");
 					put(grammarAccess.getNumberLiteralAccess().getAlternatives(), "rule__NumberLiteral__Alternatives");
@@ -45,14 +46,15 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanExpressionAccess().getAlternatives(), "rule__BooleanExpression__Alternatives");
 					put(grammarAccess.getLogicalOperatorAccess().getAlternatives(), "rule__LogicalOperator__Alternatives");
 					put(grammarAccess.getBooleanOperatorAccess().getAlternatives(), "rule__BooleanOperator__Alternatives");
-					put(grammarAccess.getVerifyTypeAccess().getAlternatives(), "rule__VerifyType__Alternatives");
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
 					put(grammarAccess.getActionInstructionAccess().getAlternatives(), "rule__ActionInstruction__Alternatives");
+					put(grammarAccess.getSelectableElementAccess().getAlternatives(), "rule__SelectableElement__Alternatives");
 					put(grammarAccess.getClickableElementAccess().getAlternatives(), "rule__ClickableElement__Alternatives");
+					put(grammarAccess.getVerifiableElementAccess().getAlternatives(), "rule__VerifiableElement__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getSelectBrowserAccess().getGroup(), "rule__SelectBrowser__Group__0");
 					put(grammarAccess.getSubprocedureAccess().getGroup(), "rule__Subprocedure__Group__0");
-					put(grammarAccess.getBodyAccess().getGroup(), "rule__Body__Group__0");
 					put(grammarAccess.getHeadAccess().getGroup_0(), "rule__Head__Group_0__0");
 					put(grammarAccess.getHeadAccess().getGroup_1(), "rule__Head__Group_1__0");
 					put(grammarAccess.getHeadAccess().getGroup_1_4(), "rule__Head__Group_1_4__0");
@@ -77,12 +79,13 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionCheckAccess().getGroup(), "rule__ActionCheck__Group__0");
 					put(grammarAccess.getActionTypeAccess().getGroup(), "rule__ActionType__Group__0");
 					put(grammarAccess.getActionSelectExpressionAccess().getGroup(), "rule__ActionSelectExpression__Group__0");
-					put(grammarAccess.getModelAccess().getSubsAssignment_0(), "rule__Model__SubsAssignment_0");
-					put(grammarAccess.getModelAccess().getBodyAssignment_2(), "rule__Model__BodyAssignment_2");
+					put(grammarAccess.getModelAccess().getNavigatorAssignment_0(), "rule__Model__NavigatorAssignment_0");
+					put(grammarAccess.getModelAccess().getSubsAssignment_1(), "rule__Model__SubsAssignment_1");
+					put(grammarAccess.getModelAccess().getBodyAssignment_3(), "rule__Model__BodyAssignment_3");
+					put(grammarAccess.getSelectBrowserAccess().getBrowserAssignment_1(), "rule__SelectBrowser__BrowserAssignment_1");
 					put(grammarAccess.getSubprocedureAccess().getHeadAssignment_1(), "rule__Subprocedure__HeadAssignment_1");
 					put(grammarAccess.getSubprocedureAccess().getBodyAssignment_2(), "rule__Subprocedure__BodyAssignment_2");
-					put(grammarAccess.getBodyAccess().getDefsAssignment_0(), "rule__Body__DefsAssignment_0");
-					put(grammarAccess.getBodyAccess().getInstructionsAssignment_1(), "rule__Body__InstructionsAssignment_1");
+					put(grammarAccess.getBodyAccess().getInstructionsAssignment(), "rule__Body__InstructionsAssignment");
 					put(grammarAccess.getHeadAccess().getNameAssignment_0_0(), "rule__Head__NameAssignment_0_0");
 					put(grammarAccess.getHeadAccess().getNameAssignment_1_0(), "rule__Head__NameAssignment_1_0");
 					put(grammarAccess.getHeadAccess().getArgsIDAssignment_1_3(), "rule__Head__ArgsIDAssignment_1_3");
@@ -95,6 +98,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionCallAccess().getArgsAssignment_1_3_1(), "rule__FunctionCall__ArgsAssignment_1_3_1");
 					put(grammarAccess.getVariableReferenceAccess().getVarIDAssignment(), "rule__VariableReference__VarIDAssignment");
 					put(grammarAccess.getVariableNameAccess().getNameAssignment(), "rule__VariableName__NameAssignment");
+					put(grammarAccess.getUriAccess().getUrlAssignment(), "rule__Uri__UrlAssignment");
 					put(grammarAccess.getNumLiteralExpressionAccess().getValueAssignment(), "rule__NumLiteralExpression__ValueAssignment");
 					put(grammarAccess.getListExpressionAccess().getExpAssignment_2(), "rule__ListExpression__ExpAssignment_2");
 					put(grammarAccess.getBooleanListExpressionAccess().getOpAssignment_0(), "rule__BooleanListExpression__OpAssignment_0");
@@ -143,7 +147,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionCheckAccess().getValueAssignment_4(), "rule__ActionCheck__ValueAssignment_4");
 					put(grammarAccess.getActionTypeAccess().getNameElementAssignment_2(), "rule__ActionType__NameElementAssignment_2");
 					put(grammarAccess.getActionTypeAccess().getValueAssignment_4(), "rule__ActionType__ValueAssignment_4");
-					put(grammarAccess.getActionSelectExpressionAccess().getElementAssignment_2(), "rule__ActionSelectExpression__ElementAssignment_2");
+					put(grammarAccess.getActionSelectExpressionAccess().getTypeAssignment_2(), "rule__ActionSelectExpression__TypeAssignment_2");
+					put(grammarAccess.getActionSelectExpressionAccess().getElementAssignment_4(), "rule__ActionSelectExpression__ElementAssignment_4");
 				}
 			};
 		}

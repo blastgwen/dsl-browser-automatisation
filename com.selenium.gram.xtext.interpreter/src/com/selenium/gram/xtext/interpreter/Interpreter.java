@@ -70,6 +70,7 @@ public class Interpreter {
 	 */
 	private void executeBody(Body body, Map<String, ExpressionValue> variables)
 			throws Exception {
+		/*
 		for(Definition def : body.getDefs()){
 			if(def.getVarID() == null) throw new InterpretationException("pas de nom de variable");
 			
@@ -80,7 +81,7 @@ public class Interpreter {
 				System.out.println("exec def : "+def.getVarID() + ", exp : "+def.getExp());
 				variables.put(def.getVarID().getName(), computeExpression(def.getExp(), variables));
 			}	
-		}
+		}*/
 		
 		for(Instruction ins : body.getInstructions()){
 			this.executeInstruction(ins, variables);

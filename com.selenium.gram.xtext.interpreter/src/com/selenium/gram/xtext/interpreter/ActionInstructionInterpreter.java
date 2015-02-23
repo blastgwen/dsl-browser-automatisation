@@ -191,7 +191,7 @@ public class ActionInstructionInterpreter {
 				System.out.println("Open - ActionInstruction");
 
 				ActionOpen act = (ActionOpen) action.getAction();
-				driver.get(act.getUrl());
+				//driver.get(act.getUrl());
 
 				System.out.println("J'ai fini l'action open");
 			}

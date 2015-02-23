@@ -79,6 +79,13 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.SELECT_BROWSER:
+      {
+        SelectBrowser selectBrowser = (SelectBrowser)theEObject;
+        T result = caseSelectBrowser(selectBrowser);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.SUBPROCEDURE:
       {
         Subprocedure subprocedure = (Subprocedure)theEObject;
@@ -134,6 +141,14 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         VariableName variableName = (VariableName)theEObject;
         T result = caseVariableName(variableName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.URI:
+      {
+        Uri uri = (Uri)theEObject;
+        T result = caseUri(uri);
+        if (result == null) result = caseExpression(uri);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -228,6 +243,7 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         Definition definition = (Definition)theEObject;
         T result = caseDefinition(definition);
+        if (result == null) result = caseInstruction(definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -333,6 +349,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Select Browser</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Select Browser</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelectBrowser(SelectBrowser object)
   {
     return null;
   }
@@ -461,6 +493,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVariableName(VariableName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Uri</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Uri</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUri(Uri object)
   {
     return null;
   }

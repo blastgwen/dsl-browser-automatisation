@@ -30,9 +30,11 @@ import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.SelectBrowser;
 import com.selenium.gram.xtext.slnDsl.SlnDslFactory;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
+import com.selenium.gram.xtext.slnDsl.Uri;
 import com.selenium.gram.xtext.slnDsl.VariableName;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 import com.selenium.gram.xtext.slnDsl.VerifyAction;
@@ -59,6 +61,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selectBrowserEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,6 +124,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * @generated
    */
   private EClass variableNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass uriEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -362,7 +378,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Subs()
+  public EReference getModel_Navigator()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -372,9 +388,39 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Body()
+  public EReference getModel_Subs()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Body()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSelectBrowser()
+  {
+    return selectBrowserEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSelectBrowser_Browser()
+  {
+    return (EAttribute)selectBrowserEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -422,19 +468,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBody_Defs()
-  {
-    return (EReference)bodyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getBody_Instructions()
   {
-    return (EReference)bodyEClass.getEStructuralFeatures().get(1);
+    return (EReference)bodyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -575,6 +611,26 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
   public EAttribute getVariableName_Name()
   {
     return (EAttribute)variableNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUri()
+  {
+    return uriEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUri_Url()
+  {
+    return (EAttribute)uriEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1112,9 +1168,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionOpen_Url()
+  public EReference getActionOpen_Url()
   {
-    return (EAttribute)actionOpenEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionOpenEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1192,9 +1248,19 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getActionSelectExpression_Type()
+  {
+    return (EAttribute)actionSelectExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getActionSelectExpression_Element()
   {
-    return (EReference)actionSelectExpressionEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionSelectExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1228,15 +1294,18 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
+    createEReference(modelEClass, MODEL__NAVIGATOR);
     createEReference(modelEClass, MODEL__SUBS);
     createEReference(modelEClass, MODEL__BODY);
+
+    selectBrowserEClass = createEClass(SELECT_BROWSER);
+    createEAttribute(selectBrowserEClass, SELECT_BROWSER__BROWSER);
 
     subprocedureEClass = createEClass(SUBPROCEDURE);
     createEReference(subprocedureEClass, SUBPROCEDURE__HEAD);
     createEReference(subprocedureEClass, SUBPROCEDURE__BODY);
 
     bodyEClass = createEClass(BODY);
-    createEReference(bodyEClass, BODY__DEFS);
     createEReference(bodyEClass, BODY__INSTRUCTIONS);
 
     headEClass = createEClass(HEAD);
@@ -1258,6 +1327,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     variableNameEClass = createEClass(VARIABLE_NAME);
     createEAttribute(variableNameEClass, VARIABLE_NAME__NAME);
+
+    uriEClass = createEClass(URI);
+    createEAttribute(uriEClass, URI__URL);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -1332,7 +1404,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEAttribute(actionClickEClass, ACTION_CLICK__ELEMENT);
 
     actionOpenEClass = createEClass(ACTION_OPEN);
-    createEAttribute(actionOpenEClass, ACTION_OPEN__URL);
+    createEReference(actionOpenEClass, ACTION_OPEN__URL);
 
     actionCheckEClass = createEClass(ACTION_CHECK);
     createEReference(actionCheckEClass, ACTION_CHECK__ELEMENT);
@@ -1343,6 +1415,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEReference(actionTypeEClass, ACTION_TYPE__VALUE);
 
     actionSelectExpressionEClass = createEClass(ACTION_SELECT_EXPRESSION);
+    createEAttribute(actionSelectExpressionEClass, ACTION_SELECT_EXPRESSION__TYPE);
     createEReference(actionSelectExpressionEClass, ACTION_SELECT_EXPRESSION__ELEMENT);
   }
 
@@ -1377,9 +1450,11 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     // Add supertypes to classes
     functionCallEClass.getESuperTypes().add(this.getInstruction());
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
+    uriEClass.getESuperTypes().add(this.getExpression());
     numLiteralExpressionEClass.getESuperTypes().add(this.getExpression());
     listExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
+    definitionEClass.getESuperTypes().add(this.getInstruction());
     assignationEClass.getESuperTypes().add(this.getInstruction());
     conditionalEClass.getESuperTypes().add(this.getInstruction());
     loopEClass.getESuperTypes().add(this.getInstruction());
@@ -1390,15 +1465,18 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModel_Navigator(), this.getSelectBrowser(), null, "navigator", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Subs(), this.getSubprocedure(), null, "subs", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Body(), this.getBody(), null, "body", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selectBrowserEClass, SelectBrowser.class, "SelectBrowser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSelectBrowser_Browser(), ecorePackage.getEString(), "browser", null, 0, 1, SelectBrowser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subprocedureEClass, Subprocedure.class, "Subprocedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubprocedure_Head(), this.getHead(), null, "head", null, 0, 1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubprocedure_Body(), this.getBody(), null, "body", null, 0, 1, Subprocedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBody_Defs(), this.getDefinition(), null, "defs", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBody_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headEClass, Head.class, "Head", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1420,6 +1498,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     initEClass(variableNameEClass, VariableName.class, "VariableName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableName_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(uriEClass, Uri.class, "Uri", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUri_Url(), ecorePackage.getEString(), "url", null, 0, 1, Uri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1494,7 +1575,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getActionClick_Element(), ecorePackage.getEString(), "element", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionOpenEClass, ActionOpen.class, "ActionOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionOpen_Url(), ecorePackage.getEString(), "url", null, 0, 1, ActionOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionOpen_Url(), this.getExpression(), null, "url", null, 0, 1, ActionOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionCheckEClass, ActionCheck.class, "ActionCheck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActionCheck_Element(), this.getExpression(), null, "element", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1505,6 +1586,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getActionType_Value(), this.getExpression(), null, "value", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionSelectExpressionEClass, ActionSelectExpression.class, "ActionSelectExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionSelectExpression_Type(), ecorePackage.getEString(), "type", null, 0, 1, ActionSelectExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getActionSelectExpression_Element(), this.getExpression(), null, "element", null, 0, 1, ActionSelectExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

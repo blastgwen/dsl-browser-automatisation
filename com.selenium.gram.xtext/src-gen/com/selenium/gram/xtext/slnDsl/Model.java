@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.Model#getNavigator <em>Navigator</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Model#getSubs <em>Subs</em>}</li>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.Model#getBody <em>Body</em>}</li>
  * </ul>
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Model extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Navigator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Navigator</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Navigator</em>' containment reference.
+   * @see #setNavigator(SelectBrowser)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getModel_Navigator()
+   * @model containment="true"
+   * @generated
+   */
+  SelectBrowser getNavigator();
+
+  /**
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.Model#getNavigator <em>Navigator</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Navigator</em>' containment reference.
+   * @see #getNavigator()
+   * @generated
+   */
+  void setNavigator(SelectBrowser value);
+
   /**
    * Returns the value of the '<em><b>Subs</b></em>' containment reference list.
    * The list contents are of type {@link com.selenium.gram.xtext.slnDsl.Subprocedure}.

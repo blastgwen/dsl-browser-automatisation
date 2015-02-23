@@ -8,15 +8,18 @@
   <genPackages prefix="SlnDsl" basePackage="com.selenium.gram.xtext" disposableProviderFactory="true"
       fileExtensions="slndsl" ecorePackage="SlnDsl.ecore#/">
     <genClasses ecoreClass="SlnDsl.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/navigator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/subs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Model/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//SelectBrowser">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//SelectBrowser/browser"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Subprocedure">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Subprocedure/head"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Subprocedure/body"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Body">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Body/defs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//Body/instructions"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Head">
@@ -38,6 +41,9 @@
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//VariableName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//VariableName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//Uri">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//Uri/url"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Expression"/>
     <genClasses ecoreClass="SlnDsl.ecore#//NumLiteralExpression">
@@ -110,7 +116,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/element"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionOpen">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionOpen/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionOpen/url"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionCheck">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionCheck/element"/>
@@ -121,6 +127,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionType/value"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionSelectExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionSelectExpression/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionSelectExpression/element"/>
     </genClasses>
   </genPackages>
