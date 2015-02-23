@@ -332,7 +332,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (nameElement=NumberLiteral value=Expression)
+	 *     (nameElement=Expression value=Expression)
 	 */
 	protected void sequence_ActionType(EObject context, ActionType semanticObject) {
 		if(errorAcceptor != null) {
@@ -343,7 +343,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionTypeAccess().getNameElementNumberLiteralParserRuleCall_2_0(), semanticObject.getNameElement());
+		feeder.accept(grammarAccess.getActionTypeAccess().getNameElementExpressionParserRuleCall_2_0(), semanticObject.getNameElement());
 		feeder.accept(grammarAccess.getActionTypeAccess().getValueExpressionParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}

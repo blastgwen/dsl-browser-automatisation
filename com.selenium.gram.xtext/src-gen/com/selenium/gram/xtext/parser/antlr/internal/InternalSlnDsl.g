@@ -2369,9 +2369,9 @@ ruleActionType returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getActionTypeAccess().getNameElementNumberLiteralParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getActionTypeAccess().getNameElementExpressionParserRuleCall_2_0()); 
 	    }
-		lv_nameElement_2_0=ruleNumberLiteral		{
+		lv_nameElement_2_0=ruleExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getActionTypeRule());
 	        }
@@ -2379,7 +2379,7 @@ ruleActionType returns [EObject current=null]
        			$current, 
        			"nameElement",
         		lv_nameElement_2_0, 
-        		"NumberLiteral");
+        		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 

@@ -1290,17 +1290,17 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameElementNumberLiteralParserRuleCall_2_0 = (RuleCall)cNameElementAssignment_2.eContents().get(0);
+		private final RuleCall cNameElementExpressionParserRuleCall_2_0 = (RuleCall)cNameElementAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cValueExpressionParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ActionType:
-		//	"type" "(" nameElement=NumberLiteral "," value=Expression ")";
+		//	"type" "(" nameElement=Expression "," value=Expression ")";
 		public ParserRule getRule() { return rule; }
 
-		//"type" "(" nameElement=NumberLiteral "," value=Expression ")"
+		//"type" "(" nameElement=Expression "," value=Expression ")"
 		public Group getGroup() { return cGroup; }
 
 		//"type"
@@ -1309,11 +1309,11 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//nameElement=NumberLiteral
+		//nameElement=Expression
 		public Assignment getNameElementAssignment_2() { return cNameElementAssignment_2; }
 
-		//NumberLiteral
-		public RuleCall getNameElementNumberLiteralParserRuleCall_2_0() { return cNameElementNumberLiteralParserRuleCall_2_0; }
+		//Expression
+		public RuleCall getNameElementExpressionParserRuleCall_2_0() { return cNameElementExpressionParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
@@ -1874,7 +1874,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionType:
-	//	"type" "(" nameElement=NumberLiteral "," value=Expression ")";
+	//	"type" "(" nameElement=Expression "," value=Expression ")";
 	public ActionTypeElements getActionTypeAccess() {
 		return pActionType;
 	}

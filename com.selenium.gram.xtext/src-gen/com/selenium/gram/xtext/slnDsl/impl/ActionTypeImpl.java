@@ -32,24 +32,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ActionTypeImpl extends MinimalEObjectImpl.Container implements ActionType
 {
   /**
-   * The default value of the '{@link #getNameElement() <em>Name Element</em>}' attribute.
+   * The cached value of the '{@link #getNameElement() <em>Name Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNameElement()
    * @generated
    * @ordered
    */
-  protected static final String NAME_ELEMENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNameElement() <em>Name Element</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNameElement()
-   * @generated
-   * @ordered
-   */
-  protected String nameElement = NAME_ELEMENT_EDEFAULT;
+  protected Expression nameElement;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -87,7 +77,7 @@ public class ActionTypeImpl extends MinimalEObjectImpl.Container implements Acti
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNameElement()
+  public Expression getNameElement()
   {
     return nameElement;
   }
@@ -97,12 +87,37 @@ public class ActionTypeImpl extends MinimalEObjectImpl.Container implements Acti
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameElement(String newNameElement)
+  public NotificationChain basicSetNameElement(Expression newNameElement, NotificationChain msgs)
   {
-    String oldNameElement = nameElement;
+    Expression oldNameElement = nameElement;
     nameElement = newNameElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_TYPE__NAME_ELEMENT, oldNameElement, nameElement));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_TYPE__NAME_ELEMENT, oldNameElement, newNameElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNameElement(Expression newNameElement)
+  {
+    if (newNameElement != nameElement)
+    {
+      NotificationChain msgs = null;
+      if (nameElement != null)
+        msgs = ((InternalEObject)nameElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_TYPE__NAME_ELEMENT, null, msgs);
+      if (newNameElement != null)
+        msgs = ((InternalEObject)newNameElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_TYPE__NAME_ELEMENT, null, msgs);
+      msgs = basicSetNameElement(newNameElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_TYPE__NAME_ELEMENT, newNameElement, newNameElement));
   }
 
   /**
@@ -163,6 +178,8 @@ public class ActionTypeImpl extends MinimalEObjectImpl.Container implements Acti
   {
     switch (featureID)
     {
+      case SlnDslPackage.ACTION_TYPE__NAME_ELEMENT:
+        return basicSetNameElement(null, msgs);
       case SlnDslPackage.ACTION_TYPE__VALUE:
         return basicSetValue(null, msgs);
     }
@@ -198,7 +215,7 @@ public class ActionTypeImpl extends MinimalEObjectImpl.Container implements Acti
     switch (featureID)
     {
       case SlnDslPackage.ACTION_TYPE__NAME_ELEMENT:
-        setNameElement((String)newValue);
+        setNameElement((Expression)newValue);
         return;
       case SlnDslPackage.ACTION_TYPE__VALUE:
         setValue((Expression)newValue);
@@ -218,7 +235,7 @@ public class ActionTypeImpl extends MinimalEObjectImpl.Container implements Acti
     switch (featureID)
     {
       case SlnDslPackage.ACTION_TYPE__NAME_ELEMENT:
-        setNameElement(NAME_ELEMENT_EDEFAULT);
+        setNameElement((Expression)null);
         return;
       case SlnDslPackage.ACTION_TYPE__VALUE:
         setValue((Expression)null);
@@ -238,28 +255,11 @@ public class ActionTypeImpl extends MinimalEObjectImpl.Container implements Acti
     switch (featureID)
     {
       case SlnDslPackage.ACTION_TYPE__NAME_ELEMENT:
-        return NAME_ELEMENT_EDEFAULT == null ? nameElement != null : !NAME_ELEMENT_EDEFAULT.equals(nameElement);
+        return nameElement != null;
       case SlnDslPackage.ACTION_TYPE__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nameElement: ");
-    result.append(nameElement);
-    result.append(')');
-    return result.toString();
   }
 
 } //ActionTypeImpl

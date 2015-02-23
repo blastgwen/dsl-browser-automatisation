@@ -193,17 +193,14 @@ ActionCheck:
 ;
 
 ActionType:
-	'type' '(' nameElement=NumberLiteral ',' value=Expression ')'
+	'type' '(' nameElement=Expression ',' value=Expression ')'
 ;
 ActionSelectExpression :
 	'select' '(' element=Expression ')'
 ;
 
 ClickableElement:
-	'button'|
-	'image'|
-	'link'
-;
+	('button'|'image'| 'link');
 /*
  * URL
  */

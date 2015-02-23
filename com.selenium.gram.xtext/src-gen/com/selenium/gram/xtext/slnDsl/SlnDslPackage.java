@@ -1106,7 +1106,7 @@ public interface SlnDslPackage extends EPackage
   int ACTION_TYPE = 31;
 
   /**
-   * The feature id for the '<em><b>Name Element</b></em>' attribute.
+   * The feature id for the '<em><b>Name Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2010,15 +2010,15 @@ public interface SlnDslPackage extends EPackage
   EClass getActionType();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionType#getNameElement <em>Name Element</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionType#getNameElement <em>Name Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name Element</em>'.
+   * @return the meta object for the containment reference '<em>Name Element</em>'.
    * @see com.selenium.gram.xtext.slnDsl.ActionType#getNameElement()
    * @see #getActionType()
    * @generated
    */
-  EAttribute getActionType_NameElement();
+  EReference getActionType_NameElement();
 
   /**
    * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionType#getValue <em>Value</em>}'.
@@ -2780,12 +2780,12 @@ public interface SlnDslPackage extends EPackage
     EClass ACTION_TYPE = eINSTANCE.getActionType();
 
     /**
-     * The meta object literal for the '<em><b>Name Element</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name Element</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_TYPE__NAME_ELEMENT = eINSTANCE.getActionType_NameElement();
+    EReference ACTION_TYPE__NAME_ELEMENT = eINSTANCE.getActionType_NameElement();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.

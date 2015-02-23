@@ -116,7 +116,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionCheck/value"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionType/nameElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionType/nameElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionType/value"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionSelectExpression">

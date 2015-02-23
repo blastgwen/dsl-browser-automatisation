@@ -1152,9 +1152,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionType_NameElement()
+  public EReference getActionType_NameElement()
   {
-    return (EAttribute)actionTypeEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1328,7 +1328,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     createEReference(actionCheckEClass, ACTION_CHECK__VALUE);
 
     actionTypeEClass = createEClass(ACTION_TYPE);
-    createEAttribute(actionTypeEClass, ACTION_TYPE__NAME_ELEMENT);
+    createEReference(actionTypeEClass, ACTION_TYPE__NAME_ELEMENT);
     createEReference(actionTypeEClass, ACTION_TYPE__VALUE);
 
     actionSelectExpressionEClass = createEClass(ACTION_SELECT_EXPRESSION);
@@ -1489,7 +1489,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEReference(getActionCheck_Value(), this.getBooleanExpression(), null, "value", null, 0, 1, ActionCheck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionTypeEClass, ActionType.class, "ActionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionType_NameElement(), ecorePackage.getEString(), "nameElement", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionType_NameElement(), this.getExpression(), null, "nameElement", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getActionType_Value(), this.getExpression(), null, "value", null, 0, 1, ActionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionSelectExpressionEClass, ActionSelectExpression.class, "ActionSelectExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

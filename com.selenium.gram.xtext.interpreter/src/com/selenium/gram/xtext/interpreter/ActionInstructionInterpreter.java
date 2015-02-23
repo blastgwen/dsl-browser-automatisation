@@ -20,6 +20,7 @@ import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.BooleanExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
+import com.thoughtworks.selenium.webdriven.commands.GetValue;
 
 public class ActionInstructionInterpreter {
 
@@ -216,12 +217,13 @@ public class ActionInstructionInterpreter {
 						|| act.getElement() instanceof ActionSelectExpression){					
 
 					if (valExp.getType() == ExpressionValueType.list){
+						// TODO : Gerer la liste
 						List<Object> list =  (List<Object>) valExp.getValue();
 						for (Object obj : list) {
-							DoActionCheck(obj.toString(), value);
+							doActionCheck(obj.toString(), value);
 						}					
 					} else {
-						DoActionCheck(valueToTest, value);						
+						doActionCheck(valueToTest, value);						
 					}
 				}
 					
@@ -238,66 +240,17 @@ public class ActionInstructionInterpreter {
 				System.out.println("Type - ActionInstruction");
 				ActionType act = (ActionType)action.getAction();
 				
-				List<WebElement> elements = new ArrayList<WebElement>();				
-				elements.addAll(driver.findElements(By.cssSelector("input[type='text']")));	
-				elements.addAll(driver.findElements(By.cssSelector("input[type='password']")));	
+				ExpressionValue expElem = interpreter.computeExpression(act.getNameElement(), variables);				
+				ExpressionValue expValue = interpreter.computeExpression(act.getValue(), variables);
 				
-				boolean type = false;
-				int i = 0;
-				while (!type){
-					
-					if (i != elements.size()){
-						try {
-							WebElement elem = elements.get(i);
-							
-							String name = elem.getAttribute("name").trim().toLowerCase();
-							String id = elem.getAttribute("id").trim().toLowerCase();
-							String place = elem.getAttribute("placeholder").trim().toLowerCase();
-							
-							String value = act.getNameElement().replaceAll("'", "");
-							value = value.replaceAll("\"", "");
-							value = value.trim().toLowerCase();
-							
-							if (name.contains(value) || id.contains(value) || place.contains(value)){	
-								elem.clear();
-								
-								if (act.getValue() instanceof NumLiteralExpression){
-									NumLiteralExpression numLit = (NumLiteralExpression)act.getValue();
-									elem.sendKeys(numLit.getValue().substring(1, numLit.getValue().length()-1));
-								} 
-								else if (act.getValue() instanceof VariableReference){
-									VariableReference varRef = (VariableReference)act.getValue();
-									
-									if (variables.containsKey(varRef.getVarID().getName())){
-										
-										// TODO -> DONE : Evaluate the expression
-										ExpressionValue exp = variables.get(varRef.getVarID().getName());
-										
-										elem.sendKeys(exp.getValue().toString());										
-									}
-									else 
-										throw new ActionInstructionException("Undefined variable " + varRef.getVarID().getName());
-								} 
-								else if (act.getValue() instanceof BooleanExpression){
-									BooleanExpression boolexp = (BooleanExpression)act.getValue();
-									Boolean bool = interpreter.getBooleanValue(boolexp, variables);
-									elem.sendKeys(bool.toString());
-									
-								} else {
-									throw new ActionInstructionException("Impossible to type this var in a textbox");
-								}
-								
-							    type = true;								
-							} 
-						} catch (ActionInstructionException e){
-							throw e;
-						}
-						catch (Exception e){
-							type = false;
-						} finally {
-							i ++;
-						}
-					}
+				if (expElem.getType() != ExpressionValueType.list){
+					doActionType(expElem.getValue().toString(), expValue);
+				} else {
+					// TODO : Gerer la liste
+					List<Object> list =  (List<Object>) expElem.getValue();
+					for (Object obj : list) {
+						doActionType(obj.toString(), expValue);
+					}	
 				}
 			}
 
@@ -309,7 +262,7 @@ public class ActionInstructionInterpreter {
 		}
 	}
 	
-	public void DoActionCheck(String valueToTest, boolean value){
+	public void doActionCheck(String valueToTest, boolean value){
 		
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 		
@@ -346,5 +299,48 @@ public class ActionInstructionInterpreter {
 				}
 			}			
 		}	
+	}
+	
+	public void doActionType(String valueToTest, ExpressionValue expValue){
+		
+		WebDriver driver = SeleniumDriver.getInstance().getDriver();
+		
+		List<WebElement> elements = new ArrayList<WebElement>();				
+		elements.addAll(driver.findElements(By.cssSelector("input[type='text']")));	
+		elements.addAll(driver.findElements(By.cssSelector("input[type='password']")));	
+		
+		boolean type = false;
+		int i = 0;
+		while (!type){					
+			if (i != elements.size()){
+				try {
+					WebElement elem = elements.get(i);
+					
+					String name = elem.getAttribute("name").trim().toLowerCase();
+					String id = elem.getAttribute("id").trim().toLowerCase();
+					String place = elem.getAttribute("placeholder").trim().toLowerCase();					
+					
+					
+					if (name.contains(valueToTest) || id.contains(valueToTest) || place.contains(valueToTest)){	
+						elem.clear();								
+							
+						if (expValue.getType() != ExpressionValueType.list){										
+							elem.sendKeys(expValue.getValue().toString());	
+						} else {
+							throw new ActionInstructionException("Impossible to type a list inside a textbox");
+						}
+						
+					    type = true;								
+					} 
+				} catch (ActionInstructionException e){
+					throw e;
+				}
+				catch (Exception e){
+					type = false;
+				} finally {
+					i ++;
+				}
+			}
+		}
 	}
 }

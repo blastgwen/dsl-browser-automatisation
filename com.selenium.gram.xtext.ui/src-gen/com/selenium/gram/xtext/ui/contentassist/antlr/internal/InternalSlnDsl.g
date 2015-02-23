@@ -6197,8 +6197,8 @@ rule__ActionType__NameElementAssignment_2
     }
 :
 (
-{ before(grammarAccess.getActionTypeAccess().getNameElementNumberLiteralParserRuleCall_2_0()); }
-	ruleNumberLiteral{ after(grammarAccess.getActionTypeAccess().getNameElementNumberLiteralParserRuleCall_2_0()); }
+{ before(grammarAccess.getActionTypeAccess().getNameElementExpressionParserRuleCall_2_0()); }
+	ruleExpression{ after(grammarAccess.getActionTypeAccess().getNameElementExpressionParserRuleCall_2_0()); }
 )
 
 ;

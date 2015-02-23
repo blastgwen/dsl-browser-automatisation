@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ActionType extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name Element</b></em>' attribute.
+   * Returns the value of the '<em><b>Name Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Element</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name Element</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Element</em>' attribute.
-   * @see #setNameElement(String)
+   * @return the value of the '<em>Name Element</em>' containment reference.
+   * @see #setNameElement(Expression)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionType_NameElement()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getNameElement();
+  Expression getNameElement();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionType#getNameElement <em>Name Element</em>}' attribute.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionType#getNameElement <em>Name Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Element</em>' attribute.
+   * @param value the new value of the '<em>Name Element</em>' containment reference.
    * @see #getNameElement()
    * @generated
    */
-  void setNameElement(String value);
+  void setNameElement(Expression value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
