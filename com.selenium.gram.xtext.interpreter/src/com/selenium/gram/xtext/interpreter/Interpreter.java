@@ -170,7 +170,7 @@ public class Interpreter {
 	 * @return la valeur, avec le type
 	 * @throws InterpretationException
 	 */
-	private ExpressionValue computeExpression(Expression exp, Map<String, ExpressionValue> variables) 
+	public ExpressionValue computeExpression(Expression exp, Map<String, ExpressionValue> variables) 
 			throws InterpretationException{
 		
 		if(exp instanceof VariableReference){

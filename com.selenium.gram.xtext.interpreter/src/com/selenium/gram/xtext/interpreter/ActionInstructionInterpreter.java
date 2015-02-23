@@ -207,94 +207,22 @@ public class ActionInstructionInterpreter {
 				
 				boolean value = interpreter.getBooleanValue(act.getValue(), variables);
 				
-				if (act.getElement() instanceof VariableReference){
-					
-					// TODO : verify this line to get the value of the variables
-					ExpressionValue exp = variables.get(((VariableReference)act.getElement()).getVarID().getName());
-					
-					List<WebElement> elements = driver.findElements(By.cssSelector("input[type='checkbox']"));
-					
-					boolean click = false;
-					int i = 0;
-					while (!click){
-						if (i == elements.size()){
-							throw new ActionInstructionException("ActionCheck - No checkbox " + value + " in this page");
-						} else {
-							try {
-								// Get attribute to test
-								String name = elements.get(i).getAttribute("name").trim().toLowerCase();
-								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
-								String str = elements.get(i).getText().trim().toLowerCase();
-								
-								if (name.contains(String.valueOf(exp.getValue())) || 
-										val.contains(String.valueOf(exp.getValue())) || 
-										str.contains(String.valueOf(exp.getValue()))){
-									
-									WebDriverWait wait = new WebDriverWait(driver, 5);
-								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
-								    
-								    // si selectionné et value false
-								    // si deselectionne et value true
-								    if ( (elements.get(i).isSelected() && !value) || !elements.get(i).isSelected() && value)
-								    	elements.get(i).click();
-								    click = true;
-								} 
-							} catch (Exception e){
-								click = false;
-							} finally {
-								i ++;
-							}
-						}						
-					}
-				}
+				ExpressionValue valExp = interpreter.computeExpression(act.getElement(), variables);
+				String valueToTest = valExp.getValue().toString().replaceAll("'", "");
+				valueToTest = valueToTest.replaceAll("\"", "");
+				valueToTest = valueToTest.trim().toLowerCase();
 				
-				
-				else if (act.getElement() instanceof NumLiteralExpression){
+				if (act.getElement() instanceof VariableReference || act.getElement() instanceof NumLiteralExpression 
+						|| act.getElement() instanceof ActionSelectExpression){					
 
-					NumLiteralExpression exp = (NumLiteralExpression)act.getElement();
-					
-					List<WebElement> elements = driver.findElements(By.cssSelector("input[type='checkbox']"));
-					elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
-					
-					boolean click = false;
-					int i = 0;
-					while (!click){
-						if (i == elements.size()){
-							throw new ActionInstructionException("ActionCheck - No checkbox " + exp.getValue() + " in this page");
-						} else {
-							try {
-								// Get attribute to test
-								String name = elements.get(i).getAttribute("name").trim().toLowerCase();
-								String val = elements.get(i).getAttribute("value").trim().toLowerCase();
-								String str = elements.get(i).getText().trim().toLowerCase();
-								
-								String valueToTest = exp.getValue().replaceAll("'", "");
-								valueToTest = valueToTest.replaceAll("\"", "");
-								valueToTest = valueToTest.trim().toLowerCase();
-								
-								if (name.contains(valueToTest) || val.contains(valueToTest) || str.contains(valueToTest)){
-									
-									WebDriverWait wait = new WebDriverWait(driver, 5);
-								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
-								    
-								    // si selectionné et value false
-								    // si deselectionne et value true
-								    if ( (elements.get(i).isSelected() && !value) || !elements.get(i).isSelected() && value)
-								    	elements.get(i).click();
-								    click = true;
-								} 
-							} catch (Exception e){
-								click = false;
-							} finally {
-								i ++;
-							}
-						}						
+					if (valExp.getType() == ExpressionValueType.list){
+						List<Object> list =  (List<Object>) valExp.getValue();
+						for (Object obj : list) {
+							DoActionCheck(obj.toString(), value);
+						}					
+					} else {
+						DoActionCheck(valueToTest, value);						
 					}
-				}
-
-				else if (act.getElement() instanceof ActionSelectExpression){
-					
-					// TODO: excecute the actionSelectExpression then for each elements click or not click
 				}
 					
 				else {
@@ -379,5 +307,44 @@ public class ActionInstructionInterpreter {
 		} catch (Exception e) {
 			throw e;
 		}
+	}
+	
+	public void DoActionCheck(String valueToTest, boolean value){
+		
+		WebDriver driver = SeleniumDriver.getInstance().getDriver();
+		
+		List<WebElement> elements = driver.findElements(By.cssSelector("input[type='checkbox']"));
+		elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
+		
+		boolean click = false;
+		int i = 0;
+		while (!click){
+			if (i == elements.size()){
+				throw new ActionInstructionException("ActionCheck - No checkbox " + valueToTest + " in this page");
+			} else {
+				try {
+					// Get attribute to test
+					String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+					String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();
+					
+					if (name.contains(valueToTest) || val.contains(valueToTest) || 	str.contains(valueToTest)){
+						
+						WebDriverWait wait = new WebDriverWait(driver, 5);
+					    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
+					    
+					    // si selectionné et value false
+					    // si deselectionne et value true
+					    if ( (elements.get(i).isSelected() && !value) || !elements.get(i).isSelected() && value)
+					    	elements.get(i).click();
+					    click = true;
+					} 
+				} catch (Exception e){
+					click = false;
+				} finally {
+					i ++;
+				}
+			}			
+		}	
 	}
 }
