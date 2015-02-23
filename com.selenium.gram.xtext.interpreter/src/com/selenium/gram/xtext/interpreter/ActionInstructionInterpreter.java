@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.selenium.gram.xtext.interpreter.exceptions.ActionInstructionException;
+import com.selenium.gram.xtext.interpreter.exceptions.SeleniumDriverException;
 import com.selenium.gram.xtext.slnDsl.ActionCheck;
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
@@ -260,7 +261,7 @@ public class ActionInstructionInterpreter {
 		}
 	}
 	
-	public void doActionCheck(String valueToTest, boolean value){
+	public void doActionCheck(String valueToTest, boolean value) throws SeleniumDriverException{
 		
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 		
@@ -299,7 +300,7 @@ public class ActionInstructionInterpreter {
 		}	
 	}
 	
-	public void doActionType(String valueToTest, ExpressionValue expValue){
+	public void doActionType(String valueToTest, ExpressionValue expValue) throws SeleniumDriverException{
 		
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 		

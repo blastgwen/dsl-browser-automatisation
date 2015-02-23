@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.selenium.gram.xtext.interpreter.exceptions.ActionInstructionException;
 import com.selenium.gram.xtext.interpreter.exceptions.InterpretationException;
+import com.selenium.gram.xtext.interpreter.exceptions.SeleniumDriverException;
 import com.selenium.gram.xtext.interpreter.exceptions.UnknownVariableException;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.Assignation;
@@ -35,6 +36,7 @@ import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
+import com.selenium.gram.xtext.slnDsl.Uri;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 import com.selenium.gram.xtext.slnDsl.VerifyAction;
 import com.selenium.gram.xtext.slnDsl.While;
@@ -59,7 +61,17 @@ public class Interpreter {
 		
 		Map<String, ExpressionValue> variables = new HashMap<String, ExpressionValue>();
 		
+		try{
+		SeleniumDriver.initializeDriver(model.getNavigator().getBrowser());
+		
 		executeBody(model.getBody(), variables);
+		}
+		catch(InterpretationException e){
+			e.printStackTrace();
+		}
+		finally{
+			SeleniumDriver.closeDriver();
+		}
 	}
 
 	/***
@@ -178,9 +190,10 @@ public class Interpreter {
 	 * @param variables
 	 * @return la valeur, avec le type
 	 * @throws InterpretationException
+	 * @throws SeleniumDriverException 
 	 */
 	public ExpressionValue computeExpression(Expression exp, Map<String, ExpressionValue> variables) 
-			throws InterpretationException{
+			throws InterpretationException, SeleniumDriverException{
 		
 		if(exp instanceof VariableReference){
 			VariableReference ref = (VariableReference) exp;
@@ -213,6 +226,10 @@ public class Interpreter {
 			
 		}
 		
+		if(exp instanceof Uri){
+			return new ExpressionValue(((Uri) exp).getUrl(), ExpressionValueType.url);
+		}
+		
 		if(exp instanceof BooleanExpression){
 			System.out.println("exec expression bool");
 			return new ExpressionValue(getBooleanValue((BooleanExpression) exp, variables), 
@@ -228,8 +245,9 @@ public class Interpreter {
 	 * @param variables
 	 * @return true ou false
 	 * @throws InterpretationException
+	 * @throws SeleniumDriverException 
 	 */
-	public Boolean getBooleanValue(BooleanExpression exp, Map<String, ExpressionValue> variables ) throws InterpretationException{
+	public Boolean getBooleanValue(BooleanExpression exp, Map<String, ExpressionValue> variables ) throws InterpretationException, SeleniumDriverException{
 		EObject val = exp.getExp();
 		System.out.println("get bool val");
 		
@@ -396,7 +414,7 @@ public class Interpreter {
 		// 2) parcourir la liste
 	}
 	
-	private boolean doVerifyCheckbox(String valueToTest, ExpressionValue value) throws InterpretationException{
+	private boolean doVerifyCheckbox(String valueToTest, ExpressionValue value) throws InterpretationException, SeleniumDriverException{
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 		
 		List<WebElement> elements = new ArrayList<WebElement>();
@@ -438,7 +456,7 @@ public class Interpreter {
 		return false;
 	}
 	
-	private boolean doVerifyTextbox(String valueToTest, ExpressionValue value) throws InterpretationException{
+	private boolean doVerifyTextbox(String valueToTest, ExpressionValue value) throws InterpretationException, SeleniumDriverException{
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 		
 		List<WebElement> elements = new ArrayList<WebElement>();
