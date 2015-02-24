@@ -50,8 +50,8 @@
     <genClasses ecoreClass="SlnDsl.ecore#//NumLiteralExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//NumLiteralExpression/value"/>
     </genClasses>
-    <genClasses ecoreClass="SlnDsl.ecore#//ListExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ListExpression/exp"/>
+    <genClasses ecoreClass="SlnDsl.ecore#//SizeOfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//SizeOfExpression/exp"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//BooleanListExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//BooleanListExpression/op"/>

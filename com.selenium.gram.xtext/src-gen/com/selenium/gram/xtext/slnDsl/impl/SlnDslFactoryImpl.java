@@ -77,7 +77,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.URI: return createUri();
       case SlnDslPackage.EXPRESSION: return createExpression();
       case SlnDslPackage.NUM_LITERAL_EXPRESSION: return createNumLiteralExpression();
-      case SlnDslPackage.LIST_EXPRESSION: return createListExpression();
+      case SlnDslPackage.SIZE_OF_EXPRESSION: return createSizeOfExpression();
       case SlnDslPackage.BOOLEAN_LIST_EXPRESSION: return createBooleanListExpression();
       case SlnDslPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
       case SlnDslPackage.BOOLEAN_VALUE: return createBooleanValue();
@@ -252,10 +252,10 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ListExpression createListExpression()
+  public SizeOfExpression createSizeOfExpression()
   {
-    ListExpressionImpl listExpression = new ListExpressionImpl();
-    return listExpression;
+    SizeOfExpressionImpl sizeOfExpression = new SizeOfExpressionImpl();
+    return sizeOfExpression;
   }
 
   /**

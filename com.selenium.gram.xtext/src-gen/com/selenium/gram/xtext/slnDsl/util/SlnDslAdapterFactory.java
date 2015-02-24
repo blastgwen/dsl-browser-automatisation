@@ -140,9 +140,9 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createNumLiteralExpressionAdapter();
       }
       @Override
-      public Adapter caseListExpression(ListExpression object)
+      public Adapter caseSizeOfExpression(SizeOfExpression object)
       {
-        return createListExpressionAdapter();
+        return createSizeOfExpressionAdapter();
       }
       @Override
       public Adapter caseBooleanListExpression(BooleanListExpression object)
@@ -467,16 +467,16 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ListExpression <em>List Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.SizeOfExpression <em>Size Of Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.selenium.gram.xtext.slnDsl.ListExpression
+   * @see com.selenium.gram.xtext.slnDsl.SizeOfExpression
    * @generated
    */
-  public Adapter createListExpressionAdapter()
+  public Adapter createSizeOfExpressionAdapter()
   {
     return null;
   }

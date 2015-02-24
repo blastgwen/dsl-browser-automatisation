@@ -167,11 +167,11 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlnDslPackage.LIST_EXPRESSION:
+      case SlnDslPackage.SIZE_OF_EXPRESSION:
       {
-        ListExpression listExpression = (ListExpression)theEObject;
-        T result = caseListExpression(listExpression);
-        if (result == null) result = caseExpression(listExpression);
+        SizeOfExpression sizeOfExpression = (SizeOfExpression)theEObject;
+        T result = caseSizeOfExpression(sizeOfExpression);
+        if (result == null) result = caseExpression(sizeOfExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -545,17 +545,17 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Size Of Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Size Of Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseListExpression(ListExpression object)
+  public T caseSizeOfExpression(SizeOfExpression object)
   {
     return null;
   }

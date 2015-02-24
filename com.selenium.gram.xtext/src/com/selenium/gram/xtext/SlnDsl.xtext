@@ -79,7 +79,7 @@ Uri:
 Expression:
 	VariableReference
 	| NumLiteralExpression
-	| ListExpression
+	| SizeOfExpression
 	| BooleanExpression
 	| SelectAction
 	| Uri	
@@ -89,7 +89,7 @@ NumLiteralExpression:
 	value = NumberLiteral
 ;
 
-ListExpression :
+SizeOfExpression :
 	'sizeof' '(' exp=Expression ')'
 ;
 

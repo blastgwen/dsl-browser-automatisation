@@ -32,11 +32,11 @@ import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
 import com.selenium.gram.xtext.slnDsl.Instruction;
-import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
+import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.Uri;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
@@ -224,8 +224,14 @@ public class Interpreter {
 			}
 		}
 		
-		if(exp instanceof ListExpression){
-			
+		if(exp instanceof SizeOfExpression){
+			ExpressionValue value = computeExpression(exp, variables);
+			if(value.getType() == ExpressionValueType.list){
+				return new ExpressionValue(((List<ExpressionValue>) value.getValue()).size(), ExpressionValueType.numeric); 
+			}
+			else {
+				return new ExpressionValue(1, ExpressionValueType.numeric);
+			}
 		}
 		
 		if(exp instanceof Uri){

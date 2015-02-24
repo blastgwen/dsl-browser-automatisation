@@ -1272,21 +1272,21 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleNumLiteralExpression"
 
 
-    // $ANTLR start "entryRuleListExpression"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:480:1: entryRuleListExpression : ruleListExpression EOF ;
-    public final void entryRuleListExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleSizeOfExpression"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:480:1: entryRuleSizeOfExpression : ruleSizeOfExpression EOF ;
+    public final void entryRuleSizeOfExpression() throws RecognitionException {
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:481:1: ( ruleListExpression EOF )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:482:1: ruleListExpression EOF
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:481:1: ( ruleSizeOfExpression EOF )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:482:1: ruleSizeOfExpression EOF
             {
-             before(grammarAccess.getListExpressionRule()); 
-            pushFollow(FOLLOW_ruleListExpression_in_entryRuleListExpression961);
-            ruleListExpression();
+             before(grammarAccess.getSizeOfExpressionRule()); 
+            pushFollow(FOLLOW_ruleSizeOfExpression_in_entryRuleSizeOfExpression961);
+            ruleSizeOfExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getListExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleListExpression968); 
+             after(grammarAccess.getSizeOfExpressionRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSizeOfExpression968); 
 
             }
 
@@ -1299,35 +1299,35 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleListExpression"
+    // $ANTLR end "entryRuleSizeOfExpression"
 
 
-    // $ANTLR start "ruleListExpression"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:489:1: ruleListExpression : ( ( rule__ListExpression__Group__0 ) ) ;
-    public final void ruleListExpression() throws RecognitionException {
+    // $ANTLR start "ruleSizeOfExpression"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:489:1: ruleSizeOfExpression : ( ( rule__SizeOfExpression__Group__0 ) ) ;
+    public final void ruleSizeOfExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:493:2: ( ( ( rule__ListExpression__Group__0 ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:494:1: ( ( rule__ListExpression__Group__0 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:493:2: ( ( ( rule__SizeOfExpression__Group__0 ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:494:1: ( ( rule__SizeOfExpression__Group__0 ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:494:1: ( ( rule__ListExpression__Group__0 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:495:1: ( rule__ListExpression__Group__0 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:494:1: ( ( rule__SizeOfExpression__Group__0 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:495:1: ( rule__SizeOfExpression__Group__0 )
             {
-             before(grammarAccess.getListExpressionAccess().getGroup()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:496:1: ( rule__ListExpression__Group__0 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:496:2: rule__ListExpression__Group__0
+             before(grammarAccess.getSizeOfExpressionAccess().getGroup()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:496:1: ( rule__SizeOfExpression__Group__0 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:496:2: rule__SizeOfExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__ListExpression__Group__0_in_ruleListExpression994);
-            rule__ListExpression__Group__0();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__0_in_ruleSizeOfExpression994);
+            rule__SizeOfExpression__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getListExpressionAccess().getGroup()); 
+             after(grammarAccess.getSizeOfExpressionAccess().getGroup()); 
 
             }
 
@@ -1346,7 +1346,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleListExpression"
+    // $ANTLR end "ruleSizeOfExpression"
 
 
     // $ANTLR start "entryRuleBooleanListExpression"
@@ -3773,13 +3773,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1356:1: rule__Expression__Alternatives : ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleListExpression ) | ( ruleBooleanExpression ) | ( ruleSelectAction ) | ( ruleUri ) );
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1356:1: rule__Expression__Alternatives : ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleSizeOfExpression ) | ( ruleBooleanExpression ) | ( ruleSelectAction ) | ( ruleUri ) );
     public final void rule__Expression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1360:1: ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleListExpression ) | ( ruleBooleanExpression ) | ( ruleSelectAction ) | ( ruleUri ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1360:1: ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleSizeOfExpression ) | ( ruleBooleanExpression ) | ( ruleSelectAction ) | ( ruleUri ) )
             int alt5=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -3870,18 +3870,18 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1373:6: ( ruleListExpression )
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1373:6: ( ruleSizeOfExpression )
                     {
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1373:6: ( ruleListExpression )
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1374:1: ruleListExpression
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1373:6: ( ruleSizeOfExpression )
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1374:1: ruleSizeOfExpression
                     {
-                     before(grammarAccess.getExpressionAccess().getListExpressionParserRuleCall_2()); 
-                    pushFollow(FOLLOW_ruleListExpression_in_rule__Expression__Alternatives2890);
-                    ruleListExpression();
+                     before(grammarAccess.getExpressionAccess().getSizeOfExpressionParserRuleCall_2()); 
+                    pushFollow(FOLLOW_ruleSizeOfExpression_in_rule__Expression__Alternatives2890);
+                    ruleSizeOfExpression();
 
                     state._fsp--;
 
-                     after(grammarAccess.getExpressionAccess().getListExpressionParserRuleCall_2()); 
+                     after(grammarAccess.getExpressionAccess().getSizeOfExpressionParserRuleCall_2()); 
 
                     }
 
@@ -7844,23 +7844,23 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FunctionCall__Group_1_3__1__Impl"
 
 
-    // $ANTLR start "rule__ListExpression__Group__0"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2776:1: rule__ListExpression__Group__0 : rule__ListExpression__Group__0__Impl rule__ListExpression__Group__1 ;
-    public final void rule__ListExpression__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__0"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2776:1: rule__SizeOfExpression__Group__0 : rule__SizeOfExpression__Group__0__Impl rule__SizeOfExpression__Group__1 ;
+    public final void rule__SizeOfExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2780:1: ( rule__ListExpression__Group__0__Impl rule__ListExpression__Group__1 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2781:2: rule__ListExpression__Group__0__Impl rule__ListExpression__Group__1
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2780:1: ( rule__SizeOfExpression__Group__0__Impl rule__SizeOfExpression__Group__1 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2781:2: rule__SizeOfExpression__Group__0__Impl rule__SizeOfExpression__Group__1
             {
-            pushFollow(FOLLOW_rule__ListExpression__Group__0__Impl_in_rule__ListExpression__Group__05797);
-            rule__ListExpression__Group__0__Impl();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__0__Impl_in_rule__SizeOfExpression__Group__05797);
+            rule__SizeOfExpression__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListExpression__Group__1_in_rule__ListExpression__Group__05800);
-            rule__ListExpression__Group__1();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__1_in_rule__SizeOfExpression__Group__05800);
+            rule__SizeOfExpression__Group__1();
 
             state._fsp--;
 
@@ -7879,12 +7879,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__0"
+    // $ANTLR end "rule__SizeOfExpression__Group__0"
 
 
-    // $ANTLR start "rule__ListExpression__Group__0__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2788:1: rule__ListExpression__Group__0__Impl : ( 'sizeof' ) ;
-    public final void rule__ListExpression__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__0__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2788:1: rule__SizeOfExpression__Group__0__Impl : ( 'sizeof' ) ;
+    public final void rule__SizeOfExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7895,9 +7895,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2793:1: ( 'sizeof' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2794:1: 'sizeof'
             {
-             before(grammarAccess.getListExpressionAccess().getSizeofKeyword_0()); 
-            match(input,37,FOLLOW_37_in_rule__ListExpression__Group__0__Impl5828); 
-             after(grammarAccess.getListExpressionAccess().getSizeofKeyword_0()); 
+             before(grammarAccess.getSizeOfExpressionAccess().getSizeofKeyword_0()); 
+            match(input,37,FOLLOW_37_in_rule__SizeOfExpression__Group__0__Impl5828); 
+             after(grammarAccess.getSizeOfExpressionAccess().getSizeofKeyword_0()); 
 
             }
 
@@ -7916,26 +7916,26 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__0__Impl"
+    // $ANTLR end "rule__SizeOfExpression__Group__0__Impl"
 
 
-    // $ANTLR start "rule__ListExpression__Group__1"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2807:1: rule__ListExpression__Group__1 : rule__ListExpression__Group__1__Impl rule__ListExpression__Group__2 ;
-    public final void rule__ListExpression__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__1"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2807:1: rule__SizeOfExpression__Group__1 : rule__SizeOfExpression__Group__1__Impl rule__SizeOfExpression__Group__2 ;
+    public final void rule__SizeOfExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2811:1: ( rule__ListExpression__Group__1__Impl rule__ListExpression__Group__2 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2812:2: rule__ListExpression__Group__1__Impl rule__ListExpression__Group__2
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2811:1: ( rule__SizeOfExpression__Group__1__Impl rule__SizeOfExpression__Group__2 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2812:2: rule__SizeOfExpression__Group__1__Impl rule__SizeOfExpression__Group__2
             {
-            pushFollow(FOLLOW_rule__ListExpression__Group__1__Impl_in_rule__ListExpression__Group__15859);
-            rule__ListExpression__Group__1__Impl();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__1__Impl_in_rule__SizeOfExpression__Group__15859);
+            rule__SizeOfExpression__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListExpression__Group__2_in_rule__ListExpression__Group__15862);
-            rule__ListExpression__Group__2();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__2_in_rule__SizeOfExpression__Group__15862);
+            rule__SizeOfExpression__Group__2();
 
             state._fsp--;
 
@@ -7954,12 +7954,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__1"
+    // $ANTLR end "rule__SizeOfExpression__Group__1"
 
 
-    // $ANTLR start "rule__ListExpression__Group__1__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2819:1: rule__ListExpression__Group__1__Impl : ( '(' ) ;
-    public final void rule__ListExpression__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__1__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2819:1: rule__SizeOfExpression__Group__1__Impl : ( '(' ) ;
+    public final void rule__SizeOfExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7970,9 +7970,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2824:1: ( '(' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2825:1: '('
             {
-             before(grammarAccess.getListExpressionAccess().getLeftParenthesisKeyword_1()); 
-            match(input,33,FOLLOW_33_in_rule__ListExpression__Group__1__Impl5890); 
-             after(grammarAccess.getListExpressionAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getSizeOfExpressionAccess().getLeftParenthesisKeyword_1()); 
+            match(input,33,FOLLOW_33_in_rule__SizeOfExpression__Group__1__Impl5890); 
+             after(grammarAccess.getSizeOfExpressionAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -7991,26 +7991,26 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__1__Impl"
+    // $ANTLR end "rule__SizeOfExpression__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ListExpression__Group__2"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2838:1: rule__ListExpression__Group__2 : rule__ListExpression__Group__2__Impl rule__ListExpression__Group__3 ;
-    public final void rule__ListExpression__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__2"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2838:1: rule__SizeOfExpression__Group__2 : rule__SizeOfExpression__Group__2__Impl rule__SizeOfExpression__Group__3 ;
+    public final void rule__SizeOfExpression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2842:1: ( rule__ListExpression__Group__2__Impl rule__ListExpression__Group__3 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2843:2: rule__ListExpression__Group__2__Impl rule__ListExpression__Group__3
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2842:1: ( rule__SizeOfExpression__Group__2__Impl rule__SizeOfExpression__Group__3 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2843:2: rule__SizeOfExpression__Group__2__Impl rule__SizeOfExpression__Group__3
             {
-            pushFollow(FOLLOW_rule__ListExpression__Group__2__Impl_in_rule__ListExpression__Group__25921);
-            rule__ListExpression__Group__2__Impl();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__2__Impl_in_rule__SizeOfExpression__Group__25921);
+            rule__SizeOfExpression__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListExpression__Group__3_in_rule__ListExpression__Group__25924);
-            rule__ListExpression__Group__3();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__3_in_rule__SizeOfExpression__Group__25924);
+            rule__SizeOfExpression__Group__3();
 
             state._fsp--;
 
@@ -8029,35 +8029,35 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__2"
+    // $ANTLR end "rule__SizeOfExpression__Group__2"
 
 
-    // $ANTLR start "rule__ListExpression__Group__2__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2850:1: rule__ListExpression__Group__2__Impl : ( ( rule__ListExpression__ExpAssignment_2 ) ) ;
-    public final void rule__ListExpression__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__2__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2850:1: rule__SizeOfExpression__Group__2__Impl : ( ( rule__SizeOfExpression__ExpAssignment_2 ) ) ;
+    public final void rule__SizeOfExpression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2854:1: ( ( ( rule__ListExpression__ExpAssignment_2 ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2855:1: ( ( rule__ListExpression__ExpAssignment_2 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2854:1: ( ( ( rule__SizeOfExpression__ExpAssignment_2 ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2855:1: ( ( rule__SizeOfExpression__ExpAssignment_2 ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2855:1: ( ( rule__ListExpression__ExpAssignment_2 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2856:1: ( rule__ListExpression__ExpAssignment_2 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2855:1: ( ( rule__SizeOfExpression__ExpAssignment_2 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2856:1: ( rule__SizeOfExpression__ExpAssignment_2 )
             {
-             before(grammarAccess.getListExpressionAccess().getExpAssignment_2()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2857:1: ( rule__ListExpression__ExpAssignment_2 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2857:2: rule__ListExpression__ExpAssignment_2
+             before(grammarAccess.getSizeOfExpressionAccess().getExpAssignment_2()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2857:1: ( rule__SizeOfExpression__ExpAssignment_2 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2857:2: rule__SizeOfExpression__ExpAssignment_2
             {
-            pushFollow(FOLLOW_rule__ListExpression__ExpAssignment_2_in_rule__ListExpression__Group__2__Impl5951);
-            rule__ListExpression__ExpAssignment_2();
+            pushFollow(FOLLOW_rule__SizeOfExpression__ExpAssignment_2_in_rule__SizeOfExpression__Group__2__Impl5951);
+            rule__SizeOfExpression__ExpAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getListExpressionAccess().getExpAssignment_2()); 
+             after(grammarAccess.getSizeOfExpressionAccess().getExpAssignment_2()); 
 
             }
 
@@ -8076,21 +8076,21 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__2__Impl"
+    // $ANTLR end "rule__SizeOfExpression__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ListExpression__Group__3"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2867:1: rule__ListExpression__Group__3 : rule__ListExpression__Group__3__Impl ;
-    public final void rule__ListExpression__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__3"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2867:1: rule__SizeOfExpression__Group__3 : rule__SizeOfExpression__Group__3__Impl ;
+    public final void rule__SizeOfExpression__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2871:1: ( rule__ListExpression__Group__3__Impl )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2872:2: rule__ListExpression__Group__3__Impl
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2871:1: ( rule__SizeOfExpression__Group__3__Impl )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2872:2: rule__SizeOfExpression__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__ListExpression__Group__3__Impl_in_rule__ListExpression__Group__35981);
-            rule__ListExpression__Group__3__Impl();
+            pushFollow(FOLLOW_rule__SizeOfExpression__Group__3__Impl_in_rule__SizeOfExpression__Group__35981);
+            rule__SizeOfExpression__Group__3__Impl();
 
             state._fsp--;
 
@@ -8109,12 +8109,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__3"
+    // $ANTLR end "rule__SizeOfExpression__Group__3"
 
 
-    // $ANTLR start "rule__ListExpression__Group__3__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2878:1: rule__ListExpression__Group__3__Impl : ( ')' ) ;
-    public final void rule__ListExpression__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__Group__3__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2878:1: rule__SizeOfExpression__Group__3__Impl : ( ')' ) ;
+    public final void rule__SizeOfExpression__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8125,9 +8125,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2883:1: ( ')' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:2884:1: ')'
             {
-             before(grammarAccess.getListExpressionAccess().getRightParenthesisKeyword_3()); 
-            match(input,35,FOLLOW_35_in_rule__ListExpression__Group__3__Impl6009); 
-             after(grammarAccess.getListExpressionAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getSizeOfExpressionAccess().getRightParenthesisKeyword_3()); 
+            match(input,35,FOLLOW_35_in_rule__SizeOfExpression__Group__3__Impl6009); 
+             after(grammarAccess.getSizeOfExpressionAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -8146,7 +8146,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__Group__3__Impl"
+    // $ANTLR end "rule__SizeOfExpression__Group__3__Impl"
 
 
     // $ANTLR start "rule__BooleanListExpression__Group__0"
@@ -16115,9 +16115,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__NumLiteralExpression__ValueAssignment"
 
 
-    // $ANTLR start "rule__ListExpression__ExpAssignment_2"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6085:1: rule__ListExpression__ExpAssignment_2 : ( ruleExpression ) ;
-    public final void rule__ListExpression__ExpAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SizeOfExpression__ExpAssignment_2"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6085:1: rule__SizeOfExpression__ExpAssignment_2 : ( ruleExpression ) ;
+    public final void rule__SizeOfExpression__ExpAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -16128,13 +16128,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6090:1: ( ruleExpression )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6091:1: ruleExpression
             {
-             before(grammarAccess.getListExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__ListExpression__ExpAssignment_212327);
+             before(grammarAccess.getSizeOfExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleExpression_in_rule__SizeOfExpression__ExpAssignment_212327);
             ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getListExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
+             after(grammarAccess.getSizeOfExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
 
             }
 
@@ -16153,7 +16153,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ListExpression__ExpAssignment_2"
+    // $ANTLR end "rule__SizeOfExpression__ExpAssignment_2"
 
 
     // $ANTLR start "rule__BooleanListExpression__OpAssignment_0"
@@ -18210,9 +18210,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_entryRuleNumLiteralExpression901 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNumLiteralExpression908 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NumLiteralExpression__ValueAssignment_in_ruleNumLiteralExpression934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListExpression_in_entryRuleListExpression961 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleListExpression968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__0_in_ruleListExpression994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSizeOfExpression_in_entryRuleSizeOfExpression961 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSizeOfExpression968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__0_in_ruleSizeOfExpression994 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanListExpression_in_entryRuleBooleanListExpression1021 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBooleanListExpression1028 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BooleanListExpression__Group__0_in_ruleBooleanListExpression1054 = new BitSet(new long[]{0x0000000000000002L});
@@ -18304,7 +18304,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_STRING_in_rule__NumberLiteral__Alternatives2824 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableReference_in_rule__Expression__Alternatives2856 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_rule__Expression__Alternatives2873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListExpression_in_rule__Expression__Alternatives2890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSizeOfExpression_in_rule__Expression__Alternatives2890 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanExpression_in_rule__Expression__Alternatives2907 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectAction_in_rule__Expression__Alternatives2924 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUri_in_rule__Expression__Alternatives2941 = new BitSet(new long[]{0x0000000000000002L});
@@ -18431,17 +18431,17 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_36_in_rule__FunctionCall__Group_1_3__0__Impl5705 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FunctionCall__Group_1_3__1__Impl_in_rule__FunctionCall__Group_1_3__15736 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FunctionCall__ArgsAssignment_1_3_1_in_rule__FunctionCall__Group_1_3__1__Impl5763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__0__Impl_in_rule__ListExpression__Group__05797 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__1_in_rule__ListExpression__Group__05800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ListExpression__Group__0__Impl5828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__1__Impl_in_rule__ListExpression__Group__15859 = new BitSet(new long[]{0x03C917A4003F81F0L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__2_in_rule__ListExpression__Group__15862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ListExpression__Group__1__Impl5890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__2__Impl_in_rule__ListExpression__Group__25921 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__3_in_rule__ListExpression__Group__25924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListExpression__ExpAssignment_2_in_rule__ListExpression__Group__2__Impl5951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListExpression__Group__3__Impl_in_rule__ListExpression__Group__35981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ListExpression__Group__3__Impl6009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__0__Impl_in_rule__SizeOfExpression__Group__05797 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__1_in_rule__SizeOfExpression__Group__05800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__SizeOfExpression__Group__0__Impl5828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__1__Impl_in_rule__SizeOfExpression__Group__15859 = new BitSet(new long[]{0x03C917A4003F81F0L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__2_in_rule__SizeOfExpression__Group__15862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__SizeOfExpression__Group__1__Impl5890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__2__Impl_in_rule__SizeOfExpression__Group__25921 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__3_in_rule__SizeOfExpression__Group__25924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__ExpAssignment_2_in_rule__SizeOfExpression__Group__2__Impl5951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SizeOfExpression__Group__3__Impl_in_rule__SizeOfExpression__Group__35981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__SizeOfExpression__Group__3__Impl6009 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BooleanListExpression__Group__0__Impl_in_rule__BooleanListExpression__Group__06048 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_rule__BooleanListExpression__Group__1_in_rule__BooleanListExpression__Group__06051 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BooleanListExpression__OpAssignment_0_in_rule__BooleanListExpression__Group__0__Impl6078 = new BitSet(new long[]{0x0000000000000002L});
@@ -18715,7 +18715,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__VariableName__NameAssignment12234 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_URL_in_rule__Uri__UrlAssignment12265 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumberLiteral_in_rule__NumLiteralExpression__ValueAssignment12296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__ListExpression__ExpAssignment_212327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__SizeOfExpression__ExpAssignment_212327 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanListOperator_in_rule__BooleanListExpression__OpAssignment_012358 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableName_in_rule__BooleanListExpression__VarNameAssignment_312389 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__BooleanListExpression__ExpAssignment_512420 = new BitSet(new long[]{0x0000000000000002L});

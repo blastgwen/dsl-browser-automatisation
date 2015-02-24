@@ -2057,7 +2057,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:807:1: ruleExpression returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:807:1: ruleExpression returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_SizeOfExpression_2= ruleSizeOfExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2065,7 +2065,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
         EObject this_NumLiteralExpression_1 = null;
 
-        EObject this_ListExpression_2 = null;
+        EObject this_SizeOfExpression_2 = null;
 
         EObject this_BooleanExpression_3 = null;
 
@@ -2077,10 +2077,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:810:28: ( (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:811:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:810:28: ( (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_SizeOfExpression_2= ruleSizeOfExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:811:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_SizeOfExpression_2= ruleSizeOfExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:811:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:811:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_SizeOfExpression_2= ruleSizeOfExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri )
             int alt10=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -2169,18 +2169,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:832:5: this_ListExpression_2= ruleListExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:832:5: this_SizeOfExpression_2= ruleSizeOfExpression
                     {
                      
-                            newCompositeNode(grammarAccess.getExpressionAccess().getListExpressionParserRuleCall_2()); 
+                            newCompositeNode(grammarAccess.getExpressionAccess().getSizeOfExpressionParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleListExpression_in_ruleExpression1840);
-                    this_ListExpression_2=ruleListExpression();
+                    pushFollow(FOLLOW_ruleSizeOfExpression_in_ruleExpression1840);
+                    this_SizeOfExpression_2=ruleSizeOfExpression();
 
                     state._fsp--;
 
                      
-                            current = this_ListExpression_2; 
+                            current = this_SizeOfExpression_2; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -2358,26 +2358,26 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleNumLiteralExpression"
 
 
-    // $ANTLR start "entryRuleListExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:917:1: entryRuleListExpression returns [EObject current=null] : iv_ruleListExpression= ruleListExpression EOF ;
-    public final EObject entryRuleListExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleSizeOfExpression"
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:917:1: entryRuleSizeOfExpression returns [EObject current=null] : iv_ruleSizeOfExpression= ruleSizeOfExpression EOF ;
+    public final EObject entryRuleSizeOfExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleListExpression = null;
+        EObject iv_ruleSizeOfExpression = null;
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:918:2: (iv_ruleListExpression= ruleListExpression EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:919:2: iv_ruleListExpression= ruleListExpression EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:918:2: (iv_ruleSizeOfExpression= ruleSizeOfExpression EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:919:2: iv_ruleSizeOfExpression= ruleSizeOfExpression EOF
             {
-             newCompositeNode(grammarAccess.getListExpressionRule()); 
-            pushFollow(FOLLOW_ruleListExpression_in_entryRuleListExpression2046);
-            iv_ruleListExpression=ruleListExpression();
+             newCompositeNode(grammarAccess.getSizeOfExpressionRule()); 
+            pushFollow(FOLLOW_ruleSizeOfExpression_in_entryRuleSizeOfExpression2046);
+            iv_ruleSizeOfExpression=ruleSizeOfExpression();
 
             state._fsp--;
 
-             current =iv_ruleListExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleListExpression2056); 
+             current =iv_ruleSizeOfExpression; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSizeOfExpression2056); 
 
             }
 
@@ -2391,12 +2391,12 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleListExpression"
+    // $ANTLR end "entryRuleSizeOfExpression"
 
 
-    // $ANTLR start "ruleListExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:926:1: ruleListExpression returns [EObject current=null] : (otherlv_0= 'sizeof' otherlv_1= '(' ( (lv_exp_2_0= ruleExpression ) ) otherlv_3= ')' ) ;
-    public final EObject ruleListExpression() throws RecognitionException {
+    // $ANTLR start "ruleSizeOfExpression"
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:926:1: ruleSizeOfExpression returns [EObject current=null] : (otherlv_0= 'sizeof' otherlv_1= '(' ( (lv_exp_2_0= ruleExpression ) ) otherlv_3= ')' ) ;
+    public final EObject ruleSizeOfExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -2414,13 +2414,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:930:1: (otherlv_0= 'sizeof' otherlv_1= '(' ( (lv_exp_2_0= ruleExpression ) ) otherlv_3= ')' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:930:3: otherlv_0= 'sizeof' otherlv_1= '(' ( (lv_exp_2_0= ruleExpression ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleListExpression2093); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleSizeOfExpression2093); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getListExpressionAccess().getSizeofKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getSizeOfExpressionAccess().getSizeofKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleListExpression2105); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSizeOfExpression2105); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getListExpressionAccess().getLeftParenthesisKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getSizeOfExpressionAccess().getLeftParenthesisKeyword_1());
                 
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:938:1: ( (lv_exp_2_0= ruleExpression ) )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:939:1: (lv_exp_2_0= ruleExpression )
@@ -2429,16 +2429,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:940:3: lv_exp_2_0= ruleExpression
             {
              
-            	        newCompositeNode(grammarAccess.getListExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getSizeOfExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleListExpression2126);
+            pushFollow(FOLLOW_ruleExpression_in_ruleSizeOfExpression2126);
             lv_exp_2_0=ruleExpression();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getListExpressionRule());
+            	            current = createModelElementForParent(grammarAccess.getSizeOfExpressionRule());
             	        }
                    		set(
                    			current, 
@@ -2453,9 +2453,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleListExpression2138); 
+            otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleSizeOfExpression2138); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getListExpressionAccess().getRightParenthesisKeyword_3());
+                	newLeafNode(otherlv_3, grammarAccess.getSizeOfExpressionAccess().getRightParenthesisKeyword_3());
                 
 
             }
@@ -2474,7 +2474,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleListExpression"
+    // $ANTLR end "ruleSizeOfExpression"
 
 
     // $ANTLR start "entryRuleBooleanListExpression"
@@ -7071,19 +7071,19 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleExpression1739 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableReference_in_ruleExpression1786 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_ruleExpression1813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListExpression_in_ruleExpression1840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSizeOfExpression_in_ruleExpression1840 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanExpression_in_ruleExpression1867 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectAction_in_ruleExpression1894 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUri_in_ruleExpression1921 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_entryRuleNumLiteralExpression1956 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNumLiteralExpression1966 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleNumLiteralExpression2011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListExpression_in_entryRuleListExpression2046 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleListExpression2056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleListExpression2093 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleListExpression2105 = new BitSet(new long[]{0x001E48BFFA4001F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression2126 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleListExpression2138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSizeOfExpression_in_entryRuleSizeOfExpression2046 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSizeOfExpression2056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleSizeOfExpression2093 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSizeOfExpression2105 = new BitSet(new long[]{0x001E48BFFA4001F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleSizeOfExpression2126 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleSizeOfExpression2138 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanListExpression_in_entryRuleBooleanListExpression2174 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBooleanListExpression2184 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanListOperator_in_ruleBooleanListExpression2230 = new BitSet(new long[]{0x0000000000200000L});

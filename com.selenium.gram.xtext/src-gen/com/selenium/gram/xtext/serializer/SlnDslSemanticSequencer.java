@@ -23,12 +23,12 @@ import com.selenium.gram.xtext.slnDsl.FunctionCall;
 import com.selenium.gram.xtext.slnDsl.FunctionName;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.Head;
-import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SelectBrowser;
+import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.Uri;
@@ -183,13 +183,6 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case SlnDslPackage.LIST_EXPRESSION:
-				if(context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getListExpressionRule()) {
-					sequence_ListExpression(context, (ListExpression) semanticObject); 
-					return; 
-				}
-				else break;
 			case SlnDslPackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
@@ -219,6 +212,13 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case SlnDslPackage.SELECT_BROWSER:
 				if(context == grammarAccess.getSelectBrowserRule()) {
 					sequence_SelectBrowser(context, (SelectBrowser) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.SIZE_OF_EXPRESSION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getSizeOfExpressionRule()) {
+					sequence_SizeOfExpression(context, (SizeOfExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -584,22 +584,6 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     exp=Expression
-	 */
-	protected void sequence_ListExpression(EObject context, ListExpression semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.LIST_EXPRESSION__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.LIST_EXPRESSION__EXP));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getListExpressionAccess().getExpExpressionParserRuleCall_2_0(), semanticObject.getExp());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (navigator=SelectBrowser subs+=Subprocedure* body=Body)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
@@ -670,6 +654,22 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getSelectBrowserAccess().getBrowserBROWSERParserRuleCall_1_0(), semanticObject.getBrowser());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     exp=Expression
+	 */
+	protected void sequence_SizeOfExpression(EObject context, SizeOfExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SIZE_OF_EXPRESSION__EXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SIZE_OF_EXPRESSION__EXP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSizeOfExpressionAccess().getExpExpressionParserRuleCall_2_0(), semanticObject.getExp());
 		feeder.finish();
 	}
 	

@@ -24,13 +24,13 @@ import com.selenium.gram.xtext.slnDsl.FunctionName;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
 import com.selenium.gram.xtext.slnDsl.Head;
 import com.selenium.gram.xtext.slnDsl.Instruction;
-import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SelectBrowser;
+import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
 import com.selenium.gram.xtext.slnDsl.SlnDslFactory;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
@@ -151,7 +151,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass listExpressionEClass = null;
+  private EClass sizeOfExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -678,9 +678,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getListExpression()
+  public EClass getSizeOfExpression()
   {
-    return listExpressionEClass;
+    return sizeOfExpressionEClass;
   }
 
   /**
@@ -688,9 +688,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getListExpression_Exp()
+  public EReference getSizeOfExpression_Exp()
   {
-    return (EReference)listExpressionEClass.getEStructuralFeatures().get(0);
+    return (EReference)sizeOfExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1357,8 +1357,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     numLiteralExpressionEClass = createEClass(NUM_LITERAL_EXPRESSION);
     createEAttribute(numLiteralExpressionEClass, NUM_LITERAL_EXPRESSION__VALUE);
 
-    listExpressionEClass = createEClass(LIST_EXPRESSION);
-    createEReference(listExpressionEClass, LIST_EXPRESSION__EXP);
+    sizeOfExpressionEClass = createEClass(SIZE_OF_EXPRESSION);
+    createEReference(sizeOfExpressionEClass, SIZE_OF_EXPRESSION__EXP);
 
     booleanListExpressionEClass = createEClass(BOOLEAN_LIST_EXPRESSION);
     createEAttribute(booleanListExpressionEClass, BOOLEAN_LIST_EXPRESSION__OP);
@@ -1474,7 +1474,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
     uriEClass.getESuperTypes().add(this.getExpression());
     numLiteralExpressionEClass.getESuperTypes().add(this.getExpression());
-    listExpressionEClass.getESuperTypes().add(this.getExpression());
+    sizeOfExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
     selectActionEClass.getESuperTypes().add(this.getExpression());
     assignationEClass.getESuperTypes().add(this.getInstruction());
@@ -1529,8 +1529,8 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEClass(numLiteralExpressionEClass, NumLiteralExpression.class, "NumLiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, NumLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(listExpressionEClass, ListExpression.class, "ListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, ListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(sizeOfExpressionEClass, SizeOfExpression.class, "SizeOfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSizeOfExpression_Exp(), this.getExpression(), null, "exp", null, 0, 1, SizeOfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanListExpressionEClass, BooleanListExpression.class, "BooleanListExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBooleanListExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, BooleanListExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

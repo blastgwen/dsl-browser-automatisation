@@ -485,14 +485,14 @@ public interface SlnDslPackage extends EPackage
   int NUM_LITERAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl <em>List Expression</em>}' class.
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.SizeOfExpressionImpl <em>Size Of Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl
-   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getListExpression()
+   * @see com.selenium.gram.xtext.slnDsl.impl.SizeOfExpressionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSizeOfExpression()
    * @generated
    */
-  int LIST_EXPRESSION = 13;
+  int SIZE_OF_EXPRESSION = 13;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -501,16 +501,16 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_EXPRESSION__EXP = EXPRESSION_FEATURE_COUNT + 0;
+  int SIZE_OF_EXPRESSION__EXP = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>List Expression</em>' class.
+   * The number of structural features of the '<em>Size Of Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int SIZE_OF_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.BooleanListExpressionImpl <em>Boolean List Expression</em>}' class.
@@ -1582,25 +1582,25 @@ public interface SlnDslPackage extends EPackage
   EAttribute getNumLiteralExpression_Value();
 
   /**
-   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ListExpression <em>List Expression</em>}'.
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.SizeOfExpression <em>Size Of Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>List Expression</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ListExpression
+   * @return the meta object for class '<em>Size Of Expression</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SizeOfExpression
    * @generated
    */
-  EClass getListExpression();
+  EClass getSizeOfExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ListExpression#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.SizeOfExpression#getExp <em>Exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ListExpression#getExp()
-   * @see #getListExpression()
+   * @see com.selenium.gram.xtext.slnDsl.SizeOfExpression#getExp()
+   * @see #getSizeOfExpression()
    * @generated
    */
-  EReference getListExpression_Exp();
+  EReference getSizeOfExpression_Exp();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.BooleanListExpression <em>Boolean List Expression</em>}'.
@@ -2528,14 +2528,14 @@ public interface SlnDslPackage extends EPackage
     EAttribute NUM_LITERAL_EXPRESSION__VALUE = eINSTANCE.getNumLiteralExpression_Value();
 
     /**
-     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl <em>List Expression</em>}' class.
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.SizeOfExpressionImpl <em>Size Of Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.selenium.gram.xtext.slnDsl.impl.ListExpressionImpl
-     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getListExpression()
+     * @see com.selenium.gram.xtext.slnDsl.impl.SizeOfExpressionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSizeOfExpression()
      * @generated
      */
-    EClass LIST_EXPRESSION = eINSTANCE.getListExpression();
+    EClass SIZE_OF_EXPRESSION = eINSTANCE.getSizeOfExpression();
 
     /**
      * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
@@ -2543,7 +2543,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIST_EXPRESSION__EXP = eINSTANCE.getListExpression_Exp();
+    EReference SIZE_OF_EXPRESSION__EXP = eINSTANCE.getSizeOfExpression_Exp();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.BooleanListExpressionImpl <em>Boolean List Expression</em>}' class.

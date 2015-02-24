@@ -441,7 +441,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cVariableReferenceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNumLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cListExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSizeOfExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cBooleanExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cSelectActionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cUriParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
@@ -449,10 +449,10 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Expression
 		// * / Expression:
-		//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | SelectAction | Uri;
+		//	VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri;
 		public ParserRule getRule() { return rule; }
 
-		//VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | SelectAction | Uri
+		//VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//VariableReference
@@ -461,8 +461,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//NumLiteralExpression
 		public RuleCall getNumLiteralExpressionParserRuleCall_1() { return cNumLiteralExpressionParserRuleCall_1; }
 
-		//ListExpression
-		public RuleCall getListExpressionParserRuleCall_2() { return cListExpressionParserRuleCall_2; }
+		//SizeOfExpression
+		public RuleCall getSizeOfExpressionParserRuleCall_2() { return cSizeOfExpressionParserRuleCall_2; }
 
 		//BooleanExpression
 		public RuleCall getBooleanExpressionParserRuleCall_3() { return cBooleanExpressionParserRuleCall_3; }
@@ -490,8 +490,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValueNumberLiteralParserRuleCall_0() { return cValueNumberLiteralParserRuleCall_0; }
 	}
 
-	public class ListExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ListExpression");
+	public class SizeOfExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SizeOfExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSizeofKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -499,7 +499,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpExpressionParserRuleCall_2_0 = (RuleCall)cExpAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//ListExpression:
+		//SizeOfExpression:
 		//	"sizeof" "(" exp=Expression ")";
 		public ParserRule getRule() { return rule; }
 
@@ -1548,7 +1548,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final UriElements pUri;
 	private final ExpressionElements pExpression;
 	private final NumLiteralExpressionElements pNumLiteralExpression;
-	private final ListExpressionElements pListExpression;
+	private final SizeOfExpressionElements pSizeOfExpression;
 	private final BooleanListExpressionElements pBooleanListExpression;
 	private final BooleanListOperatorElements pBooleanListOperator;
 	private final BooleanExpressionElements pBooleanExpression;
@@ -1603,7 +1603,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUri = new UriElements();
 		this.pExpression = new ExpressionElements();
 		this.pNumLiteralExpression = new NumLiteralExpressionElements();
-		this.pListExpression = new ListExpressionElements();
+		this.pSizeOfExpression = new SizeOfExpressionElements();
 		this.pBooleanListExpression = new BooleanListExpressionElements();
 		this.pBooleanListOperator = new BooleanListOperatorElements();
 		this.pBooleanExpression = new BooleanExpressionElements();
@@ -1801,7 +1801,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Expression
 	// * / Expression:
-	//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | SelectAction | Uri;
+	//	VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -1820,14 +1820,14 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getNumLiteralExpressionAccess().getRule();
 	}
 
-	//ListExpression:
+	//SizeOfExpression:
 	//	"sizeof" "(" exp=Expression ")";
-	public ListExpressionElements getListExpressionAccess() {
-		return pListExpression;
+	public SizeOfExpressionElements getSizeOfExpressionAccess() {
+		return pSizeOfExpression;
 	}
 	
-	public ParserRule getListExpressionRule() {
-		return getListExpressionAccess().getRule();
+	public ParserRule getSizeOfExpressionRule() {
+		return getSizeOfExpressionAccess().getRule();
 	}
 
 	//BooleanListExpression:

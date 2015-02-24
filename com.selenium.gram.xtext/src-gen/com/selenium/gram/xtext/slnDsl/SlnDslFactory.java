@@ -140,13 +140,13 @@ public interface SlnDslFactory extends EFactory
   NumLiteralExpression createNumLiteralExpression();
 
   /**
-   * Returns a new object of class '<em>List Expression</em>'.
+   * Returns a new object of class '<em>Size Of Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Expression</em>'.
+   * @return a new object of class '<em>Size Of Expression</em>'.
    * @generated
    */
-  ListExpression createListExpression();
+  SizeOfExpression createSizeOfExpression();
 
   /**
    * Returns a new object of class '<em>Boolean List Expression</em>'.

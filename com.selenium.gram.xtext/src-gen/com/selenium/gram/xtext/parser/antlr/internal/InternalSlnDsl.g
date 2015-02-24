@@ -830,11 +830,11 @@ ruleExpression returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getExpressionAccess().getListExpressionParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getExpressionAccess().getSizeOfExpressionParserRuleCall_2()); 
     }
-    this_ListExpression_2=ruleListExpression
+    this_SizeOfExpression_2=ruleSizeOfExpression
     { 
-        $current = $this_ListExpression_2.current; 
+        $current = $this_SizeOfExpression_2.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -913,36 +913,36 @@ ruleNumLiteralExpression returns [EObject current=null]
 
 
 
-// Entry rule entryRuleListExpression
-entryRuleListExpression returns [EObject current=null] 
+// Entry rule entryRuleSizeOfExpression
+entryRuleSizeOfExpression returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getListExpressionRule()); }
-	 iv_ruleListExpression=ruleListExpression 
-	 { $current=$iv_ruleListExpression.current; } 
+	{ newCompositeNode(grammarAccess.getSizeOfExpressionRule()); }
+	 iv_ruleSizeOfExpression=ruleSizeOfExpression 
+	 { $current=$iv_ruleSizeOfExpression.current; } 
 	 EOF 
 ;
 
-// Rule ListExpression
-ruleListExpression returns [EObject current=null] 
+// Rule SizeOfExpression
+ruleSizeOfExpression returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='sizeof' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getListExpressionAccess().getSizeofKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getSizeOfExpressionAccess().getSizeofKeyword_0());
     }
 	otherlv_1='(' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getListExpressionAccess().getLeftParenthesisKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getSizeOfExpressionAccess().getLeftParenthesisKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getListExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getSizeOfExpressionAccess().getExpExpressionParserRuleCall_2_0()); 
 	    }
 		lv_exp_2_0=ruleExpression		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getListExpressionRule());
+	            $current = createModelElementForParent(grammarAccess.getSizeOfExpressionRule());
 	        }
        		set(
        			$current, 
@@ -955,7 +955,7 @@ ruleListExpression returns [EObject current=null]
 )
 )	otherlv_3=')' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getListExpressionAccess().getRightParenthesisKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getSizeOfExpressionAccess().getRightParenthesisKeyword_3());
     }
 )
 ;
