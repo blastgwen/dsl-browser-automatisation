@@ -66,7 +66,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanListExpressionAccess().getGroup(), "rule__BooleanListExpression__Group__0");
 					put(grammarAccess.getVerifyActionAccess().getGroup(), "rule__VerifyAction__Group__0");
 					put(grammarAccess.getExistActionAccess().getGroup(), "rule__ExistAction__Group__0");
-					put(grammarAccess.getActionSelectExpressionAccess().getGroup(), "rule__ActionSelectExpression__Group__0");
+					put(grammarAccess.getSelectActionAccess().getGroup(), "rule__SelectAction__Group__0");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getGroup(), "rule__BinaryBooleanExpression__Group__0");
 					put(grammarAccess.getBinaryLogicalExpressionAccess().getGroup(), "rule__BinaryLogicalExpression__Group__0");
 					put(grammarAccess.getNegationExpressionAccess().getGroup(), "rule__NegationExpression__Group__0");
@@ -120,8 +120,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVerifyActionAccess().getValueAssignment_6(), "rule__VerifyAction__ValueAssignment_6");
 					put(grammarAccess.getExistActionAccess().getSelectAssignment_2(), "rule__ExistAction__SelectAssignment_2");
 					put(grammarAccess.getExistActionAccess().getNameElementAssignment_4(), "rule__ExistAction__NameElementAssignment_4");
-					put(grammarAccess.getActionSelectExpressionAccess().getTypeAssignment_2(), "rule__ActionSelectExpression__TypeAssignment_2");
-					put(grammarAccess.getActionSelectExpressionAccess().getNameElementAssignment_4(), "rule__ActionSelectExpression__NameElementAssignment_4");
+					put(grammarAccess.getSelectActionAccess().getTypeAssignment_2(), "rule__SelectAction__TypeAssignment_2");
+					put(grammarAccess.getSelectActionAccess().getNameElementAssignment_4(), "rule__SelectAction__NameElementAssignment_4");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getOpAssignment_0(), "rule__BinaryBooleanExpression__OpAssignment_0");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getLeftAssignment_1(), "rule__BinaryBooleanExpression__LeftAssignment_1");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getRightAssignment_2(), "rule__BinaryBooleanExpression__RightAssignment_2");

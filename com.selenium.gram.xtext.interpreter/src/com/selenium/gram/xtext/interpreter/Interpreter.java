@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.opera.core.systems.scope.protos.EcmascriptProtos.Object.ObjectType;
 import com.selenium.gram.xtext.interpreter.exceptions.ActionInstructionException;
 import com.selenium.gram.xtext.interpreter.exceptions.InterpretationException;
 import com.selenium.gram.xtext.interpreter.exceptions.SeleniumDriverException;
@@ -35,6 +36,7 @@ import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.Uri;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
@@ -234,7 +236,133 @@ public class Interpreter {
 			System.out.println("exec expression bool");
 			return new ExpressionValue(getBooleanValue((BooleanExpression) exp, variables), 
 					ExpressionValueType.bool);
-		}		
+		}
+		
+		if (exp instanceof SelectAction){
+			System.out.println("exec select action");
+			SelectAction act = (SelectAction) exp;
+			
+			ExpressionValue toTest = this.computeExpression(act.getNameElement(), variables);
+			WebDriver driver = SeleniumDriver.getInstance().getDriver();
+			
+			if (toTest.getType() == ExpressionValueType.list){
+				throw new InterpretationException("Impossible to test with a list ");
+			}
+			String valueToTest = toTest.getValue().toString();
+			
+			List<WebElement> elements = new ArrayList<WebElement>();
+			List<ExpressionValue> res = new ArrayList<ExpressionValue>();
+
+			if (act.getType().equals("link")){
+				
+				elements.addAll(driver.findElements(By.cssSelector(("a"))));				
+				int i = 0;
+				while (i < elements.size()){
+					String str = elements.get(i).getText();
+					if (str.toLowerCase().trim().contains(valueToTest)){	
+					    ExpressionValue value = new ExpressionValue(str, ExpressionValueType.literal);	
+					    res.add(value);
+					}	
+					i ++;
+				}
+			} 
+			else if (act.getType().equals("button")){
+				elements.addAll(driver.findElements(By.cssSelector("input[type='submit']")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String str = elem.getText().trim().toLowerCase();
+					String valu = elem.getAttribute("value").trim().toLowerCase();
+					
+					if (str.contains(valueToTest) || valu.contains(valueToTest)){
+						ExpressionValue value = new ExpressionValue(str == "" ? valu : str
+								, ExpressionValueType.literal);
+						
+					    res.add(value);
+					}
+					i ++;
+				}
+				
+			} else if (act.getType().equals("textbox")){
+				elements.addAll(driver.findElements(By.cssSelector("input[type='text']")));	
+				elements.addAll(driver.findElements(By.cssSelector("input[type='password']")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String name = elem.getAttribute("name").trim().toLowerCase();
+					String id = elem.getAttribute("id").trim().toLowerCase();
+					String place = elem.getAttribute("placeholder").trim().toLowerCase();					
+					
+					if (name.contains(valueToTest) || id.contains(valueToTest) || place.contains(valueToTest)){	
+						ExpressionValue value = new ExpressionValue(name != "" ? name : (id != "" ? id : place)
+								, ExpressionValueType.literal);
+						
+					    res.add(value);
+					}
+					i ++;
+				}
+				
+			}
+			
+			else if (act.getType().equals("checkbox")){
+				elements.addAll(driver.findElements(By.cssSelector("input[type='checkbox']")));
+				elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+					String valu = elements.get(i).getAttribute("value").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();
+					
+					if (name.contains(valueToTest) || valu.contains(valueToTest) || 	str.contains(valueToTest)){
+						ExpressionValue value = new ExpressionValue(name != "" ? name : (valu != "" ? valu : str)
+								, ExpressionValueType.literal);
+						
+					    res.add(value);
+					}
+					i ++;
+				}
+				
+			}
+			else if (act.getType().equals("image")){
+				elements.addAll(driver.findElements(By.tagName("img")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String src = elements.get(i).getAttribute("src").trim().toLowerCase();
+					String alt = elements.get(i).getAttribute("alt").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();					
+					
+					if (src.contains(valueToTest) || alt.contains(valueToTest) || str.contains(valueToTest)){	
+						ExpressionValue value = new ExpressionValue(src != "" ? src : (alt != "" ? alt : str)
+								, ExpressionValueType.literal);
+						
+					    res.add(value);
+					}
+					i ++;
+				}
+			}
+			else {
+				throw new InterpretationException("Unknown Select Element type");
+			}
+			
+			if (res.size() > 1){
+				return new ExpressionValue(res, ExpressionValueType.list);
+			} else if (res.size() == 1){
+				return res.get(0);
+			} else {
+				// TODO : verify this
+				return new ExpressionValue ("", ExpressionValueType.literal);
+			}
+		}
 		
 		throw new InterpretationException("Expression inconnue : "+exp.eClass().getName());
 	}

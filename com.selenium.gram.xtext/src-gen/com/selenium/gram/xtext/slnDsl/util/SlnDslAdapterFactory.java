@@ -170,9 +170,9 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createExistActionAdapter();
       }
       @Override
-      public Adapter caseActionSelectExpression(ActionSelectExpression object)
+      public Adapter caseSelectAction(SelectAction object)
       {
-        return createActionSelectExpressionAdapter();
+        return createSelectActionAdapter();
       }
       @Override
       public Adapter caseBinaryBooleanExpression(BinaryBooleanExpression object)
@@ -557,16 +557,16 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression <em>Action Select Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.SelectAction <em>Select Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.selenium.gram.xtext.slnDsl.ActionSelectExpression
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction
    * @generated
    */
-  public Adapter createActionSelectExpressionAdapter()
+  public Adapter createSelectActionAdapter()
   {
     return null;
   }

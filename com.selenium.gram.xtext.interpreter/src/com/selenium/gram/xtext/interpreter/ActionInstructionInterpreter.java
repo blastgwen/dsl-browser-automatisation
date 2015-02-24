@@ -16,9 +16,9 @@ import com.selenium.gram.xtext.slnDsl.ActionCheck;
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
-import com.selenium.gram.xtext.slnDsl.ActionSelectExpression;
 import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
 
 public class ActionInstructionInterpreter {
@@ -215,13 +215,13 @@ public class ActionInstructionInterpreter {
 				valueToTest = valueToTest.trim().toLowerCase();
 				
 				if (act.getElement() instanceof VariableReference || act.getElement() instanceof NumLiteralExpression 
-						|| act.getElement() instanceof ActionSelectExpression){					
+						|| act.getElement() instanceof SelectAction){					
 
 					if (valExp.getType() == ExpressionValueType.list){
-						// TODO : Gerer la liste
-						List<Object> list =  (List<Object>) valExp.getValue();
-						for (Object obj : list) {
-							doActionCheck(obj.toString(), value);
+						// TODO : Verify this
+						List<ExpressionValue> list =  (List<ExpressionValue>) valExp.getValue();
+						for (ExpressionValue obj : list) {
+							doActionCheck(obj.getValue().toString(), value);
 						}					
 					} else {
 						doActionCheck(valueToTest, value);						
@@ -248,9 +248,9 @@ public class ActionInstructionInterpreter {
 					doActionType(expElem.getValue().toString(), expValue);
 				} else {
 					// TODO : Gerer la liste
-					List<Object> list =  (List<Object>) expElem.getValue();
-					for (Object obj : list) {
-						doActionType(obj.toString(), expValue);
+					List<ExpressionValue> list =  (List<ExpressionValue>) expElem.getValue();
+					for (ExpressionValue obj : list) {
+						doActionType(obj.getType().toString(), expValue);
 					}	
 				}
 			}

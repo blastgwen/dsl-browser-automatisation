@@ -83,7 +83,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.BOOLEAN_VALUE: return createBooleanValue();
       case SlnDslPackage.VERIFY_ACTION: return createVerifyAction();
       case SlnDslPackage.EXIST_ACTION: return createExistAction();
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION: return createActionSelectExpression();
+      case SlnDslPackage.SELECT_ACTION: return createSelectAction();
       case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION: return createBinaryBooleanExpression();
       case SlnDslPackage.BINARY_LOGICAL_EXPRESSION: return createBinaryLogicalExpression();
       case SlnDslPackage.NEGATION_EXPRESSION: return createNegationExpression();
@@ -318,10 +318,10 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActionSelectExpression createActionSelectExpression()
+  public SelectAction createSelectAction()
   {
-    ActionSelectExpressionImpl actionSelectExpression = new ActionSelectExpressionImpl();
-    return actionSelectExpression;
+    SelectActionImpl selectAction = new SelectActionImpl();
+    return selectAction;
   }
 
   /**

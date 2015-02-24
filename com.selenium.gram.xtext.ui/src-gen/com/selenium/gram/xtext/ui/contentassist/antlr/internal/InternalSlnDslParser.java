@@ -1812,21 +1812,21 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleExistAction"
 
 
-    // $ANTLR start "entryRuleActionSelectExpression"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:676:1: entryRuleActionSelectExpression : ruleActionSelectExpression EOF ;
-    public final void entryRuleActionSelectExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleSelectAction"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:676:1: entryRuleSelectAction : ruleSelectAction EOF ;
+    public final void entryRuleSelectAction() throws RecognitionException {
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:677:1: ( ruleActionSelectExpression EOF )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:678:1: ruleActionSelectExpression EOF
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:677:1: ( ruleSelectAction EOF )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:678:1: ruleSelectAction EOF
             {
-             before(grammarAccess.getActionSelectExpressionRule()); 
-            pushFollow(FOLLOW_ruleActionSelectExpression_in_entryRuleActionSelectExpression1381);
-            ruleActionSelectExpression();
+             before(grammarAccess.getSelectActionRule()); 
+            pushFollow(FOLLOW_ruleSelectAction_in_entryRuleSelectAction1381);
+            ruleSelectAction();
 
             state._fsp--;
 
-             after(grammarAccess.getActionSelectExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionSelectExpression1388); 
+             after(grammarAccess.getSelectActionRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectAction1388); 
 
             }
 
@@ -1839,35 +1839,35 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleActionSelectExpression"
+    // $ANTLR end "entryRuleSelectAction"
 
 
-    // $ANTLR start "ruleActionSelectExpression"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:685:1: ruleActionSelectExpression : ( ( rule__ActionSelectExpression__Group__0 ) ) ;
-    public final void ruleActionSelectExpression() throws RecognitionException {
+    // $ANTLR start "ruleSelectAction"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:685:1: ruleSelectAction : ( ( rule__SelectAction__Group__0 ) ) ;
+    public final void ruleSelectAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:689:2: ( ( ( rule__ActionSelectExpression__Group__0 ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:690:1: ( ( rule__ActionSelectExpression__Group__0 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:689:2: ( ( ( rule__SelectAction__Group__0 ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:690:1: ( ( rule__SelectAction__Group__0 ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:690:1: ( ( rule__ActionSelectExpression__Group__0 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:691:1: ( rule__ActionSelectExpression__Group__0 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:690:1: ( ( rule__SelectAction__Group__0 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:691:1: ( rule__SelectAction__Group__0 )
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getGroup()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:692:1: ( rule__ActionSelectExpression__Group__0 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:692:2: rule__ActionSelectExpression__Group__0
+             before(grammarAccess.getSelectActionAccess().getGroup()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:692:1: ( rule__SelectAction__Group__0 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:692:2: rule__SelectAction__Group__0
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__0_in_ruleActionSelectExpression1414);
-            rule__ActionSelectExpression__Group__0();
+            pushFollow(FOLLOW_rule__SelectAction__Group__0_in_ruleSelectAction1414);
+            rule__SelectAction__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionSelectExpressionAccess().getGroup()); 
+             after(grammarAccess.getSelectActionAccess().getGroup()); 
 
             }
 
@@ -1886,7 +1886,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleActionSelectExpression"
+    // $ANTLR end "ruleSelectAction"
 
 
     // $ANTLR start "entryRuleBinaryBooleanExpression"
@@ -3798,13 +3798,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1364:1: rule__Expression__Alternatives : ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleListExpression ) | ( ruleBooleanExpression ) | ( ruleActionSelectExpression ) | ( ruleUri ) );
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1364:1: rule__Expression__Alternatives : ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleListExpression ) | ( ruleBooleanExpression ) | ( ruleSelectAction ) | ( ruleUri ) );
     public final void rule__Expression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1368:1: ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleListExpression ) | ( ruleBooleanExpression ) | ( ruleActionSelectExpression ) | ( ruleUri ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1368:1: ( ( ruleVariableReference ) | ( ruleNumLiteralExpression ) | ( ruleListExpression ) | ( ruleBooleanExpression ) | ( ruleSelectAction ) | ( ruleUri ) )
             int alt5=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -3933,18 +3933,18 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1393:6: ( ruleActionSelectExpression )
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1393:6: ( ruleSelectAction )
                     {
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1393:6: ( ruleActionSelectExpression )
-                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1394:1: ruleActionSelectExpression
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1393:6: ( ruleSelectAction )
+                    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:1394:1: ruleSelectAction
                     {
-                     before(grammarAccess.getExpressionAccess().getActionSelectExpressionParserRuleCall_4()); 
-                    pushFollow(FOLLOW_ruleActionSelectExpression_in_rule__Expression__Alternatives2944);
-                    ruleActionSelectExpression();
+                     before(grammarAccess.getExpressionAccess().getSelectActionParserRuleCall_4()); 
+                    pushFollow(FOLLOW_ruleSelectAction_in_rule__Expression__Alternatives2944);
+                    ruleSelectAction();
 
                     state._fsp--;
 
-                     after(grammarAccess.getExpressionAccess().getActionSelectExpressionParserRuleCall_4()); 
+                     after(grammarAccess.getExpressionAccess().getSelectActionParserRuleCall_4()); 
 
                     }
 
@@ -9814,23 +9814,23 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExistAction__Group__5__Impl"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__0"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3587:1: rule__ActionSelectExpression__Group__0 : rule__ActionSelectExpression__Group__0__Impl rule__ActionSelectExpression__Group__1 ;
-    public final void rule__ActionSelectExpression__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__0"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3587:1: rule__SelectAction__Group__0 : rule__SelectAction__Group__0__Impl rule__SelectAction__Group__1 ;
+    public final void rule__SelectAction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3591:1: ( rule__ActionSelectExpression__Group__0__Impl rule__ActionSelectExpression__Group__1 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3592:2: rule__ActionSelectExpression__Group__0__Impl rule__ActionSelectExpression__Group__1
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3591:1: ( rule__SelectAction__Group__0__Impl rule__SelectAction__Group__1 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3592:2: rule__SelectAction__Group__0__Impl rule__SelectAction__Group__1
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__0__Impl_in_rule__ActionSelectExpression__Group__07387);
-            rule__ActionSelectExpression__Group__0__Impl();
+            pushFollow(FOLLOW_rule__SelectAction__Group__0__Impl_in_rule__SelectAction__Group__07387);
+            rule__SelectAction__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__1_in_rule__ActionSelectExpression__Group__07390);
-            rule__ActionSelectExpression__Group__1();
+            pushFollow(FOLLOW_rule__SelectAction__Group__1_in_rule__SelectAction__Group__07390);
+            rule__SelectAction__Group__1();
 
             state._fsp--;
 
@@ -9849,12 +9849,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__0"
+    // $ANTLR end "rule__SelectAction__Group__0"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__0__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3599:1: rule__ActionSelectExpression__Group__0__Impl : ( 'select' ) ;
-    public final void rule__ActionSelectExpression__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__0__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3599:1: rule__SelectAction__Group__0__Impl : ( 'select' ) ;
+    public final void rule__SelectAction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -9865,9 +9865,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3604:1: ( 'select' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3605:1: 'select'
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getSelectKeyword_0()); 
-            match(input,42,FOLLOW_42_in_rule__ActionSelectExpression__Group__0__Impl7418); 
-             after(grammarAccess.getActionSelectExpressionAccess().getSelectKeyword_0()); 
+             before(grammarAccess.getSelectActionAccess().getSelectKeyword_0()); 
+            match(input,42,FOLLOW_42_in_rule__SelectAction__Group__0__Impl7418); 
+             after(grammarAccess.getSelectActionAccess().getSelectKeyword_0()); 
 
             }
 
@@ -9886,26 +9886,26 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__0__Impl"
+    // $ANTLR end "rule__SelectAction__Group__0__Impl"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__1"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3618:1: rule__ActionSelectExpression__Group__1 : rule__ActionSelectExpression__Group__1__Impl rule__ActionSelectExpression__Group__2 ;
-    public final void rule__ActionSelectExpression__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__1"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3618:1: rule__SelectAction__Group__1 : rule__SelectAction__Group__1__Impl rule__SelectAction__Group__2 ;
+    public final void rule__SelectAction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3622:1: ( rule__ActionSelectExpression__Group__1__Impl rule__ActionSelectExpression__Group__2 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3623:2: rule__ActionSelectExpression__Group__1__Impl rule__ActionSelectExpression__Group__2
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3622:1: ( rule__SelectAction__Group__1__Impl rule__SelectAction__Group__2 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3623:2: rule__SelectAction__Group__1__Impl rule__SelectAction__Group__2
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__1__Impl_in_rule__ActionSelectExpression__Group__17449);
-            rule__ActionSelectExpression__Group__1__Impl();
+            pushFollow(FOLLOW_rule__SelectAction__Group__1__Impl_in_rule__SelectAction__Group__17449);
+            rule__SelectAction__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__2_in_rule__ActionSelectExpression__Group__17452);
-            rule__ActionSelectExpression__Group__2();
+            pushFollow(FOLLOW_rule__SelectAction__Group__2_in_rule__SelectAction__Group__17452);
+            rule__SelectAction__Group__2();
 
             state._fsp--;
 
@@ -9924,12 +9924,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__1"
+    // $ANTLR end "rule__SelectAction__Group__1"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__1__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3630:1: rule__ActionSelectExpression__Group__1__Impl : ( '(' ) ;
-    public final void rule__ActionSelectExpression__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__1__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3630:1: rule__SelectAction__Group__1__Impl : ( '(' ) ;
+    public final void rule__SelectAction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -9940,9 +9940,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3635:1: ( '(' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3636:1: '('
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getLeftParenthesisKeyword_1()); 
-            match(input,34,FOLLOW_34_in_rule__ActionSelectExpression__Group__1__Impl7480); 
-             after(grammarAccess.getActionSelectExpressionAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getSelectActionAccess().getLeftParenthesisKeyword_1()); 
+            match(input,34,FOLLOW_34_in_rule__SelectAction__Group__1__Impl7480); 
+             after(grammarAccess.getSelectActionAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -9961,26 +9961,26 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__1__Impl"
+    // $ANTLR end "rule__SelectAction__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__2"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3649:1: rule__ActionSelectExpression__Group__2 : rule__ActionSelectExpression__Group__2__Impl rule__ActionSelectExpression__Group__3 ;
-    public final void rule__ActionSelectExpression__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__2"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3649:1: rule__SelectAction__Group__2 : rule__SelectAction__Group__2__Impl rule__SelectAction__Group__3 ;
+    public final void rule__SelectAction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3653:1: ( rule__ActionSelectExpression__Group__2__Impl rule__ActionSelectExpression__Group__3 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3654:2: rule__ActionSelectExpression__Group__2__Impl rule__ActionSelectExpression__Group__3
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3653:1: ( rule__SelectAction__Group__2__Impl rule__SelectAction__Group__3 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3654:2: rule__SelectAction__Group__2__Impl rule__SelectAction__Group__3
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__2__Impl_in_rule__ActionSelectExpression__Group__27511);
-            rule__ActionSelectExpression__Group__2__Impl();
+            pushFollow(FOLLOW_rule__SelectAction__Group__2__Impl_in_rule__SelectAction__Group__27511);
+            rule__SelectAction__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__3_in_rule__ActionSelectExpression__Group__27514);
-            rule__ActionSelectExpression__Group__3();
+            pushFollow(FOLLOW_rule__SelectAction__Group__3_in_rule__SelectAction__Group__27514);
+            rule__SelectAction__Group__3();
 
             state._fsp--;
 
@@ -9999,35 +9999,35 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__2"
+    // $ANTLR end "rule__SelectAction__Group__2"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__2__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3661:1: rule__ActionSelectExpression__Group__2__Impl : ( ( rule__ActionSelectExpression__TypeAssignment_2 ) ) ;
-    public final void rule__ActionSelectExpression__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__2__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3661:1: rule__SelectAction__Group__2__Impl : ( ( rule__SelectAction__TypeAssignment_2 ) ) ;
+    public final void rule__SelectAction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3665:1: ( ( ( rule__ActionSelectExpression__TypeAssignment_2 ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3666:1: ( ( rule__ActionSelectExpression__TypeAssignment_2 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3665:1: ( ( ( rule__SelectAction__TypeAssignment_2 ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3666:1: ( ( rule__SelectAction__TypeAssignment_2 ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3666:1: ( ( rule__ActionSelectExpression__TypeAssignment_2 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3667:1: ( rule__ActionSelectExpression__TypeAssignment_2 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3666:1: ( ( rule__SelectAction__TypeAssignment_2 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3667:1: ( rule__SelectAction__TypeAssignment_2 )
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getTypeAssignment_2()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3668:1: ( rule__ActionSelectExpression__TypeAssignment_2 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3668:2: rule__ActionSelectExpression__TypeAssignment_2
+             before(grammarAccess.getSelectActionAccess().getTypeAssignment_2()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3668:1: ( rule__SelectAction__TypeAssignment_2 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3668:2: rule__SelectAction__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__TypeAssignment_2_in_rule__ActionSelectExpression__Group__2__Impl7541);
-            rule__ActionSelectExpression__TypeAssignment_2();
+            pushFollow(FOLLOW_rule__SelectAction__TypeAssignment_2_in_rule__SelectAction__Group__2__Impl7541);
+            rule__SelectAction__TypeAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionSelectExpressionAccess().getTypeAssignment_2()); 
+             after(grammarAccess.getSelectActionAccess().getTypeAssignment_2()); 
 
             }
 
@@ -10046,26 +10046,26 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__2__Impl"
+    // $ANTLR end "rule__SelectAction__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__3"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3678:1: rule__ActionSelectExpression__Group__3 : rule__ActionSelectExpression__Group__3__Impl rule__ActionSelectExpression__Group__4 ;
-    public final void rule__ActionSelectExpression__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__3"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3678:1: rule__SelectAction__Group__3 : rule__SelectAction__Group__3__Impl rule__SelectAction__Group__4 ;
+    public final void rule__SelectAction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3682:1: ( rule__ActionSelectExpression__Group__3__Impl rule__ActionSelectExpression__Group__4 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3683:2: rule__ActionSelectExpression__Group__3__Impl rule__ActionSelectExpression__Group__4
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3682:1: ( rule__SelectAction__Group__3__Impl rule__SelectAction__Group__4 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3683:2: rule__SelectAction__Group__3__Impl rule__SelectAction__Group__4
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__3__Impl_in_rule__ActionSelectExpression__Group__37571);
-            rule__ActionSelectExpression__Group__3__Impl();
+            pushFollow(FOLLOW_rule__SelectAction__Group__3__Impl_in_rule__SelectAction__Group__37571);
+            rule__SelectAction__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__4_in_rule__ActionSelectExpression__Group__37574);
-            rule__ActionSelectExpression__Group__4();
+            pushFollow(FOLLOW_rule__SelectAction__Group__4_in_rule__SelectAction__Group__37574);
+            rule__SelectAction__Group__4();
 
             state._fsp--;
 
@@ -10084,12 +10084,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__3"
+    // $ANTLR end "rule__SelectAction__Group__3"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__3__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3690:1: rule__ActionSelectExpression__Group__3__Impl : ( ',' ) ;
-    public final void rule__ActionSelectExpression__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__3__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3690:1: rule__SelectAction__Group__3__Impl : ( ',' ) ;
+    public final void rule__SelectAction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -10100,9 +10100,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3695:1: ( ',' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3696:1: ','
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getCommaKeyword_3()); 
-            match(input,37,FOLLOW_37_in_rule__ActionSelectExpression__Group__3__Impl7602); 
-             after(grammarAccess.getActionSelectExpressionAccess().getCommaKeyword_3()); 
+             before(grammarAccess.getSelectActionAccess().getCommaKeyword_3()); 
+            match(input,37,FOLLOW_37_in_rule__SelectAction__Group__3__Impl7602); 
+             after(grammarAccess.getSelectActionAccess().getCommaKeyword_3()); 
 
             }
 
@@ -10121,26 +10121,26 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__3__Impl"
+    // $ANTLR end "rule__SelectAction__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__4"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3709:1: rule__ActionSelectExpression__Group__4 : rule__ActionSelectExpression__Group__4__Impl rule__ActionSelectExpression__Group__5 ;
-    public final void rule__ActionSelectExpression__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__4"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3709:1: rule__SelectAction__Group__4 : rule__SelectAction__Group__4__Impl rule__SelectAction__Group__5 ;
+    public final void rule__SelectAction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3713:1: ( rule__ActionSelectExpression__Group__4__Impl rule__ActionSelectExpression__Group__5 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3714:2: rule__ActionSelectExpression__Group__4__Impl rule__ActionSelectExpression__Group__5
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3713:1: ( rule__SelectAction__Group__4__Impl rule__SelectAction__Group__5 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3714:2: rule__SelectAction__Group__4__Impl rule__SelectAction__Group__5
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__4__Impl_in_rule__ActionSelectExpression__Group__47633);
-            rule__ActionSelectExpression__Group__4__Impl();
+            pushFollow(FOLLOW_rule__SelectAction__Group__4__Impl_in_rule__SelectAction__Group__47633);
+            rule__SelectAction__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__5_in_rule__ActionSelectExpression__Group__47636);
-            rule__ActionSelectExpression__Group__5();
+            pushFollow(FOLLOW_rule__SelectAction__Group__5_in_rule__SelectAction__Group__47636);
+            rule__SelectAction__Group__5();
 
             state._fsp--;
 
@@ -10159,35 +10159,35 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__4"
+    // $ANTLR end "rule__SelectAction__Group__4"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__4__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3721:1: rule__ActionSelectExpression__Group__4__Impl : ( ( rule__ActionSelectExpression__NameElementAssignment_4 ) ) ;
-    public final void rule__ActionSelectExpression__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__4__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3721:1: rule__SelectAction__Group__4__Impl : ( ( rule__SelectAction__NameElementAssignment_4 ) ) ;
+    public final void rule__SelectAction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3725:1: ( ( ( rule__ActionSelectExpression__NameElementAssignment_4 ) ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3726:1: ( ( rule__ActionSelectExpression__NameElementAssignment_4 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3725:1: ( ( ( rule__SelectAction__NameElementAssignment_4 ) ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3726:1: ( ( rule__SelectAction__NameElementAssignment_4 ) )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3726:1: ( ( rule__ActionSelectExpression__NameElementAssignment_4 ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3727:1: ( rule__ActionSelectExpression__NameElementAssignment_4 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3726:1: ( ( rule__SelectAction__NameElementAssignment_4 ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3727:1: ( rule__SelectAction__NameElementAssignment_4 )
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getNameElementAssignment_4()); 
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3728:1: ( rule__ActionSelectExpression__NameElementAssignment_4 )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3728:2: rule__ActionSelectExpression__NameElementAssignment_4
+             before(grammarAccess.getSelectActionAccess().getNameElementAssignment_4()); 
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3728:1: ( rule__SelectAction__NameElementAssignment_4 )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3728:2: rule__SelectAction__NameElementAssignment_4
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__NameElementAssignment_4_in_rule__ActionSelectExpression__Group__4__Impl7663);
-            rule__ActionSelectExpression__NameElementAssignment_4();
+            pushFollow(FOLLOW_rule__SelectAction__NameElementAssignment_4_in_rule__SelectAction__Group__4__Impl7663);
+            rule__SelectAction__NameElementAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionSelectExpressionAccess().getNameElementAssignment_4()); 
+             after(grammarAccess.getSelectActionAccess().getNameElementAssignment_4()); 
 
             }
 
@@ -10206,21 +10206,21 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__4__Impl"
+    // $ANTLR end "rule__SelectAction__Group__4__Impl"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__5"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3738:1: rule__ActionSelectExpression__Group__5 : rule__ActionSelectExpression__Group__5__Impl ;
-    public final void rule__ActionSelectExpression__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__5"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3738:1: rule__SelectAction__Group__5 : rule__SelectAction__Group__5__Impl ;
+    public final void rule__SelectAction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3742:1: ( rule__ActionSelectExpression__Group__5__Impl )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3743:2: rule__ActionSelectExpression__Group__5__Impl
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3742:1: ( rule__SelectAction__Group__5__Impl )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3743:2: rule__SelectAction__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__ActionSelectExpression__Group__5__Impl_in_rule__ActionSelectExpression__Group__57693);
-            rule__ActionSelectExpression__Group__5__Impl();
+            pushFollow(FOLLOW_rule__SelectAction__Group__5__Impl_in_rule__SelectAction__Group__57693);
+            rule__SelectAction__Group__5__Impl();
 
             state._fsp--;
 
@@ -10239,12 +10239,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__5"
+    // $ANTLR end "rule__SelectAction__Group__5"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__Group__5__Impl"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3749:1: rule__ActionSelectExpression__Group__5__Impl : ( ')' ) ;
-    public final void rule__ActionSelectExpression__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__Group__5__Impl"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3749:1: rule__SelectAction__Group__5__Impl : ( ')' ) ;
+    public final void rule__SelectAction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -10255,9 +10255,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3754:1: ( ')' )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:3755:1: ')'
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getRightParenthesisKeyword_5()); 
-            match(input,36,FOLLOW_36_in_rule__ActionSelectExpression__Group__5__Impl7721); 
-             after(grammarAccess.getActionSelectExpressionAccess().getRightParenthesisKeyword_5()); 
+             before(grammarAccess.getSelectActionAccess().getRightParenthesisKeyword_5()); 
+            match(input,36,FOLLOW_36_in_rule__SelectAction__Group__5__Impl7721); 
+             after(grammarAccess.getSelectActionAccess().getRightParenthesisKeyword_5()); 
 
             }
 
@@ -10276,7 +10276,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__Group__5__Impl"
+    // $ANTLR end "rule__SelectAction__Group__5__Impl"
 
 
     // $ANTLR start "rule__BinaryBooleanExpression__Group__0"
@@ -16874,9 +16874,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExistAction__NameElementAssignment_4"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__TypeAssignment_2"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6363:1: rule__ActionSelectExpression__TypeAssignment_2 : ( ruleSelectableElement ) ;
-    public final void rule__ActionSelectExpression__TypeAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__TypeAssignment_2"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6363:1: rule__SelectAction__TypeAssignment_2 : ( ruleSelectableElement ) ;
+    public final void rule__SelectAction__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -16887,13 +16887,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6368:1: ( ruleSelectableElement )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6369:1: ruleSelectableElement
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getTypeSelectableElementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleSelectableElement_in_rule__ActionSelectExpression__TypeAssignment_212905);
+             before(grammarAccess.getSelectActionAccess().getTypeSelectableElementParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleSelectableElement_in_rule__SelectAction__TypeAssignment_212905);
             ruleSelectableElement();
 
             state._fsp--;
 
-             after(grammarAccess.getActionSelectExpressionAccess().getTypeSelectableElementParserRuleCall_2_0()); 
+             after(grammarAccess.getSelectActionAccess().getTypeSelectableElementParserRuleCall_2_0()); 
 
             }
 
@@ -16912,12 +16912,12 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__TypeAssignment_2"
+    // $ANTLR end "rule__SelectAction__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__ActionSelectExpression__NameElementAssignment_4"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6378:1: rule__ActionSelectExpression__NameElementAssignment_4 : ( ruleExpression ) ;
-    public final void rule__ActionSelectExpression__NameElementAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__SelectAction__NameElementAssignment_4"
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6378:1: rule__SelectAction__NameElementAssignment_4 : ( ruleExpression ) ;
+    public final void rule__SelectAction__NameElementAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -16928,13 +16928,13 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6383:1: ( ruleExpression )
             // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6384:1: ruleExpression
             {
-             before(grammarAccess.getActionSelectExpressionAccess().getNameElementExpressionParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__ActionSelectExpression__NameElementAssignment_412936);
+             before(grammarAccess.getSelectActionAccess().getNameElementExpressionParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_ruleExpression_in_rule__SelectAction__NameElementAssignment_412936);
             ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getActionSelectExpressionAccess().getNameElementExpressionParserRuleCall_4_0()); 
+             after(grammarAccess.getSelectActionAccess().getNameElementExpressionParserRuleCall_4_0()); 
 
             }
 
@@ -16953,7 +16953,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ActionSelectExpression__NameElementAssignment_4"
+    // $ANTLR end "rule__SelectAction__NameElementAssignment_4"
 
 
     // $ANTLR start "rule__BinaryBooleanExpression__OpAssignment_0"
@@ -18256,9 +18256,9 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleExistAction_in_entryRuleExistAction1321 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExistAction1328 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExistAction__Group__0_in_ruleExistAction1354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionSelectExpression_in_entryRuleActionSelectExpression1381 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionSelectExpression1388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__0_in_ruleActionSelectExpression1414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectAction_in_entryRuleSelectAction1381 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectAction1388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__0_in_ruleSelectAction1414 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBinaryBooleanExpression_in_entryRuleBinaryBooleanExpression1441 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBinaryBooleanExpression1448 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BinaryBooleanExpression__Group__0_in_ruleBinaryBooleanExpression1474 = new BitSet(new long[]{0x0000000000000002L});
@@ -18332,7 +18332,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_rule__Expression__Alternatives2893 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleListExpression_in_rule__Expression__Alternatives2910 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanExpression_in_rule__Expression__Alternatives2927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionSelectExpression_in_rule__Expression__Alternatives2944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectAction_in_rule__Expression__Alternatives2944 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUri_in_rule__Expression__Alternatives2961 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_rule__BooleanListOperator__Alternatives2994 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_rule__BooleanListOperator__Alternatives3014 = new BitSet(new long[]{0x0000000000000002L});
@@ -18528,23 +18528,23 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ExistAction__NameElementAssignment_4_in_rule__ExistAction__Group__4__Impl7286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExistAction__Group__5__Impl_in_rule__ExistAction__Group__57316 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_36_in_rule__ExistAction__Group__5__Impl7344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__0__Impl_in_rule__ActionSelectExpression__Group__07387 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__1_in_rule__ActionSelectExpression__Group__07390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__ActionSelectExpression__Group__0__Impl7418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__1__Impl_in_rule__ActionSelectExpression__Group__17449 = new BitSet(new long[]{0x000000000F800000L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__2_in_rule__ActionSelectExpression__Group__17452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__ActionSelectExpression__Group__1__Impl7480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__2__Impl_in_rule__ActionSelectExpression__Group__27511 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__3_in_rule__ActionSelectExpression__Group__27514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__TypeAssignment_2_in_rule__ActionSelectExpression__Group__2__Impl7541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__3__Impl_in_rule__ActionSelectExpression__Group__37571 = new BitSet(new long[]{0x07922F48007F01F0L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__4_in_rule__ActionSelectExpression__Group__37574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ActionSelectExpression__Group__3__Impl7602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__4__Impl_in_rule__ActionSelectExpression__Group__47633 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__5_in_rule__ActionSelectExpression__Group__47636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__NameElementAssignment_4_in_rule__ActionSelectExpression__Group__4__Impl7663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionSelectExpression__Group__5__Impl_in_rule__ActionSelectExpression__Group__57693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__ActionSelectExpression__Group__5__Impl7721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__0__Impl_in_rule__SelectAction__Group__07387 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__1_in_rule__SelectAction__Group__07390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__SelectAction__Group__0__Impl7418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__1__Impl_in_rule__SelectAction__Group__17449 = new BitSet(new long[]{0x000000000F800000L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__2_in_rule__SelectAction__Group__17452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SelectAction__Group__1__Impl7480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__2__Impl_in_rule__SelectAction__Group__27511 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__3_in_rule__SelectAction__Group__27514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__TypeAssignment_2_in_rule__SelectAction__Group__2__Impl7541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__3__Impl_in_rule__SelectAction__Group__37571 = new BitSet(new long[]{0x07922F48007F01F0L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__4_in_rule__SelectAction__Group__37574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__SelectAction__Group__3__Impl7602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__4__Impl_in_rule__SelectAction__Group__47633 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__5_in_rule__SelectAction__Group__47636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__NameElementAssignment_4_in_rule__SelectAction__Group__4__Impl7663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelectAction__Group__5__Impl_in_rule__SelectAction__Group__57693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__SelectAction__Group__5__Impl7721 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BinaryBooleanExpression__Group__0__Impl_in_rule__BinaryBooleanExpression__Group__07764 = new BitSet(new long[]{0x07922F48007F01F0L});
     public static final BitSet FOLLOW_rule__BinaryBooleanExpression__Group__1_in_rule__BinaryBooleanExpression__Group__07767 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BinaryBooleanExpression__OpAssignment_0_in_rule__BinaryBooleanExpression__Group__0__Impl7794 = new BitSet(new long[]{0x0000000000000002L});
@@ -18759,8 +18759,8 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleExpression_in_rule__VerifyAction__ValueAssignment_612812 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSelectableElement_in_rule__ExistAction__SelectAssignment_212843 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__ExistAction__NameElementAssignment_412874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectableElement_in_rule__ActionSelectExpression__TypeAssignment_212905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__ActionSelectExpression__NameElementAssignment_412936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectableElement_in_rule__SelectAction__TypeAssignment_212905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__SelectAction__NameElementAssignment_412936 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanOperator_in_rule__BinaryBooleanExpression__OpAssignment_012967 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__BinaryBooleanExpression__LeftAssignment_112998 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__BinaryBooleanExpression__RightAssignment_213029 = new BitSet(new long[]{0x0000000000000002L});

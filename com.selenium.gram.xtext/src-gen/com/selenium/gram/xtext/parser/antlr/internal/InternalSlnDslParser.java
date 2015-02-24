@@ -2078,7 +2078,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:814:1: ruleExpression returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_ActionSelectExpression_4= ruleActionSelectExpression | this_Uri_5= ruleUri ) ;
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:814:1: ruleExpression returns [EObject current=null] : (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2090,7 +2090,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
         EObject this_BooleanExpression_3 = null;
 
-        EObject this_ActionSelectExpression_4 = null;
+        EObject this_SelectAction_4 = null;
 
         EObject this_Uri_5 = null;
 
@@ -2098,10 +2098,10 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:817:28: ( (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_ActionSelectExpression_4= ruleActionSelectExpression | this_Uri_5= ruleUri ) )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_ActionSelectExpression_4= ruleActionSelectExpression | this_Uri_5= ruleUri )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:817:28: ( (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri ) )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri )
             {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_ActionSelectExpression_4= ruleActionSelectExpression | this_Uri_5= ruleUri )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:818:1: (this_VariableReference_0= ruleVariableReference | this_NumLiteralExpression_1= ruleNumLiteralExpression | this_ListExpression_2= ruleListExpression | this_BooleanExpression_3= ruleBooleanExpression | this_SelectAction_4= ruleSelectAction | this_Uri_5= ruleUri )
             int alt10=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -2226,18 +2226,18 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:859:5: this_ActionSelectExpression_4= ruleActionSelectExpression
+                    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:859:5: this_SelectAction_4= ruleSelectAction
                     {
                      
-                            newCompositeNode(grammarAccess.getExpressionAccess().getActionSelectExpressionParserRuleCall_4()); 
+                            newCompositeNode(grammarAccess.getExpressionAccess().getSelectActionParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleActionSelectExpression_in_ruleExpression1913);
-                    this_ActionSelectExpression_4=ruleActionSelectExpression();
+                    pushFollow(FOLLOW_ruleSelectAction_in_ruleExpression1913);
+                    this_SelectAction_4=ruleSelectAction();
 
                     state._fsp--;
 
                      
-                            current = this_ActionSelectExpression_4; 
+                            current = this_SelectAction_4; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -3675,26 +3675,26 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleExistAction"
 
 
-    // $ANTLR start "entryRuleActionSelectExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1479:1: entryRuleActionSelectExpression returns [EObject current=null] : iv_ruleActionSelectExpression= ruleActionSelectExpression EOF ;
-    public final EObject entryRuleActionSelectExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleSelectAction"
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1479:1: entryRuleSelectAction returns [EObject current=null] : iv_ruleSelectAction= ruleSelectAction EOF ;
+    public final EObject entryRuleSelectAction() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleActionSelectExpression = null;
+        EObject iv_ruleSelectAction = null;
 
 
         try {
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1480:2: (iv_ruleActionSelectExpression= ruleActionSelectExpression EOF )
-            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1481:2: iv_ruleActionSelectExpression= ruleActionSelectExpression EOF
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1480:2: (iv_ruleSelectAction= ruleSelectAction EOF )
+            // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1481:2: iv_ruleSelectAction= ruleSelectAction EOF
             {
-             newCompositeNode(grammarAccess.getActionSelectExpressionRule()); 
-            pushFollow(FOLLOW_ruleActionSelectExpression_in_entryRuleActionSelectExpression3211);
-            iv_ruleActionSelectExpression=ruleActionSelectExpression();
+             newCompositeNode(grammarAccess.getSelectActionRule()); 
+            pushFollow(FOLLOW_ruleSelectAction_in_entryRuleSelectAction3211);
+            iv_ruleSelectAction=ruleSelectAction();
 
             state._fsp--;
 
-             current =iv_ruleActionSelectExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionSelectExpression3221); 
+             current =iv_ruleSelectAction; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectAction3221); 
 
             }
 
@@ -3708,12 +3708,12 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleActionSelectExpression"
+    // $ANTLR end "entryRuleSelectAction"
 
 
-    // $ANTLR start "ruleActionSelectExpression"
-    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1488:1: ruleActionSelectExpression returns [EObject current=null] : (otherlv_0= 'select' otherlv_1= '(' ( (lv_type_2_0= ruleSelectableElement ) ) otherlv_3= ',' ( (lv_nameElement_4_0= ruleExpression ) ) otherlv_5= ')' ) ;
-    public final EObject ruleActionSelectExpression() throws RecognitionException {
+    // $ANTLR start "ruleSelectAction"
+    // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1488:1: ruleSelectAction returns [EObject current=null] : (otherlv_0= 'select' otherlv_1= '(' ( (lv_type_2_0= ruleSelectableElement ) ) otherlv_3= ',' ( (lv_nameElement_4_0= ruleExpression ) ) otherlv_5= ')' ) ;
+    public final EObject ruleSelectAction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -3734,13 +3734,13 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1492:1: (otherlv_0= 'select' otherlv_1= '(' ( (lv_type_2_0= ruleSelectableElement ) ) otherlv_3= ',' ( (lv_nameElement_4_0= ruleExpression ) ) otherlv_5= ')' )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1492:3: otherlv_0= 'select' otherlv_1= '(' ( (lv_type_2_0= ruleSelectableElement ) ) otherlv_3= ',' ( (lv_nameElement_4_0= ruleExpression ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleActionSelectExpression3258); 
+            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleSelectAction3258); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getActionSelectExpressionAccess().getSelectKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getSelectActionAccess().getSelectKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleActionSelectExpression3270); 
+            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleSelectAction3270); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getActionSelectExpressionAccess().getLeftParenthesisKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getSelectActionAccess().getLeftParenthesisKeyword_1());
                 
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1500:1: ( (lv_type_2_0= ruleSelectableElement ) )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1501:1: (lv_type_2_0= ruleSelectableElement )
@@ -3749,16 +3749,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1502:3: lv_type_2_0= ruleSelectableElement
             {
              
-            	        newCompositeNode(grammarAccess.getActionSelectExpressionAccess().getTypeSelectableElementParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getSelectActionAccess().getTypeSelectableElementParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSelectableElement_in_ruleActionSelectExpression3291);
+            pushFollow(FOLLOW_ruleSelectableElement_in_ruleSelectAction3291);
             lv_type_2_0=ruleSelectableElement();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getActionSelectExpressionRule());
+            	            current = createModelElementForParent(grammarAccess.getSelectActionRule());
             	        }
                    		set(
                    			current, 
@@ -3773,9 +3773,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleActionSelectExpression3303); 
+            otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleSelectAction3303); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getActionSelectExpressionAccess().getCommaKeyword_3());
+                	newLeafNode(otherlv_3, grammarAccess.getSelectActionAccess().getCommaKeyword_3());
                 
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1522:1: ( (lv_nameElement_4_0= ruleExpression ) )
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1523:1: (lv_nameElement_4_0= ruleExpression )
@@ -3784,16 +3784,16 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
             // ../com.selenium.gram.xtext/src-gen/com/selenium/gram/xtext/parser/antlr/internal/InternalSlnDsl.g:1524:3: lv_nameElement_4_0= ruleExpression
             {
              
-            	        newCompositeNode(grammarAccess.getActionSelectExpressionAccess().getNameElementExpressionParserRuleCall_4_0()); 
+            	        newCompositeNode(grammarAccess.getSelectActionAccess().getNameElementExpressionParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleActionSelectExpression3324);
+            pushFollow(FOLLOW_ruleExpression_in_ruleSelectAction3324);
             lv_nameElement_4_0=ruleExpression();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getActionSelectExpressionRule());
+            	            current = createModelElementForParent(grammarAccess.getSelectActionRule());
             	        }
                    		set(
                    			current, 
@@ -3808,9 +3808,9 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleActionSelectExpression3336); 
+            otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleSelectAction3336); 
 
-                	newLeafNode(otherlv_5, grammarAccess.getActionSelectExpressionAccess().getRightParenthesisKeyword_5());
+                	newLeafNode(otherlv_5, grammarAccess.getSelectActionAccess().getRightParenthesisKeyword_5());
                 
 
             }
@@ -3829,7 +3829,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleActionSelectExpression"
+    // $ANTLR end "ruleSelectAction"
 
 
     // $ANTLR start "entryRuleBinaryBooleanExpression"
@@ -7095,7 +7095,7 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_ruleExpression1832 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleListExpression_in_ruleExpression1859 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanExpression_in_ruleExpression1886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionSelectExpression_in_ruleExpression1913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectAction_in_ruleExpression1913 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUri_in_ruleExpression1940 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumLiteralExpression_in_entryRuleNumLiteralExpression1975 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNumLiteralExpression1985 = new BitSet(new long[]{0x0000000000000002L});
@@ -7150,14 +7150,14 @@ public class InternalSlnDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_24_in_ruleExistAction3142 = new BitSet(new long[]{0x003C917FF48001F0L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleExistAction3163 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_25_in_ruleExistAction3175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionSelectExpression_in_entryRuleActionSelectExpression3211 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionSelectExpression3221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleActionSelectExpression3258 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleActionSelectExpression3270 = new BitSet(new long[]{0x07C0000000000000L});
-    public static final BitSet FOLLOW_ruleSelectableElement_in_ruleActionSelectExpression3291 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleActionSelectExpression3303 = new BitSet(new long[]{0x003C917FF48001F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleActionSelectExpression3324 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleActionSelectExpression3336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectAction_in_entryRuleSelectAction3211 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectAction3221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleSelectAction3258 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleSelectAction3270 = new BitSet(new long[]{0x07C0000000000000L});
+    public static final BitSet FOLLOW_ruleSelectableElement_in_ruleSelectAction3291 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleSelectAction3303 = new BitSet(new long[]{0x003C917FF48001F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleSelectAction3324 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleSelectAction3336 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBinaryBooleanExpression_in_entryRuleBinaryBooleanExpression3372 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBinaryBooleanExpression3382 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanOperator_in_ruleBinaryBooleanExpression3428 = new BitSet(new long[]{0x003C917FF48001F0L});

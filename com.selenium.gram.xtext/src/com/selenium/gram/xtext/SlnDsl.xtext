@@ -81,7 +81,7 @@ Expression:
 	| NumLiteralExpression
 	| ListExpression
 	| BooleanExpression
-	| ActionSelectExpression
+	| SelectAction
 	| Uri	
 ;	
 
@@ -128,7 +128,7 @@ ExistAction :
 	'exist' '(' select=SelectableElement ',' nameElement=Expression ')'
 ;
 
-ActionSelectExpression :
+SelectAction :
 	'select' '(' type=SelectableElement ',' nameElement=Expression ')'
 ;
 

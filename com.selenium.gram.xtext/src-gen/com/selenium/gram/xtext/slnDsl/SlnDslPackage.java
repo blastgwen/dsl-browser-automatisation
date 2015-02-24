@@ -698,14 +698,14 @@ public interface SlnDslPackage extends EPackage
   int EXIST_ACTION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl <em>Action Select Expression</em>}' class.
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl <em>Select Action</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl
-   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionSelectExpression()
+   * @see com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
    * @generated
    */
-  int ACTION_SELECT_EXPRESSION = 19;
+  int SELECT_ACTION = 19;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -714,7 +714,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_SELECT_EXPRESSION__TYPE = EXPRESSION_FEATURE_COUNT + 0;
+  int SELECT_ACTION__TYPE = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' containment reference.
@@ -723,16 +723,16 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_SELECT_EXPRESSION__NAME_ELEMENT = EXPRESSION_FEATURE_COUNT + 1;
+  int SELECT_ACTION__NAME_ELEMENT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Action Select Expression</em>' class.
+   * The number of structural features of the '<em>Select Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_SELECT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int SELECT_ACTION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.BinaryBooleanExpressionImpl <em>Binary Boolean Expression</em>}' class.
@@ -1763,36 +1763,36 @@ public interface SlnDslPackage extends EPackage
   EReference getExistAction_NameElement();
 
   /**
-   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression <em>Action Select Expression</em>}'.
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.SelectAction <em>Select Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Select Expression</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionSelectExpression
+   * @return the meta object for class '<em>Select Action</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction
    * @generated
    */
-  EClass getActionSelectExpression();
+  EClass getSelectAction();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.SelectAction#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getType()
-   * @see #getActionSelectExpression()
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction#getType()
+   * @see #getSelectAction()
    * @generated
    */
-  EAttribute getActionSelectExpression_Type();
+  EAttribute getSelectAction_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getNameElement <em>Name Element</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.SelectAction#getNameElement <em>Name Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Name Element</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getNameElement()
-   * @see #getActionSelectExpression()
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction#getNameElement()
+   * @see #getSelectAction()
    * @generated
    */
-  EReference getActionSelectExpression_NameElement();
+  EReference getSelectAction_NameElement();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression <em>Binary Boolean Expression</em>}'.
@@ -2676,14 +2676,14 @@ public interface SlnDslPackage extends EPackage
     EReference EXIST_ACTION__NAME_ELEMENT = eINSTANCE.getExistAction_NameElement();
 
     /**
-     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl <em>Action Select Expression</em>}' class.
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl <em>Select Action</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl
-     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionSelectExpression()
+     * @see com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
      * @generated
      */
-    EClass ACTION_SELECT_EXPRESSION = eINSTANCE.getActionSelectExpression();
+    EClass SELECT_ACTION = eINSTANCE.getSelectAction();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -2691,7 +2691,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_SELECT_EXPRESSION__TYPE = eINSTANCE.getActionSelectExpression_Type();
+    EAttribute SELECT_ACTION__TYPE = eINSTANCE.getSelectAction_Type();
 
     /**
      * The meta object literal for the '<em><b>Name Element</b></em>' containment reference feature.
@@ -2699,7 +2699,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTION_SELECT_EXPRESSION__NAME_ELEMENT = eINSTANCE.getActionSelectExpression_NameElement();
+    EReference SELECT_ACTION__NAME_ELEMENT = eINSTANCE.getSelectAction_NameElement();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.BinaryBooleanExpressionImpl <em>Binary Boolean Expression</em>}' class.

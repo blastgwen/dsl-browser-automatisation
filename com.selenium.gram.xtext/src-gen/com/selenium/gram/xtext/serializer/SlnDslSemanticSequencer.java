@@ -7,7 +7,6 @@ import com.selenium.gram.xtext.slnDsl.ActionCheck;
 import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
-import com.selenium.gram.xtext.slnDsl.ActionSelectExpression;
 import com.selenium.gram.xtext.slnDsl.ActionType;
 import com.selenium.gram.xtext.slnDsl.Assignation;
 import com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression;
@@ -28,6 +27,7 @@ import com.selenium.gram.xtext.slnDsl.ListExpression;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SelectBrowser;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
@@ -78,13 +78,6 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case SlnDslPackage.ACTION_OPEN:
 				if(context == grammarAccess.getActionOpenRule()) {
 					sequence_ActionOpen(context, (ActionOpen) semanticObject); 
-					return; 
-				}
-				else break;
-			case SlnDslPackage.ACTION_SELECT_EXPRESSION:
-				if(context == grammarAccess.getActionSelectExpressionRule() ||
-				   context == grammarAccess.getExpressionRule()) {
-					sequence_ActionSelectExpression(context, (ActionSelectExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -216,6 +209,13 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case SlnDslPackage.SELECT_ACTION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getSelectActionRule()) {
+					sequence_SelectAction(context, (SelectAction) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlnDslPackage.SELECT_BROWSER:
 				if(context == grammarAccess.getSelectBrowserRule()) {
 					sequence_SelectBrowser(context, (SelectBrowser) semanticObject); 
@@ -325,25 +325,6 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getActionOpenAccess().getUrlExpressionParserRuleCall_2_0(), semanticObject.getUrl());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (type=SelectableElement nameElement=Expression)
-	 */
-	protected void sequence_ActionSelectExpression(EObject context, ActionSelectExpression semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_SELECT_EXPRESSION__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_SELECT_EXPRESSION__TYPE));
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.ACTION_SELECT_EXPRESSION__NAME_ELEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.ACTION_SELECT_EXPRESSION__NAME_ELEMENT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionSelectExpressionAccess().getTypeSelectableElementParserRuleCall_2_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getActionSelectExpressionAccess().getNameElementExpressionParserRuleCall_4_0(), semanticObject.getNameElement());
 		feeder.finish();
 	}
 	
@@ -654,6 +635,25 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getNumLiteralExpressionAccess().getValueNumberLiteralParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=SelectableElement nameElement=Expression)
+	 */
+	protected void sequence_SelectAction(EObject context, SelectAction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__TYPE));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__NAME_ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__NAME_ELEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSelectActionAccess().getTypeSelectableElementParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getSelectActionAccess().getNameElementExpressionParserRuleCall_4_0(), semanticObject.getNameElement());
 		feeder.finish();
 	}
 	

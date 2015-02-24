@@ -447,16 +447,16 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNumLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cListExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cBooleanExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cActionSelectExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cSelectActionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cUriParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		/// *
 		// * Expression
 		// * / Expression:
-		//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | ActionSelectExpression | Uri;
+		//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | SelectAction | Uri;
 		public ParserRule getRule() { return rule; }
 
-		//VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | ActionSelectExpression | Uri
+		//VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | SelectAction | Uri
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//VariableReference
@@ -471,8 +471,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//BooleanExpression
 		public RuleCall getBooleanExpressionParserRuleCall_3() { return cBooleanExpressionParserRuleCall_3; }
 
-		//ActionSelectExpression
-		public RuleCall getActionSelectExpressionParserRuleCall_4() { return cActionSelectExpressionParserRuleCall_4; }
+		//SelectAction
+		public RuleCall getSelectActionParserRuleCall_4() { return cSelectActionParserRuleCall_4; }
 
 		//Uri
 		public RuleCall getUriParserRuleCall_5() { return cUriParserRuleCall_5; }
@@ -792,8 +792,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
-	public class ActionSelectExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionSelectExpression");
+	public class SelectActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SelectAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSelectKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -804,7 +804,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameElementExpressionParserRuleCall_4_0 = (RuleCall)cNameElementAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ActionSelectExpression:
+		//SelectAction:
 		//	"select" "(" type=SelectableElement "," nameElement=Expression ")";
 		public ParserRule getRule() { return rule; }
 
@@ -1560,7 +1560,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tBOOLEAN;
 	private final VerifyActionElements pVerifyAction;
 	private final ExistActionElements pExistAction;
-	private final ActionSelectExpressionElements pActionSelectExpression;
+	private final SelectActionElements pSelectAction;
 	private final BinaryBooleanExpressionElements pBinaryBooleanExpression;
 	private final BinaryLogicalExpressionElements pBinaryLogicalExpression;
 	private final NegationExpressionElements pNegationExpression;
@@ -1615,7 +1615,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
 		this.pVerifyAction = new VerifyActionElements();
 		this.pExistAction = new ExistActionElements();
-		this.pActionSelectExpression = new ActionSelectExpressionElements();
+		this.pSelectAction = new SelectActionElements();
 		this.pBinaryBooleanExpression = new BinaryBooleanExpressionElements();
 		this.pBinaryLogicalExpression = new BinaryLogicalExpressionElements();
 		this.pNegationExpression = new NegationExpressionElements();
@@ -1805,7 +1805,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Expression
 	// * / Expression:
-	//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | ActionSelectExpression | Uri;
+	//	VariableReference | NumLiteralExpression | ListExpression | BooleanExpression | SelectAction | Uri;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -1901,14 +1901,14 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getExistActionAccess().getRule();
 	}
 
-	//ActionSelectExpression:
+	//SelectAction:
 	//	"select" "(" type=SelectableElement "," nameElement=Expression ")";
-	public ActionSelectExpressionElements getActionSelectExpressionAccess() {
-		return pActionSelectExpression;
+	public SelectActionElements getSelectActionAccess() {
+		return pSelectAction;
 	}
 	
-	public ParserRule getActionSelectExpressionRule() {
-		return getActionSelectExpressionAccess().getRule();
+	public ParserRule getSelectActionRule() {
+		return getSelectActionAccess().getRule();
 	}
 
 	//BinaryBooleanExpression:

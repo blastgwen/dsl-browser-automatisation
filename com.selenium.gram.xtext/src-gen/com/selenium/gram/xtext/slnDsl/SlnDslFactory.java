@@ -194,13 +194,13 @@ public interface SlnDslFactory extends EFactory
   ExistAction createExistAction();
 
   /**
-   * Returns a new object of class '<em>Action Select Expression</em>'.
+   * Returns a new object of class '<em>Select Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Select Expression</em>'.
+   * @return a new object of class '<em>Select Action</em>'.
    * @generated
    */
-  ActionSelectExpression createActionSelectExpression();
+  SelectAction createSelectAction();
 
   /**
    * Returns a new object of class '<em>Binary Boolean Expression</em>'.
