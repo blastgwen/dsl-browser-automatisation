@@ -147,7 +147,8 @@ public class ActionInstructionInterpreter {
 				// ----------- IMAGE -----------
 				// *****************************
 				else if (act.getType().equals("image")) {
-					List<WebElement> elements = driver.findElements(By.tagName("img"));
+					List<WebElement> elements = new ArrayList<WebElement>();
+					elements.addAll(driver.findElements(By.tagName("img")));
 					
 					boolean click = false;
 					int i = 0;
@@ -192,7 +193,8 @@ public class ActionInstructionInterpreter {
 				System.out.println("Open - ActionInstruction");
 
 				ActionOpen act = (ActionOpen) action.getAction();
-				//driver.get(act.getUrl());
+				ExpressionValue val = interpreter.computeExpression(act.getUrl(), variables);
+				driver.get(val.getValue().toString());
 
 				System.out.println("J'ai fini l'action open");
 			}
@@ -265,7 +267,8 @@ public class ActionInstructionInterpreter {
 		
 		WebDriver driver = SeleniumDriver.getInstance().getDriver();
 		
-		List<WebElement> elements = driver.findElements(By.cssSelector("input[type='checkbox']"));
+		List<WebElement> elements = new ArrayList<WebElement>();
+		elements.addAll(driver.findElements(By.cssSelector("input[type='checkbox']")));
 		elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
 		
 		boolean click = false;

@@ -125,7 +125,11 @@ VerifyAction :
 ;
 
 ExistAction :
-	'exist' '(' nameElement = NumberLiteral ')'
+	'exist' '(' select=SelectableElement ',' nameElement=Expression ')'
+;
+
+ActionSelectExpression :
+	'select' '(' type=SelectableElement ',' nameElement=Expression ')'
 ;
 
 BinaryBooleanExpression:
@@ -209,9 +213,6 @@ ActionCheck:
 
 ActionType:
 	'type' '(' nameElement=Expression ',' value=Expression ')'
-;
-ActionSelectExpression :
-	'select' '(' type=SelectableElement ',' element=Expression ')'
 ;
 	
 SelectableElement:

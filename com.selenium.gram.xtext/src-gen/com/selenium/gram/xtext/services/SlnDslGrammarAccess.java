@@ -753,15 +753,18 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cExistKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameElementNumberLiteralParserRuleCall_2_0 = (RuleCall)cNameElementAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSelectAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSelectSelectableElementParserRuleCall_2_0 = (RuleCall)cSelectAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameElementExpressionParserRuleCall_4_0 = (RuleCall)cNameElementAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ExistAction:
-		//	"exist" "(" nameElement=NumberLiteral ")";
+		//	"exist" "(" select=SelectableElement "," nameElement=Expression ")";
 		public ParserRule getRule() { return rule; }
 
-		//"exist" "(" nameElement=NumberLiteral ")"
+		//"exist" "(" select=SelectableElement "," nameElement=Expression ")"
 		public Group getGroup() { return cGroup; }
 
 		//"exist"
@@ -770,14 +773,67 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//nameElement=NumberLiteral
-		public Assignment getNameElementAssignment_2() { return cNameElementAssignment_2; }
+		//select=SelectableElement
+		public Assignment getSelectAssignment_2() { return cSelectAssignment_2; }
 
-		//NumberLiteral
-		public RuleCall getNameElementNumberLiteralParserRuleCall_2_0() { return cNameElementNumberLiteralParserRuleCall_2_0; }
+		//SelectableElement
+		public RuleCall getSelectSelectableElementParserRuleCall_2_0() { return cSelectSelectableElementParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//nameElement=Expression
+		public Assignment getNameElementAssignment_4() { return cNameElementAssignment_4; }
+
+		//Expression
+		public RuleCall getNameElementExpressionParserRuleCall_4_0() { return cNameElementExpressionParserRuleCall_4_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class ActionSelectExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionSelectExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSelectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeSelectableElementParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameElementExpressionParserRuleCall_4_0 = (RuleCall)cNameElementAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//ActionSelectExpression:
+		//	"select" "(" type=SelectableElement "," nameElement=Expression ")";
+		public ParserRule getRule() { return rule; }
+
+		//"select" "(" type=SelectableElement "," nameElement=Expression ")"
+		public Group getGroup() { return cGroup; }
+
+		//"select"
+		public Keyword getSelectKeyword_0() { return cSelectKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//type=SelectableElement
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+
+		//SelectableElement
+		public RuleCall getTypeSelectableElementParserRuleCall_2_0() { return cTypeSelectableElementParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//nameElement=Expression
+		public Assignment getNameElementAssignment_4() { return cNameElementAssignment_4; }
+
+		//Expression
+		public RuleCall getNameElementExpressionParserRuleCall_4_0() { return cNameElementExpressionParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class BinaryBooleanExpressionElements extends AbstractParserRuleElementFinder {
@@ -1416,50 +1472,6 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
-	public class ActionSelectExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionSelectExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSelectKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeSelectableElementParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementExpressionParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//ActionSelectExpression:
-		//	"select" "(" type=SelectableElement "," element=Expression ")";
-		public ParserRule getRule() { return rule; }
-
-		//"select" "(" type=SelectableElement "," element=Expression ")"
-		public Group getGroup() { return cGroup; }
-
-		//"select"
-		public Keyword getSelectKeyword_0() { return cSelectKeyword_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
-		//type=SelectableElement
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
-
-		//SelectableElement
-		public RuleCall getTypeSelectableElementParserRuleCall_2_0() { return cTypeSelectableElementParserRuleCall_2_0; }
-
-		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
-		//element=Expression
-		public Assignment getElementAssignment_4() { return cElementAssignment_4; }
-
-		//Expression
-		public RuleCall getElementExpressionParserRuleCall_4_0() { return cElementExpressionParserRuleCall_4_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-	}
-
 	public class SelectableElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SelectableElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1548,6 +1560,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tBOOLEAN;
 	private final VerifyActionElements pVerifyAction;
 	private final ExistActionElements pExistAction;
+	private final ActionSelectExpressionElements pActionSelectExpression;
 	private final BinaryBooleanExpressionElements pBinaryBooleanExpression;
 	private final BinaryLogicalExpressionElements pBinaryLogicalExpression;
 	private final NegationExpressionElements pNegationExpression;
@@ -1565,7 +1578,6 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActionOpenElements pActionOpen;
 	private final ActionCheckElements pActionCheck;
 	private final ActionTypeElements pActionType;
-	private final ActionSelectExpressionElements pActionSelectExpression;
 	private final SelectableElementElements pSelectableElement;
 	private final ClickableElementElements pClickableElement;
 	private final VerifiableElementElements pVerifiableElement;
@@ -1603,6 +1615,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
 		this.pVerifyAction = new VerifyActionElements();
 		this.pExistAction = new ExistActionElements();
+		this.pActionSelectExpression = new ActionSelectExpressionElements();
 		this.pBinaryBooleanExpression = new BinaryBooleanExpressionElements();
 		this.pBinaryLogicalExpression = new BinaryLogicalExpressionElements();
 		this.pNegationExpression = new NegationExpressionElements();
@@ -1620,7 +1633,6 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pActionOpen = new ActionOpenElements();
 		this.pActionCheck = new ActionCheckElements();
 		this.pActionType = new ActionTypeElements();
-		this.pActionSelectExpression = new ActionSelectExpressionElements();
 		this.pSelectableElement = new SelectableElementElements();
 		this.pClickableElement = new ClickableElementElements();
 		this.pVerifiableElement = new VerifiableElementElements();
@@ -1880,13 +1892,23 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ExistAction:
-	//	"exist" "(" nameElement=NumberLiteral ")";
+	//	"exist" "(" select=SelectableElement "," nameElement=Expression ")";
 	public ExistActionElements getExistActionAccess() {
 		return pExistAction;
 	}
 	
 	public ParserRule getExistActionRule() {
 		return getExistActionAccess().getRule();
+	}
+
+	//ActionSelectExpression:
+	//	"select" "(" type=SelectableElement "," nameElement=Expression ")";
+	public ActionSelectExpressionElements getActionSelectExpressionAccess() {
+		return pActionSelectExpression;
+	}
+	
+	public ParserRule getActionSelectExpressionRule() {
+		return getActionSelectExpressionAccess().getRule();
 	}
 
 	//BinaryBooleanExpression:
@@ -2061,16 +2083,6 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getActionTypeRule() {
 		return getActionTypeAccess().getRule();
-	}
-
-	//ActionSelectExpression:
-	//	"select" "(" type=SelectableElement "," element=Expression ")";
-	public ActionSelectExpressionElements getActionSelectExpressionAccess() {
-		return pActionSelectExpression;
-	}
-	
-	public ParserRule getActionSelectExpressionRule() {
-		return getActionSelectExpressionAccess().getRule();
 	}
 
 	//SelectableElement:

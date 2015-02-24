@@ -12,7 +12,7 @@ package com.selenium.gram.xtext.slnDsl;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getType <em>Type</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getElement <em>Element</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getNameElement <em>Name Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ public interface ActionSelectExpression extends Expression
   void setType(String value);
 
   /**
-   * Returns the value of the '<em><b>Element</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Element</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name Element</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element</em>' containment reference.
-   * @see #setElement(Expression)
-   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionSelectExpression_Element()
+   * @return the value of the '<em>Name Element</em>' containment reference.
+   * @see #setNameElement(Expression)
+   * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionSelectExpression_NameElement()
    * @model containment="true"
    * @generated
    */
-  Expression getElement();
+  Expression getNameElement();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getElement <em>Element</em>}' containment reference.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionSelectExpression#getNameElement <em>Name Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element</em>' containment reference.
-   * @see #getElement()
+   * @param value the new value of the '<em>Name Element</em>' containment reference.
+   * @see #getNameElement()
    * @generated
    */
-  void setElement(Expression value);
+  void setNameElement(Expression value);
 
 } // ActionSelectExpression

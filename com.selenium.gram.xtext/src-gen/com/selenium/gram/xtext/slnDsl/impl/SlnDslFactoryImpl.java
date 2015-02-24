@@ -83,6 +83,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.BOOLEAN_VALUE: return createBooleanValue();
       case SlnDslPackage.VERIFY_ACTION: return createVerifyAction();
       case SlnDslPackage.EXIST_ACTION: return createExistAction();
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION: return createActionSelectExpression();
       case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION: return createBinaryBooleanExpression();
       case SlnDslPackage.BINARY_LOGICAL_EXPRESSION: return createBinaryLogicalExpression();
       case SlnDslPackage.NEGATION_EXPRESSION: return createNegationExpression();
@@ -98,7 +99,6 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.ACTION_OPEN: return createActionOpen();
       case SlnDslPackage.ACTION_CHECK: return createActionCheck();
       case SlnDslPackage.ACTION_TYPE: return createActionType();
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION: return createActionSelectExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -318,6 +318,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ActionSelectExpression createActionSelectExpression()
+  {
+    ActionSelectExpressionImpl actionSelectExpression = new ActionSelectExpressionImpl();
+    return actionSelectExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BinaryBooleanExpression createBinaryBooleanExpression()
   {
     BinaryBooleanExpressionImpl binaryBooleanExpression = new BinaryBooleanExpressionImpl();
@@ -476,17 +487,6 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     ActionTypeImpl actionType = new ActionTypeImpl();
     return actionType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ActionSelectExpression createActionSelectExpression()
-  {
-    ActionSelectExpressionImpl actionSelectExpression = new ActionSelectExpressionImpl();
-    return actionSelectExpression;
   }
 
   /**

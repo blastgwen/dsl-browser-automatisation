@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl#getType <em>Type</em>}</li>
- *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link com.selenium.gram.xtext.slnDsl.impl.ActionSelectExpressionImpl#getNameElement <em>Name Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,14 +51,14 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   protected String type = TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
+   * The cached value of the '{@link #getNameElement() <em>Name Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElement()
+   * @see #getNameElement()
    * @generated
    * @ordered
    */
-  protected Expression element;
+  protected Expression nameElement;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,9 +109,9 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getElement()
+  public Expression getNameElement()
   {
-    return element;
+    return nameElement;
   }
 
   /**
@@ -119,13 +119,13 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetElement(Expression newElement, NotificationChain msgs)
+  public NotificationChain basicSetNameElement(Expression newNameElement, NotificationChain msgs)
   {
-    Expression oldElement = element;
-    element = newElement;
+    Expression oldNameElement = nameElement;
+    nameElement = newNameElement;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT, oldElement, newElement);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT, oldNameElement, newNameElement);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -136,20 +136,20 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElement(Expression newElement)
+  public void setNameElement(Expression newNameElement)
   {
-    if (newElement != element)
+    if (newNameElement != nameElement)
     {
       NotificationChain msgs = null;
-      if (element != null)
-        msgs = ((InternalEObject)element).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT, null, msgs);
-      if (newElement != null)
-        msgs = ((InternalEObject)newElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT, null, msgs);
-      msgs = basicSetElement(newElement, msgs);
+      if (nameElement != null)
+        msgs = ((InternalEObject)nameElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT, null, msgs);
+      if (newNameElement != null)
+        msgs = ((InternalEObject)newNameElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT, null, msgs);
+      msgs = basicSetNameElement(newNameElement, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT, newElement, newElement));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT, newNameElement, newNameElement));
   }
 
   /**
@@ -162,8 +162,8 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
   {
     switch (featureID)
     {
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
-        return basicSetElement(null, msgs);
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT:
+        return basicSetNameElement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,8 +180,8 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
     {
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
         return getType();
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
-        return getElement();
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT:
+        return getNameElement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -199,8 +199,8 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
         setType((String)newValue);
         return;
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
-        setElement((Expression)newValue);
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT:
+        setNameElement((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -219,8 +219,8 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
-        setElement((Expression)null);
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT:
+        setNameElement((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -238,8 +238,8 @@ public class ActionSelectExpressionImpl extends ExpressionImpl implements Action
     {
       case SlnDslPackage.ACTION_SELECT_EXPRESSION__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION__ELEMENT:
-        return element != null;
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION__NAME_ELEMENT:
+        return nameElement != null;
     }
     return super.eIsSet(featureID);
   }

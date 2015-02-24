@@ -336,7 +336,109 @@ public class Interpreter {
 		}
 		
 		if(val instanceof ExistAction){
+			System.out.println("exec existAction");
+			ExistAction act = (ExistAction) val;
 			
+			ExpressionValue toTest = this.computeExpression(act.getNameElement(), variables);
+			WebDriver driver = SeleniumDriver.getInstance().getDriver();
+			
+			if (toTest.getType() == ExpressionValueType.list){
+				throw new InterpretationException("Impossible to test with a list ");
+			}
+			String valueToTest = toTest.getValue().toString();
+			
+			List<WebElement> elements = new ArrayList<WebElement>();
+			
+			if (act.getSelect().equals("link")){
+				
+				elements.addAll(driver.findElements(By.cssSelector(("a"))));				
+				int i = 0;
+				while (i < elements.size()){
+					String str = elements.get(i).getText();
+					if (str.toLowerCase().trim().contains(valueToTest)){	
+					    return true;								
+					}	
+					i ++;
+				}
+				return false;
+			} 
+			else if (act.getSelect().equals("button")){
+				elements.addAll(driver.findElements(By.cssSelector("input[type='submit']")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					String str = elem.getText().trim().toLowerCase();
+					String valu = elem.getAttribute("value").trim().toLowerCase();
+					if (str.contains(valueToTest) || valu.contains(valueToTest)){
+						return true;
+					}
+					i ++;
+				}
+				return false;
+				
+			} else if (act.getSelect().equals("textbox")){
+				elements.addAll(driver.findElements(By.cssSelector("input[type='text']")));	
+				elements.addAll(driver.findElements(By.cssSelector("input[type='password']")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String name = elem.getAttribute("name").trim().toLowerCase();
+					String id = elem.getAttribute("id").trim().toLowerCase();
+					String place = elem.getAttribute("placeholder").trim().toLowerCase();					
+					
+					if (name.contains(valueToTest) || id.contains(valueToTest) || place.contains(valueToTest)){	
+						return true;
+					}
+					i ++;
+				}
+				return false;
+				
+			}
+			
+			else if (act.getSelect().equals("checkbox")){
+				elements.addAll(driver.findElements(By.cssSelector("input[type='checkbox']")));
+				elements.addAll(driver.findElements(By.cssSelector("input[type='radio']")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String name = elements.get(i).getAttribute("name").trim().toLowerCase();
+					String valu = elements.get(i).getAttribute("value").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();
+					
+					if (name.contains(valueToTest) || valu.contains(valueToTest) || 	str.contains(valueToTest)){
+						return true;
+					}
+					i ++;
+				}
+				return false;
+				
+			}
+			else if (act.getSelect().equals("image")){
+				elements.addAll(driver.findElements(By.tagName("img")));
+				
+				int i = 0;
+				while (i < elements.size()){
+					WebElement elem = elements.get(i);
+					
+					String src = elements.get(i).getAttribute("src").trim().toLowerCase();
+					String alt = elements.get(i).getAttribute("alt").trim().toLowerCase();
+					String str = elements.get(i).getText().trim().toLowerCase();					
+					
+					if (src.contains(valueToTest) || alt.contains(valueToTest) || str.contains(valueToTest)){	
+						return true;
+					}
+					i ++;
+				}
+				return false;
+			}
+			else {
+				throw new InterpretationException("Unknown Select Element type");
+			}
 		}
 		
 		if(val instanceof BooleanListExpression){

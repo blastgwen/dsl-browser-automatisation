@@ -70,7 +70,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//VerifyAction/value"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ExistAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ExistAction/nameElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ExistAction/select"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ExistAction/nameElement"/>
+    </genClasses>
+    <genClasses ecoreClass="SlnDsl.ecore#//ActionSelectExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionSelectExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionSelectExpression/nameElement"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//BinaryBooleanExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//BinaryBooleanExpression/op"/>
@@ -126,10 +131,6 @@
     <genClasses ecoreClass="SlnDsl.ecore#//ActionType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionType/nameElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionType/value"/>
-    </genClasses>
-    <genClasses ecoreClass="SlnDsl.ecore#//ActionSelectExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionSelectExpression/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionSelectExpression/element"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

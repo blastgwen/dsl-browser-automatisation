@@ -211,6 +211,14 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.ACTION_SELECT_EXPRESSION:
+      {
+        ActionSelectExpression actionSelectExpression = (ActionSelectExpression)theEObject;
+        T result = caseActionSelectExpression(actionSelectExpression);
+        if (result == null) result = caseExpression(actionSelectExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION:
       {
         BinaryBooleanExpression binaryBooleanExpression = (BinaryBooleanExpression)theEObject;
@@ -321,14 +329,6 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionType actionType = (ActionType)theEObject;
         T result = caseActionType(actionType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SlnDslPackage.ACTION_SELECT_EXPRESSION:
-      {
-        ActionSelectExpression actionSelectExpression = (ActionSelectExpression)theEObject;
-        T result = caseActionSelectExpression(actionSelectExpression);
-        if (result == null) result = caseExpression(actionSelectExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -641,6 +641,22 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Select Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Select Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionSelectExpression(ActionSelectExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Binary Boolean Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -876,22 +892,6 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseActionType(ActionType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Action Select Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action Select Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseActionSelectExpression(ActionSelectExpression object)
   {
     return null;
   }
