@@ -1198,9 +1198,9 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionClick_Element()
+  public EReference getActionClick_Element()
   {
-    return (EAttribute)actionClickEClass.getEStructuralFeatures().get(1);
+    return (EReference)actionClickEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1427,7 +1427,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     actionClickEClass = createEClass(ACTION_CLICK);
     createEAttribute(actionClickEClass, ACTION_CLICK__TYPE);
-    createEAttribute(actionClickEClass, ACTION_CLICK__ELEMENT);
+    createEReference(actionClickEClass, ACTION_CLICK__ELEMENT);
 
     actionOpenEClass = createEClass(ACTION_OPEN);
     createEReference(actionOpenEClass, ACTION_OPEN__URL);
@@ -1599,7 +1599,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     initEClass(actionClickEClass, ActionClick.class, "ActionClick", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActionClick_Type(), ecorePackage.getEString(), "type", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActionClick_Element(), ecorePackage.getEString(), "element", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionClick_Element(), this.getExpression(), null, "element", null, 0, 1, ActionClick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionOpenEClass, ActionOpen.class, "ActionOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActionOpen_Url(), this.getExpression(), null, "url", null, 0, 1, ActionOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

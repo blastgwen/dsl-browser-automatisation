@@ -1317,14 +1317,14 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeClickableElementParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementNumberLiteralParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
+		private final RuleCall cElementExpressionParserRuleCall_4_0 = (RuleCall)cElementAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ActionClick:
-		//	"click" "(" type=ClickableElement "," element=NumberLiteral ")";
+		//	"click" "(" type=ClickableElement "," element=Expression ")";
 		public ParserRule getRule() { return rule; }
 
-		//"click" "(" type=ClickableElement "," element=NumberLiteral ")"
+		//"click" "(" type=ClickableElement "," element=Expression ")"
 		public Group getGroup() { return cGroup; }
 
 		//"click"
@@ -1342,11 +1342,11 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//element=NumberLiteral
+		//element=Expression
 		public Assignment getElementAssignment_4() { return cElementAssignment_4; }
 
-		//NumberLiteral
-		public RuleCall getElementNumberLiteralParserRuleCall_4_0() { return cElementNumberLiteralParserRuleCall_4_0; }
+		//Expression
+		public RuleCall getElementExpressionParserRuleCall_4_0() { return cElementExpressionParserRuleCall_4_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -2046,7 +2046,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionClick:
-	//	"click" "(" type=ClickableElement "," element=NumberLiteral ")";
+	//	"click" "(" type=ClickableElement "," element=Expression ")";
 	public ActionClickElements getActionClickAccess() {
 		return pActionClick;
 	}

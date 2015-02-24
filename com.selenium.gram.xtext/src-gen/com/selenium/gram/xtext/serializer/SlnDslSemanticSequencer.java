@@ -287,7 +287,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (type=ClickableElement element=NumberLiteral)
+	 *     (type=ClickableElement element=Expression)
 	 */
 	protected void sequence_ActionClick(EObject context, ActionClick semanticObject) {
 		if(errorAcceptor != null) {
@@ -299,7 +299,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getActionClickAccess().getTypeClickableElementParserRuleCall_2_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0(), semanticObject.getElement());
+		feeder.accept(grammarAccess.getActionClickAccess().getElementExpressionParserRuleCall_4_0(), semanticObject.getElement());
 		feeder.finish();
 	}
 	

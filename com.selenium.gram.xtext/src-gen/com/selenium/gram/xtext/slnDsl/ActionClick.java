@@ -50,29 +50,29 @@ public interface ActionClick extends EObject
   void setType(String value);
 
   /**
-   * Returns the value of the '<em><b>Element</b></em>' attribute.
+   * Returns the value of the '<em><b>Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Element</em>' attribute isn't clear,
+   * If the meaning of the '<em>Element</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element</em>' attribute.
-   * @see #setElement(String)
+   * @return the value of the '<em>Element</em>' containment reference.
+   * @see #setElement(Expression)
    * @see com.selenium.gram.xtext.slnDsl.SlnDslPackage#getActionClick_Element()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getElement();
+  Expression getElement();
 
   /**
-   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionClick#getElement <em>Element</em>}' attribute.
+   * Sets the value of the '{@link com.selenium.gram.xtext.slnDsl.ActionClick#getElement <em>Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element</em>' attribute.
+   * @param value the new value of the '<em>Element</em>' containment reference.
    * @see #getElement()
    * @generated
    */
-  void setElement(String value);
+  void setElement(Expression value);
 
 } // ActionClick

@@ -119,7 +119,7 @@
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionClick">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//ActionClick/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionClick/element"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//ActionOpen">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//ActionOpen/url"/>

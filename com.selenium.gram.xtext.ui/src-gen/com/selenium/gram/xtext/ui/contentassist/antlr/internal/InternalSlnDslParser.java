@@ -17941,25 +17941,25 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ActionClick__ElementAssignment_4"
-    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6753:1: rule__ActionClick__ElementAssignment_4 : ( ruleNumberLiteral ) ;
+    // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6753:1: rule__ActionClick__ElementAssignment_4 : ( ruleExpression ) ;
     public final void rule__ActionClick__ElementAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6757:1: ( ( ruleNumberLiteral ) )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6758:1: ( ruleNumberLiteral )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6757:1: ( ( ruleExpression ) )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6758:1: ( ruleExpression )
             {
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6758:1: ( ruleNumberLiteral )
-            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6759:1: ruleNumberLiteral
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6758:1: ( ruleExpression )
+            // ../com.selenium.gram.xtext.ui/src-gen/com/selenium/gram/xtext/ui/contentassist/antlr/internal/InternalSlnDsl.g:6759:1: ruleExpression
             {
-             before(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleNumberLiteral_in_rule__ActionClick__ElementAssignment_413711);
-            ruleNumberLiteral();
+             before(grammarAccess.getActionClickAccess().getElementExpressionParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_ruleExpression_in_rule__ActionClick__ElementAssignment_413711);
+            ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0()); 
+             after(grammarAccess.getActionClickAccess().getElementExpressionParserRuleCall_4_0()); 
 
             }
 
@@ -18666,7 +18666,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ActionClick__Group__2__Impl_in_rule__ActionClick__Group__210386 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_rule__ActionClick__Group__3_in_rule__ActionClick__Group__210389 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionClick__TypeAssignment_2_in_rule__ActionClick__Group__2__Impl10416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActionClick__Group__3__Impl_in_rule__ActionClick__Group__310446 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_rule__ActionClick__Group__3__Impl_in_rule__ActionClick__Group__310446 = new BitSet(new long[]{0x07922F48007F01F0L});
     public static final BitSet FOLLOW_rule__ActionClick__Group__4_in_rule__ActionClick__Group__310449 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_rule__ActionClick__Group__3__Impl10477 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionClick__Group__4__Impl_in_rule__ActionClick__Group__410508 = new BitSet(new long[]{0x0000001000000000L});
@@ -18785,7 +18785,7 @@ public class InternalSlnDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleActionCheck_in_rule__ActionInstruction__ActionAssignment_213618 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionType_in_rule__ActionInstruction__ActionAssignment_313649 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleClickableElement_in_rule__ActionClick__TypeAssignment_213680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_rule__ActionClick__ElementAssignment_413711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__ActionClick__ElementAssignment_413711 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__ActionOpen__UrlAssignment_213742 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_rule__ActionCheck__ElementAssignment_213773 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanExpression_in_rule__ActionCheck__ValueAssignment_413804 = new BitSet(new long[]{0x0000000000000002L});

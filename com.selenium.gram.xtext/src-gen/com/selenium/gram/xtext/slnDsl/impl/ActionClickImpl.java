@@ -3,11 +3,14 @@
 package com.selenium.gram.xtext.slnDsl.impl;
 
 import com.selenium.gram.xtext.slnDsl.ActionClick;
+import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.SlnDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -49,24 +52,14 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
   protected String type = TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getElement() <em>Element</em>}' attribute.
+   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getElement()
    * @generated
    * @ordered
    */
-  protected static final String ELEMENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getElement()
-   * @generated
-   * @ordered
-   */
-  protected String element = ELEMENT_EDEFAULT;
+  protected Expression element;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,7 +110,7 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getElement()
+  public Expression getElement()
   {
     return element;
   }
@@ -127,12 +120,53 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElement(String newElement)
+  public NotificationChain basicSetElement(Expression newElement, NotificationChain msgs)
   {
-    String oldElement = element;
+    Expression oldElement = element;
     element = newElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CLICK__ELEMENT, oldElement, element));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CLICK__ELEMENT, oldElement, newElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setElement(Expression newElement)
+  {
+    if (newElement != element)
+    {
+      NotificationChain msgs = null;
+      if (element != null)
+        msgs = ((InternalEObject)element).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_CLICK__ELEMENT, null, msgs);
+      if (newElement != null)
+        msgs = ((InternalEObject)newElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlnDslPackage.ACTION_CLICK__ELEMENT, null, msgs);
+      msgs = basicSetElement(newElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlnDslPackage.ACTION_CLICK__ELEMENT, newElement, newElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SlnDslPackage.ACTION_CLICK__ELEMENT:
+        return basicSetElement(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -167,7 +201,7 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
         setType((String)newValue);
         return;
       case SlnDslPackage.ACTION_CLICK__ELEMENT:
-        setElement((String)newValue);
+        setElement((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,7 +221,7 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
         setType(TYPE_EDEFAULT);
         return;
       case SlnDslPackage.ACTION_CLICK__ELEMENT:
-        setElement(ELEMENT_EDEFAULT);
+        setElement((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -206,7 +240,7 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
       case SlnDslPackage.ACTION_CLICK__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case SlnDslPackage.ACTION_CLICK__ELEMENT:
-        return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
+        return element != null;
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +258,6 @@ public class ActionClickImpl extends MinimalEObjectImpl.Container implements Act
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (type: ");
     result.append(type);
-    result.append(", element: ");
-    result.append(element);
     result.append(')');
     return result.toString();
   }

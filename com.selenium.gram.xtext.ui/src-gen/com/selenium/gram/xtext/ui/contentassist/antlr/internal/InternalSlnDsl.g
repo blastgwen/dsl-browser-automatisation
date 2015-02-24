@@ -6756,8 +6756,8 @@ rule__ActionClick__ElementAssignment_4
     }
 :
 (
-{ before(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0()); }
-	ruleNumberLiteral{ after(grammarAccess.getActionClickAccess().getElementNumberLiteralParserRuleCall_4_0()); }
+{ before(grammarAccess.getActionClickAccess().getElementExpressionParserRuleCall_4_0()); }
+	ruleExpression{ after(grammarAccess.getActionClickAccess().getElementExpressionParserRuleCall_4_0()); }
 )
 
 ;

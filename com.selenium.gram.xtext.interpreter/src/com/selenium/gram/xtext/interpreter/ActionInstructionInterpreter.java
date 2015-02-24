@@ -31,12 +31,18 @@ public class ActionInstructionInterpreter {
 			 * Action CLICK
 			 */
 			if (action.getAction() instanceof ActionClick) {
-				ActionClick act = (ActionClick) action.getAction();
-				String value = act.getElement().replaceAll("'", "");
-				value = value.replaceAll("\"", "");
-				value = value.trim().toLowerCase();
 				
-				System.out.println("ActionClick - " + act.getType() + " - "	+ act.getElement());
+				ActionClick act = (ActionClick) action.getAction();
+				
+				ExpressionValue valueToTest = (ExpressionValue) interpreter.computeExpression(act.getElement(), variables);
+				
+				if (valueToTest.getType() == ExpressionValueType.list){
+					throw new ActionInstructionException("Impossible to click on a list expression");
+				}
+				
+				String value = valueToTest.getValue().toString();				
+								
+				System.out.println("ActionClick - " + act.getType() + " - "	+ value);
 
 				// *****************************
 				// ---------- BUTTON -----------
@@ -218,7 +224,7 @@ public class ActionInstructionInterpreter {
 						|| act.getElement() instanceof SelectAction){					
 
 					if (valExp.getType() == ExpressionValueType.list){
-						// TODO : Verify this
+
 						List<ExpressionValue> list =  (List<ExpressionValue>) valExp.getValue();
 						for (ExpressionValue obj : list) {
 							doActionCheck(obj.getValue().toString(), value);
@@ -247,7 +253,6 @@ public class ActionInstructionInterpreter {
 				if (expElem.getType() != ExpressionValueType.list){
 					doActionType(expElem.getValue().toString(), expValue);
 				} else {
-					// TODO : Gerer la liste
 					List<ExpressionValue> list =  (List<ExpressionValue>) expElem.getValue();
 					for (ExpressionValue obj : list) {
 						doActionType(obj.getType().toString(), expValue);

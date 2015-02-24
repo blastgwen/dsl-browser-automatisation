@@ -200,7 +200,7 @@ ActionInstruction:
 ;
 
 ActionClick:
-	'click' '(' type=ClickableElement ',' element=NumberLiteral ')'
+	'click' '(' type=ClickableElement ',' element=Expression ')'
 ;
 
 ActionOpen:

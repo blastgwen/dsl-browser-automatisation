@@ -1133,7 +1133,7 @@ public interface SlnDslPackage extends EPackage
   int ACTION_CLICK__TYPE = 0;
 
   /**
-   * The feature id for the '<em><b>Element</b></em>' attribute.
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2135,15 +2135,15 @@ public interface SlnDslPackage extends EPackage
   EAttribute getActionClick_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.ActionClick#getElement <em>Element</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.ActionClick#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Element</em>'.
+   * @return the meta object for the containment reference '<em>Element</em>'.
    * @see com.selenium.gram.xtext.slnDsl.ActionClick#getElement()
    * @see #getActionClick()
    * @generated
    */
-  EAttribute getActionClick_Element();
+  EReference getActionClick_Element();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionOpen <em>Action Open</em>}'.
@@ -2982,12 +2982,12 @@ public interface SlnDslPackage extends EPackage
     EAttribute ACTION_CLICK__TYPE = eINSTANCE.getActionClick_Type();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_CLICK__ELEMENT = eINSTANCE.getActionClick_Element();
+    EReference ACTION_CLICK__ELEMENT = eINSTANCE.getActionClick_Element();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionOpenImpl <em>Action Open</em>}' class.
