@@ -1282,14 +1282,6 @@ rule__BROWSER__Alternatives
 { after(grammarAccess.getBROWSERAccess().getChromeKeyword_1()); }
 )
 
-    |(
-{ before(grammarAccess.getBROWSERAccess().getOperaKeyword_2()); }
-
-	'opera' 
-
-{ after(grammarAccess.getBROWSERAccess().getOperaKeyword_2()); }
-)
-
 ;
 finally {
 	restoreStackSize(stackSize);

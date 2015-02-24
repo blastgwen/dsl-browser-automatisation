@@ -93,13 +93,12 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cFirefoxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cChromeKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cOperaKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//BROWSER:
-		//	"firefox" | "chrome" | "opera";
+		//	"firefox" | "chrome";
 		public ParserRule getRule() { return rule; }
 
-		//"firefox" | "chrome" | "opera"
+		//"firefox" | "chrome"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"firefox"
@@ -107,9 +106,6 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"chrome"
 		public Keyword getChromeKeyword_1() { return cChromeKeyword_1; }
-
-		//"opera"
-		public Keyword getOperaKeyword_2() { return cOperaKeyword_2; }
 	}
 
 	public class SubprocedureElements extends AbstractParserRuleElementFinder {
@@ -1689,7 +1685,7 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BROWSER:
-	//	"firefox" | "chrome" | "opera";
+	//	"firefox" | "chrome";
 	public BROWSERElements getBROWSERAccess() {
 		return pBROWSER;
 	}

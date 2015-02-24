@@ -18,7 +18,7 @@ SelectBrowser:
 ;
 
 BROWSER:
-	'firefox' | 'chrome' | 'opera'
+	'firefox' | 'chrome' 
 ;
 	
 Subprocedure:

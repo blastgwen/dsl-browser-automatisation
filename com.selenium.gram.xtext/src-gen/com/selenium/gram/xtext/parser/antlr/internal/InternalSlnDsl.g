@@ -216,13 +216,6 @@ ruleBROWSER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getBROWSERAccess().getChromeKeyword_1()); 
     }
-
-    |
-	kw='opera' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getBROWSERAccess().getOperaKeyword_2()); 
-    }
 )
     ;
 
