@@ -175,9 +175,9 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
         return createExistActionAdapter();
       }
       @Override
-      public Adapter caseSelectAction(SelectAction object)
+      public Adapter caseGetAction(GetAction object)
       {
-        return createSelectActionAdapter();
+        return createGetActionAdapter();
       }
       @Override
       public Adapter caseBinaryBooleanExpression(BinaryBooleanExpression object)
@@ -248,6 +248,11 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseActionCheck(ActionCheck object)
       {
         return createActionCheckAdapter();
+      }
+      @Override
+      public Adapter caseSelectAction(SelectAction object)
+      {
+        return createSelectActionAdapter();
       }
       @Override
       public Adapter caseActionType(ActionType object)
@@ -577,16 +582,16 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.SelectAction <em>Select Action</em>}'.
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.GetAction <em>Get Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.selenium.gram.xtext.slnDsl.SelectAction
+   * @see com.selenium.gram.xtext.slnDsl.GetAction
    * @generated
    */
-  public Adapter createSelectActionAdapter()
+  public Adapter createGetActionAdapter()
   {
     return null;
   }
@@ -797,6 +802,21 @@ public class SlnDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionCheckAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.selenium.gram.xtext.slnDsl.SelectAction <em>Select Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction
+   * @generated
+   */
+  public Adapter createSelectActionAdapter()
   {
     return null;
   }

@@ -22,6 +22,7 @@ import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
 import com.selenium.gram.xtext.slnDsl.FunctionName;
 import com.selenium.gram.xtext.slnDsl.FunctionReference;
+import com.selenium.gram.xtext.slnDsl.GetAction;
 import com.selenium.gram.xtext.slnDsl.Head;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
@@ -178,6 +179,13 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case SlnDslPackage.GET_ACTION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getGetActionRule()) {
+					sequence_GetAction(context, (GetAction) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlnDslPackage.HEAD:
 				if(context == grammarAccess.getHeadRule()) {
 					sequence_Head(context, (Head) semanticObject); 
@@ -211,8 +219,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case SlnDslPackage.SELECT_ACTION:
-				if(context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getSelectActionRule()) {
+				if(context == grammarAccess.getSelectActionRule()) {
 					sequence_SelectAction(context, (SelectAction) semanticObject); 
 					return; 
 				}
@@ -314,7 +321,7 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (action=ActionOpen | action=ActionClick | action=ActionCheck | action=ActionType)
+	 *     (action=ActionOpen | action=ActionClick | action=ActionCheck | action=ActionType | action=SelectAction)
 	 */
 	protected void sequence_ActionInstruction(EObject context, ActionInstruction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -583,6 +590,25 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (type=SelectableElement nameElement=Expression)
+	 */
+	protected void sequence_GetAction(EObject context, GetAction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.GET_ACTION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.GET_ACTION__TYPE));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.GET_ACTION__NAME_ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.GET_ACTION__NAME_ELEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getGetActionAccess().getTypeSelectableElementParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getGetActionAccess().getNameElementExpressionParserRuleCall_4_0(), semanticObject.getNameElement());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=FunctionName | (name=FunctionName argsID+=VariableName argsID+=VariableName*))
 	 */
 	protected void sequence_Head(EObject context, Head semanticObject) {
@@ -655,19 +681,19 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (type=SelectableElement nameElement=Expression)
+	 *     (nameElement=Expression value=Expression)
 	 */
 	protected void sequence_SelectAction(EObject context, SelectAction semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__TYPE));
 			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__NAME_ELEMENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__NAME_ELEMENT));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.SELECT_ACTION__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSelectActionAccess().getTypeSelectableElementParserRuleCall_2_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getSelectActionAccess().getNameElementExpressionParserRuleCall_4_0(), semanticObject.getNameElement());
+		feeder.accept(grammarAccess.getSelectActionAccess().getNameElementExpressionParserRuleCall_2_0(), semanticObject.getNameElement());
+		feeder.accept(grammarAccess.getSelectActionAccess().getValueExpressionParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

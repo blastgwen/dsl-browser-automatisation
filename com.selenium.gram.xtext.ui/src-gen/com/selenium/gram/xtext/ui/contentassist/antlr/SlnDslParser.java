@@ -68,7 +68,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanListExpressionAccess().getGroup(), "rule__BooleanListExpression__Group__0");
 					put(grammarAccess.getVerifyActionAccess().getGroup(), "rule__VerifyAction__Group__0");
 					put(grammarAccess.getExistActionAccess().getGroup(), "rule__ExistAction__Group__0");
-					put(grammarAccess.getSelectActionAccess().getGroup(), "rule__SelectAction__Group__0");
+					put(grammarAccess.getGetActionAccess().getGroup(), "rule__GetAction__Group__0");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getGroup(), "rule__BinaryBooleanExpression__Group__0");
 					put(grammarAccess.getBinaryLogicalExpressionAccess().getGroup(), "rule__BinaryLogicalExpression__Group__0");
 					put(grammarAccess.getNegationExpressionAccess().getGroup(), "rule__NegationExpression__Group__0");
@@ -81,6 +81,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionClickAccess().getGroup(), "rule__ActionClick__Group__0");
 					put(grammarAccess.getActionOpenAccess().getGroup(), "rule__ActionOpen__Group__0");
 					put(grammarAccess.getActionCheckAccess().getGroup(), "rule__ActionCheck__Group__0");
+					put(grammarAccess.getSelectActionAccess().getGroup(), "rule__SelectAction__Group__0");
 					put(grammarAccess.getActionTypeAccess().getGroup(), "rule__ActionType__Group__0");
 					put(grammarAccess.getModelAccess().getNavigatorAssignment_0(), "rule__Model__NavigatorAssignment_0");
 					put(grammarAccess.getModelAccess().getSubsAssignment_1(), "rule__Model__SubsAssignment_1");
@@ -125,8 +126,8 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVerifyActionAccess().getValueAssignment_6(), "rule__VerifyAction__ValueAssignment_6");
 					put(grammarAccess.getExistActionAccess().getSelectAssignment_2(), "rule__ExistAction__SelectAssignment_2");
 					put(grammarAccess.getExistActionAccess().getNameElementAssignment_4(), "rule__ExistAction__NameElementAssignment_4");
-					put(grammarAccess.getSelectActionAccess().getTypeAssignment_2(), "rule__SelectAction__TypeAssignment_2");
-					put(grammarAccess.getSelectActionAccess().getNameElementAssignment_4(), "rule__SelectAction__NameElementAssignment_4");
+					put(grammarAccess.getGetActionAccess().getTypeAssignment_2(), "rule__GetAction__TypeAssignment_2");
+					put(grammarAccess.getGetActionAccess().getNameElementAssignment_4(), "rule__GetAction__NameElementAssignment_4");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getOpAssignment_0(), "rule__BinaryBooleanExpression__OpAssignment_0");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getLeftAssignment_1(), "rule__BinaryBooleanExpression__LeftAssignment_1");
 					put(grammarAccess.getBinaryBooleanExpressionAccess().getRightAssignment_2(), "rule__BinaryBooleanExpression__RightAssignment_2");
@@ -150,11 +151,14 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionInstructionAccess().getActionAssignment_1(), "rule__ActionInstruction__ActionAssignment_1");
 					put(grammarAccess.getActionInstructionAccess().getActionAssignment_2(), "rule__ActionInstruction__ActionAssignment_2");
 					put(grammarAccess.getActionInstructionAccess().getActionAssignment_3(), "rule__ActionInstruction__ActionAssignment_3");
+					put(grammarAccess.getActionInstructionAccess().getActionAssignment_4(), "rule__ActionInstruction__ActionAssignment_4");
 					put(grammarAccess.getActionClickAccess().getTypeAssignment_2(), "rule__ActionClick__TypeAssignment_2");
 					put(grammarAccess.getActionClickAccess().getElementAssignment_4(), "rule__ActionClick__ElementAssignment_4");
 					put(grammarAccess.getActionOpenAccess().getUrlAssignment_2(), "rule__ActionOpen__UrlAssignment_2");
 					put(grammarAccess.getActionCheckAccess().getElementAssignment_2(), "rule__ActionCheck__ElementAssignment_2");
 					put(grammarAccess.getActionCheckAccess().getValueAssignment_4(), "rule__ActionCheck__ValueAssignment_4");
+					put(grammarAccess.getSelectActionAccess().getNameElementAssignment_2(), "rule__SelectAction__NameElementAssignment_2");
+					put(grammarAccess.getSelectActionAccess().getValueAssignment_4(), "rule__SelectAction__ValueAssignment_4");
 					put(grammarAccess.getActionTypeAccess().getNameElementAssignment_2(), "rule__ActionType__NameElementAssignment_2");
 					put(grammarAccess.getActionTypeAccess().getValueAssignment_4(), "rule__ActionType__ValueAssignment_4");
 				}

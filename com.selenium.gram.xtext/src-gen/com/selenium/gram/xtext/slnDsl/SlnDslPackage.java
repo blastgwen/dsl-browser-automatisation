@@ -744,14 +744,14 @@ public interface SlnDslPackage extends EPackage
   int EXIST_ACTION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl <em>Select Action</em>}' class.
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.GetActionImpl <em>Get Action</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl
-   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
+   * @see com.selenium.gram.xtext.slnDsl.impl.GetActionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getGetAction()
    * @generated
    */
-  int SELECT_ACTION = 20;
+  int GET_ACTION = 20;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -760,7 +760,7 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SELECT_ACTION__TYPE = EXPRESSION_FEATURE_COUNT + 0;
+  int GET_ACTION__TYPE = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' containment reference.
@@ -769,16 +769,16 @@ public interface SlnDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SELECT_ACTION__NAME_ELEMENT = EXPRESSION_FEATURE_COUNT + 1;
+  int GET_ACTION__NAME_ELEMENT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Select Action</em>' class.
+   * The number of structural features of the '<em>Get Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECT_ACTION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int GET_ACTION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.BinaryBooleanExpressionImpl <em>Binary Boolean Expression</em>}' class.
@@ -1262,6 +1262,43 @@ public interface SlnDslPackage extends EPackage
   int ACTION_CHECK_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl <em>Select Action</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
+   * @generated
+   */
+  int SELECT_ACTION = 35;
+
+  /**
+   * The feature id for the '<em><b>Name Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_ACTION__NAME_ELEMENT = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_ACTION__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Select Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT_ACTION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl <em>Action Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1269,7 +1306,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionType()
    * @generated
    */
-  int ACTION_TYPE = 35;
+  int ACTION_TYPE = 36;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' containment reference.
@@ -1852,36 +1889,36 @@ public interface SlnDslPackage extends EPackage
   EReference getExistAction_NameElement();
 
   /**
-   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.SelectAction <em>Select Action</em>}'.
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.GetAction <em>Get Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Select Action</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.SelectAction
+   * @return the meta object for class '<em>Get Action</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.GetAction
    * @generated
    */
-  EClass getSelectAction();
+  EClass getGetAction();
 
   /**
-   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.SelectAction#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.GetAction#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.SelectAction#getType()
-   * @see #getSelectAction()
+   * @see com.selenium.gram.xtext.slnDsl.GetAction#getType()
+   * @see #getGetAction()
    * @generated
    */
-  EAttribute getSelectAction_Type();
+  EAttribute getGetAction_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.SelectAction#getNameElement <em>Name Element</em>}'.
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.GetAction#getNameElement <em>Name Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Name Element</em>'.
-   * @see com.selenium.gram.xtext.slnDsl.SelectAction#getNameElement()
-   * @see #getSelectAction()
+   * @see com.selenium.gram.xtext.slnDsl.GetAction#getNameElement()
+   * @see #getGetAction()
    * @generated
    */
-  EReference getSelectAction_NameElement();
+  EReference getGetAction_NameElement();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.BinaryBooleanExpression <em>Binary Boolean Expression</em>}'.
@@ -2286,6 +2323,38 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EReference getActionCheck_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.SelectAction <em>Select Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Select Action</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction
+   * @generated
+   */
+  EClass getSelectAction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.SelectAction#getNameElement <em>Name Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name Element</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction#getNameElement()
+   * @see #getSelectAction()
+   * @generated
+   */
+  EReference getSelectAction_NameElement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.SelectAction#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.SelectAction#getValue()
+   * @see #getSelectAction()
+   * @generated
+   */
+  EReference getSelectAction_Value();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.ActionType <em>Action Type</em>}'.
@@ -2799,14 +2868,14 @@ public interface SlnDslPackage extends EPackage
     EReference EXIST_ACTION__NAME_ELEMENT = eINSTANCE.getExistAction_NameElement();
 
     /**
-     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl <em>Select Action</em>}' class.
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.GetActionImpl <em>Get Action</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl
-     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
+     * @see com.selenium.gram.xtext.slnDsl.impl.GetActionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getGetAction()
      * @generated
      */
-    EClass SELECT_ACTION = eINSTANCE.getSelectAction();
+    EClass GET_ACTION = eINSTANCE.getGetAction();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -2814,7 +2883,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SELECT_ACTION__TYPE = eINSTANCE.getSelectAction_Type();
+    EAttribute GET_ACTION__TYPE = eINSTANCE.getGetAction_Type();
 
     /**
      * The meta object literal for the '<em><b>Name Element</b></em>' containment reference feature.
@@ -2822,7 +2891,7 @@ public interface SlnDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECT_ACTION__NAME_ELEMENT = eINSTANCE.getSelectAction_NameElement();
+    EReference GET_ACTION__NAME_ELEMENT = eINSTANCE.getGetAction_NameElement();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.BinaryBooleanExpressionImpl <em>Binary Boolean Expression</em>}' class.
@@ -3155,6 +3224,32 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EReference ACTION_CHECK__VALUE = eINSTANCE.getActionCheck_Value();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl <em>Select Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.SelectActionImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
+     * @generated
+     */
+    EClass SELECT_ACTION = eINSTANCE.getSelectAction();
+
+    /**
+     * The meta object literal for the '<em><b>Name Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_ACTION__NAME_ELEMENT = eINSTANCE.getSelectAction_NameElement();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT_ACTION__VALUE = eINSTANCE.getSelectAction_Value();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.ActionTypeImpl <em>Action Type</em>}' class.

@@ -81,7 +81,7 @@ Expression:
 	| NumLiteralExpression
 	| SizeOfExpression
 	| BooleanExpression
-	| SelectAction
+	| GetAction
 	| Uri
 	| NumericOperation	
 ;	
@@ -137,8 +137,8 @@ ExistAction :
 	'exist' '(' select=SelectableElement ',' nameElement=Expression ')'
 ;
 
-SelectAction :
-	'select' '(' type=SelectableElement ',' nameElement=Expression ')'
+GetAction :
+	'get' '(' type=SelectableElement ',' nameElement=Expression ')'
 ;
 
 BinaryBooleanExpression:
@@ -206,6 +206,7 @@ ActionInstruction:
 	| action=ActionClick
 	| action=ActionCheck
 	| action=ActionType
+	| action=SelectAction
 ;
 
 ActionClick:
@@ -218,6 +219,10 @@ ActionOpen:
 
 ActionCheck:
 	'check' '('element=Expression ',' value=BooleanExpression')'
+;
+
+SelectAction:
+	'select' '(' nameElement=Expression ',' value=Expression ')'
 ;
 
 ActionType:

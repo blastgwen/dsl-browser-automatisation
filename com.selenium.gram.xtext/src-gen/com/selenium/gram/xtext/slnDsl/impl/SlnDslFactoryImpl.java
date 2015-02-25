@@ -84,7 +84,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.BOOLEAN_VALUE: return createBooleanValue();
       case SlnDslPackage.VERIFY_ACTION: return createVerifyAction();
       case SlnDslPackage.EXIST_ACTION: return createExistAction();
-      case SlnDslPackage.SELECT_ACTION: return createSelectAction();
+      case SlnDslPackage.GET_ACTION: return createGetAction();
       case SlnDslPackage.BINARY_BOOLEAN_EXPRESSION: return createBinaryBooleanExpression();
       case SlnDslPackage.BINARY_LOGICAL_EXPRESSION: return createBinaryLogicalExpression();
       case SlnDslPackage.NEGATION_EXPRESSION: return createNegationExpression();
@@ -99,6 +99,7 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
       case SlnDslPackage.ACTION_CLICK: return createActionClick();
       case SlnDslPackage.ACTION_OPEN: return createActionOpen();
       case SlnDslPackage.ACTION_CHECK: return createActionCheck();
+      case SlnDslPackage.SELECT_ACTION: return createSelectAction();
       case SlnDslPackage.ACTION_TYPE: return createActionType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -330,10 +331,10 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SelectAction createSelectAction()
+  public GetAction createGetAction()
   {
-    SelectActionImpl selectAction = new SelectActionImpl();
-    return selectAction;
+    GetActionImpl getAction = new GetActionImpl();
+    return getAction;
   }
 
   /**
@@ -488,6 +489,17 @@ public class SlnDslFactoryImpl extends EFactoryImpl implements SlnDslFactory
   {
     ActionCheckImpl actionCheck = new ActionCheckImpl();
     return actionCheck;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelectAction createSelectAction()
+  {
+    SelectActionImpl selectAction = new SelectActionImpl();
+    return selectAction;
   }
 
   /**

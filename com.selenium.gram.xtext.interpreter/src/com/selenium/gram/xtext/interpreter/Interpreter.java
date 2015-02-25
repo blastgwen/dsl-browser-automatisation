@@ -31,12 +31,12 @@ import com.selenium.gram.xtext.slnDsl.ExistAction;
 import com.selenium.gram.xtext.slnDsl.Expression;
 import com.selenium.gram.xtext.slnDsl.Foreach;
 import com.selenium.gram.xtext.slnDsl.FunctionCall;
+import com.selenium.gram.xtext.slnDsl.GetAction;
 import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.NumericOperation;
-import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
 import com.selenium.gram.xtext.slnDsl.Uri;
@@ -264,9 +264,9 @@ public class Interpreter {
 					ExpressionValueType.bool);
 		}
 		
-		if (exp instanceof SelectAction){
+		if (exp instanceof GetAction){
 			System.out.println("exec select action");
-			SelectAction act = (SelectAction) exp;
+			GetAction act = (GetAction) exp;
 			
 			ExpressionValue toTest = this.computeExpression(act.getNameElement(), variables);
 			WebDriver driver = SeleniumDriver.getInstance().getDriver();

@@ -219,11 +219,11 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlnDslPackage.SELECT_ACTION:
+      case SlnDslPackage.GET_ACTION:
       {
-        SelectAction selectAction = (SelectAction)theEObject;
-        T result = caseSelectAction(selectAction);
-        if (result == null) result = caseExpression(selectAction);
+        GetAction getAction = (GetAction)theEObject;
+        T result = caseGetAction(getAction);
+        if (result == null) result = caseExpression(getAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -330,6 +330,13 @@ public class SlnDslSwitch<T> extends Switch<T>
       {
         ActionCheck actionCheck = (ActionCheck)theEObject;
         T result = caseActionCheck(actionCheck);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlnDslPackage.SELECT_ACTION:
+      {
+        SelectAction selectAction = (SelectAction)theEObject;
+        T result = caseSelectAction(selectAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -665,17 +672,17 @@ public class SlnDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Select Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Get Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Select Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Get Action</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSelectAction(SelectAction object)
+  public T caseGetAction(GetAction object)
   {
     return null;
   }
@@ -900,6 +907,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseActionCheck(ActionCheck object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Select Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Select Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelectAction(SelectAction object)
   {
     return null;
   }

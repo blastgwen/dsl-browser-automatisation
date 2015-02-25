@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.selenium.gram.xtext.interpreter.exceptions.ActionInstructionException;
@@ -17,6 +18,7 @@ import com.selenium.gram.xtext.slnDsl.ActionClick;
 import com.selenium.gram.xtext.slnDsl.ActionInstruction;
 import com.selenium.gram.xtext.slnDsl.ActionOpen;
 import com.selenium.gram.xtext.slnDsl.ActionType;
+import com.selenium.gram.xtext.slnDsl.GetAction;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.VariableReference;
@@ -60,7 +62,9 @@ public class ActionInstructionInterpreter {
 								WebElement elem = elements.get(i);
 								String str = elem.getText().trim().toLowerCase();
 								String val = elem.getAttribute("value").trim().toLowerCase();
-								if (str.contains(value) || val.contains(value)){	
+								String id = elements.get(i).getAttribute("id").trim().toLowerCase();
+								
+								if (str.contains(value) || val.contains(value) || id.contains(value)){	
 									WebDriverWait wait = new WebDriverWait(driver, 5);
 								    wait.until(ExpectedConditions.elementToBeClickable(elem));
 								    elem.click();
@@ -99,8 +103,9 @@ public class ActionInstructionInterpreter {
 									try {
 										WebElement elem = elements.get(i);
 										String str = elem.getText().trim().toLowerCase();
+										String id = elem.getAttribute("id").trim().toLowerCase();
 										String val = elem.getAttribute("value").trim().toLowerCase();
-										if (str.contains(value) || val.contains(value)){	
+										if (str.contains(value) || val.contains(value) || id.contains(value)){	
 											WebDriverWait wait = new WebDriverWait(driver, 5);
 										    wait.until(ExpectedConditions.elementToBeClickable(elem));
 										    elem.click();
@@ -165,11 +170,11 @@ public class ActionInstructionInterpreter {
 							try {
 								// Get attribute to test
 								String src = elements.get(i).getAttribute("src").trim().toLowerCase();
+								String id = elements.get(i).getAttribute("id").trim().toLowerCase();
 								String alt = elements.get(i).getAttribute("alt").trim().toLowerCase();
-								String str = elements.get(i).getText().trim().toLowerCase();
+								String str = elements.get(i).getText().trim().toLowerCase();								
 								
-								
-								if (src.contains(value) || alt.contains(value) || str.contains(value)){	
+								if (src.contains(value) || alt.contains(value) || str.contains(value) || id.contains(value)){	
 									WebDriverWait wait = new WebDriverWait(driver, 5);
 								    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
 								    elements.get(i).click();
@@ -221,7 +226,7 @@ public class ActionInstructionInterpreter {
 				valueToTest = valueToTest.trim().toLowerCase();
 				
 				if (act.getElement() instanceof VariableReference || act.getElement() instanceof NumLiteralExpression 
-						|| act.getElement() instanceof SelectAction){					
+						|| act.getElement() instanceof GetAction){					
 
 					if (valExp.getType() == ExpressionValueType.list){
 
@@ -259,7 +264,66 @@ public class ActionInstructionInterpreter {
 					}	
 				}
 			}
-
+			
+			/*
+			 * ACTION SELECT
+			 */
+			else if (action.getAction() instanceof SelectAction) {
+				System.out.println("Select - ActionInstruction");
+				
+				SelectAction act = (SelectAction)action.getAction();
+				
+				ExpressionValue expElem = interpreter.computeExpression(act.getNameElement(), variables);				
+				ExpressionValue expValue = interpreter.computeExpression(act.getValue(), variables);
+				
+				String elemToTest = expValue.getValue().toString().replaceAll("'", "");
+				elemToTest = elemToTest.replaceAll("\"", "");
+				elemToTest = elemToTest.trim().toLowerCase();
+				
+				String valueToTest = expValue.getValue().toString().replaceAll("'", "");
+				valueToTest = valueToTest.replaceAll("\"", "");
+				valueToTest = valueToTest.trim().toLowerCase();
+				
+				if (expElem.getType() == ExpressionValueType.list 
+						|| expValue.getType() == ExpressionValueType.list){
+					throw new ActionInstructionException("Impossible to have list Object in this function");
+				} else {
+					List<WebElement> elements = new ArrayList<WebElement>();
+					elements.addAll(driver.findElements(By.tagName("select")));
+					
+					boolean click = false;
+					int i = 0;
+					while (!click){
+						if (i == elements.size()){
+							throw new ActionInstructionException("ActionnSelect - No dropdown list " + expValue.getValue().toString() + " in this page");
+						} else {
+							try {
+								// Get attribute to test
+								String alt = elements.get(i).getAttribute("name").trim().toLowerCase();
+								String str = elements.get(i).getText().trim().toLowerCase();
+								String id = elements.get(i).getAttribute("id").trim().toLowerCase();
+								
+								// find the dropdown
+								if (alt.contains(elemToTest) || str.contains(elemToTest) || id.contains(elemToTest)){	
+									Select dropList = new Select(elements.get(i));
+									List<WebElement> options = dropList.getOptions();
+									for (WebElement opt : options) {
+										String strOpt = opt.getText().toLowerCase().trim();
+										if (strOpt.contains(valueToTest)){
+											dropList.selectByVisibleText(opt.getText());
+										}
+									}									
+									click = true;
+								} 
+							} catch (Exception e){
+								click = false;
+							} finally {
+								i ++;
+							}
+						}						
+					}
+				}
+			}
 			else {
 				throw new ActionInstructionException("Undefined ActionInstruction");
 			}
@@ -286,9 +350,11 @@ public class ActionInstructionInterpreter {
 					// Get attribute to test
 					String name = elements.get(i).getAttribute("name").trim().toLowerCase();
 					String val = elements.get(i).getAttribute("value").trim().toLowerCase();
+					String id = elements.get(i).getAttribute("id").trim().toLowerCase();
 					String str = elements.get(i).getText().trim().toLowerCase();
 					
-					if (name.contains(valueToTest) || val.contains(valueToTest) || 	str.contains(valueToTest)){
+					if (name.contains(valueToTest) || val.contains(valueToTest) 
+							|| 	str.contains(valueToTest) || id.contains(valueToTest)){
 						
 						WebDriverWait wait = new WebDriverWait(driver, 5);
 					    wait.until(ExpectedConditions.elementToBeClickable(elements.get(i)));
