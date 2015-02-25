@@ -47,6 +47,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//Uri/url"/>
     </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//Expression"/>
+    <genClasses ecoreClass="SlnDsl.ecore#//NumericOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//NumericOperation/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//NumericOperation/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlnDsl.ecore#//NumericOperation/right"/>
+    </genClasses>
     <genClasses ecoreClass="SlnDsl.ecore#//NumLiteralExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlnDsl.ecore#//NumLiteralExpression/value"/>
     </genClasses>

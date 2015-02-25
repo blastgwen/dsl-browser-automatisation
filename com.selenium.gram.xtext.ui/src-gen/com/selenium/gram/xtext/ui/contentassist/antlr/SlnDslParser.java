@@ -42,6 +42,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionCallAccess().getAlternatives(), "rule__FunctionCall__Alternatives");
 					put(grammarAccess.getNumberLiteralAccess().getAlternatives(), "rule__NumberLiteral__Alternatives");
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
+					put(grammarAccess.getNumericOperatorAccess().getAlternatives(), "rule__NumericOperator__Alternatives");
 					put(grammarAccess.getBooleanListOperatorAccess().getAlternatives(), "rule__BooleanListOperator__Alternatives");
 					put(grammarAccess.getBooleanExpressionAccess().getAlternatives(), "rule__BooleanExpression__Alternatives");
 					put(grammarAccess.getLogicalOperatorAccess().getAlternatives(), "rule__LogicalOperator__Alternatives");
@@ -62,6 +63,7 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionCallAccess().getGroup_0(), "rule__FunctionCall__Group_0__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup_1(), "rule__FunctionCall__Group_1__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup_1_3(), "rule__FunctionCall__Group_1_3__0");
+					put(grammarAccess.getNumericOperationAccess().getGroup(), "rule__NumericOperation__Group__0");
 					put(grammarAccess.getSizeOfExpressionAccess().getGroup(), "rule__SizeOfExpression__Group__0");
 					put(grammarAccess.getBooleanListExpressionAccess().getGroup(), "rule__BooleanListExpression__Group__0");
 					put(grammarAccess.getVerifyActionAccess().getGroup(), "rule__VerifyAction__Group__0");
@@ -101,6 +103,9 @@ public class SlnDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableReferenceAccess().getVarIDAssignment(), "rule__VariableReference__VarIDAssignment");
 					put(grammarAccess.getVariableNameAccess().getNameAssignment(), "rule__VariableName__NameAssignment");
 					put(grammarAccess.getUriAccess().getUrlAssignment(), "rule__Uri__UrlAssignment");
+					put(grammarAccess.getNumericOperationAccess().getOpAssignment_0(), "rule__NumericOperation__OpAssignment_0");
+					put(grammarAccess.getNumericOperationAccess().getLeftAssignment_1(), "rule__NumericOperation__LeftAssignment_1");
+					put(grammarAccess.getNumericOperationAccess().getRightAssignment_2(), "rule__NumericOperation__RightAssignment_2");
 					put(grammarAccess.getNumLiteralExpressionAccess().getValueAssignment(), "rule__NumLiteralExpression__ValueAssignment");
 					put(grammarAccess.getSizeOfExpressionAccess().getExpAssignment_2(), "rule__SizeOfExpression__ExpAssignment_2");
 					put(grammarAccess.getBooleanListExpressionAccess().getOpAssignment_0(), "rule__BooleanListExpression__OpAssignment_0");

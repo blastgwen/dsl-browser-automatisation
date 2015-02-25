@@ -35,6 +35,7 @@ import com.selenium.gram.xtext.slnDsl.Instruction;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.NumericOperation;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
 import com.selenium.gram.xtext.slnDsl.Subprocedure;
@@ -64,15 +65,14 @@ public class Interpreter {
 		Map<String, ExpressionValue> variables = new HashMap<String, ExpressionValue>();
 		
 		try{
+		SeleniumDriver.closeDriver();
+			
 		SeleniumDriver.initializeDriver(model.getNavigator().getBrowser());
 		
 		executeBody(model.getBody(), variables);
 		}
 		catch(InterpretationException e){
 			e.printStackTrace();
-		}
-		finally{
-			SeleniumDriver.closeDriver();
 		}
 	}
 
@@ -231,6 +231,26 @@ public class Interpreter {
 			}
 			else {
 				return new ExpressionValue(1, ExpressionValueType.numeric);
+			}
+		}
+		
+		if(exp instanceof NumericOperation){
+			NumericOperation numOp = (NumericOperation) exp;
+			ExpressionValue left = computeExpression(numOp.getLeft(), variables);
+			ExpressionValue right = computeExpression(numOp.getRight(), variables);
+			if(left.getType() == ExpressionValueType.numeric && right.getType() == ExpressionValueType.numeric){
+				switch(numOp.getOp()){
+				case "+":
+					return new ExpressionValue((int)left.getValue() + (int)right.getValue(), ExpressionValueType.numeric);
+				case "-":
+					return new ExpressionValue((int)left.getValue() - (int)right.getValue(), ExpressionValueType.numeric);
+				case "/":
+					return new ExpressionValue((int)left.getValue() / (int)right.getValue(), ExpressionValueType.numeric);
+				case "*":
+					return new ExpressionValue((int)left.getValue() * (int)right.getValue(), ExpressionValueType.numeric);
+					default:
+						throw new InterpretationException("Unknown numeric operator");
+				}
 			}
 		}
 		

@@ -131,6 +131,15 @@ public interface SlnDslFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Numeric Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Numeric Operation</em>'.
+   * @generated
+   */
+  NumericOperation createNumericOperation();
+
+  /**
    * Returns a new object of class '<em>Num Literal Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

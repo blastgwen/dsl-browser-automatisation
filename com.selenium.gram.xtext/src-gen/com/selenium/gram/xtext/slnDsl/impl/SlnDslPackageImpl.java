@@ -28,6 +28,7 @@ import com.selenium.gram.xtext.slnDsl.Loop;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.NumericOperation;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SelectBrowser;
 import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
@@ -138,6 +139,13 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
    * @generated
    */
   private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numericOperationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -651,6 +659,46 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
   public EClass getExpression()
   {
     return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumericOperation()
+  {
+    return numericOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNumericOperation_Op()
+  {
+    return (EAttribute)numericOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumericOperation_Left()
+  {
+    return (EReference)numericOperationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumericOperation_Right()
+  {
+    return (EReference)numericOperationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1354,6 +1402,11 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
 
     expressionEClass = createEClass(EXPRESSION);
 
+    numericOperationEClass = createEClass(NUMERIC_OPERATION);
+    createEAttribute(numericOperationEClass, NUMERIC_OPERATION__OP);
+    createEReference(numericOperationEClass, NUMERIC_OPERATION__LEFT);
+    createEReference(numericOperationEClass, NUMERIC_OPERATION__RIGHT);
+
     numLiteralExpressionEClass = createEClass(NUM_LITERAL_EXPRESSION);
     createEAttribute(numLiteralExpressionEClass, NUM_LITERAL_EXPRESSION__VALUE);
 
@@ -1473,6 +1526,7 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     functionCallEClass.getESuperTypes().add(this.getInstruction());
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
     uriEClass.getESuperTypes().add(this.getExpression());
+    numericOperationEClass.getESuperTypes().add(this.getExpression());
     numLiteralExpressionEClass.getESuperTypes().add(this.getExpression());
     sizeOfExpressionEClass.getESuperTypes().add(this.getExpression());
     booleanExpressionEClass.getESuperTypes().add(this.getExpression());
@@ -1525,6 +1579,11 @@ public class SlnDslPackageImpl extends EPackageImpl implements SlnDslPackage
     initEAttribute(getUri_Url(), ecorePackage.getEString(), "url", null, 0, 1, Uri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(numericOperationEClass, NumericOperation.class, "NumericOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNumericOperation_Op(), ecorePackage.getEString(), "op", null, 0, 1, NumericOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumericOperation_Left(), this.getExpression(), null, "left", null, 0, 1, NumericOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumericOperation_Right(), this.getExpression(), null, "right", null, 0, 1, NumericOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numLiteralExpressionEClass, NumLiteralExpression.class, "NumLiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumLiteralExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, NumLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

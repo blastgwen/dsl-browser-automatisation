@@ -82,8 +82,17 @@ Expression:
 	| SizeOfExpression
 	| BooleanExpression
 	| SelectAction
-	| Uri	
+	| Uri
+	| NumericOperation	
 ;	
+
+NumericOperation:
+	op=NumericOperator left=Expression right=Expression
+;
+
+NumericOperator:
+	'+' | '-' | '/' | '*'
+;
 
 NumLiteralExpression:
 	value = NumberLiteral

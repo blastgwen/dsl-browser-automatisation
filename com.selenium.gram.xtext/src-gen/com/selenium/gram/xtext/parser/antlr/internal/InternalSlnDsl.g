@@ -867,8 +867,141 @@ ruleExpression returns [EObject current=null]
         $current = $this_Uri_5.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getExpressionAccess().getNumericOperationParserRuleCall_6()); 
+    }
+    this_NumericOperation_6=ruleNumericOperation
+    { 
+        $current = $this_NumericOperation_6.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleNumericOperation
+entryRuleNumericOperation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNumericOperationRule()); }
+	 iv_ruleNumericOperation=ruleNumericOperation 
+	 { $current=$iv_ruleNumericOperation.current; } 
+	 EOF 
+;
+
+// Rule NumericOperation
+ruleNumericOperation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumericOperationAccess().getOpNumericOperatorParserRuleCall_0_0()); 
+	    }
+		lv_op_0_0=ruleNumericOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumericOperationRule());
+	        }
+       		set(
+       			$current, 
+       			"op",
+        		lv_op_0_0, 
+        		"NumericOperator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumericOperationAccess().getLeftExpressionParserRuleCall_1_0()); 
+	    }
+		lv_left_1_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumericOperationRule());
+	        }
+       		set(
+       			$current, 
+       			"left",
+        		lv_left_1_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumericOperationAccess().getRightExpressionParserRuleCall_2_0()); 
+	    }
+		lv_right_2_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumericOperationRule());
+	        }
+       		set(
+       			$current, 
+       			"right",
+        		lv_right_2_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleNumericOperator
+entryRuleNumericOperator returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNumericOperatorRule()); } 
+	 iv_ruleNumericOperator=ruleNumericOperator 
+	 { $current=$iv_ruleNumericOperator.current.getText(); }  
+	 EOF 
+;
+
+// Rule NumericOperator
+ruleNumericOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='+' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getPlusSignKeyword_0()); 
+    }
+
+    |
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getHyphenMinusKeyword_1()); 
+    }
+
+    |
+	kw='/' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getSolidusKeyword_2()); 
+    }
+
+    |
+	kw='*' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNumericOperatorAccess().getAsteriskKeyword_3()); 
+    }
+)
+    ;
 
 
 

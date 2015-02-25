@@ -159,6 +159,14 @@ public class SlnDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlnDslPackage.NUMERIC_OPERATION:
+      {
+        NumericOperation numericOperation = (NumericOperation)theEObject;
+        T result = caseNumericOperation(numericOperation);
+        if (result == null) result = caseExpression(numericOperation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlnDslPackage.NUM_LITERAL_EXPRESSION:
       {
         NumLiteralExpression numLiteralExpression = (NumLiteralExpression)theEObject;
@@ -524,6 +532,22 @@ public class SlnDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Numeric Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Numeric Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumericOperation(NumericOperation object)
   {
     return null;
   }

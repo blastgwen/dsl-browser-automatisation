@@ -26,6 +26,7 @@ import com.selenium.gram.xtext.slnDsl.Head;
 import com.selenium.gram.xtext.slnDsl.Model;
 import com.selenium.gram.xtext.slnDsl.NegationExpression;
 import com.selenium.gram.xtext.slnDsl.NumLiteralExpression;
+import com.selenium.gram.xtext.slnDsl.NumericOperation;
 import com.selenium.gram.xtext.slnDsl.SelectAction;
 import com.selenium.gram.xtext.slnDsl.SelectBrowser;
 import com.selenium.gram.xtext.slnDsl.SizeOfExpression;
@@ -199,6 +200,13 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getNumLiteralExpressionRule()) {
 					sequence_NumLiteralExpression(context, (NumLiteralExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlnDslPackage.NUMERIC_OPERATION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getNumericOperationRule()) {
+					sequence_NumericOperation(context, (NumericOperation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -619,6 +627,28 @@ public class SlnDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getNumLiteralExpressionAccess().getValueNumberLiteralParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (op=NumericOperator left=Expression right=Expression)
+	 */
+	protected void sequence_NumericOperation(EObject context, NumericOperation semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.NUMERIC_OPERATION__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.NUMERIC_OPERATION__OP));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.NUMERIC_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.NUMERIC_OPERATION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, SlnDslPackage.Literals.NUMERIC_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlnDslPackage.Literals.NUMERIC_OPERATION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNumericOperationAccess().getOpNumericOperatorParserRuleCall_0_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getNumericOperationAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getNumericOperationAccess().getRightExpressionParserRuleCall_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	

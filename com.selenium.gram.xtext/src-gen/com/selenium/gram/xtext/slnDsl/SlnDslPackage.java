@@ -305,7 +305,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 23;
+  int INSTRUCTION = 24;
 
   /**
    * The number of structural features of the '<em>Instruction</em>' class.
@@ -457,6 +457,52 @@ public interface SlnDslPackage extends EPackage
   int URI_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumericOperationImpl <em>Numeric Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.selenium.gram.xtext.slnDsl.impl.NumericOperationImpl
+   * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNumericOperation()
+   * @generated
+   */
+  int NUMERIC_OPERATION = 12;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_OPERATION__OP = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_OPERATION__LEFT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_OPERATION__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Numeric Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_OPERATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl <em>Num Literal Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -464,7 +510,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNumLiteralExpression()
    * @generated
    */
-  int NUM_LITERAL_EXPRESSION = 12;
+  int NUM_LITERAL_EXPRESSION = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -492,7 +538,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSizeOfExpression()
    * @generated
    */
-  int SIZE_OF_EXPRESSION = 13;
+  int SIZE_OF_EXPRESSION = 14;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -520,7 +566,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanListExpression()
    * @generated
    */
-  int BOOLEAN_LIST_EXPRESSION = 14;
+  int BOOLEAN_LIST_EXPRESSION = 15;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -566,7 +612,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanExpression()
    * @generated
    */
-  int BOOLEAN_EXPRESSION = 15;
+  int BOOLEAN_EXPRESSION = 16;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -594,7 +640,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 16;
+  int BOOLEAN_VALUE = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -622,7 +668,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getVerifyAction()
    * @generated
    */
-  int VERIFY_ACTION = 17;
+  int VERIFY_ACTION = 18;
 
   /**
    * The feature id for the '<em><b>Verify Type</b></em>' attribute.
@@ -668,7 +714,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getExistAction()
    * @generated
    */
-  int EXIST_ACTION = 18;
+  int EXIST_ACTION = 19;
 
   /**
    * The feature id for the '<em><b>Select</b></em>' attribute.
@@ -705,7 +751,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getSelectAction()
    * @generated
    */
-  int SELECT_ACTION = 19;
+  int SELECT_ACTION = 20;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -742,7 +788,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBinaryBooleanExpression()
    * @generated
    */
-  int BINARY_BOOLEAN_EXPRESSION = 20;
+  int BINARY_BOOLEAN_EXPRESSION = 21;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -788,7 +834,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getBinaryLogicalExpression()
    * @generated
    */
-  int BINARY_LOGICAL_EXPRESSION = 21;
+  int BINARY_LOGICAL_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -834,7 +880,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNegationExpression()
    * @generated
    */
-  int NEGATION_EXPRESSION = 22;
+  int NEGATION_EXPRESSION = 23;
 
   /**
    * The feature id for the '<em><b>Negation</b></em>' containment reference.
@@ -862,7 +908,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getDefinition()
    * @generated
    */
-  int DEFINITION = 24;
+  int DEFINITION = 25;
 
   /**
    * The feature id for the '<em><b>Var ID</b></em>' containment reference.
@@ -899,7 +945,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getAssignation()
    * @generated
    */
-  int ASSIGNATION = 25;
+  int ASSIGNATION = 26;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -936,7 +982,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getConditional()
    * @generated
    */
-  int CONDITIONAL = 26;
+  int CONDITIONAL = 27;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -982,7 +1028,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getLoop()
    * @generated
    */
-  int LOOP = 27;
+  int LOOP = 28;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -1010,7 +1056,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getWhile()
    * @generated
    */
-  int WHILE = 28;
+  int WHILE = 29;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -1047,7 +1093,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getForeach()
    * @generated
    */
-  int FOREACH = 29;
+  int FOREACH = 30;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' containment reference list.
@@ -1093,7 +1139,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionInstruction()
    * @generated
    */
-  int ACTION_INSTRUCTION = 30;
+  int ACTION_INSTRUCTION = 31;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -1121,7 +1167,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionClick()
    * @generated
    */
-  int ACTION_CLICK = 31;
+  int ACTION_CLICK = 32;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1158,7 +1204,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionOpen()
    * @generated
    */
-  int ACTION_OPEN = 32;
+  int ACTION_OPEN = 33;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' containment reference.
@@ -1186,7 +1232,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionCheck()
    * @generated
    */
-  int ACTION_CHECK = 33;
+  int ACTION_CHECK = 34;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -1223,7 +1269,7 @@ public interface SlnDslPackage extends EPackage
    * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getActionType()
    * @generated
    */
-  int ACTION_TYPE = 34;
+  int ACTION_TYPE = 35;
 
   /**
    * The feature id for the '<em><b>Name Element</b></em>' containment reference.
@@ -1559,6 +1605,49 @@ public interface SlnDslPackage extends EPackage
    * @generated
    */
   EClass getExpression();
+
+  /**
+   * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.NumericOperation <em>Numeric Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Numeric Operation</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NumericOperation
+   * @generated
+   */
+  EClass getNumericOperation();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.selenium.gram.xtext.slnDsl.NumericOperation#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NumericOperation#getOp()
+   * @see #getNumericOperation()
+   * @generated
+   */
+  EAttribute getNumericOperation_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.NumericOperation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NumericOperation#getLeft()
+   * @see #getNumericOperation()
+   * @generated
+   */
+  EReference getNumericOperation_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.selenium.gram.xtext.slnDsl.NumericOperation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.selenium.gram.xtext.slnDsl.NumericOperation#getRight()
+   * @see #getNumericOperation()
+   * @generated
+   */
+  EReference getNumericOperation_Right();
 
   /**
    * Returns the meta object for class '{@link com.selenium.gram.xtext.slnDsl.NumLiteralExpression <em>Num Literal Expression</em>}'.
@@ -2508,6 +2597,40 @@ public interface SlnDslPackage extends EPackage
      * @generated
      */
     EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumericOperationImpl <em>Numeric Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.selenium.gram.xtext.slnDsl.impl.NumericOperationImpl
+     * @see com.selenium.gram.xtext.slnDsl.impl.SlnDslPackageImpl#getNumericOperation()
+     * @generated
+     */
+    EClass NUMERIC_OPERATION = eINSTANCE.getNumericOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMERIC_OPERATION__OP = eINSTANCE.getNumericOperation_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMERIC_OPERATION__LEFT = eINSTANCE.getNumericOperation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMERIC_OPERATION__RIGHT = eINSTANCE.getNumericOperation_Right();
 
     /**
      * The meta object literal for the '{@link com.selenium.gram.xtext.slnDsl.impl.NumLiteralExpressionImpl <em>Num Literal Expression</em>}' class.

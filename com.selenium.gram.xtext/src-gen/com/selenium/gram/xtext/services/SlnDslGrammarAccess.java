@@ -445,14 +445,16 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBooleanExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cSelectActionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cUriParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cNumericOperationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		/// *
 		// * Expression
 		// * / Expression:
-		//	VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri;
+		//	VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri |
+		//	NumericOperation;
 		public ParserRule getRule() { return rule; }
 
-		//VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri
+		//VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri | NumericOperation
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//VariableReference
@@ -472,6 +474,73 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Uri
 		public RuleCall getUriParserRuleCall_5() { return cUriParserRuleCall_5; }
+
+		//NumericOperation
+		public RuleCall getNumericOperationParserRuleCall_6() { return cNumericOperationParserRuleCall_6; }
+	}
+
+	public class NumericOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumericOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOpNumericOperatorParserRuleCall_0_0 = (RuleCall)cOpAssignment_0.eContents().get(0);
+		private final Assignment cLeftAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLeftExpressionParserRuleCall_1_0 = (RuleCall)cLeftAssignment_1.eContents().get(0);
+		private final Assignment cRightAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRightExpressionParserRuleCall_2_0 = (RuleCall)cRightAssignment_2.eContents().get(0);
+		
+		//NumericOperation:
+		//	op=NumericOperator left=Expression right=Expression;
+		public ParserRule getRule() { return rule; }
+
+		//op=NumericOperator left=Expression right=Expression
+		public Group getGroup() { return cGroup; }
+
+		//op=NumericOperator
+		public Assignment getOpAssignment_0() { return cOpAssignment_0; }
+
+		//NumericOperator
+		public RuleCall getOpNumericOperatorParserRuleCall_0_0() { return cOpNumericOperatorParserRuleCall_0_0; }
+
+		//left=Expression
+		public Assignment getLeftAssignment_1() { return cLeftAssignment_1; }
+
+		//Expression
+		public RuleCall getLeftExpressionParserRuleCall_1_0() { return cLeftExpressionParserRuleCall_1_0; }
+
+		//right=Expression
+		public Assignment getRightAssignment_2() { return cRightAssignment_2; }
+
+		//Expression
+		public RuleCall getRightExpressionParserRuleCall_2_0() { return cRightExpressionParserRuleCall_2_0; }
+	}
+
+	public class NumericOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumericOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cSolidusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cAsteriskKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//NumericOperator:
+		//	"+" | "-" | "/" | "*";
+		public ParserRule getRule() { return rule; }
+
+		//"+" | "-" | "/" | "*"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"+"
+		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+
+		//"/"
+		public Keyword getSolidusKeyword_2() { return cSolidusKeyword_2; }
+
+		//"*"
+		public Keyword getAsteriskKeyword_3() { return cAsteriskKeyword_3; }
 	}
 
 	public class NumLiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -1547,6 +1616,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final NumberLiteralElements pNumberLiteral;
 	private final UriElements pUri;
 	private final ExpressionElements pExpression;
+	private final NumericOperationElements pNumericOperation;
+	private final NumericOperatorElements pNumericOperator;
 	private final NumLiteralExpressionElements pNumLiteralExpression;
 	private final SizeOfExpressionElements pSizeOfExpression;
 	private final BooleanListExpressionElements pBooleanListExpression;
@@ -1602,6 +1673,8 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNumberLiteral = new NumberLiteralElements();
 		this.pUri = new UriElements();
 		this.pExpression = new ExpressionElements();
+		this.pNumericOperation = new NumericOperationElements();
+		this.pNumericOperator = new NumericOperatorElements();
 		this.pNumLiteralExpression = new NumLiteralExpressionElements();
 		this.pSizeOfExpression = new SizeOfExpressionElements();
 		this.pBooleanListExpression = new BooleanListExpressionElements();
@@ -1801,13 +1874,34 @@ public class SlnDslGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Expression
 	// * / Expression:
-	//	VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri;
+	//	VariableReference | NumLiteralExpression | SizeOfExpression | BooleanExpression | SelectAction | Uri |
+	//	NumericOperation;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
 	
 	public ParserRule getExpressionRule() {
 		return getExpressionAccess().getRule();
+	}
+
+	//NumericOperation:
+	//	op=NumericOperator left=Expression right=Expression;
+	public NumericOperationElements getNumericOperationAccess() {
+		return pNumericOperation;
+	}
+	
+	public ParserRule getNumericOperationRule() {
+		return getNumericOperationAccess().getRule();
+	}
+
+	//NumericOperator:
+	//	"+" | "-" | "/" | "*";
+	public NumericOperatorElements getNumericOperatorAccess() {
+		return pNumericOperator;
+	}
+	
+	public ParserRule getNumericOperatorRule() {
+		return getNumericOperatorAccess().getRule();
 	}
 
 	//NumLiteralExpression:
