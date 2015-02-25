@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:slnDsl="http://www.selenium.com/gram/xtext/SlnDsl" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_8LbXIL0IEeSCkJXdkE5yYw" selectedViews="_UASeAL0KEeSCkJXdkE5yYw" version="8.1.1">
+  <models xmi:type="slnDsl:Model" href="open.slndsl#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_UASeAL0KEeSCkJXdkE5yYw" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WagdsL0KEeSCkJXdkE5yYw" name="Diagramme">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WaqOsL0KEeSCkJXdkE5yYw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_WaqOsb0KEeSCkJXdkE5yYw" type="Sirius" element="_WagdsL0KEeSCkJXdkE5yYw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_WaqOs70KEeSCkJXdkE5yYw" type="2001" element="_Wagdsb0KEeSCkJXdkE5yYw">
+            <children xmi:type="notation:Node" xmi:id="_Waz_sL0KEeSCkJXdkE5yYw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Waz_sb0KEeSCkJXdkE5yYw" x="31"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Waz_sr0KEeSCkJXdkE5yYw" type="3003" element="_Wagdsr0KEeSCkJXdkE5yYw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Waz_s70KEeSCkJXdkE5yYw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Waz_tL0KEeSCkJXdkE5yYw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_WaqOtL0KEeSCkJXdkE5yYw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WaqOtb0KEeSCkJXdkE5yYw" width="30" height="30"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_WaqOsr0KEeSCkJXdkE5yYw"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Wagdsb0KEeSCkJXdkE5yYw" name="chrome" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="slnDsl:SelectBrowser" href="open.slndsl#//@navigator"/>
+        <semanticElements xmi:type="slnDsl:SelectBrowser" href="open.slndsl#//@navigator"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_Wagdsr0KEeSCkJXdkE5yYw">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Wagds70KEeSCkJXdkE5yYw"/>
+          <description xmi:type="style:SquareDescription" href="platform:/resource/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Navigator']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_WagdtL0KEeSCkJXdkE5yYw"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_Wagdtb0KEeSCkJXdkE5yYw" red="252" green="175" blue="62"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Navigator']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_Wagdtr0KEeSCkJXdkE5yYw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer"/>
+      <target xmi:type="slnDsl:Model" href="open.slndsl#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

@@ -1,0 +1,11 @@
+browser chrome
+sub openEMN()
+	open(http://www.nngroup.com/articles/checkboxes-vs-radio-buttons/)
+endsub
+	
+main 
+	openEMN()
+	while (verify(checkbox, "permission", false)) do
+		check("permission", true)
+	endwhile
+endmain
