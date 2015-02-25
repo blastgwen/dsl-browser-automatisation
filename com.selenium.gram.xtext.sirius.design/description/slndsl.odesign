@@ -10,6 +10,103 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
           </style>
         </nodeMappings>
+        <nodeMappings name="Subprocedure" domainClass="slnDsl.Subprocedure">
+          <style xsi:type="style:SquareDescription" labelExpression="SubProcedure" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Body" domainClass="slnDsl.Body">
+          <style xsi:type="style:SquareDescription" labelExpression="Body" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Head" domainClass="slnDsl.Head">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Declaration" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="FunctionName" domainClass="slnDsl.FunctionName">
+          <style xsi:type="style:DotDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="VariableName" domainClass="slnDsl.VariableName">
+          <style xsi:type="style:DotDescription" showIcon="false" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Definition" domainClass="slnDsl.Definition">
+          <style xsi:type="style:SquareDescription" labelExpression="Definition" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Expression" domainClass="slnDsl.Expression">
+          <style xsi:type="style:EllipseNodeDescription" labelExpression="Expression" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="SubBodyRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Subprocedure']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Body']" targetFinderExpression="feature:body">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SubHeadRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Subprocedure']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Head']" targetFinderExpression="feature:head">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="HeadNameRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Head']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='FunctionName']" targetFinderExpression="feature:name">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="HeadVarRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Head']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='VariableName']" targetFinderExpression="feature:argsID">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DefBodyRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Body']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Definition']" targetFinderExpression="feature:defs">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DefVarRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Definition']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='VariableName']" targetFinderExpression="feature:varID">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>

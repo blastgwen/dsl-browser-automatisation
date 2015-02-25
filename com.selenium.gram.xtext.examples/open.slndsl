@@ -1,9 +1,10 @@
 browser chrome
-sub openEMN()
+sub openEMN(var truc)
 	open(https://nte.gemtech.fr/campus/)
 endsub
 	
 main 
+	var chose = ""
 	openEMN()
 	click(link, "connexion")
 	click(image, "czam")

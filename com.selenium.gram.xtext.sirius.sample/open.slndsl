@@ -1,11 +1,16 @@
 browser chrome
-sub openEMN()
-	open(http://www.nngroup.com/articles/checkboxes-vs-radio-buttons/)
+sub openEMN(var truc)
+	open(https://nte.gemtech.fr/campus/)
 endsub
 	
 main 
+	var chose = ""
 	openEMN()
-	while (verify(checkbox, "permission", false)) do
-		check("permission", true)
-	endwhile
+	click(link, "connexion")
+	click(image, "czam")
+	select("user_idp", "Nantes")
+	click(button, "continuer")
+	click(button, "sauvegarder")
+	type("username", "gbec12")
+	type("password", "gwen007")
 endmain
