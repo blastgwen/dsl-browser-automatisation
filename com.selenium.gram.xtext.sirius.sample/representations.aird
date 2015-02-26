@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:slnDsl="http://www.selenium.com/gram/xtext/SlnDsl" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_8LbXIL0IEeSCkJXdkE5yYw" selectedViews="_UASeAL0KEeSCkJXdkE5yYw" version="8.1.1">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:slnDsl="http://www.selenium.com/gram/xtext/SlnDsl" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_8LbXIL0IEeSCkJXdkE5yYw" selectedViews="_v1gCYL2vEeSw3422j2dkkw" version="8.1.1">
   <models xmi:type="slnDsl:Model" href="open.slndsl#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_UASeAL0KEeSCkJXdkE5yYw" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WagdsL0KEeSCkJXdkE5yYw" name="Diagramme">
@@ -659,5 +659,8 @@
       <target xmi:type="slnDsl:Model" href="open.slndsl#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_v1gCYL2vEeSw3422j2dkkw" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/com.selenium.gram.xtext.sirius.design/description/slndsl.odesign#//@ownedViewpoints[name='Model']"/>
   </ownedViews>
 </viewpoint:DAnalysis>
