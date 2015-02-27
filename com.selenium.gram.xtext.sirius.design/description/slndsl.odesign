@@ -59,6 +59,76 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
+        <nodeMappings name="FunctionCall" domainClass="slnDsl.Conditional">
+          <style xsi:type="style:SquareDescription" labelExpression="feature:ref" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Conditional" domainClass="slnDsl.Conditional">
+          <style xsi:type="style:LozengeNodeDescription" labelExpression="IF" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Loop" domainClass="slnDsl.Loop">
+          <style xsi:type="style:LozengeNodeDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings xsi:type="description_1:NodeMappingImport" name="ActionInstruction" domainClass="slnDsl.ActionInstruction">
+          <style xsi:type="style:SquareDescription" labelExpression="Action" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Assignation" domainClass="slnDsl.Assignation">
+          <style xsi:type="style:DotDescription" labelExpression="feature:var" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ActionOpen" domainClass="slnDsl.ActionOpen">
+          <style xsi:type="style:DotDescription" labelExpression="Open" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ActionClick" domainClass="slnDsl.ActionClick">
+          <style xsi:type="style:DotDescription" labelExpression="Click" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ActionCheck" domainClass="slnDsl.ActionCheck">
+          <style xsi:type="style:DotDescription" labelExpression="Check" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ActionType" domainClass="slnDsl.ActionType">
+          <style xsi:type="style:DotDescription" labelExpression="Type" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ActionSelect" domainClass="slnDsl.SelectAction">
+          <style xsi:type="style:DotDescription" labelExpression="Select" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="SubBodyRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Subprocedure']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Body']" targetFinderExpression="feature:body">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -100,6 +170,38 @@
           </style>
         </edgeMappings>
         <edgeMappings name="DefVarRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Definition']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='VariableName']" targetFinderExpression="feature:varID">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="BodyInstruction" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Body']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Assignation'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Conditional'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='FunctionCall'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Loop'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionInstruction']" targetFinderExpression="feature:instructions">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ActionInstrRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionInstruction']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionClick'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionCheck'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionOpen'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionSelect'] //@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionType']" targetFinderExpression="feature:action">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ClickElementRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionClick']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Expression']" targetFinderExpression="feature:element">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OpelElementRel" sourceMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='ActionOpen']" targetMapping="//@ownedViewpoints[name='Model']/@ownedRepresentations[name='Diagramme']/@defaultLayer/@nodeMappings[name='Expression']" targetFinderExpression="feature:url">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
