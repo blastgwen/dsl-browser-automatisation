@@ -11,6 +11,6 @@ main
 	select("user_idp", "Nantes")
 	click(button, "continuer")
 	click(button, "sauvegarder")
-	type("username", "gbec12")
-	type("password", "gwen007")
+	type("username", "")
+	type("password", "")
 endmain
